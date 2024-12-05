@@ -2,10 +2,26 @@
 
 import fs from "fs";
 
+export async function GET(request) {
+  return new Response('Hello World', { status: 200 });
+}
+
 export async function POST(request) {
     try {
       const body = await request.json();
-      
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+      console.log('LIVEKITCLI');
+
       // Append to webhook.json file
       const webhookPath = '/home/adnan/webhook.json';
       
