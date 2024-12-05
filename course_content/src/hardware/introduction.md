@@ -8,6 +8,20 @@ Our goal at dynabot is to make hardware engineering more accessible to billions 
 
 # Dynamicland
 
+# RTINGS INDEXING - UNDERSTANDING INSDUSTRY dec 6
+http://localhost:3000/dynabot
+http://localhost:3000/dynabot/wikicourse
+https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
+https://livekit.io/use-cases/robotics
+https://platform.openai.com/playground/chat?models=o1-preview
+https://www.crunchbase.com/login
+https://pitchbook.com/
+https://opencorporates.com/
+https://www.dnb.com/
+https://www.cbinsights.com/
+https://www.automate.org/
+https://www.massrobotics.org/
+
 dec 6
 dec 7 walter isacsoon for VPRI / dynamicland
 8 -

@@ -36,4 +36,5 @@ Dec 7 - rest - figure out evals for 5 agents (communication, measurement) lucasa
 60 days until final launch - readme should only be 60 days - Feb 4
 mobile, ML, mechE, webGPU
 reasoning = o1 + dynamicland = reasoning
+doing schleps + having fun.
 -----Last Line pls do not write beneath this line Dedicated to fabrice, dwarf fortress, avi-bryant ----
