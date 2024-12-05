@@ -1,4 +1,4 @@
-# Standard Libray Bun project with minimal dependencies 
+# Standard Libray Bun project with minimal dependencies
 
 https://bun.sh/docs/cli/test
 
@@ -6,7 +6,7 @@ https://bun.sh/docs/cli/test
 
 # HomeLab for 5 GPUs for public use
 
-2. Jetson Orin 
+2. Jetson Orin
 2. 2 3070s
 1. 4090
 Estimated Launch Dec 20, 2024 - 1000/250,000 people  for $1000
@@ -16,3 +16,16 @@ Estimated Launch Dec 20, 2024 - 1000/250,000 people  for $1000
 3. sound-board-creation
 4. anki-flashcards-to-audio
 5. IMMICH + DOCKER + image search + annotation + YOLO instant
+
+
+dynamicland.com-worrydream.com
+
+
+paulgraham.com
+
+kalzumeus
+apenwarr
+
+team liquid / day9
+david foster wallace
+aaron swartz

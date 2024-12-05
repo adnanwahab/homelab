@@ -1,58 +1,58 @@
-'use client'
 
-import React, { useState } from 'react'
+'use client';
 
-interface Message {
-  role: 'user' | 'assistant'
-  content: string
-}
+import React, { useState } from 'react';
 
-export default function Chatbot() {
-  const [messages, setMessages] = useState<Message[]>([])
-  const [input, setInput] = useState('')
+export default function HomePage() {
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
 
   const sendMessage = async () => {
-    if (!input.trim()) return
+    if (!input.trim()) return;
 
-    const userMessage: Message = { role: 'user', content: input }
-    setMessages([...messages, userMessage])
-    setInput('')
+    const userMessage = { role: 'user', content: input };
+    setMessages((prev) => [...prev, userMessage]);
+    setInput('');
 
     try {
-      const response = await fetch('/api/chat_interface', {
+      const response = await fetch('/api/chat', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ messages: [...messages, userMessage] }),
-      })
-      const data = await response.json()
-      const assistantMessage: Message = { role: 'assistant', content: data.message }
-      setMessages((prev) => [...prev, assistantMessage])
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input }),
+      });
+
+      const data = await response.json();
+
+      const botMessage = { role: 'bot', content: data.response };
+      setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      console.error('Error:', error)
+      console.error('Error communicating with the bot:', error);
     }
-  }
+  };
 
   return (
-    <div className="h-screen flex flex-col chatbot-container">
-      <div className="flex-1 overflow-y-auto messages">
-        {messages.map((msg, idx) => (
-          <div key={idx} className={`message ${msg.role}`}>
-            {msg.content}
-          </div>
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '2rem' }}>
+      <h1>Ollama Chatbot</h1>
+      <div style={{ border: '1px solid #ccc', padding: '1rem', height: '400px', overflowY: 'auto' }}>
+        {messages.map((msg, index) => (
+          <p key={index}>
+            <strong>{msg.role === 'user' ? 'You' : 'Bot'}:</strong> {msg.content}
+          </p>
         ))}
       </div>
-      <div className="input-area p-4 border-t">
+      <div style={{ marginTop: '1rem' }}>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-          placeholder="Type your message..."
+          style={{ width: 'calc(100% - 80px)', padding: '0.5rem' }}
+          className='border border-gray-300 rounded-md p-2 text-blue-900'
         />
-        <button onClick={sendMessage}>Send</button>
+        <button onClick={sendMessage} style={{ padding: '0.5rem', marginLeft: '0.5rem' }}>
+          Send
+        </button>
       </div>
     </div>
-  )
+  );
 }
