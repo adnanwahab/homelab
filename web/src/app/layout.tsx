@@ -1,22 +1,22 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+    ClerkProvider,
+    SignInButton,
+    SignedIn,
+    SignedOut,
+    UserButton,
+} from "@clerk/nextjs";
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
-import Head from 'next/head';
+import Head from "next/head";
 
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 // 1. dynabot - $300 nanosaurs
 // 2. three.js collaborative canvas - type shit - get 3d world --- adds to everyones animal cross + sims + minecraft
 //3. llama-tools = labels for reasoning -- 100% free open source
-// 
+//
 /* <meta property="og:title" content="Robotics and Biotech Innovations | Dynamciland" />
 <meta
   property="og:description"
@@ -41,62 +41,65 @@ import { Analytics } from "@vercel/analytics/react"
 // };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <ClerkProvider>
-      <html lang="en">
-         <Head>
-          <title>Robotics and Biotech Innovations | Dynamciland</title>
-          <meta
-            name="description"
-            content="Dynabot.dev - AI+Robotics+Biotech inspired by dynamiclan"
-          />
-          <link rel="icon" href="/public/favicon/favicon.svg" />
+    return (
+        <ClerkProvider>
+            <html lang="en">
+                <Head>
+                    <title>
+                        Robotics and Biotech Innovations | Dynamciland
+                    </title>
+                    <meta
+                        name="description"
+                        content="Dynabot.dev - AI+Robotics+Biotech inspired by dynamiclan"
+                    />
+                    <link rel="icon" href="/public/favicon/favicon.svg" />
 
-          <script type="text/javascript" dangerouslySetInnerHTML={{
-            __html: `
+                    <script
+                        type="text/javascript"
+                        dangerouslySetInnerHTML={{
+                            __html: `
               (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
               })(window, document, "clarity", "script", "ok8h7h9e0q");
-            `
-          }} />
-          <meta
-            name="keywords"
-          content="Dynabot.dev - AI+Robotics+Biotech inspired by dynamicland"
-          />
-          <link rel="canonical" href="https://www.dynabot.dev/" />
-          <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Dynamciland",
-          "url": "https://www.dynamciland.com",
-          "logo": "https://www.dynamciland.com/logo.png",
-          "sameAs": [
-            "https://www.facebook.com/dynamciland",
-            "https://www.twitter.com/dynamciland",
-          ],
-          "description": "Dynamciland is the hub of innovation in robotics and biotech.",
-        }),
-      }}
-    />
-        </Head>
-        <body
-          className={` antialiased`}
-        >
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </html>
-    </ClerkProvider>
-  );
+            `,
+                        }}
+                    />
+                    <meta
+                        name="keywords"
+                        content="Dynabot.dev - AI+Robotics+Biotech inspired by dynamicland"
+                    />
+                    <link rel="canonical" href="https://www.dynabot.dev/" />
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "Organization",
+                                name: "Dynamciland",
+                                url: "https://www.dynamciland.com",
+                                logo: "https://www.dynamciland.com/logo.png",
+                                sameAs: [
+                                    "https://www.facebook.com/dynamciland",
+                                    "https://www.twitter.com/dynamciland",
+                                ],
+                                description:
+                                    "Dynamciland is the hub of innovation in robotics and biotech.",
+                            }),
+                        }}
+                    />
+                </Head>
+                <body className={` antialiased`}>
+                    {children}
+                    <Analytics />
+                    <SpeedInsights />
+                </body>
+            </html>
+        </ClerkProvider>
+    );
 }
-  
