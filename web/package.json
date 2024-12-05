@@ -45,6 +45,7 @@
     "lucide-react": "^0.462.0",
     "next": "15.0.3",
     "next-sitemap": "^4.2.3",
+    "next-transpile-modules": "^10.0.1",
     "openai": "latest",
     "react": "latest",
     "react-dom": "latest",

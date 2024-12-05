@@ -18,7 +18,7 @@ export default function DenoWebgpu() {
     <div>
       PERIOD HI WORLD audio webgpu
       <ThreeJsAudioProcessing />
-      {/* <Periodic /> */}
+      <Periodic />  
     </div>
   );
 }

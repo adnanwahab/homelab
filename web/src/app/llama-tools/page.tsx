@@ -18,10 +18,14 @@ function LLama_Tools_Main() {
     <div>
       <ul>
         <li>
-          <a href="/replay-analyzer">[ ] livekit replay analyzer</a>
+          <a href="/llama-tools/replay_analyzer">[ ] 1 - livekit replay analyzer</a>
+        </li>
+
+        <li>
+          <a href="/llama-tools/replay_analyzer">JUPYTER IFRAME IN OBS COURSE</a>
         </li>
         <li>
-          <a href="/llama-tools/deno-webgpu-threejs">deno-webgpu</a>
+          <a href="/llama-tools/deno-webgpu-threejs">CHECKED deno-webgpu</a>
         </li>
         <li>[ ] magic llama</li>
         <li>[ ] magic iframe</li>

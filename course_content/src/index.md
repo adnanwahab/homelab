@@ -14,6 +14,11 @@ Must have
 0. 30-60 jupyter notebooks
 1. $150 nanosaur / dynabot / maurice
 2. creative AI + box3d + agents - fun mvp llama-tools 
+---
+1. observable course content 
+2. deno-webpug 
+3. jupyter 30
+4. livekit robot
 <!-- <iframe width="100%" height="968" frameBorder="0"
   src="https://observablehq.com/embed/@roboticsuniversity/alan_how@262?cells=pdfViewer"></iframe>
 
