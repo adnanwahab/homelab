@@ -15,7 +15,7 @@ export async function POST(req: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'llama2',
+        model: 'llama3.2',
         messages: messages,
         stream: false,
       }),

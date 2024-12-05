@@ -26,7 +26,9 @@ IP: odyssey, mew,
 tools: opw, livekit, obs, playwright, rustdesk, slurm/voltage - https://worrydream.com/ExplorableExplanations/ -- https://nextjournal.com
 https://www.figma.com/design/LX2jMZByF7xuhSsYBP9lX2/Untitled?node-id=0-1&t=0zJ9Ppdo2c1pbLDD-1 - mockup - dec 6
 Thanks to Dynamicland, PG, and VPRI.
-Dec 4 - Livekit
+Dec 4 - Replay Analyzer / room organizer
 Dec 5 - playwright
 dec 6 - Jupyterx30 - complete and send to patrick, jp+eric
------Last Line pls do not write beneath this line Dedicated to Rain Kaufman, my friend ----
+Dec 7 - rest - figure out evals for 5 agents (communication, measurement)
+60 days until final launch - readme should only be 60 days - Feb 4
+-----Last Line pls do not write beneath this line Dedicated to Rain, my friend ----

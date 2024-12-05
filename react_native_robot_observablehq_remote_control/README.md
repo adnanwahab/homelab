@@ -1,59 +1,50 @@
-# LiveKit React Native Example App
+# Welcome to your Expo app 👋
 
-A basic video conference app built on top of the [LiveKit React Native SDK](https://github.com/livekit/client-sdk-react-native). 
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Getting Started
+## Get started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+1. Install dependencies
 
-## Step 1: Start the Metro Server
+   ```bash
+   npm install
+   ```
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+2. Start the app
 
-To start Metro, run the following command from the _root_ of your React Native project:
+   ```bash
+    npx expo start
+   ```
 
-```bash
-# using npm
-npm start
+In the output, you'll find options to open the app in a
 
-# OR using Yarn
-yarn start
-```
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-## Step 2: Start your Application
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Get a fresh project
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
+When you're ready, run:
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+npm run reset-project
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Learn more
 
-## Congratulations! :tada:
+To learn more about developing your project with Expo, look at the following resources:
 
-You've successfully run our LiveKit example app! :partying_face:
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-### Now what?
+## Join the community
 
-- View our guides at https://docs.livekit.io/
-- [Join our community!](https://livekit.io/join-slack)
+Join our community of developers creating universal apps.
 
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
