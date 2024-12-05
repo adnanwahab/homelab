@@ -1,4 +1,5 @@
 # TDD for ML Engineering w/ UV/mamba/poetry/nix python simple Asserts - 32 notebooks in by Dec 6
+https://nextjournal.com/leahneukirchen/determining-an-election-in-k
 
 1. perception = computer vision and audio analysis (rev)
 2. Prediction = abid + raffi
