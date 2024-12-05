@@ -62,7 +62,7 @@ export default function Home() {
 
         <nav className="flex gap-6">
           <a href="/blog" className="hover:opacity-70">
-            Blog
+            Blog!
           </a>
           {/* <a href="/tools" className="hover:opacity-70 ">Tools</a> */}
           {/* <button className="hover:opacity-70">
