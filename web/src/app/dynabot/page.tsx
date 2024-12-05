@@ -1,19 +1,28 @@
-'use client'
+"use client";
 import LivingRobotDemo from "@/components/demo";
 import { Container } from "@/components/container";
 import Footer from "@/components/footer";
 import { LogoCloud } from "@/components/logo-cloud";
 import { Navbar } from "@/components/navbar";
 import TitleRewriter from "@/components/title-rewriter";
-import { SeeingSpace } from "@/components/seeingspace"; 
+import { SeeingSpace } from "@/components/seeingspace";
+import {MainComponent as BuyRobotPage} from './robot/page'
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
       <main>
-        <div className="bg-gradient-to-b from-white from-50% to-gray-100 ">
-          <LivingRobotDemo  second_thing={SeeingSpace} />
-          <PricingPage />
+        <div className="bg-gradient-to-b from-white from-50% to-gray-100 text-blue-700">
+          <div>
+            <a href="/robot">1. Robot for $300 - get 10 signups by Jan 1 </a>{" "}
+          </div>
+
+
+          <BuyRobotPage />
+         
+
+          {/* <LivingRobotDemo  second_thing={SeeingSpace} /> */}
+          {/* <PricingPage /> */}
           <Footer />
           {/* <LogoCloud /> */}
         </div>
@@ -22,36 +31,25 @@ export default function Home() {
   );
 }
 
-
-
-
 // import Image from "next/image";
-
 
 // export default function Home() {
 //   return (
 //     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 //       <ul>
 
-    
-
 //         <li>
 //           <a href="/dynabot">
 //             dynabot.dev - living demo (medbot, repairbot, roombacat)
 //           </a>
 //         </li>
- 
+
 //       ------------
 //       <li>
 //           <a href="/dynabot/deno-webgpu">
 //             deno-webgpu
 //           </a>
 //         </li>
-
-
-
-
-
 
 // -------------
 //         <li>
@@ -72,7 +70,6 @@ export default function Home() {
 //           </a>
 //         </li>
 
-     
 //         <li>
 //           <a href="/baby-dynamicland">baby dynamicland</a>
 //         </li>
@@ -82,14 +79,10 @@ export default function Home() {
 //   );
 // }
 
+// //50 llamas - 50 gpus --- instantly interpret and deno-webpgu suggestions
 
-// //50 llamas - 50 gpus --- instantly interpret and deno-webpgu suggestions 
-
-
-
-
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link";
+import Image from "next/image";
 
 function PricingPage() {
   return (
@@ -109,14 +102,20 @@ function PricingPage() {
           <h2 className="text-2xl font-semibold text-gray-900">Free</h2>
           <ul className="mt-6 space-y-4">
             <li className="flex items-start">
-              <svg className="h-6 w-6 text-purple-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              <svg
+                className="h-6 w-6 text-purple-500 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
               </svg>
               <span className="ml-3 text-gray-600">Mac, iPad, and iPhone</span>
             </li>
             {/* Add other list items similarly */}
           </ul>
-          <p className="mt-8 text-2xl font-bold">Free <span className="text-gray-600">forever</span></p>
+          <p className="mt-8 text-2xl font-bold">
+            Free <span className="text-gray-600">forever</span>
+          </p>
           <Link href="https://apps.apple.com" className="mt-8 block">
             <Image
               src="/app-store-badge.png"
@@ -158,16 +157,19 @@ function PricingPage() {
       {/* Footer */}
       <div className="mt-16 text-center">
         <p className="text-gray-600">
-          Students and teachers can contact us at{' '}
-          <a href="mailto:hello@museapp.com" className="text-purple-600 hover:text-purple-500">
+          Students and teachers can contact us at{" "}
+          <a
+            href="mailto:hello@museapp.com"
+            className="text-purple-600 hover:text-purple-500"
+          >
             hello@museapp.com
-          </a>
-          {' '}for an education discount.
+          </a>{" "}
+          for an education discount.
         </p>
         <p className="mt-4 text-sm text-gray-500">
           *Mac device is required for Setapp; iPad and iPhone are optional.
         </p>
       </div>
     </div>
-  )
+  );
 }

@@ -35,8 +35,8 @@ git commit -m "Initial commit - reinitialized history"
 read -p "Do you want to set the remote origin? (y/n): " set_remote
 if [ "$set_remote" = "y" ]; then
   read -p "Enter the remote repository URL: " remote_url
-  git remote add origin "$remote_url"
-  echo "Remote origin set to $remote_url"
+  git remote add origin "git@github.com:adnanwahab/homelab.git"
+  echo "Remote origin set to git@github.com:adnanwahab/homelab.git"
 else
   echo "No remote repository set."
 fi
@@ -44,7 +44,7 @@ fi
 # Optional: Push the new commit to remote repository (force push to overwrite history)
 read -p "Do you want to push the new commit to the remote repository? (y/n): " push_confirm
 if [ "$push_confirm" = "y" ]; then
-  git push -u origin master --force
+  git push -u origin main --force
   echo "Pushed new history to remote repository."
 else
   echo "Skipping push to remote."

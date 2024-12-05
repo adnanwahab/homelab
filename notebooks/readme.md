@@ -1,3 +1,12 @@
+# TDD for ML Engineering w/ UV/mamba/poetry/nix python simple Asserts - 32 notebooks in by Dec 6
+
+1. perception = computer vision and audio analysis (rev)
+2. Prediction = abid + raffi
+3. simulation = chatkhan
+4. real world = dynamicland
+
+
+5. Extra: Mechanical Engineering, (Physics, econ, manufacturing, systems)
 
 <div align="right" style="text-align:right"><i>Peter Norvig
 <br><a href="https://github.com/norvig/pytudes/blob/main/LICENSE">MIT License</a><br>2015-2022</i></div>

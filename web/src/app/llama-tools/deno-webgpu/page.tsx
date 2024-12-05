@@ -1,43 +1,51 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import fs from 'fs';
+import React, { useState } from "react";
+import ThreeJsAudio from "./threejs";
 
-export default function Page() {
-  const [imageData, setImageData] = useState<string | null>(null);
+function DenoWebgpu() {
+  const [textInput, setTextInput] = useState("");
+  const [fileInput, setFileInput] = useState<File | null>(null);
 
-  const handleRunWebGPU = async () => {
-    try {
-      const response = await fetch('/api/run-webgpu', {
-        method: 'POST',
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to run WebGPU script');
-      }
-      
-      const data = await response.json();
-      setImageData(data.imageUrl);
-    } catch (error) {
-      console.error('Error running WebGPU:', error);
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("text", textInput);
+    if (fileInput) {
+      !formData.append("file", fileInput);
     }
+
+    const hi = await fetch("http://localhost:8000/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    console.log(hi);
   };
 
   return (
-    <div className="p-4">
-      <button 
-        onClick={handleRunWebGPU}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Run WebGPU
-      </button>
-      
-      {imageData && (
-        <div className="mt-4">
-          <img src={imageData} alt="WebGPU Output" />
-        </div>
-      )}
+    <div>
+      <h1>
+        Type a string, or send image or video, and we will make it in three.js
+      </h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter a string"
+          value={textInput}
+          onChange={(e) => setTextInput(e.target.value)}
+        />
+        <input
+          type="file"
+          accept="image/*,video/*"
+          onChange={(e) => setFileInput(e.target.files?.[0] || null)}
+        />
+        <button type="submit">Submit</button>
+      </form>
+      <ThreeJsAudio />
     </div>
   );
 }
-    
+
+export default DenoWebgpu;
