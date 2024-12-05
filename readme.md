@@ -13,3 +13,4 @@ wiki
 3. simulation = unreal/deno-webgpu/unity
 4. real-world = dynamicland systems theory (foxglove)
 5. hardware = agents + manufacturing+sensors+mechE
+https://github.com/adnanwahab/homelab
