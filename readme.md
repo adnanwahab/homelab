@@ -1,11 +1,11 @@
 # Dynabot.dev - $300 robot + free wikicourse
-1. Dec 5 - Link to 30 jupyter Notebooks [Link to jupyter notebooks](https://github.com/adnanwahab/homelab/blob/main/notebooks/readme.md)
+1. PYMOJODec 5 - Link to 30 jupyter Notebooks [Link to jupyter notebooks](https://github.com/adnanwahab/homelab/blob/main/notebooks/readme.md)
 
-2. Dec 6 - Link to 1000 scripts [Link to 1000 scripts](https://github.com/adnanwahab/homelab/tree/main/scripts#readme)
+2. BUN/NIX - Dec 6 - Link to 1000 scripts [Link to 1000 scripts](https://github.com/adnanwahab/homelab/tree/main/scripts#readme)
 
-3. Dec 4 - Link to web-app [Link to Web App](https://github.com/adnanwahab/homelab/blob/main/web/README.md)
+3. nextjs / serverside proxies  - Dec 4 - Link to web-app [Link to Web App](https://github.com/adnanwahab/homelab/blob/main/web/README.md)
 
-4. Dec 7 - Link to Data Pipeline [Link to jupyter notebooks](https://github.com/adnanwahab/homelab/blob/main/notebooks/readme.md)
+4. Dec 7 - Link to Data Pipeline 16TB REALTIME --- cranshaw
 ----
 wiki
 1. perception = livekit/o1/vit/yolo/segment-anything
@@ -14,3 +14,19 @@ wiki
 4. real-world = dynamicland systems theory (foxglove)
 5. hardware = agents + manufacturing+sensors+mechE
 https://github.com/adnanwahab/homelab
+$5000
+500 livekit - 1000 people / cloud costs / fly.io
+4 3070s
+
+3000 in robotics hardware - 1-2 good robots
+Dec 5 - Next.js Editor service for observableFramework dyna-style
+    -- import source md of file and put a save button lol -- write to FS -- ask for supervision for 30 day
+livekit(3 machine egress to self-hosted 16tb) 30 lines max each file - see all files in periodic
+IP: odyssey, mew,
+tools: opw, livekit, obs, playwright, rustdesk, slurm/voltage - https://worrydream.com/ExplorableExplanations/ -- https://nextjournal.com
+https://www.figma.com/design/LX2jMZByF7xuhSsYBP9lX2/Untitled?node-id=0-1&t=0zJ9Ppdo2c1pbLDD-1 - mockup - dec 6
+Thanks to Dynamicland, PG, and VPRI.
+Dec 4 - Livekit
+Dec 5 - playwright
+dec 6 - Jupyterx30 - complete and send to patrick, jp+eric
+-----Last Line pls do not write beneath this line Dedicated to Rain Kaufman, my friend ----

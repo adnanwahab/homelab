@@ -5,10 +5,10 @@ const navigation = {
     { name: "LLama Tools", href: "/llama-tools" },
   ],
   contact: [
-    { name: "contact@threejs-journey.com", href: "mailto:contact@threejs-journey.com" },
-    { name: "Discord", href: "#" },
-    { name: "LinkedIn", href: "#" },
-    { name: "Youtube", href: "#" },
+    { name: "hi@dynabot.dev", href: "mailto:hi@dynabot.dev" },
+    { name: "Twitch.tv", href: "https://www.twitch.tv/dynabot_dev" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/adnan-wahab/" },
+    { name: "Youtube", href: "https://www.youtube.com/@dynabot_dev" },
   ],
   legal: [
     { name: "DeepAtlas", href: "/legal" },
@@ -78,3 +78,6 @@ function Footer() {
 }
 
 export default Footer;
+
+
+

@@ -1,4 +1,41 @@
 "use client"
+import Livekit_Subscriber from "./livekit_subscriber";
+import Contact_Or_replay_calendar from "./Contact_Or_replay_calendar";
+
+
+//measure 30% on 3d-annotation - webgpu
+//        30% on dynabot - hardware
+//        30% on rev - backend
+
+function Show_Five_Desktop_Livekits() {
+  return <div>Show_Five_Desktop_Livekits</div>
+}
+
+function Egress_List() {
+ return <div>Egress_List</div>  
+}
+
+function Twitch_Picker() {
+ return <div>Twitch_Picker</div>  
+}
+
+export default function Livekit_Desktop_Viewer() {
+  return <div>Livekit Replay analyzer --- 
+    <ul>
+      <li>[ ] Desktop Viewer current state + prompt</li>
+      <li>[ ] react native app</li>
+      <li>[ ] replit integration 75mb to 25mb</li>
+    </ul>
+    <Livekit_Subscriber />
+    <DesktopViewer />
+    {/* <Contact_Or_replay_calendar /> */}
+
+    <Egress_List />
+    <Twitch_Picker />
+    <iframe src="/proxy?url=https://threejs.org/examples/css3d_periodictable.html" />
+  </div>
+}
+
 
 import { useState } from "react"
 import { Maximize2, Minus, X } from 'lucide-react'
@@ -71,7 +108,7 @@ interface Window {
   isMaximized: boolean
 }
 
-export default function DesktopViewer() {
+ function DesktopViewer() {
   const [windows, setWindows] = useState<Window[]>([
     { id: 1, title: "Window 1", content: "Content for window 1", isMaximized: false },
     { id: 2, title: "Window 2", content: "Content for window 2", isMaximized: false },

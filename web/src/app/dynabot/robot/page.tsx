@@ -2,15 +2,22 @@
 // import notebook from "@roboticsuniversity/rtings-for-robots@17";import { useEffect, useRef } from 'react';
 import Footer from "@/components/footer";
 import HardwareConfigurator from "@/components/hardware_configurator";
+import Livekit_Desktop_Viewer from "@/components/Livekit_Desktop_Viewer";
+
+
+
 //import Rtings from "@/components/rtings";
 
 export const MainComponent = function () {
   return     <div className="min-h-screen bg-gray-950 text-white">
   {/* Hero Section */}
   <div className="container mx-auto px-4 py-16">
+  <Livekit_Desktop_Viewer />
     <h1 className="text-center text-4xl md:text-6xl font-bold text-gray-300 mb-4">
      Self Driving Robot for $141
     </h1>
+
+
     
 
 
