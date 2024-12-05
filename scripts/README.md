@@ -1,8 +1,13 @@
 # Standard Libray Bun project with minimal dependencies
-
+https://github.com/RishavRimoSaha/bumble-bot.git
 https://bun.sh/docs/cli/test
 
 # 1000 useful 1 page tools in src folder
+
+0. outliers
+1. flow
+2. amazon/yt
+
 
 # HomeLab for 5 GPUs for public use
 
@@ -17,15 +22,3 @@ Estimated Launch Dec 20, 2024 - 1000/250,000 people  for $1000
 4. anki-flashcards-to-audio
 5. IMMICH + DOCKER + image search + annotation + YOLO instant
 
-
-dynamicland.com-worrydream.com
-
-
-paulgraham.com
-
-kalzumeus
-apenwarr
-
-team liquid / day9
-david foster wallace
-aaron swartz
