@@ -32,4 +32,5 @@ dec 6 - Jupyterx30 - complete and send to patrick, jp+eric
 Dec 7 - rest - figure out evals for 5 agents (communication, measurement) lucasarts
 60 days until final launch - readme should only be 60 days - Feb 4
 mobile, ML, mechE, webGPU
+reasoning = o1 + dynamicland = reasoning
 -----Last Line pls do not write beneath this line Dedicated to Rain, my friend ----
