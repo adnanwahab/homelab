@@ -1,19 +1,14 @@
 //spatial computing with robotics and dynamicland
 //biotech with robots
-
 "use client";
 
 import { useState, useEffect } from "react";
-import Footer from "../components/Footer";
-import React from 'react';
 
 //5 livekits always running
-
 //$500 livekit
 //$500 fly.io gpu
 //$2000 hardware - RTINGS - Where to spend $2000 on Hardware to get a innate.bot sibling :)
 //$3000 Total
-
 //$2000 O1 - Diagrams - 400,000
 //
 //
@@ -38,7 +33,7 @@ export default function Home() {
       title: "A $350 self-driving robot with arm",
       description:
         "comes with 30 pre-trained tasks and a home-labratory setup for your phone, desktop, or tv",
-      logoSrc: "https://nanosaur.ai/assets/images/nanosaur_og.jpg",
+      logoSrc: "/dynabot_preview.img",
     },
 
     {
@@ -94,16 +89,15 @@ export default function Home() {
               <h2 className="text-xl font-medium">{project.title}</h2>
               <p className="text-gray-600">
                 {project.description.split("\n").map((line, i) => (
-                  <React.Fragment key={i}>
+                  <>
                     {line}
                     {i === 0 && <br />}
-                  </React.Fragment>
+                  </>
                 ))}
               </p>
             </div>
           </a>
         ))}
-        <Footer />
       </main>
     </div>
   );

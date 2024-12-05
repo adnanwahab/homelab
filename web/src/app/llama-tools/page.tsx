@@ -1,8 +1,7 @@
 import Chatbot from "@/components/Chatbot";
 import Livekit from "@/components/Livekit_Desktop_Viewer";
 
-
-import replay_analyzer from './replay_analyzer/page'
+import replay_analyzer from "./replay_analyzer/page";
 // import Magic_Llama from "@/components/Magic_Llama";
 //hello-kitty stack
 function Magic_Iframe_Llama() {
@@ -18,7 +17,12 @@ function LLama_Tools_Main() {
   return (
     <div>
       <ul>
-        <li>[ ] livekit replay analyzer</li>
+        <li>
+          <a href="/replay-analyzer">[ ] livekit replay analyzer</a>
+        </li>
+        <li>
+          <a href="/llama-tools/deno-webgpu-threejs">deno-webgpu</a>
+        </li>
         <li>[ ] magic llama</li>
         <li>[ ] magic iframe</li>
       </ul>
