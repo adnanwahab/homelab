@@ -1,3 +1,7 @@
+# 30 good demos by Dec 7 saturday ---- 
+4 days happy till public launch -- https://observablehq.com/projects/@roboticsuniversity/dynamicbotnotebook
+
+
 bun run observable run convert
 
 https://observablehq.com/@saneef/pdf-view

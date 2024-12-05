@@ -1,436 +1,178 @@
+'use client'
+import React, { useRef, useEffect, useState } from 'react';
+import * as THREE from 'three';
+import { WebGPURenderer } from 'three/examples/jsm/renderers/WebGPURenderer.js';
+import * as Nodes from 'three/examples/jsm/nodes/Nodes.js';
+import { GUI } from 'lil-gui';
+
+function AudioProcessingComponent() {
+  const containerRef = useRef();
+  const [started, setStarted] = useState(false);
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>three.js examples</title>
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link rel="shortcut icon" href="../files/favicon_white.ico" media="(prefers-color-scheme: dark)"/>
-		<link rel="shortcut icon" href="../files/favicon.ico" media="(prefers-color-scheme: light)" />
-		<link rel="stylesheet" type="text/css" href="../files/main.css">
-	</head>
-	<body>
-
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-JPPX9MZGZ4"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-JPPX9MZGZ4');
-		</script>
-
-		<div id="panel">
-
-			<div id="header">
-				<h1><a href="https://threejs.org">three.js</a></h1>
-
-				<div id="sections">
-					<a href="../docs/index.html#manual/introduction/Creating-a-scene">docs</a>
-					<span class="selected">examples</span>
-				</div>
-
-				<div id="expandButton"></div>
-			</div>
-
-			<div id="panelScrim"></div>
-
-			<div id="contentWrapper">
-
-				<div id="inputWrapper">
-					<input placeholder="" type="text" id="filterInput" autocorrect="off" autocapitalize="off" spellcheck="false" />
-					<div id="clearSearchButton"></div>
-				</div>
-
-				<div id="content">
-					<img id="previewsToggler" src="./files/thumbnails.svg" width="20" height="20" />
-				</div>
-			</div>
-
-		</div>
-
-		<iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;"></iframe>
-
-		<a id="button" target="_blank"><img src="../files/ic_code_black_24dp.svg"></a>
-
-		<script>
-
-		const panel = document.getElementById( 'panel' );
-		const content = document.getElementById( 'content' );
-		const viewer = document.getElementById( 'viewer' );
-		const filterInput = document.getElementById( 'filterInput' );
-		const clearSearchButton = document.getElementById( 'clearSearchButton' );
-		const expandButton = document.getElementById( 'expandButton' );
-		const viewSrcButton = document.getElementById( 'button' );
-		const panelScrim = document.getElementById( 'panelScrim' );
-		const previewsToggler = document.getElementById( 'previewsToggler' );
-
-		const sectionLink = document.querySelector( '#sections > a' );
-		const sectionDefaultHref = sectionLink.href;
-
-		const links = {};
-		const validRedirects = new Map();
-		const fragment = document.createDocumentFragment();
-
-		let selected = null;
-
-		init();
-
-		async function init() {
-
-			viewSrcButton.style.display = 'none';
-
-			const files = await ( await fetch( 'files.json' ) ).json();
-			const tags = await ( await fetch( 'tags.json' ) ).json();
-
-			for ( const key in files ) {
-
-				const category = files[ key ];
-
-				const header = document.createElement( 'h2' );
-				header.textContent = key;
-				header.setAttribute( 'data-category', key );
-				fragment.appendChild( header );
-
-				for ( let i = 0; i < category.length; i ++ ) {
-
-					const file = category[ i ];
-
-					const link = createLink( file, tags[ file ] );
-					fragment.appendChild( link );
-
-					links[ file ] = link;
-					validRedirects.set( file, file + '.html' );
-
-				}
-
-			}
-
-			content.appendChild( fragment );
-
-			if ( window.location.hash !== '' ) {
-
-				const file = window.location.hash.substring( 1 );
-
-				// use a predefined map of redirects to avoid untrusted URL redirection due to user-provided value
-
-				if ( validRedirects.has( file ) === true ) {
-
-					selectFile( file );
-					viewer.src = validRedirects.get( file );
-					viewer.style.display = 'unset';
-
-				}
-
-			}
-
-			if ( viewer.src === '' ) {
-
-				viewer.srcdoc = document.getElementById( 'PlaceholderHTML' ).innerHTML;
-				viewer.style.display = 'unset';
-
-			}
-
-			filterInput.value = extractQuery();
-
-			if ( filterInput.value !== '' ) {
-
-				panel.classList.add( 'searchFocused' );
-
-				updateFilter( files, tags );
-
-			} else {
-
-				updateLink( '' );
-
-			}
-
-			// Events
-
-			filterInput.onfocus = function ( ) {
-
-				panel.classList.add( 'searchFocused' );
-
-			};
-
-			filterInput.onblur = function ( ) {
-
-				if ( filterInput.value === '' ) {
-
-					panel.classList.remove( 'searchFocused' );
-
-				}
-
-			};
-
-			clearSearchButton.onclick = function ( ) {
-
-				filterInput.value = '';
-				updateFilter( files, tags );
-				filterInput.focus();
-
-			};
-
-			filterInput.addEventListener( 'input', function () {
-
-				updateFilter( files, tags );
-
-			} );
-
-
-			expandButton.addEventListener( 'click', function ( event ) {
-
-				event.preventDefault();
-				panel.classList.toggle( 'open' );
-
-			} );
-
-			panelScrim.onclick = function ( event ) {
-
-				event.preventDefault();
-				panel.classList.toggle( 'open' );
-
-			};
-
-			previewsToggler.onclick = function ( event ) {
-
-				event.preventDefault();
-				content.classList.toggle( 'minimal' );
-
-			};
-
-			// iOS iframe auto-resize workaround
-
-			if ( /(iPad|iPhone|iPod)/g.test( navigator.userAgent ) ) {
-
-				viewer.style.width = getComputedStyle( viewer ).width;
-				viewer.style.height = getComputedStyle( viewer ).height;
-				viewer.setAttribute( 'scrolling', 'no' );
-
-			}
-
-		}
-
-		function createLink( file, tags ) {
-
-			const external = Array.isArray( tags ) && tags.includes( 'external' ) ? ' <span class="tag">external</span>' : '';
-
-			const template = `
-				<div class="card">
-					<a href="${ file }.html" target="viewer">
-						<div class="cover">
-							<img src="screenshots/${ file }.jpg" loading="lazy" width="400" />
-						</div>
-						<div class="title">${ getName( file ) }${ external }</div>
-					</a>
-				</div>
-			`;
-
-			const link = createElementFromHTML( template );
-
-			link.querySelector( 'a[target="viewer"]' ).addEventListener( 'click', function ( event ) {
-
-				if ( event.button !== 0 || event.ctrlKey || event.altKey || event.metaKey ) return;
-
-				selectFile( file );
-
-			} );
-
-			return link;
-
-		}
-
-		function selectFile( file ) {
-
-			if ( selected !== null ) links[ selected ].classList.remove( 'selected' );
-
-			links[ file ].classList.add( 'selected' );
-
-			window.location.hash = file;
-			viewer.focus();
-			viewer.style.display = 'unset';
-
-			panel.classList.remove( 'open' );
-
-			selected = file;
-
-			// Reveal "View source" button and set attributes to this example
-			viewSrcButton.style.display = '';
-			viewSrcButton.href = 'https://github.com/mrdoob/three.js/blob/master/examples/' + selected + '.html';
-			viewSrcButton.title = 'View source code for ' + getName( selected ) + ' on GitHub';
-
-		}
-
-		function escapeRegExp( string ) {
-
-			string = string.replace( /[.*+?^${}()|[\]\\]/g, '\\$&' ); // https://stackoverflow.com/a/6969486/5250847
-
-			return '(?=.*' + string.split( ' ' ).join( ')(?=.*' ) + ')'; // match all words, in any order
-
-		}
-
-		function updateFilter( files, tags ) {
-
-			let v = filterInput.value.trim();
-			v = v.replace( /\s+/gi, ' ' ); // replace multiple whitespaces with a single one
-
-			if ( v !== '' ) {
-
-				window.history.replaceState( {}, '', '?q=' + v + window.location.hash );
-
-			} else {
-
-				window.history.replaceState( {}, '', window.location.pathname + window.location.hash );
-
-			}
-
-			const exp = new RegExp( escapeRegExp( v ), 'gi' );
-
-			for ( const key in files ) {
-
-				const section = files[ key ];
-
-				for ( let i = 0; i < section.length; i ++ ) {
-
-					filterExample( section[ i ], exp, tags );
-
-				}
-
-			}
-
-			layoutList( files );
-
-			updateLink( v );
-
-		}
-
-		function updateLink( search ) {
-
-			// update docs link
-
-			if ( search ) {
-
-				const link = sectionLink.href.split( /[?#]/ )[ 0 ];
-				sectionLink.href = `${link}?q=${search}`;
-
-			} else {
-
-				sectionLink.href = sectionDefaultHref;
-
-			}
-
-		}
-
-		function filterExample( file, exp, tags ) {
-
-			const link = links[ file ];
-			if ( file in tags ) file += ' ' + tags[ file ].join( ' ' );
-			const res = file.replace( /_+/g, ' ' ).match( exp );
-
-			if ( res && res.length > 0 ) {
-
-				link.classList.remove( 'hidden' );
-
-			} else {
-
-				link.classList.add( 'hidden' );
-
-			}
-
-		}
-
-		function getName( file ) {
-
-			const name = file.split( '_' );
-			name.shift();
-			return name.join( ' / ' );
-
-		}
-
-		function layoutList( files ) {
-
-			for ( const key in files ) {
-
-				let collapsed = true;
-
-				const section = files[ key ];
-
-				for ( let i = 0; i < section.length; i ++ ) {
-
-					const file = section[ i ];
-
-					if ( links[ file ].classList.contains( 'hidden' ) === false ) {
-
-						collapsed = false;
-						break;
-
-					}
-
-				}
-
-				const element = document.querySelector( 'h2[data-category="' + key + '"]' );
-
-				if ( collapsed ) {
-
-					element.classList.add( 'hidden' );
-
-				} else {
-
-					element.classList.remove( 'hidden' );
-
-				}
-
-			}
-
-		}
-
-		function extractQuery() {
-
-			const search = window.location.search;
-
-			if ( search.indexOf( '?q=' ) !== - 1 ) {
-
-				return decodeURI( search.slice( 3 ) );
-
-			}
-
-			return '';
-
-		}
-
-		function createElementFromHTML( htmlString ) {
-
-			const div = document.createElement( 'div' );
-			div.innerHTML = htmlString.trim();
-			return div.firstChild;
-
-		}
-
-		</script>
-		<template id="PlaceholderHTML">
-			<!DOCTYPE html>
-				<html lang="en">
-					<head>
-						<meta charset="utf-8">
-						<title>three.js examples</title>
-						<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-						<link rel="stylesheet" type="text/css" href="../files/main.css">
-						<style>
-						html, body {
-							height: 100%;
-						}
-						body {
-							height: 100%;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							user-select: none;
-						}
-						</style>
-					</head>
-					<body>
-						Select an example from the sidebar
-					</body>
-				</html>
-		</template>
-	</body>
-</html>
+  useEffect(() => {
+    if (!started) return;
+
+    let camera, scene, renderer;
+    let computeNode;
+    let waveBuffer, sampleRate;
+    let waveArray;
+    let currentAudio, currentAnalyser;
+
+    const analyserBuffer = new Uint8Array(1024);
+    let analyserTexture;
+
+    const init = async () => {
+      // Audio buffer
+      const soundBuffer = await fetch('/sounds/webgpu-audio-processing.mp3').then(res => res.arrayBuffer());
+
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const audioBuffer = await audioContext.decodeAudioData(soundBuffer);
+      waveBuffer = audioBuffer.getChannelData(0);
+
+      // Adding extra silence to delay and pitch
+      waveBuffer = new Float32Array([...waveBuffer, ...new Float32Array(200000)]);
+      sampleRate = audioBuffer.sampleRate / audioBuffer.numberOfChannels;
+
+      // Create WebGPU buffers
+      waveArray = Nodes.instancedArray(waveBuffer);
+      waveArray.setPBO(true);
+
+      // Parameters
+      const pitch = Nodes.uniform(1.5);
+      const delayVolume = Nodes.uniform(0.2);
+      const delayOffset = Nodes.uniform(0.55);
+
+      // Compute shader function
+      const computeShaderFn = Nodes.Fn(() => {
+        const index = Nodes.float(Nodes.instanceIndex);
+
+        // Pitch
+        const time = index.mul(pitch);
+        let wave = waveArray.element(time);
+
+        // Delay
+        for (let i = 1; i < 7; i++) {
+          const waveOffset = waveArray.element(index.sub(delayOffset.mul(sampleRate).mul(i)).mul(pitch));
+          const waveOffsetVolume = waveOffset.mul(delayVolume.div(i * i));
+          wave = wave.add(waveOffsetVolume);
+        }
+
+        // Store
+        const waveStorageElementNode = waveArray.element(Nodes.instanceIndex);
+        waveStorageElementNode.assign(wave);
+      });
+
+      // Compute
+      computeNode = computeShaderFn().compute(waveBuffer.length);
+
+      // GUI
+      const gui = new GUI();
+      gui.add(pitch, 'value', 0.5, 2, 0.01).name('pitch');
+      gui.add(delayVolume, 'value', 0, 1, 0.01).name('delayVolume');
+      gui.add(delayOffset, 'value', 0.1, 1, 0.01).name('delayOffset');
+
+      // Renderer
+      const container = containerRef.current;
+
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 30);
+
+      // Nodes
+      analyserTexture = new THREE.DataTexture(analyserBuffer, analyserBuffer.length, 1, THREE.RedFormat);
+
+      const spectrum = Nodes.texture(analyserTexture, Nodes.screenUV.x).x.mul(Nodes.screenUV.y);
+      const backgroundNode = Nodes.color(0x0000ff).mul(spectrum);
+
+      // Scene
+      scene = new THREE.Scene();
+      scene.backgroundNode = backgroundNode;
+
+      // Renderer
+      renderer = new WebGPURenderer({ antialias: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setAnimationLoop(render);
+
+      container.appendChild(renderer.domElement);
+
+      // Event listeners
+      window.addEventListener('resize', onWindowResize);
+
+      playAudioBuffer();
+    };
+
+    const playAudioBuffer = async () => {
+      if (currentAudio) currentAudio.stop();
+
+      // Compute audio
+      await renderer.computeAsync(computeNode);
+
+      const wave = new Float32Array(await renderer.getArrayBufferAsync(waveArray.value));
+
+      // Play result
+      const audioOutputContext = new (window.AudioContext || window.webkitAudioContext)({ sampleRate });
+      const audioOutputBuffer = audioOutputContext.createBuffer(1, wave.length, sampleRate);
+      audioOutputBuffer.copyToChannel(wave, 0);
+      const source = audioOutputContext.createBufferSource();
+      source.connect(audioOutputContext.destination);
+      source.buffer = audioOutputBuffer;
+      source.start();
+
+      currentAudio = source;
+
+      // Visual feedback
+      currentAnalyser = audioOutputContext.createAnalyser();
+      currentAnalyser.fftSize = 2048;
+      source.connect(currentAnalyser);
+    };
+
+    const onWindowResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+
+    const render = () => {
+      if (currentAnalyser) {
+        currentAnalyser.getByteFrequencyData(analyserBuffer);
+        analyserTexture.needsUpdate = true;
+      }
+
+      renderer.render(scene, camera);
+    };
+
+    init();
+
+    // Cleanup on unmount
+    return () => {
+      if (currentAudio) currentAudio.stop();
+      if (renderer) {
+        renderer.dispose();
+        renderer.forceContextLoss();
+        renderer.domElement = null;
+      }
+      window.removeEventListener('resize', onWindowResize);
+    };
+  }, [started]);
+
+  const handleStart = () => {
+    setStarted(true);
+  };
+
+  return (
+    <div>
+      {!started && <button onClick={handleStart}>Play</button>}
+      <div ref={containerRef} />
+      <div id="info">
+        <a href="https://threejs.org" target="_blank" rel="noopener noreferrer">
+          three.js
+        </a>{' '}
+        WebGPU - Audio Processing
+        <br />
+        Click on screen to process the audio using WebGPU.
+      </div>
+    </div>
+  );
+}
+
+export default AudioProcessingComponent;

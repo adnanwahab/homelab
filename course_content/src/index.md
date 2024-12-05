@@ -1,5 +1,19 @@
 # Robotics Info Course
-
+---
+TOP LEVEL Goals: Dem 7
+1. fun mmo-teleop demo + wiki-course + medical bot for 100-8000
+---
+Todays Date: Dec 5 2024
+TODO 
+0. 30 Jupyter Notebooks
+1. LIVEKIT
+2. OBSERVABLE
+3. THREEJS
+--------
+Must have
+0. 30-60 jupyter notebooks
+1. $150 nanosaur / dynabot / maurice
+2. creative AI + box3d + agents - fun mvp llama-tools 
 <!-- <iframe width="100%" height="968" frameBorder="0"
   src="https://observablehq.com/embed/@roboticsuniversity/alan_how@262?cells=pdfViewer"></iframe>
 

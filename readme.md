@@ -1,4 +1,7 @@
 # Dynabot.dev - $300 robot + free wikicourse
+
+## 300 robot = dynabot.dev/robot
+## Free Wiki Course = https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 1. PYMOJODec 5 - Link to 30 jupyter Notebooks [Link to jupyter notebooks](https://github.com/adnanwahab/homelab/blob/main/notebooks/readme.md)
 
 2. BUN/NIX - Dec 6 - Link to 1000 scripts [Link to 1000 scripts](https://github.com/adnanwahab/homelab/tree/main/scripts#readme)
