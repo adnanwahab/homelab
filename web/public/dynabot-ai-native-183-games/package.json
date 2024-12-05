@@ -1,0 +1,14 @@
+{
+  "name": "@roboticsuniversity/dynabot-ai-native-183-games",
+  "main": "5d5868ce9ffbbf6c@51.js",
+  "version": "51.0.0",
+  "homepage": "https://observablehq.com/@roboticsuniversity/dynabot-ai-native-183-games",
+  "author": {
+    "name": "roboticsuniversity",
+    "url": "https://observablehq.com/@roboticsuniversity"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

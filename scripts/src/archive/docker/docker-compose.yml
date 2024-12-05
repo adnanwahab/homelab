@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  roomba_app:
+    build:
+      context: .
+      dockerfile: scripts/docker/
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+    volumes:
+      - .:/usr/src/app
+    command: ["bun", "run", "index.ts"]
+
+  zed_sdk:
+    image: stereolabs/zed:4.2-tools-devel-jetson-jp5.1.0
+
+# segment-anything:
+#   image: segment-anything
+#   volumes:
+#     - .:/data
