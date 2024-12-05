@@ -19,10 +19,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.eggnog92.react_native_robot_observablehq_remote_control"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "23b1af75-c0fd-474b-a2a0-5b820ba955a2"
+      }
     }
   }
 }

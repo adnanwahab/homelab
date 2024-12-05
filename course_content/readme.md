@@ -20,3 +20,7 @@ login with twitter.com
 
 
 https://www.youtube.com/watch?v=klTjiXjqHrQ&t=466s&ab_channel=ColinReckons - enjalot 4
+
+data = derp 
+derp/sensor_data/cam1 - environmental - for isometric / stereospci
+derp/sensor_data/cam2 - front facing
