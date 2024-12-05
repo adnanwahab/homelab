@@ -1,9 +1,8 @@
-
+# NYC Data Office
 
 saposlky
 
 https://github.com/enjalot/latent-scope
-
 
 
 # AI safety
@@ -14,11 +13,11 @@ https://github.com/enjalot/latent-scope
 
 latent scope -> analyze all roads + all laws to ammend them for happines of all people
 kyle voght - tech crunch - improve launch time of cars by 3 years.
-berlin - circlular city - bubbles of parks - walking only - trains - self driving for interstate lanes 
+berlin - circlular city - bubbles of parks - walking only - trains - self driving for interstate lanes
 
 
 
-tvgtropes - lableing = robot understand human 
+tvgtropes - lableing = robot understand human
 
 
 # Real-World Ethics, Safety, and Regulation
@@ -137,4 +136,4 @@ Plot.scatter(data, {
 
 Feel free to explore the visualization and delve into the references to gain a deeper understanding of the complex interplay between ethics, safety, and regulation in today's world.
 
-saposlky --- david goggins 
+saposlky --- david goggins

@@ -5,6 +5,15 @@ export default {
       name: "Perception",
       pages: [
         { name: "Livekit", path: "/perception/1_livekit" },
+        {
+          name: "Whisper and Audio Processing and Understanding Voice",
+          path: "/perception/whisper",
+        },
+        {
+          name: "Voxels Stixels Minecraft Diffusion 3D Policy and Semseg",
+          path: "/perception/voxels-stixels-minecraft",
+        },
+
         // { name: "Sensor Fusion", path: "/perception/sensor-fusion" },
         //{ name: "LIDAR Processing", path: "/perception/lidar-processing" },
         // { name: "Camera Calibration", path: "/perception/camera-calibration" },
