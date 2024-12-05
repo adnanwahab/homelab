@@ -6,6 +6,8 @@ import Livekit_Desktop_Viewer from "@/components/Livekit_Desktop_Viewer";
 
 
 
+import Livekit_Callibration from "@/components/Livekit_Callibration";
+
 //import Rtings from "@/components/rtings";
 
 export const MainComponent = function () {
@@ -115,16 +117,24 @@ export const MainComponent = function () {
   {/* <RobotFriends /> */}
 </div>
 }
+export default OnlyLivekit 
 
-
-export default function Robot() {
-  return (
-    <>
-      <MainComponent />
-      <Footer></Footer>
-    </>
-  );
+function OnlyLivekit() {
+  return <>only livekit
+  
+  <Livekit_Callibration />
+  </>
 }
+
+
+// export default function Robot() {
+//   return (
+//     <>
+//       <MainComponent />
+//       <Footer></Footer>
+//     </>
+//   );
+// }
 
 function AmazonButton() {   
   return <>

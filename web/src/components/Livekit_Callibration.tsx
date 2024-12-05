@@ -38,10 +38,10 @@ export default function Page() {
 
   return (
     <LiveKitRoom
-      video={false}
-      audio={false}
+      video={true}
+      audio={true}
       token={token}
-      screen={false}
+      screen={true}
       serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL}
       // Use the default LiveKit theme for nice styles.
       data-lk-theme="default"
