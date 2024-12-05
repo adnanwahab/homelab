@@ -1,40 +1,14 @@
 # TDD for ML Engineering w/ UV/mamba/poetry/nix python simple Asserts - 32 notebooks in by Dec 6
-https://nextjournal.com/leahneukirchen/determining-an-election-in-k
-
-1. perception = computer vision and audio analysis (rev)
-2. Prediction = abid + raffi
-3. simulation = chatkhan
-4. real world = dynamicland
-
-
-5. Extra: Mechanical Engineering, (Physics, econ, manufacturing, systems)
-
-<div align="right" style="text-align:right"><i>Peter Norvig
-<br><a href="https://github.com/norvig/pytudes/blob/main/LICENSE">MIT License</a><br>2015-2022</i></div>
-
-# pytudes
-
-"An ***étude*** (a French word meaning *study*) is an instrumental musical composition, usually short, of considerable difficulty,
-and designed to provide practice material for perfecting a particular musical skill." — [*Wikipedia*](https://en.wikipedia.org/wiki/%C3%89tude)
-
-This project contains ***pytudes***—Python programs, usually short, for perfecting particular programming skills.
-
-# Who is this for?
-
-To continue the musical analogy, some people think of programming like [Spotify](http://spotify.com): they want to know how to install the app, find a good playlist, and hit the "play" button; after that they don't want to think about it. There are plenty of other tutorials that will tell you how to do the equivalent of that for various programming tasks—this one won't help. But if you think of programming like playing the piano—a craft that can take [years](https://norvig.com/21-days.html) to perfect—then I hope this collection can help.
-
+1. https://nextjournal.com/leahneukirchen/determining-an-election-in-k
+2. https://pyodide.org/en/stable/console.html
 
 # Index of Jupyter (IPython) Notebooks
-
 For each notebook you can hover on the title to see a description, or click the title to view on github, or click one of the letters in the left column to launch the notebook on
 [**C**olab](https://colab.research.google.com),
 [**D**eepnote](https://deepnote.com),
 [**M**ybinder](https://mybinder.org),
 [**S**agemaker](https://studiolab.sagemaker.aws/), or
 [**N**BViewer](https://nbviewer.jupyter.org/).
-
-
-
 |Run|Year|New|
 |---|---|---|
 | [C](https://colab.research.google.com/github/norvig/pytudes/blob/main/ipynb/Paint.ipynb) [D](https://beta.deepnote.org/launch?template=python_3.6&url=https%3A%2F%2Fgithub.com%2Fnorvig%2Fpytudes%2Fblob%2Fmain%2Fipynb%2FPaint.ipynb) [M](https://mybinder.org/v2/gh/norvig/pytudes/main?filepath=ipynb%2FPaint.ipynb) [N](https://nbviewer.jupyter.org/github/norvig/pytudes/blob/main/ipynb/Paint.ipynb) [S](https://studiolab.sagemaker.aws/import/github/norvig/pytudes/blob/main/ipynb/Paint.ipynb) | <u>2024</u> | <a href="ipynb/Paint.ipynb" title="What is the average cluster size of a random grid of colored squares?">Counting Cluster Sizes in Paint by Numbers</a> |

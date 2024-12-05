@@ -1,35 +1,33 @@
-"use client"
-import { useState } from 'react'
-import { Radio, RadioGroup } from '@headlessui/react'
-import Link from 'next/link'
-import SisterSchools from './sisterschools'
+"use client";
+import { useState } from "react";
+import { Radio, RadioGroup } from "@headlessui/react";
+import Link from "next/link";
+import SisterSchools from "./sisterschools";
 import {
   ClerkProvider,
   SignInButton,
   SignedIn,
   SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+  UserButton,
+} from "@clerk/nextjs";
 interface CourseHeroProps {
-  title?: string
-  subtitle?: string
-  price?: string
-  studentCount?: number
+  title?: string;
+  subtitle?: string;
+  price?: string;
+  studentCount?: number;
   author?: {
-    name: string
-    avatar?: string
-  }
-  trustpilotStars?: number
+    name: string;
+    avatar?: string;
+  };
+  trustpilotStars?: number;
 }
 
-const mockData ={
+const mockData = {
   isFree: true,
-}
-
+};
 
 //https://github.com/adnanwahab/homelab/blob/main/notebooks/readme.md
 //
-
 
 export function CourseHero({
   title = "Become a Robotics Engineer",
@@ -38,21 +36,20 @@ export function CourseHero({
   studentCount = 12,
   author = {
     name: "Adnan Wahab",
-    avatar: "/friends.jpg"
+    avatar: "/friends.jpg",
   },
-  trustpilotStars = 5
+  trustpilotStars = 5,
 }: CourseHeroProps) {
   return (
     <div className="flex min-h-screen bg-slate-950">
-
-<SignInButton />  
+      <SignInButton />
       {/* Left Column */}
       <div className="flex-1 p-12 flex flex-col justify-center">
         {/* Author */}
         <div className="flex items-center gap-3 mb-8">
           {/* {author.avatar && (
-            <img 
-              src={author.avatar} 
+            <img
+              src={author.avatar}
               alt={author.name}
               className="w-12 h-12 rounded-full"
             />
@@ -61,18 +58,14 @@ export function CourseHero({
         </div>
 
         {/* Title */}
-        <h1 className="text-6xl font-bold text-white mb-6">
-          {title}
-        </h1>
+        <h1 className="text-6xl font-bold text-white mb-6">{title}</h1>
 
         {/* Subtitle */}
         <div className="mb-8">
+          <p className="text-xl text-gray-300">{subtitle}</p>
           <p className="text-xl text-gray-300">
-            {subtitle}
-          </p>
-          <p className="text-xl text-gray-300">
-            <span className="font-bold">93 hours of video</span> to go from{' '}
-            <span className="font-bold">absolute beginner</span> to{' '}
+            <span className="font-bold">93 hours of video</span> to go from{" "}
+            <span className="font-bold">absolute beginner</span> to{" "}
             <span className="font-bold">advanced Robotics Engineer</span>
           </p>
         </div>
@@ -81,10 +74,12 @@ export function CourseHero({
         <div className="flex items-center gap-4 mb-8">
           <div className="flex items-center gap-2">
             <span className="text-purple-300">🎓</span>
-            <span className="text-gray-300">{studentCount.toLocaleString()} Students</span>
+            <span className="text-gray-300">
+              {studentCount.toLocaleString()} Students
+            </span>
           </div>
           <div className="flex items-center gap-1">
-            {'★'.repeat(trustpilotStars)}
+            {"★".repeat(trustpilotStars)}
             <span className="text-gray-300 ml-1">on Trustpilot</span>
           </div>
         </div>
@@ -92,9 +87,9 @@ export function CourseHero({
         {/* Price Card */}
         <div className="flex items-center gap-4 bg-purple-900/50 p-4 rounded-xl w-fit">
           <div className="w-24 h-16 bg-gray-800 rounded overflow-hidden">
-            <img 
-              src="/static-dynamicland.gif" 
-              alt="Course preview" 
+            <img
+              src="/static-dynamicland.gif"
+              alt="Course preview"
               className="w-full h-full object-cover"
             />
           </div>
@@ -111,12 +106,12 @@ export function CourseHero({
       <div className="flex-1 relative">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-[80%] aspect-square relative">
-            <img 
-              src="/static-dynamicland.gif" 
-              alt="3D Scene" 
+            <img
+              src="/static-dynamicland.gif"
+              alt="3D Scene"
               className="w-full h-full object-cover rounded-xl"
             />
-            
+
             {/* Navigation Dots */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
               <button className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
@@ -133,14 +128,14 @@ export function CourseHero({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 import Footer from "@/components/footer";
 import Constructionism from "./Constructionism";
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon } from "@heroicons/react/20/solid";
 import { Container } from "@/components/container";
-import {SeeingSpace} from '@/components/seeingspace'
+import { SeeingSpace } from "@/components/seeingspace";
 
 // https://tevisthompson.com/saving-zelda/
 
@@ -148,37 +143,40 @@ function RoboticsTimeline() {
   const timelineItems = [
     {
       period: "Past",
-      image: "https://i.pinimg.com/originals/b3/9e/e4/b39ee473da74ac009dfb6e56afcb9c22.gif", // Replace with actual Mario-style image
-      alt: "Retro platformer game screenshot"
+      image:
+        "https://i.pinimg.com/originals/b3/9e/e4/b39ee473da74ac009dfb6e56afcb9c22.gif", // Replace with actual Mario-style image
+      alt: "Retro platformer game screenshot",
     },
     {
-      period: "Present", 
-      image: "https://www.nintendo.com/eu/media/images/08_content_images/country_support_2/uk_6/CapturedLavaBubble_01.gif", // Replace with actual 3D robot image
-      alt: "3D robot on green platform"
+      period: "Present",
+      image:
+        "https://www.nintendo.com/eu/media/images/08_content_images/country_support_2/uk_6/CapturedLavaBubble_01.gif", // Replace with actual 3D robot image
+      alt: "3D robot on green platform",
     },
     {
       period: "Future",
-      image: "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/bedrock_header.jpg", // Replace with actual futuristic city image
-      alt: "Futuristic city with gradient colors"
-    }
+      image:
+        "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/bedrock_header.jpg", // Replace with actual futuristic city image
+      alt: "Futuristic city with gradient colors",
+    },
   ];
 
   const features = [
     {
       icon: "🐱", // You can replace with proper icon component
       title: "Pet Care",
-      description: "Feed stray cat and dogs"
+      description: "Feed stray cat and dogs",
     },
     {
       icon: "🧺", // You can replace with proper icon component
       title: "Automate Chores",
-      description: "Fold laundry + load dishes"
+      description: "Fold laundry + load dishes",
     },
     {
       icon: "🌱", // You can replace with proper icon component
       title: "Infinite Creation",
-      description: "Gardening, painting, etc."
-    }
+      description: "Gardening, painting, etc.",
+    },
   ];
 
   return (
@@ -189,39 +187,42 @@ function RoboticsTimeline() {
           <div key={index} className="relative">
             <div className="text-sm text-cyan-400 mb-2">{item.period}</div>
             <div className="rounded-lg overflow-hidden">
-              <img 
-                src={item.image} 
+              <img
+                src={item.image}
                 alt={item.alt}
                 className="w-full h-48 object-cover"
               />
-              
             </div>
           </div>
         ))}
-                        {/* <img className="w-48" src="https://github.com/matthiasn/talk-transcripts/raw/master/Kay_Alan/NonIncrementalFuture/00.34.18.jpg" />
+        {/* <img className="w-48" src="https://github.com/matthiasn/talk-transcripts/raw/master/Kay_Alan/NonIncrementalFuture/00.34.18.jpg" />
                         <img className="w-48" src="https://github.com/matthiasn/talk-transcripts/raw/master/Kay_Alan/NonIncrementalFuture/00.34.18.jpg" /> */}
       </div>
     </div>
   );
 }
 
-
 function AlanHow() {
-  return <div>Alan How
-
-
-
-<iframe width="100%" height="968" frameBorder="0"
-  src="https://observablehq.com/embed/@roboticsuniversity/alan_how@262?cells=pdfViewer"></iframe>
-  </div>
+  return (
+    <div>
+      Alan How
+      <iframe
+        width="100%"
+        height="968"
+        frameBorder="0"
+        src="https://observablehq.com/embed/@roboticsuniversity/alan_how@262?cells=pdfViewer"
+      ></iframe>
+    </div>
+  );
 }
 
 function Dynamicland() {
-  return <div>Dynamicland
-
-
-<SeeingSpace />
-  </div>
+  return (
+    <div>
+      Dynamicland
+      <SeeingSpace />
+    </div>
+  );
 }
 
 function FeatureSection() {
@@ -266,11 +267,12 @@ const Observable_understanding_of_ai = () => {
       videoSrc: "/_z/planning.mp4",
     },
     {
-      title: 'Real World Applications w/ dynamicland & dynamical-systems-theory',
+      title:
+        "Real World Applications w/ dynamicland & dynamical-systems-theory",
       description:
-        'Build a $141 robot that can feed Your Cat,  clean your room, garden your plants, and build Dynamicland + Arcology.',
-      imgSrc: '',
-      videoSrc: '/_z/map.mp4',
+        "Build a $141 robot that can feed Your Cat,  clean your room, garden your plants, and build Dynamicland + Arcology.",
+      imgSrc: "",
+      videoSrc: "/_z/map.mp4",
     },
   ];
 
@@ -306,18 +308,15 @@ const Observable_understanding_of_ai = () => {
   );
 };
 
-
-const _= 'https://roboticsuniversity.observablehq.cloud/roomba-cat-academy/'
+const _ = "https://roboticsuniversity.observablehq.cloud/roomba-cat-academy/";
 
 const includedFeatures = [
-  'Lifetime GPU Access + Career & Research Support',
-  'Daily Content Updates of New Robotics Research',
-  'Discounts on Hardware & Software'
-]
+  "Lifetime GPU Access + Career & Research Support",
+  "Daily Content Updates of New Robotics Research",
+  "Discounts on Hardware & Software",
+];
 
 function Example() {
-
-
   return (
     <div className="bg-gray-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -326,23 +325,32 @@ function Example() {
             Simple no-tricks pricing
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-            All material 100% free, open source and only pay for lifetime gpu access.
+            All material 100% free, open source and only pay for lifetime gpu
+            access.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-700 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
-            <h3 className="text-3xl font-semibold tracking-tight text-gray-100">Lifetime membership</h3>
-            <p className="mt-6 text-base/7 text-gray-300">
-            
-            </p>
+            <h3 className="text-3xl font-semibold tracking-tight text-gray-100">
+              Lifetime membership
+            </h3>
+            <p className="mt-6 text-base/7 text-gray-300"></p>
             <div className="mt-10 flex items-center gap-x-4">
-              <h4 className="flex-none text-sm/6 font-semibold text-indigo-400">Whats included</h4>
+              <h4 className="flex-none text-sm/6 font-semibold text-indigo-400">
+                Whats included
+              </h4>
               <div className="h-px flex-auto bg-gray-700" />
             </div>
-            <ul role="list" className="mt-8 grid grid-cols-1 gap-4 text-sm/6 text-gray-300 sm:grid-cols-2 sm:gap-6">
+            <ul
+              role="list"
+              className="mt-8 grid grid-cols-1 gap-4 text-sm/6 text-gray-300 sm:grid-cols-2 sm:gap-6"
+            >
               {includedFeatures.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
-                  <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-indigo-400" />
+                  <CheckIcon
+                    aria-hidden="true"
+                    className="h-6 w-5 flex-none text-indigo-400"
+                  />
                   {feature}
                 </li>
               ))}
@@ -351,10 +359,16 @@ function Example() {
           <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
             <div className="rounded-2xl bg-gray-800 py-10 text-center ring-1 ring-inset ring-gray-700 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto max-w-xs px-8">
-                <p className="text-base font-semibold text-gray-300">Pay once, own it forever</p>
+                <p className="text-base font-semibold text-gray-300">
+                  Pay once, own it forever
+                </p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-semibold tracking-tight text-gray-100">$25</span>
-                  <span className="text-sm/6 font-semibold tracking-wide text-gray-400">USD</span>
+                  <span className="text-5xl font-semibold tracking-tight text-gray-100">
+                    $25
+                  </span>
+                  <span className="text-sm/6 font-semibold tracking-wide text-gray-400">
+                    USD
+                  </span>
                 </p>
                 {/* <a
                   id="login-or-signup-button2"
@@ -364,25 +378,26 @@ function Example() {
                   Get access
                 </a> */}
 
+                <SignInButton />
 
-<SignInButton />  
-
-
-{/* <stripe-buy-button
+                {/* <stripe-buy-button
   buy-button-id="buy_btn_1QHbhYId2dkGhN5mxxd48zrS"
   publishable-key="pk_live_51QB42BId2dkGhN5m5qnmBDA9s6EklBon8LsfGudaVN7hsE96LE58bUTWxuMUxS8FHlr5OevT26LqziNcCtXzVXKH00Ywx5nkl7"
 >
 </stripe-buy-button> */}
-                <a href="https://roboticsuniversity.observablehq.cloud/roomba-cat-academy" className="mt-1">
-        {/* <button
-        
+                <a
+                  href="https://roboticsuniversity.observablehq.cloud/roomba-cat-academy"
+                  className="mt-1"
+                >
+                  {/* <button
+
           className={`flex-1 py-3 rounded-lg ${true ? 'bg-purple-500 text-white' : 'bg-gray-600 text-gray-400 cursor-not-allowed'}`}
 
         >
           Preview Free Course Content
         </button> */}
-        {/* </a> */}
-        </a>
+                  {/* </a> */}
+                </a>
                 {/* <p className="mt-6 text-xs/5 text-gray-300">
                   We not charging till Dec 1 - have fun
                 </p> */}
@@ -392,7 +407,7 @@ function Example() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 // https://mail.google.com/mail/u/1/#sent/KtbxLwHHmVLxgPZbsZqHxfhsVtkSzFmBML
 
@@ -400,21 +415,22 @@ function Course() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-bold mb-8">Course</h1>
-        <CourseHero />
+        {/* <h1 className="text-4xl font-bold mb-8">Course</h1> */}
+        <SisterSchools />
 
+        <CourseHero />
 
         {/* Observable iframe with proper spacing */}
         <div className="mb-16">
-          <iframe 
-            width="100%" 
-            height="750" 
+          <iframe
+            width="100%"
+            height="750"
             src="https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/"
             className="rounded-lg"
-        />
-            {/* <iframe 
-            width="100%" 
-            height="750" 
+          />
+          {/* <iframe
+            width="100%"
+            height="750"
             src="http://localhost:3001"
             className="rounded-lg"
         /> */}
@@ -423,22 +439,27 @@ function Course() {
         <RoboticsTimeline />
 
         <FeatureSection />
-        <SisterSchools />
         {/* <AlanHow /> */}
-        
+
         {/* Course description section */}
         <div className="my-16 prose prose-invert max-w-none">
           <p className="text-xl">
-            Robotics Odyssey Nov 1 - 5000 research papers converted to video games<br/>
-            Become a Al+Robotics engineer for $25<br/>
-            Earn up to $50 by contribution to course and I will personally file patents for significant contributions.
+            Robotics Odyssey Nov 1 - 5000 research papers converted to video
+            games
+            <br />
+            Become a Al+Robotics engineer for $25
+            <br />
+            Earn up to $50 by contribution to course and I will personally file
+            patents for significant contributions.
           </p>
-          
+
           <h2 className="text-2xl font-bold mt-8 mb-4">Fun Lessons</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-lg bg-gray-800">Robot Bartender</div>
             <div className="p-6 rounded-lg bg-gray-800">Robot Policeman</div>
-            <div className="p-6 rounded-lg bg-gray-800">Feed Your Pets with Robot</div>
+            <div className="p-6 rounded-lg bg-gray-800">
+              Feed Your Pets with Robot
+            </div>
           </div>
         </div>
 
@@ -449,15 +470,15 @@ function Course() {
 
         <Constructionism />
 
-        
         {/* Future vision section */}
         <div className="my-16 p-8 bg-gray-800 rounded-lg">
           <p className="text-xl text-cyan-300">
-            Coming 2025 - English Language code and diagram generation will get good enough that 100% of people can contribute...
+            Coming 2025 - English Language code and diagram generation will get
+            good enough that 100% of people can contribute...
           </p>
         </div>
 
-        <Robot_Pricing />
+        {/* <Robot_Pricing /> */}
 
         {/* <Footer /> */}
       </div>
@@ -465,9 +486,7 @@ function Course() {
   );
 }
 
-
 export default Course;
-
 
 function ___() {
   return (
@@ -761,8 +780,6 @@ function ___() {
   );
 }
 
-
-
 function ObsPreview() {
   return (
     // <img alt="" loading="lazy" decoding="async" data-nimg="fill" sizes="(min-width: 760px) 50vw, (min-width: 1000px) 33vw, 100vw" src="https://files.hashirama.blog/blog/floorplan.jpg" />
@@ -777,71 +794,65 @@ function ObsPreview() {
   );
 }
 
-
-
-
-
-
 const frequencies = [
-  { value: 'monthly', label: 'Monthly', priceSuffix: '' },
-  { value: 'annually', label: 'Annually', priceSuffix: '/year' },
-]
+  { value: "monthly", label: "Monthly", priceSuffix: "" },
+  { value: "annually", label: "Annually", priceSuffix: "/year" },
+];
 const tiers = [
   {
-    name: 'Course only',
-    id: 'tier-ai-only',
-    href: '#',
-    price: { monthly: '$19', annually: '$199' },
-    description: 'Bring your own Robot',
-    features: ['64 Machine Learning Demos', '20 Free AI Tools', '90 hours of video demonstrations'],
-    mostPopular: false,
-  },
-  {
-    name: 'Nanosaur',
-    id: 'tier-nanosaur',
-    href: '#',
-    price: { monthly: '$141', annually: '$299' },
-    description: 'Nvidia Jetson Nano with 64GB SSD',
-    features: ['Robust Robotics Fool-Proof Infrastructure'],
-    mostPopular: false,
-  },
-  {
-    name: 'Nanosaur+Arm',
-    id: 'tier-startup',
-    href: '#',
-    price: { monthly: '$400', annually: '$599' },
-    description: 'A plan that scales with your rapidly growing business.',
+    name: "Course only",
+    id: "tier-ai-only",
+    href: "#",
+    price: { monthly: "$19", annually: "$199" },
+    description: "Bring your own Robot",
     features: [
-      '25 products',
-      'Up to 10,000 subscribers',
-      'Advanced analytics',
-      '24-hour support response time',
-      'Marketing automations',
+      "64 Machine Learning Demos",
+      "20 Free AI Tools",
+      "90 hours of video demonstrations",
     ],
     mostPopular: false,
   },
   {
-    name: 'Maurice',
-    id: 'tier-enterprise',
-    href: '#',
-    price: { monthly: '$3000', annually: '$999' },
-    description: 'builders and enthusiasts',
+    name: "Nanosaur",
+    id: "tier-nanosaur",
+    href: "#",
+    price: { monthly: "$141", annually: "$299" },
+    description: "Nvidia Jetson Nano with 64GB SSD",
+    features: ["Robust Robotics Fool-Proof Infrastructure"],
+    mostPopular: false,
+  },
+  {
+    name: "Nanosaur+Arm",
+    id: "tier-startup",
+    href: "#",
+    price: { monthly: "$400", annually: "$599" },
+    description: "A plan that scales with your rapidly growing business.",
     features: [
-      'Pick up trash', 
-      'serve a shot glass', 
-      'greet and guide humans'  
+      "25 products",
+      "Up to 10,000 subscribers",
+      "Advanced analytics",
+      "24-hour support response time",
+      "Marketing automations",
     ],
+    mostPopular: false,
+  },
+  {
+    name: "Maurice",
+    id: "tier-enterprise",
+    href: "#",
+    price: { monthly: "$3000", annually: "$999" },
+    description: "builders and enthusiasts",
+    features: ["Pick up trash", "serve a shot glass", "greet and guide humans"],
     mostPopular: true,
   },
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
-
 function Robot_Pricing() {
-  const [frequency, setFrequency] = useState(frequencies[0])
+  const [frequency, setFrequency] = useState(frequencies[0]);
 
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -853,27 +864,29 @@ function Robot_Pricing() {
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
-          Make Advanced Science, Mathematics, Machine Learning, AI fun and easy to learn by teaching your robotic pet to feed your other pets and baby sit your brothers and sisters.
+          Make Advanced Science, Mathematics, Machine Learning, AI fun and easy
+          to learn by teaching your robotic pet to feed your other pets and baby
+          sit your brothers and sisters.
         </p>
         <div className="mt-16 flex justify-center">
-          <fieldset aria-label="Payment frequency">
-     
-          </fieldset>
+          <fieldset aria-label="Payment frequency"></fieldset>
         </div>
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
           {tiers.map((tier, index) => (
             <div
               key={tier.id}
               className={classNames(
-                tier.mostPopular ? 'ring-2 ring-indigo-600' : 'ring-1 ring-gray-200',
-                'rounded-3xl p-8',
+                tier.mostPopular
+                  ? "ring-2 ring-indigo-600"
+                  : "ring-1 ring-gray-200",
+                "rounded-3xl p-8",
               )}
             >
               <h3
                 id={tier.id}
                 className={classNames(
-                  tier.mostPopular ? 'text-indigo-600' : 'text-gray-900',
-                  'text-lg/8 font-semibold',
+                  tier.mostPopular ? "text-indigo-600" : "text-gray-900",
+                  "text-lg/8 font-semibold",
                 )}
               >
                 {tier.name}
@@ -883,24 +896,32 @@ function Robot_Pricing() {
                 <span className="text-4xl font-semibold tracking-tight text-gray-900">
                   {tier.price[frequency.value]}
                 </span>
-                <span className="text-sm/6 font-semibold text-gray-600">{frequency.priceSuffix}</span>
+                <span className="text-sm/6 font-semibold text-gray-600">
+                  {frequency.priceSuffix}
+                </span>
               </p>
               <a
                 href={tier.href}
                 aria-describedby={tier.id}
                 className={classNames(
                   tier.mostPopular
-                    ? 'bg-indigo-600 text-white shadow-sm hover:bg-indigo-500'
-                    : 'text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300',
-                  'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600',
+                    ? "bg-indigo-600 text-white shadow-sm hover:bg-indigo-500"
+                    : "text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300",
+                  "mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600",
                 )}
               >
-                {index === 0 ?'Buy Info Product' : 'Buy Robot'}
+                {index === 0 ? "Buy Info Product" : "Buy Robot"}
               </a>
-              <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600">
+              <ul
+                role="list"
+                className="mt-8 space-y-3 text-sm/6 text-gray-600"
+              >
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex gap-x-3">
-                    <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-indigo-600" />
+                    <CheckIcon
+                      aria-hidden="true"
+                      className="h-6 w-5 flex-none text-indigo-600"
+                    />
                     {feature}
                   </li>
                 ))}
@@ -910,13 +931,11 @@ function Robot_Pricing() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
 
 ///nanosaur with mods - 350
 //pre manufactured - amazon - 350
-
 
 //spend time and make nanosaur better + easier
 ///https://rigbetellabs.com/
