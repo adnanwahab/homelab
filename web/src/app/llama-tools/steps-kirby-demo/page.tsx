@@ -6,6 +6,13 @@ const Card = ({ children, className = "" }) => (
   </div>
 );
 
+// rev music
+//
+// neuralink cause effect
+// dynamicland
+// rtings for robot +
+// 151 observables + a server component for soe --- jupyter note
+
 const VisualizationGrid = () => {
   const images = [
     { id: 1, title: "Flower Map Projection", width: 400, height: 400 },
@@ -27,7 +34,9 @@ const VisualizationGrid = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Visualizations</h1>
+      <h1 className="text-3xl font-bold mb-6">
+        Visualizations for Robots / idk
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {images.map((image) => (
           <Card key={image.id} className="overflow-hidden">
