@@ -45,7 +45,7 @@ export default function Home() {
       slug: "/articles/300_dollar_robot",
       title: "300 Dollar Robot",
       description: "A $300 self-driving robot with arm",
-      logoSrc: "/articles/300_dollar_robot",
+      logoSrc: "/articles/dynamicland",
     },
   ];
 

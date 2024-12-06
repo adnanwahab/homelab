@@ -1,5 +1,5 @@
 # Dynabot.dev - $300 robot + free wikicourse - https://github.com/adnanwahab/jetbot
-
+magic iframe + magic llama - free for all - co-authors - live-edit entire internet - 
 
 ever since 2012 -- I saw a talk by Avi Bryant about WebGL and reading research papers.
 So we wanted to make it as easy as possible to annotate and make research papers starting 2025 usying dynabot.dev
