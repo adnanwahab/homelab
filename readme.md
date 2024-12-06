@@ -1,4 +1,10 @@
+
+https://research.nvidia.com/labs/toronto-ai/infinicube/
+
 # Dynabot.dev - $300 robot + free wikicourse - https://github.com/adnanwahab/jetbot
+
+magic-api =https://snap.stanford.edu/data/email-Enron.txt.gz
+
 magic iframe + magic llama - free for all - co-authors - live-edit entire internet - 
 
 ever since 2012 -- I saw a talk by Avi Bryant about WebGL and reading research papers.
@@ -46,5 +52,17 @@ reasoning = o1 + dynamicland = reasoning
 doing schleps + having fun.
 story since 2002 - something something knowledge grows fractally - progress = good
 https://www.gapminder.org/ --- data visualization -- improves cognition, reasoning and seeing == improving thinking about dynamicla systems
+https://www.browserbase.com/
+-----Last Line pls do not write beneath this line Dedicated to 
 
------Last Line pls do not write beneath this line Dedicated to fabrice, dwarf fortress, avi-bryant ----
+
+
+
+
+7x50-15
+
+control robot over time!
+
+webapp = iframe
+api = observablehq + o1
+livekit = connectivity

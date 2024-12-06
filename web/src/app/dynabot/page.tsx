@@ -290,7 +290,7 @@ export default function Home() {
         <div className="bg-gradient-to-b from-white from-50% to-gray-100 text-blue-700">
           <div>
             <ul>
-              <li>1/ 64 notebooks</li>
+              <li>1. 64 notebooks</li>
               <li>2. demo - livestream of unreal + webrtc</li>
               <li>3. llama-tools playwrgiht easier -- wysyig editor </li>
               <li>151 jupyter - https://www.jasondavies.com/ </li>

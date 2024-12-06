@@ -4,6 +4,9 @@ import { Button } from "@/components/button";
 //https://github.com/anthropics/courses/blob/master/tool_use/README.md
 //https://docs.anthropic.com/en/prompt-library/library
 const demos = {
+  "outbreak": "/proxy?url=https://meltingasphalt.com/interactive/outbreak/",
+  "twitch_plays_collaborative": "https://observablehq.com/embed/a8b7a7402653b22c@23?cell=*",
+
   "latent-scope-city-redessign":
     "https://techcrunch.com/2016/06/28/cruises-kyle-vogt-will-speak-about-self-driving-cars-at-disrupt-sf/",
     "code-gen": "https://reflect.app/g/awahab/0539b9a20851497692de1e4fe21208a5",
@@ -39,7 +42,9 @@ const demos = {
     "magic_youtube_edit_reccomendation_engine_": "https://x.com/garrytan/status/1801656150980706328",
     "cooking_debugger": "Ollama vit + video caption",
     "discord_on_web_": "https://discord.com/login",
-    "codepen_css_3d_renderer": "https://codepen.io/dehash/pen/nPKLaQ"
+    "codepen_css_3d_renderer": "https://codepen.io/dehash/pen/nPKLaQ",
+    "codepen_threejs_portal_planes_with_matcaps": "https://codepen.io/smcnally000/embed/eYqXWyJ?default-tab=html%2Cresult",
+    
 
     
 };

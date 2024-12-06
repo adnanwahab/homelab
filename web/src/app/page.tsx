@@ -54,8 +54,10 @@ export default function Home() {
       <header className="flex justify-between items-center mb-16">
         <div>
           <h1 className="text-xl font-medium">
-            Make info-course 100% free with $5 for lifetime compute like modal,
-            and amazon wishlist for dynabot parts
+         0. 4 element notebook - avatar notebook 4 elements
+
+            {/* Make info-course 100% free with $5 for lifetime compute like modal,
+            and amazon wishlist for dynabot parts */}
           </h1>
     
           <h1 className="text-xl font-medium">Dynabot.dev</h1>
