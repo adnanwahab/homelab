@@ -33,7 +33,7 @@ export default function Home() {
       title: "A $350 self-driving robot with arm",
       description:
         "comes with 30 pre-trained tasks and a home-labratory setup for your phone, desktop, or tv",
-      logoSrc: "/dynabot_preview.img",
+      logoSrc: "https://nanosaur.ai/assets/images/nanosaur_og.jpg",
     },
 
     {
