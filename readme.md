@@ -1,6 +1,12 @@
-
+https://github.com/jminor/webremoteplay
 https://research.nvidia.com/labs/toronto-ai/infinicube/
+https://observablehq.com/d/627defd0ee337caf
+https://claude.ai/chat/bbfce29e-2a46-4705-8996-9aba597c428f
+http://localhost:3000/llama-tools/183_games
+http://localhost:3000/llama-tools/steps-editor -- course content in observable framework?
+game - 1 https://jsfiddle.net/designsystemweb/qyxek93n/
 
+instant collaborative game + tools  - https://ambient.run/packages/t5qdqwpkoxtelvafs7qpvzhaoperwfpt
 # Dynabot.dev - $300 robot + free wikicourse - https://github.com/adnanwahab/jetbot
 
 magic-api =https://snap.stanford.edu/data/email-Enron.txt.gz
