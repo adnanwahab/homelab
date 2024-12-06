@@ -38,10 +38,10 @@ const Visualizations: React.FC<VisualizationProps> = ({ images }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-serif mb-12">Visualisations</h1>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {images.map((image, index) => (
-          <div 
+          <div
             key={index}
             className="aspect-square relative overflow-hidden rounded-lg hover:shadow-lg transition-shadow duration-300"
           >
@@ -56,8 +56,6 @@ const Visualizations: React.FC<VisualizationProps> = ({ images }) => {
     </div>
   );
 };
-
-
 
 function VisualizationGallery() {
   const visualizations = [
@@ -74,7 +72,6 @@ function VisualizationGallery() {
 
   return <Visualizations images={visualizations} />;
 }
-
 
 function roboticsportfolio() {
   return <VisualizationGallery />;
@@ -101,6 +98,9 @@ export default function Home() {
               <li>151 jupyter - https://www.jasondavies.com/ </li>
             </ul>
           </div>
+          <iframe src="https://www.dynabot.dev/llama-tools/steps-kirby-demo">
+            {" "}
+          </iframe>
           <CameraCalibration />
 
           {/* <BuyRobotPage /> */}

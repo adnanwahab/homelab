@@ -13,6 +13,11 @@ const Card = ({ children, className = "" }) => (
 // rtings for robot +
 // 151 observables + a server component for soe --- jupyter note
 
+const demos = {
+  "latent-scope-city-redessign":
+    "https://techcrunch.com/2016/06/28/cruises-kyle-vogt-will-speak-about-self-driving-cars-at-disrupt-sf/",
+};
+
 const VisualizationGrid = () => {
   const images = [
     { id: 1, title: "Flower Map Projection", width: 400, height: 400 },
@@ -35,7 +40,7 @@ const VisualizationGrid = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">
-        Visualizations for Robots / idk
+        http://localhost:3000/llama-tools/steps-kirby-demo{" "}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {images.map((image) => (
