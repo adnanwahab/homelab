@@ -1,5 +1,12 @@
 # Dynabot.dev - $300 robot + free wikicourse - https://github.com/adnanwahab/jetbot
 
+
+ever since 2012 -- I saw a talk by Avi Bryant about WebGL and reading research papers.
+So we wanted to make it as easy as possible to annotate and make research papers starting 2025 usying dynabot.dev
+which is inspired by Xerox Parc and VPRI.
+
+Dynamicland = good invention of 2014-21
+
 ## 300 robot = dynabot.dev/robot
 ## Free Wiki Course = https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 1. PYMOJODec 5 - Link to 30 jupyter Notebooks [Link to jupyter notebooks](https://github.com/adnanwahab/homelab/blob/main/notebooks/readme.md)
@@ -38,4 +45,5 @@ mobile, ML, mechE, webGPU
 reasoning = o1 + dynamicland = reasoning
 doing schleps + having fun.
 story since 2002 - something something knowledge grows fractally - progress = good
+https://www.gapminder.org/ --- data visualization -- improves cognition, reasoning and seeing == improving thinking about dynamicla systems
 -----Last Line pls do not write beneath this line Dedicated to fabrice, dwarf fortress, avi-bryant ----

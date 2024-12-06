@@ -6,7 +6,87 @@ import { LogoCloud } from "@/components/logo-cloud";
 import { Navbar } from "@/components/navbar";
 import TitleRewriter from "@/components/title-rewriter";
 import { SeeingSpace } from "@/components/seeingspace";
-import {MainComponent as BuyRobotPage} from './robot/page'
+import { MainComponent as BuyRobotPage } from "./robot/page";
+
+import React from "react";
+import fs from "fs";
+import path from "path";
+
+// export async function getStaticProps() {
+//   const filePath = path.join(
+//     process.cwd(),
+//     "public",
+//     "zed-2i-camera-callibration.html",
+//   );
+//   const fileContents = fs.readFileSync(filePath, "utf8");
+
+//   return {
+//     props: {
+//       notebookHtml: fileContents,
+//     },
+//   };
+// }
+
+interface VisualizationProps {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+}
+
+const Visualizations: React.FC<VisualizationProps> = ({ images }) => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      <h1 className="text-4xl font-serif mb-12">Visualisations</h1>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {images.map((image, index) => (
+          <div 
+            key={index}
+            className="aspect-square relative overflow-hidden rounded-lg hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
+
+function VisualizationGallery() {
+  const visualizations = [
+    { src: "/path/to/flower-map.png", alt: "Flower shaped world map" },
+    { src: "/path/to/globe.png", alt: "Blue globe visualization" },
+    { src: "/path/to/noise.png", alt: "Noise pattern" },
+    { src: "/path/to/coastline.png", alt: "Coastline drawing" },
+    { src: "/path/to/circular-graph.png", alt: "Circular graph" },
+    { src: "/path/to/dots.png", alt: "Dot pattern" },
+    { src: "/path/to/voronoi.png", alt: "Voronoi diagram" },
+    { src: "/path/to/network.png", alt: "Network visualization" },
+    // ... add all other images
+  ];
+
+  return <Visualizations images={visualizations} />;
+}
+
+
+function roboticsportfolio() {
+  return <VisualizationGallery />;
+}
+
+function CameraCalibration({ notebookHtml }) {
+  const github_shit = `https://raw.githubusercontent.com/adnanwahab/homelab/refs/heads/main/notebooks/perception/zed-2i-camera-callibration.ipynb`;
+  const github_shit_2 = `{"cells":[{"id":"0","cell_type":"code","execution_count":1,"outputs":[{"output_type":"stream","name":"stdout","text":["0/64\n"]}],"source":["print('0/64')"],"metadata":{}},{"id":"3206af1c-fc7e-49d5-bf65-16ddb9129961","cell_type":"code","execution_count":null,"outputs":[],"source":["//https://worrydream.com/ExplorableExplanations/\n","# turso \n","# 60 days of executing all the notes"],"metadata":{}}],"metadata":{},"nbformat":4,"nbformat_minor":5}`;
+
+  return <div dangerouslySetInnerHTML={{ __html: github_shit_2 }} />;
+  //return <div dangerouslySetInnerHTML={{ __html: notebookHtml }} />;
+}
 
 export default function Home() {
   return (
@@ -14,12 +94,16 @@ export default function Home() {
       <main>
         <div className="bg-gradient-to-b from-white from-50% to-gray-100 text-blue-700">
           <div>
-            <a href="/robot">1. Robot for $300 - get 10 signups by Jan 1 </a>{" "}
+            <ul>
+              <li>1/ 64 notebooks</li>
+              <li>2. demo - livestream of unreal + webrtc</li>
+              <li>3. llama-tools playwrgiht easier -- wysyig editor </li>
+              <li>151 jupyter - https://www.jasondavies.com/ </li>
+            </ul>
           </div>
+          <CameraCalibration />
 
-
-          <BuyRobotPage />
-         
+          {/* <BuyRobotPage /> */}
 
           {/* <LivingRobotDemo  second_thing={SeeingSpace} /> */}
           {/* <PricingPage /> */}
