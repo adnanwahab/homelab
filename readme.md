@@ -46,4 +46,5 @@ reasoning = o1 + dynamicland = reasoning
 doing schleps + having fun.
 story since 2002 - something something knowledge grows fractally - progress = good
 https://www.gapminder.org/ --- data visualization -- improves cognition, reasoning and seeing == improving thinking about dynamicla systems
+
 -----Last Line pls do not write beneath this line Dedicated to fabrice, dwarf fortress, avi-bryant ----
