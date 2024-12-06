@@ -7,7 +7,64 @@ import { Navbar } from "@/components/navbar";
 import TitleRewriter from "@/components/title-rewriter";
 import { SeeingSpace } from "@/components/seeingspace";
 import { MainComponent as BuyRobotPage } from "./robot/page";
-
+const bill_of_materials = `Qt	Part	:us: USA	:it: Italy	:uk: UK	:netherlands: NL	Notes
+1	NVIDIA Jetson Nano	NVIDIA store	 	 	 	You can use
+2Gb or 4Gb version
+Buy this alternative carrier:
+SEEED studio
+1	MicroSD card 64Gb	:us: $9.99
+Amazon	:it:
+Amazon	:uk:
+Amazon	:netherlands:
+Amazon
+1	128GB NVM3 M.2 PCLe SSD	 	 	 	 	Only for SEEED STUDIO carrier
+NVMe M.2
+1	Wi-Fi Dongle 5Ghz	:us: $13.90
+Amazon	:it:
+Amazon	:uk:
+Amazon	:netherlands:
+Amazon
+1	Power Bank	:us: $29.99
+Amazon	:it:
+Amazon	:uk:
+Amazon	:netherlands:
+Amazon	Power Bank dimensioning
+2	Pololu Micro Gearbox	:us: $25.75
+Amazon	:it:
+Amazon	:uk:
+Amazon	:netherlands:
+Amazon	Pololu 6V 150RPM
+alternative:
+aliexpress.com
+1	Adafruit motor control	:us: $29.10
+Amazon	:it:
+Amazon	:uk:
+Amazon	:netherlands:
+Amazon	DC Motor + Stepper FeatherWing Add-on
+alternative:
+aliexpress.com
+2	oled display	:us: $5
+Amazon	:it:
+Amazon	:uk:
+Amazon	:netherlands:
+Amazon	128x64px 0.06in I2C
+Best price pack:
+3 display
+6	Ball bearings F686ZZ	:us: $7.49
+Amazon	:it:
+Amazon	:uk:
+Amazon	:netherlands:
+Amazon	alternative:
+aliexpress.com
+10	Magnets 4x2mm	:us: $10.99
+Amazon	 	 	:netherlands:
+Amazon	alternative:
+aliexpress.com
+-	Expansion board	 	 	 	 	Expansion board
+-	3D parts	 	 	 	 	3D filaments
+-	Hex M2 Screw set	:us: $10*
+Amazon	 	 	 	Screw set
+`;
 import React from "react";
 import fs from "fs";
 import path from "path";
@@ -57,6 +114,143 @@ const Visualizations: React.FC<VisualizationProps> = ({ images }) => {
   );
 };
 
+const demos = {
+  sections: [
+    {
+      name: "Perception",
+      pages: [
+        { name: "Livekit", path: "/perception/1_livekit" },
+        {
+          name: "Whisper and Audio Processing and Understanding Voice",
+          path: "/perception/whisper",
+        },
+        {
+          name: "Voxels Stixels Minecraft Diffusion 3D Policy and Semseg",
+          path: "/perception/voxels-stixels-minecraft",
+        },
+        { name: "Sensor Fusion", path: "/perception/sensor-fusion" },
+        { name: "LIDAR Processing", path: "/perception/lidar-processing" },
+        { name: "Camera Calibration", path: "/perception/camera-calibration" },
+        { name: "Object Detection", path: "/perception/object-detection" },
+        {
+          name: "Semantic Segmentation",
+          path: "/perception/semantic-segmentation",
+        },
+        {
+          name: "Scene Understanding",
+          path: "/perception/scene-understanding",
+        },
+        { name: "Audio Processing", path: "/perception/audio-processing" },
+        { name: "3D Mapping", path: "/perception/3d-mapping" },
+      ],
+    },
+    {
+      name: "Prediction",
+      pages: [
+        {
+          name: "Introduction to Mathematical Attention",
+          path: "/prediction/introduction",
+        },
+        { name: "Creative-AI", path: "/prediction/creative-ai" },
+        { name: "agentic UI", path: "/prediction/agentic-ui" },
+        { name: "Behavioral Cloning", path: "/prediction/behavioral-cloning" },
+        {
+          name: "Markov Decision Processes",
+          path: "/prediction/markov-decision-processes",
+        },
+        { name: "Path Prediction", path: "/prediction/path-prediction" },
+        { name: "LSTM Networks", path: "/prediction/lstm-networks" },
+        {
+          name: "Trajectory Optimization",
+          path: "/prediction/trajectory-optimization",
+        },
+        { name: "Motion Planning", path: "/prediction/motion-planning" },
+        {
+          name: "Probabilistic Roadmaps",
+          path: "/prediction/probabilistic-roadmaps",
+        },
+        {
+          name: "agentic UI + Tooling",
+          path: "/prediction/agentic-ui-tooling",
+        },
+      ],
+    },
+    {
+      name: "Simulation",
+      pages: [
+        {
+          name: "Reinforcement Learning",
+          path: "/simulation/reinforcement-learning",
+        },
+        { name: "Physics Engines", path: "/simulation/physics-engines" },
+        {
+          name: "Diffusion 3D Policy",
+          path: "/simulation/diffusion-3d-policy",
+        },
+        {
+          name: "Agent-Based Modeling",
+          path: "/simulation/agent-based-modeling",
+        },
+        { name: "Sim-to-Real Transfer", path: "/simulation/sim-to-real" },
+        { name: "Carla Rendering", path: "/simulation/carla-rendering" },
+      ],
+    },
+    {
+      name: "Real World Applications",
+      pages: [
+        { name: "jetbot", path: "/real-world-applications/jetbot" },
+        { name: "Medbot", path: "/real-world-applications/medbot" },
+        { path: "real-world-applications/ethics-safety-transparent-logging" },
+        { path: "real-world-applications/remix-cities" },
+        {
+          name: "Agricultural Robotics",
+          path: "/real-world-applications/agricultural-robotics",
+        },
+        {
+          name: "Feeding Your Cat",
+          path: "/real-world-applications/feeding-your-cat",
+        },
+        {
+          name: "Robot Bartender",
+          path: "/real-world-applications/robot-bartender",
+        },
+        {
+          name: "Room Cleaning",
+          path: "/real-world-applications/room-cleaning",
+        },
+        { name: "Sentry", path: "/real-world-applications/sentry" },
+      ],
+    },
+    {
+      name: "Hardware System",
+      pages: [
+        { name: "todo dec 11", path: "/hardware/introduction.md" },
+        {
+          name: "Actuators and Motors",
+          path: "/hardware-system/actuators-motors",
+        },
+        {
+          name: "Raspberry Pi & Jetson Nano",
+          path: "/hardware-system/raspberry-pi-jetson",
+        },
+        { name: "Soldering and PCBs", path: "/hardware-system/soldering-pcbs" },
+        { name: "Embedded Systems", path: "/hardware-system/embedded-systems" },
+        { name: "Robot Kinematics", path: "/hardware-system/robot-kinematics" },
+        { name: "ROS", path: "/hardware-system/ros" },
+        {
+          name: "Jupyter + python fundamentals",
+          path: "/hardware-system/jupyter",
+        },
+      ],
+    },
+  ],
+};
+//sqlite + eval score
+
+const eval_scores = {
+  Jupyter: 100,
+};
+
 function VisualizationGallery() {
   const visualizations = [
     { src: "/path/to/flower-map.png", alt: "Flower shaped world map" },
@@ -85,6 +279,10 @@ function CameraCalibration({ notebookHtml }) {
   //return <div dangerouslySetInnerHTML={{ __html: notebookHtml }} />;
 }
 
+function MagicIframe() {
+  //caches and proxies
+}
+
 export default function Home() {
   return (
     <div className="overflow-hidden">
@@ -96,7 +294,22 @@ export default function Home() {
               <li>2. demo - livestream of unreal + webrtc</li>
               <li>3. llama-tools playwrgiht easier -- wysyig editor </li>
               <li>151 jupyter - https://www.jasondavies.com/ </li>
+              <li> learn c++ and zig - CTF - hack my bot if you can! </li>
             </ul>
+
+            <img src="https://nanosaur.ai/assets/images/nanosaur_og.jpg" />
+            <div
+              style={{
+                transform: "rotateY(180deg)",
+                transition: "transform 0.5s ease",
+              }}
+            >
+              <img
+                className="w-96 h-96 object-cover"
+                src="https://images.squarespace-cdn.com/content/v1/65789f5bc31b3c64091939a3/31563aa0-c09d-46a1-a2d1-b0193528775e/STRETCH+3+KEYSHOT+2024+FULL+02+%281%29.png?format=2500w"
+              />
+              <iframe src="https://www.dynabot.dev/dynabot"></iframe>
+            </div>
           </div>
           <iframe src="https://www.dynabot.dev/llama-tools/steps-kirby-demo">
             {" "}

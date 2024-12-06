@@ -67,8 +67,8 @@ export default {
       pages: [
         { name: "jetbot", path: "/real-world-applications/jetbot" },
         { name: "Medbot", path: "/real-world-applications/medbot" },
-        { name: "dynamicland", path: "/real-world-applications/dynamicland" },
-        { path: "real-world-applications/ethics-safety-transparent-logging" },
+        2        // { path: "real-world-applications/ethics-safety-transparent-logging" },
+        { path: "real-world-applications/remix-cities" },
         // { name: "Agricultural Robotics", path: "/real-world-applications/agricultural-robotics" },
         // { name: "Feeding Your Cat", path: "/real-world-applications/feeding-your-cat" },
         // { name: "Robot Bartender", path: "/real-world-applications/robot-bartender" },

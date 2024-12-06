@@ -20,7 +20,13 @@ const demos = {
 
 const VisualizationGrid = () => {
   const images = [
-    { id: 1, title: "Flower Map Projection", width: 400, height: 400 },
+    {
+      src: "https://www.redblobgames.com/thumbnail/all-pairs.png?2020-08-30-11-27-27",
+      id: 1,
+      title: "Flower Map Projection",
+      width: 400,
+      height: 400,
+    },
     { id: 2, title: "Globe Visualization", width: 400, height: 400 },
     { id: 3, title: "Noise Pattern", width: 400, height: 200 },
     { id: 4, title: "Country Outline", width: 400, height: 400 },
@@ -46,7 +52,7 @@ const VisualizationGrid = () => {
         {images.map((image) => (
           <Card key={image.id} className="overflow-hidden">
             <img
-              src={`/api/placeholder/${image.width}/${image.height}`}
+              src={image.src}
               alt={image.title}
               className="w-full h-auto object-cover"
             />
@@ -56,6 +62,7 @@ const VisualizationGrid = () => {
           </Card>
         ))}
       </div>
+      <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t39.2365-6/461179924_892945479558448_4846394290454647920_n.png?_nc_cat=105&ccb=1-7&_nc_sid=e280be&_nc_ohc=kFBuO73RGIYQ7kNvgE1YISg&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=Alff7w0QTlwpUJ_VrS5lBpl&oh=00_AYDMTZ1pzYwebCXva61SJTUWv1oJ6xPxZvAJ_ncknZN9Yg&oe=676A8050" />
     </div>
   );
 };
