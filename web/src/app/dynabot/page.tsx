@@ -48,16 +48,14 @@ const LandingPage = () => {
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-6 py-20">
         <h1 className="text-6xl font-bold text-white mb-8">
-          Build UIs without the grunt work
+          Introducing Dynabot 3
         </h1>
         <p className="text-xl text-gray-300 mb-12 max-w-2xl">
-          Storybook is a frontend workshop for building UI components and
-          pages in isolation. Thousands of teams use it for UI development,
-          testing, and documentation. It's open source and free.
+          A shitty place-holder until intuitive-surgical-davinci-3 and 
         </p>
         <div className="flex space-x-4">
           <button className="bg-white text-purple-900 px-6 py-3 rounded-lg font-semibold">
-            Get Started
+            Adopt a Dynabot
           </button>
           <button className="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold flex items-center">
             npx storybook@latest init
