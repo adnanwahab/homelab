@@ -83,3 +83,4 @@ https://claude.ai/chat/bbfce29e-2a46-4705-8996-9aba597c428f
 http://localhost:3000/llama-tools/183_games
 http://localhost:3000/llama-tools/steps-editor -- course content in observable framework?
 game - 1 https://jsfiddle.net/designsystemweb/qyxek93n/
+https://paulbuchheit.blogspot.com/2008/01/ultra-immersive-long-form-video-games.html
