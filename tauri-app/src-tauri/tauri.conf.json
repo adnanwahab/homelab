@@ -4,10 +4,7 @@
   "version": "0.1.0",
   "identifier": "com.tauri-app.app",
   "build": {
-    "beforeDevCommand": "deno task dev",
-    "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "deno task build",
-    "frontendDist": "../dist"
+    "frontendDist": "../src"
   },
   "app": {
     "withGlobalTauri": true,
@@ -19,7 +16,7 @@
       }
     ],
     "security": {
-      "csp": null
+      "csp": "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; frame-src https://* 'self'; connect-src 'self' https://dynabot.dev"
     }
   },
   "bundle": {
