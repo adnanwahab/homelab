@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Loader2 } from 'lucide-react'
 //import { iterateSteps } from '../actions/iterate-steps'
 function iterateSteps(steps: string[]) {
-  return <div>iterateSteps</div>s
+  return <div>iterateSteps</div>
 }
 export function StepsEditor() {
   const [steps, setSteps] = useState<string[]>(['Step 1', 'Step 2', 'Step 3'])
