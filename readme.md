@@ -1,6 +1,16 @@
-1. dynamicland gamekit - Dec 6 -> 6am - 2 games - dynabot+ mario party
-2. dynabot - $100 robot -> 10am
-3. wiki-course = 2 jupyter notebook -> 2pm? https://app.hex.tech/82f53ad5-33e8-4b80-98b1-29b1b1f428b6/settings/data-sources
+1. dynabot - /dynabot - $100 robot for medicine.
+2. wiki-game = /llama-tools 2 jupyter notebook -> gamekit to research dynamicland
+
+https://www.notion.so/Dynabot-Onboarding-144f77917ff88000895ae0a3e82217c5
+
+ - /  -- Dec 6 -> 6am - 2 games - dynabot+ mario party
+
+https://super.so/pricing
+https://apply.workable.com/futureplc/j/18B7A883EE/
+
+https://www.penguinrandomhouse.com/books/735360/infectious-generosity-by-chris-anderson/
+# Maybe 'infra' is why robotics is too boring
+
 Sep 1 = dynamicland.org asks for game https://dy namicland.org/2024/FAQ/#Realtalk_in_practice
 Dec 8 = dynabot publishes gamekit - to distribute communities that build shared understanding in computer video games and children's card games
 educational science game - teach a robot simple tasks -- auto-publishes your game to a small community of 7 million daily collaborators.
@@ -75,7 +85,7 @@ control robot over time!
 webapp = iframe
 api = observablehq + o1
 livekit = connectivity
-
+https://huggingface.co/learn/deep-rl-course/en/unit5/pyramids
 https://github.com/jminor/webremoteplay
 https://research.nvidia.com/labs/toronto-ai/infinicube/
 https://observablehq.com/d/627defd0ee337caf

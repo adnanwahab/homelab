@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { Loader2 } from 'lucide-react'
 import { iterateSteps } from '../actions/iterate-steps'
 import { clsx } from 'clsx'
-import React from 'react'
+import React from 'react' 
+import SimpleThreeDemo from './SimpleThreeDemo'
 
 const initialCode = `
 export default function Page() {
@@ -35,9 +36,10 @@ function Preview() {
   return (
     <div className="w-1/2 h-full">
       <h1>Preview</h1>
-      <iframe  width="100%" height="100%" src="https://threejs.org/examples/?q=physics#physics_ammo_break"/>
+      {/* <iframe  width="100%" height="100%" src="https://threejs.org/examples/?q=physics#physics_ammo_break"/> */}
 
       {/* <iframe src="https://www.dynabot.dev/articles/dynamicland/game/page.tsx" width="100%" height="100%"></iframe> */}
+      <SimpleThreeDemo />
     </div>
   )
 }

@@ -2,6 +2,46 @@ import Chatbot from "@/components/Chatbot";
 import Livekit from "@/components/Livekit_Desktop_Viewer";
 
 import replay_analyzer from "./replay_analyzer/page";
+
+const RainbowGrid = () => {
+  // Create an array of 183 elements
+  const cellCount = 183;
+  const cells = Array.from({ length: cellCount }, (_, i) => i + 1);
+
+  return (
+    <div className="min-h-screen bg-gray-900 p-4">
+      <h1 className="text-center text-3xl font-bold text-white mb-8">
+        Rainbow + Shiny Grid ({cellCount} cells)
+      </h1>
+
+      <div
+        className="
+          grid gap-4
+          sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12
+          place-items-center
+        "
+      >
+        {cells.map((cell) => (
+          <div
+            key={cell}
+            className="
+              w-16 h-16 sm:w-20 sm:h-20
+              bg-gradient-to-br from-red-500 via-yellow-400 to-green-500
+              rounded-md shadow-lg
+              animate-pulse
+              transition-transform duration-200
+              hover:scale-105
+              flex items-center justify-center
+            "
+          >
+            <span className="text-white font-bold text-sm">{cell}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 // import Magic_Llama from "@/components/Magic_Llama";
 //hello-kitty stack
 function Magic_Iframe_Llama() {
@@ -18,11 +58,15 @@ function LLama_Tools_Main() {
     <div>
       <ul>
         <li>
-          <a href="/llama-tools/replay_analyzer">[ ] 1 - livekit replay analyzer</a>
+          <a href="/llama-tools/replay_analyzer">
+            [ ] 1 - livekit replay analyzer
+          </a>
         </li>
 
         <li>
-          <a href="/llama-tools/replay_analyzer">JUPYTER IFRAME IN OBS COURSE</a>
+          <a href="/llama-tools/replay_analyzer">
+            JUPYTER IFRAME IN OBS COURSE
+          </a>
         </li>
         <li>
           <a href="/llama-tools/deno-webgpu-threejs">CHECKED deno-webgpu</a>
@@ -42,7 +86,8 @@ export default function () {
   return (
     <div>
       <h1>Llama Tools</h1>
-      <LLama_Tools_Main />
+      {/* <LLama_Tools_Main /> */}
+      <RainbowGrid />
     </div>
   );
 }

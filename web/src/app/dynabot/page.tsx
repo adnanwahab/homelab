@@ -7,6 +7,43 @@ import { Navbar } from "@/components/navbar";
 import TitleRewriter from "@/components/title-rewriter";
 import { SeeingSpace } from "@/components/seeingspace";
 import { MainComponent as BuyRobotPage } from "./robot/page";
+
+// app/page.js
+// function Notion_ListView() {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/notion`,
+//     {
+//       cache: "no-store",
+//     },
+//   );
+//   const json = await res.json();
+
+//   if (!res.ok) {
+//     return <div>Error: {json.error}</div>;
+//   }
+
+//   const data = json.data || [];
+
+//   return (
+//     <main className="p-8">
+//       <h1 className="text-2xl font-bold mb-4">Notion Database Entries</h1>
+//       <ul className="space-y-2">
+//         {data.map((item) => {
+//           // Each item is a page object from the Notion API.
+//           // Extract a title property from the page if it exists:
+//           const title =
+//             item.properties?.Name?.title?.[0]?.plain_text || "Untitled";
+//           return (
+//             <li key={item.id} className="p-4 bg-white shadow rounded">
+//               {title}
+//             </li>
+//           );
+//         })}
+//       </ul>
+//     </main>
+//   );
+// }
+
 const bill_of_materials = `Qt	Part	:us: USA	:it: Italy	:uk: UK	:netherlands: NL	Notes
 1	NVIDIA Jetson Nano	NVIDIA store	 	 	 	You can use
 2Gb or 4Gb version

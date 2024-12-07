@@ -1,4 +1,3 @@
-
 "use client";
 import { useState, useEffect } from "react";
 import React from "react";
@@ -31,21 +30,18 @@ export default function Home() {
   const projects = [
     {
       slug: "/dynabot",
-      title: "A $350 self-driving robot with arm",
-      description: "comes with 30 pre-trained tasks and a home-labratory setup for your phone, desktop, or tv",
+      title: "Dynabot - adopt a robot",
+      description: "",
       logoSrc: "/dynabot/",
+      imgSrc: "https://worrydream.com/MagicInk/p/communication_model.png",
     },
     {
-      slug: "/llama-tools", 
-      title: "Llama Tools",
-      description: "Replay Analyze4r for robots",
-      logoSrc: "/llama-tools/steps-kirby-demo",
-    },
-    {
-      slug: "/articles/300_dollar_robot",
-      title: "300 Dollar Robot",
-      description: "A $300 self-driving robot with arm",
-      logoSrc: "/articles/dynamicland",
+      slug: "/llama-tools",
+      title: "183 wiki-science games",
+      description: "",
+      logoSrc: "/llama-tools/",
+      imgSrc: "https://worrydream.com/MagicInk/p/communication_model.png",
+      //steps-kirby-demo
     },
   ];
 
@@ -54,12 +50,12 @@ export default function Home() {
       <header className="flex justify-between items-center mb-16">
         <div>
           <h1 className="text-xl font-medium">
-         0. 4 element notebook - avatar notebook 4 elements
+            {/* 0. 4 element notebook - avatar notebook 4 elements */}
 
             {/* Make info-course 100% free with $5 for lifetime compute like modal,
             and amazon wishlist for dynabot parts */}
           </h1>
-    
+
           <h1 className="text-xl font-medium">Dynabot.dev</h1>
           <p className="shiny-text">robotics, cgi, and infrastructure.</p>
         </div>
@@ -75,7 +71,9 @@ export default function Home() {
         {projects.slice(0, 7).map((project, index) => (
           <a key={project.slug} href={`${project.slug}`} className="block">
             <div className="aspect-video bg-black rounded-lg flex items-center justify-center">
-              <iframe src={project.logoSrc} className="w-full h-full" />
+              <img src={project.imgSrc} className="w-full h-full" />
+
+              {/* <iframe src={project.logoSrc} className="w-full h-full" /> */}
             </div>
 
             <div className="mt-4">
