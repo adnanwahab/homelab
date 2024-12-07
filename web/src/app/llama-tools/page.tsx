@@ -3,6 +3,13 @@ import Livekit from "@/components/Livekit_Desktop_Viewer";
 
 import replay_analyzer from "./replay_analyzer/page";
 
+const games = [
+  {
+    name: "rev_game",
+    url: "/rev_game.gif",
+  },
+];
+
 const RainbowGrid = () => {
   // Create an array of 183 elements
   const cellCount = 183;
@@ -21,7 +28,7 @@ const RainbowGrid = () => {
           place-items-center
         "
       >
-        {cells.map((cell) => (
+        {cells.map((cell, index) => (
           <div
             key={cell}
             className="
@@ -35,6 +42,12 @@ const RainbowGrid = () => {
             "
           >
             <span className="text-white font-bold text-sm">{cell}</span>
+            <a href={`/llama-tools/1`}>
+              <img
+                src={games[index % games.length].url}
+                className="w-full h-full"
+              />
+            </a>
           </div>
         ))}
       </div>
