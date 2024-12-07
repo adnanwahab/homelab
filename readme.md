@@ -1,17 +1,20 @@
-https://github.com/jminor/webremoteplay
-https://research.nvidia.com/labs/toronto-ai/infinicube/
-https://observablehq.com/d/627defd0ee337caf
-https://claude.ai/chat/bbfce29e-2a46-4705-8996-9aba597c428f
-http://localhost:3000/llama-tools/183_games
-http://localhost:3000/llama-tools/steps-editor -- course content in observable framework?
-game - 1 https://jsfiddle.net/designsystemweb/qyxek93n/
+1. dynamicland gamekit - Dec 6 -> 6am - 2 games - dynabot+ mario party
+2. dynabot - $100 robot -> 10am
+3. wiki-course = 2 jupyter notebook -> 2pm? https://app.hex.tech/82f53ad5-33e8-4b80-98b1-29b1b1f428b6/settings/data-sources
+Sep 1 = dynamicland.org asks for game https://dy namicland.org/2024/FAQ/#Realtalk_in_practice
+Dec 8 = dynabot publishes gamekit - to distribute communities that build shared understanding in computer video games and children's card games
+educational science game - teach a robot simple tasks -- auto-publishes your game to a small community of 7 million daily collaborators.
+
+fix email = game.
+https://lumalabs.ai/dream-machine
+steam = (online 25,967,988 playing now 7,165,881)
 
 instant collaborative game + tools  - https://ambient.run/packages/t5qdqwpkoxtelvafs7qpvzhaoperwfpt
 # Dynabot.dev - $300 robot + free wikicourse - https://github.com/adnanwahab/jetbot
 
 magic-api =https://snap.stanford.edu/data/email-Enron.txt.gz
 
-magic iframe + magic llama - free for all - co-authors - live-edit entire internet - 
+magic iframe + magic llama - free for all - co-authors - live-edit entire internet -
 
 ever since 2012 -- I saw a talk by Avi Bryant about WebGL and reading research papers.
 So we wanted to make it as easy as possible to annotate and make research papers starting 2025 usying dynabot.dev
@@ -59,7 +62,7 @@ doing schleps + having fun.
 story since 2002 - something something knowledge grows fractally - progress = good
 https://www.gapminder.org/ --- data visualization -- improves cognition, reasoning and seeing == improving thinking about dynamicla systems
 https://www.browserbase.com/
------Last Line pls do not write beneath this line Dedicated to 
+-----Last Line pls do not write beneath this line Dedicated to
 
 
 
@@ -72,3 +75,11 @@ control robot over time!
 webapp = iframe
 api = observablehq + o1
 livekit = connectivity
+
+https://github.com/jminor/webremoteplay
+https://research.nvidia.com/labs/toronto-ai/infinicube/
+https://observablehq.com/d/627defd0ee337caf
+https://claude.ai/chat/bbfce29e-2a46-4705-8996-9aba597c428f
+http://localhost:3000/llama-tools/183_games
+http://localhost:3000/llama-tools/steps-editor -- course content in observable framework?
+game - 1 https://jsfiddle.net/designsystemweb/qyxek93n/
