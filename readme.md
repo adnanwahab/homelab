@@ -1,3 +1,4 @@
+# Dynabot.dev = fool-proof robotcs simulation validation and verification  to measure perpection performance and impact on robot behavior
 1. dynabot - /dynabot - $100 robot for medicine.
 2. wiki-game = /llama-tools 2 jupyter notebook -> gamekit to research dynamicland = simulation as a serivce 4 reasoning + dynamicland 4 cooking + cats - https://www.worldlabs.ai/blog
 
