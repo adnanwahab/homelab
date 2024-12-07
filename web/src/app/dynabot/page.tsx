@@ -1,14 +1,13 @@
 
+//     
+ //<a href="https://nanosaur.ai">nanosaur.ai</a>
+ //<a href="https://hello-robot.com">hello robot.ai</a>
+ //<a href="https://innate.bot">Maurice</a>
 const attempt = `<div>
       <h1>Dynabot 3</h1>
 
- <a href="https://nanosaur.ai">nanosaur.ai</a>
-              <a href="https://hello-robot.com">hello robot.ai</a>
-              <a href="https://innate.bot">Maurice</a>
 
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/65789f5bc31b3c64091939a3/31563aa0-c09d-46a1-a2d1-b0193528775e/STRETCH+3+KEYSHOT+2024+FULL+02+%281%29.png?format=2500w"
-              />
+          
 
       <div class="bg-homeBackground relative" id="page-top">
    <div class="relative z-10">
