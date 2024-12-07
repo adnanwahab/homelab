@@ -2,7 +2,8 @@
 2. wiki-game = /llama-tools 2 jupyter notebook -> gamekit to research dynamicland
 
 https://www.notion.so/Dynabot-Onboarding-144f77917ff88000895ae0a3e82217c5
-
+https://www.youtube.com/watch?v=UTuS9s0pR7o
+https://github.com/facebookresearch/AnimatedDrawings?tab=readme-ov-file
  - /  -- Dec 6 -> 6am - 2 games - dynabot+ mario party
 
 https://super.so/pricing
