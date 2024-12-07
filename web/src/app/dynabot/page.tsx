@@ -4,11 +4,6 @@
  //<a href="https://hello-robot.com">hello robot.ai</a>
  //<a href="https://innate.bot">Maurice</a>
 const attempt = `<div>
-      <h1>Dynabot 3</h1>
-
-
-          
-
       <div class="bg-homeBackground relative" id="page-top">
    <div class="relative z-10">
       <div class="ui-text-sm ui-font-normal ui-flex ui-justify-center ui-py-[10px] ui-px-[20px] ui-text-white ui-bg-black ui-bg-gradient-to-r ui-from-[#340000] ui-via-black ui-to-[#000040]">
@@ -1979,8 +1974,7 @@ const attempt = `<div>
                const MyHtmlPage = () => {
                 return (
                     <div>
-                        <h1>My HTML Page</h1>
-                        <p>This is the content of my HTML page.</p>
+        
                         <div dangerouslySetInnerHTML={ { __html:attempt} }></div>
                         {/* Replace the above with your HTML content */}
                     </div>
