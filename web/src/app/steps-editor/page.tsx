@@ -1,6 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { Loader2 } from 'lucide-react'
+import { iterateSteps } from '../actions/iterate-steps'
+import { clsx } from 'clsx'
+import React from 'react'
 
 const initialCode = `
 export default function Page() {
