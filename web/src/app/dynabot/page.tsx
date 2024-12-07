@@ -8,6 +8,130 @@ import TitleRewriter from "@/components/title-rewriter";
 import { SeeingSpace } from "@/components/seeingspace";
 import { MainComponent as BuyRobotPage } from "./robot/page";
 
+const LandingPage = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-purple-800 to-blue-900">
+      {/* Top Navigation */}
+      <nav className="bg-transparent py-4 px-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-pink-500 rounded-sm"></div>
+              <span className="ml-2 text-white font-semibold text-xl">Storybook</span>
+            </div>
+            <div className="hidden md:flex space-x-6">
+              {['Docs', 'Addons', 'Showcase', 'Blog'].map((item) => (
+                <a key={item} href="#" className="text-gray-300 hover:text-white">
+                  {item}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center space-x-4">
+            <button className="bg-gray-800 text-white px-4 py-2 rounded-full flex items-center">
+              <span className="mr-2">84,832</span>
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm9 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-9 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm9 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" clipRule="evenodd" />
+              </svg>
+            </button>
+            <div className="relative">
+              <input
+                type="search"
+                placeholder="Search docs"
+                className="bg-gray-800 text-white px-4 py-2 rounded-full w-48 focus:outline-none"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <h1 className="text-6xl font-bold text-white mb-8">
+          Build UIs without the grunt work
+        </h1>
+        <p className="text-xl text-gray-300 mb-12 max-w-2xl">
+          Storybook is a frontend workshop for building UI components and
+          pages in isolation. Thousands of teams use it for UI development,
+          testing, and documentation. It's open source and free.
+        </p>
+        <div className="flex space-x-4">
+          <button className="bg-white text-purple-900 px-6 py-3 rounded-lg font-semibold">
+            Get Started
+          </button>
+          <button className="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold flex items-center">
+            npx storybook@latest init
+            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-20 flex space-x-12">
+          <div>
+            <div className="text-2xl font-bold text-white">27.21m</div>
+            <div className="text-gray-400">Installs per month</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-white">2282</div>
+            <div className="text-gray-400">Contributors</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-white flex items-baseline">
+              Version <span className="text-5xl ml-2">8</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Tabs */}
+        <div className="mt-20">
+          <div className="flex space-x-8 border-b border-gray-700">
+            {['Development', 'Component testing', 'Visual testing', 'Documentation'].map((tab) => (
+              <button
+                key={tab}
+                className={`pb-4 text-gray-300 hover:text-white ${
+                  tab === 'Development' ? 'border-b-2 border-white text-white' : ''
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Integrations Section */}
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-white mb-4">
+          Integrate with the tools you already use
+        </h2>
+        <p className="text-gray-300 mb-12 max-w-2xl">
+          Storybook is incrementally adoptable and integrates with industry-standard tools.
+          That means your team doesn't have to change their workflow.
+        </p>
+        <div className="grid grid-cols-6 gap-6">
+          {[...Array(18)].map((_, i) => (
+            <div key={i} className="w-16 h-16 bg-gray-800 rounded-xl"></div>
+          ))}
+        </div>
+        <div className="mt-12 flex space-x-12">
+          <div>
+            <div className="text-xl font-bold text-white">400+</div>
+            <div className="text-gray-400">Integrations</div>
+          </div>
+          <div>
+            <div className="text-xl font-bold text-white">35M</div>
+            <div className="text-gray-400">Downloads per week</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LandingPage;
+
 // app/page.js
 // function Notion_ListView() {
 //   const res = await fetch(
@@ -320,190 +444,11 @@ function MagicIframe() {
   //caches and proxies
 }
 
-export default function Home() {
-  return (
-    <div className="overflow-hidden">
-      <main>
-        <div className="bg-gradient-to-b from-white from-50% to-gray-100 text-blue-700">
-          <div>
-            <ul>
-              <li>1. 64 notebooks</li>
-              <li>2. demo - livestream of unreal + webrtc</li>
-              <li>3. llama-tools playwrgiht easier -- wysyig editor </li>
-              <li>151 jupyter - https://www.jasondavies.com/ </li>
-              <li> learn c++ and zig - CTF - hack my bot if you can! </li>
-            </ul>
 
-            <img src="https://nanosaur.ai/assets/images/nanosaur_og.jpg" />
-            <div
-              style={{
-                transform: "rotateY(180deg)",
-                transition: "transform 0.5s ease",
-              }}
-            >
-              <img
-                className="w-96 h-96 object-cover"
-                src="https://images.squarespace-cdn.com/content/v1/65789f5bc31b3c64091939a3/31563aa0-c09d-46a1-a2d1-b0193528775e/STRETCH+3+KEYSHOT+2024+FULL+02+%281%29.png?format=2500w"
-              />
-              <iframe src="https://www.dynabot.dev/dynabot"></iframe>
-            </div>
-          </div>
-          <iframe src="https://www.dynabot.dev/llama-tools/steps-kirby-demo">
-            {" "}
-          </iframe>
-          <CameraCalibration />
+              // <a href="https://nanosaur.ai">nanosaur.ai</a>
+              // <a href="https://hello-robot.com">hello robot.ai</a>
+              // <a href="https://innate.bot">Maurice</a>
 
-          {/* <BuyRobotPage /> */}
-
-          {/* <LivingRobotDemo  second_thing={SeeingSpace} /> */}
-          {/* <PricingPage /> */}
-          <Footer />
-          {/* <LogoCloud /> */}
-        </div>
-      </main>
-    </div>
-  );
-}
-
-// import Image from "next/image";
-
-// export default function Home() {
-//   return (
-//     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-//       <ul>
-
-//         <li>
-//           <a href="/dynabot">
-//             dynabot.dev - living demo (medbot, repairbot, roombacat)
-//           </a>
-//         </li>
-
-//       ------------
-//       <li>
-//           <a href="/dynabot/deno-webgpu">
-//             deno-webgpu
-//           </a>
-//         </li>
-
-// -------------
-//         <li>
-//           <a href="/jupyter">
-//             jupyter
-//           </a>
-//         </li>
-
-//         <li>
-//           <a href="/files">
-//             files-derp
-//           </a>
-//         </li>
-
-//         <li>
-//           <a href="/llama_tools">
-//             llama-tools - tools for llama 3.2
-//           </a>
-//         </li>
-
-//         <li>
-//           <a href="/baby-dynamicland">baby dynamicland</a>
-//         </li>
-
-//       </ul>
-//     </div>
-//   );
-// }
-
-// //50 llamas - 50 gpus --- instantly interpret and deno-webpgu suggestions
-
-import Link from "next/link";
-import Image from "next/image";
-
-function PricingPage() {
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Pricing</h1>
-        <p className="text-xl text-gray-600">
-          Support an independent business and a product made with love.
-        </p>
-      </div>
-
-      {/* Pricing Cards Grid */}
-      <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-        {/* Free Tier */}
-        <div className="rounded-lg border border-gray-200 p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-gray-900">Free</h2>
-          <ul className="mt-6 space-y-4">
-            <li className="flex items-start">
-              <svg
-                className="h-6 w-6 text-purple-500 shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-              </svg>
-              <span className="ml-3 text-gray-600">Mac, iPad, and iPhone</span>
-            </li>
-            {/* Add other list items similarly */}
-          </ul>
-          <p className="mt-8 text-2xl font-bold">
-            Free <span className="text-gray-600">forever</span>
-          </p>
-          <Link href="https://apps.apple.com" className="mt-8 block">
-            <Image
-              src="/app-store-badge.png"
-              alt="Download on the App Store"
-              width={140}
-              height={42}
-              className="mx-auto"
-            />
-          </Link>
-        </div>
-
-        {/* Unlimited Tier */}
-        <div className="rounded-lg border-2 border-purple-500 p-8 shadow-lg relative">
-          <div className="absolute -top-5 right-0 left-0">
-            <span className="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-              Most Popular
-            </span>
-          </div>
-          <h2 className="text-2xl font-semibold text-purple-500">Unlimited</h2>
-          {/* Similar structure to Free tier */}
-          <div className="mt-8">
-            <span className="text-2xl font-bold">$9.99</span>/month
-            <div className="mt-2">
-              <span className="text-2xl font-bold">$99.99</span>/year
-            </div>
-          </div>
-        </div>
-
-        {/* Setapp Tier */}
-        <div className="rounded-lg border border-gray-200 p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-gray-900">Setapp</h2>
-          {/* Similar structure to other tiers */}
-          <div className="mt-8">
-            <span className="text-2xl font-bold">$9.99</span>/month
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="mt-16 text-center">
-        <p className="text-gray-600">
-          Students and teachers can contact us at{" "}
-          <a
-            href="mailto:hello@museapp.com"
-            className="text-purple-600 hover:text-purple-500"
-          >
-            hello@museapp.com
-          </a>{" "}
-          for an education discount.
-        </p>
-        <p className="mt-4 text-sm text-gray-500">
-          *Mac device is required for Setapp; iPad and iPhone are optional.
-        </p>
-      </div>
-    </div>
-  );
-}
+              // <img
+              //   src="https://images.squarespace-cdn.com/content/v1/65789f5bc31b3c64091939a3/31563aa0-c09d-46a1-a2d1-b0193528775e/STRETCH+3+KEYSHOT+2024+FULL+02+%281%29.png?format=2500w"
+              // />

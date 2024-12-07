@@ -1,6 +1,12 @@
 1. dynabot - /dynabot - $100 robot for medicine.
-2. wiki-game = /llama-tools 2 jupyter notebook -> gamekit to research dynamicland
+2. wiki-game = /llama-tools 2 jupyter notebook -> gamekit to research dynamicland = simulation as a serivce 4 reasoning + dynamicland 4 cooking + cats - https://www.worldlabs.ai/blog
 
+# https://tldraw.dev/docs/sync https://github.com/facebookresearch/AnimatedDrawings?tab=readme-ov-file
+https://www.youtube.com/watch?v=UTuS9s0pR7o
+https://github.com/huggingface/lerobot
+----
+
+network explorer
 https://www.notion.so/Dynabot-Onboarding-144f77917ff88000895ae0a3e82217c5
 https://www.youtube.com/watch?v=UTuS9s0pR7o
 https://github.com/facebookresearch/AnimatedDrawings?tab=readme-ov-file
