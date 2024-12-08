@@ -13,4 +13,6 @@ https://dagster.io/
 Deterministic CI pipelines for simulation infrastructure  https://github.com/NVIDIA/warp/blob/main/warp/examples/sim/example_granular.py https://ale.farama.org/
 Continous Eval = CI for robots https://nbsanity.com/ - simulator answers questions
 karaoke / club penguin - rosebud.ai but 183 games in one minigame-map - ml robot comedy
-add 1 api + 1 game  + 1 jupyter notebook - o1 writes code much faster so traditional organization schemes require improvemnt - obs = editor for game
+add 1 api + 1 game  + 1 jupyter notebook - o1 writes code much faster so traditional organization schemes require improvemnt - obs = editor for game 
+
+# Gary's mod with music - tools = guaranteed hits
