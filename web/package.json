@@ -15,6 +15,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    
     "@anthropic-ai/sdk": "latest",
     "@clerk/nextjs": "^6.5.1",
     "@headlessui/react": "^2.2.0",
@@ -54,6 +55,7 @@
     "three": "latest"
   },
   "devDependencies": {
+    "@notionhq/client": "latest",
     "@chromatic-com/storybook": "^3.2.2",
     "@storybook/addon-essentials": "^8.4.6",
     "@storybook/addon-interactions": "^8.4.6",
