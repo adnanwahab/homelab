@@ -42,7 +42,7 @@ const RainbowGrid = () => {
             "
           >
             <span className="text-white font-bold text-sm">{cell}</span>
-            <a href={`/llama-tools/1`}>
+            <a href={`/tools/1`}>
               <img
                 src={games[index % games.length].url}
                 className="w-full h-full"
@@ -63,35 +63,6 @@ function Magic_Iframe_Llama() {
       <div className="shiny-text">Magic LLama</div>
       <iframe src="/proxy?url=https://github.com" />;
     </>
-  );
-}
-
-function LLama_Tools_Main() {
-  return (
-    <div>
-      <ul>
-        <li>
-          <a href="/llama-tools/replay_analyzer">
-            [ ] 1 - livekit replay analyzer
-          </a>
-        </li>
-
-        <li>
-          <a href="/llama-tools/replay_analyzer">
-            JUPYTER IFRAME IN OBS COURSE
-          </a>
-        </li>
-        <li>
-          <a href="/llama-tools/deno-webgpu-threejs">CHECKED deno-webgpu</a>
-        </li>
-        <li>[ ] magic llama</li>
-        <li>[ ] magic iframe</li>
-      </ul>
-      {/* <Chatbot /> */}
-      {/* <Livekit /> */}
-      {/* <Magic_Iframe_Llama /> */}
-      {/*       <div>3. magic llama + magic iframe</div> */}
-    </div>
   );
 }
 

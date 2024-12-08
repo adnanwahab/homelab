@@ -19,23 +19,23 @@ const home = process.env.HOME;
 const derp = `${home}/derp`;
 
 const start_audio_publish = async function () {
-    const timestamp = Date.now();
-    const outputPath = `${derp}/recordings/audio-${timestamp}.mp3`;
+  const timestamp = Date.now();
+  const outputPath = `${derp}/recordings/audio-${timestamp}.mp3`;
 };
 
 const start_audio_egress = async function () {
-    const timestamp = Date.now();
-    const outputPath = `${derp}/recordings/audio-${timestamp}.mp3`;
+  const timestamp = Date.now();
+  const outputPath = `${derp}/recordings/audio-${timestamp}.mp3`;
 
-    const result = await $`lk egress start \
+  const result = await $`lk egress start \
       --url ${wsUrl} \
       --api-key ${apiKey} \
       --api-secret ${apiSecret} \
       --audio-only \
       --output ${outputPath}`;
 
-    console.log("Audio egress started:", result);
-    return outputPath;
+  console.log("Audio egress started:", result);
+  return outputPath;
 };
 export { start_audio_egress };
 const start_egress_screeshare = async function () {};
@@ -63,20 +63,19 @@ const start_egress_screeshare = async function () {};
 // done`
 
 const fetchApiItems = async () => {
-    const itemIds = await $`op item list --tags api --format json`.json();
+  const itemIds = await $`op item list --tags api --format json`.json();
 
-    for (const item of itemIds) {
-        const itemDetails =
-            await $`op item get ${item.id} --format json`.json();
+  for (const item of itemIds) {
+    const itemDetails = await $`op item get ${item.id} --format json`.json();
 
-        const title = itemDetails.overview.title;
-        const notes = itemDetails.notesPlain;
+    const title = itemDetails.overview.title;
+    const notes = itemDetails.notesPlain;
 
-        console.log("------------------------------");
-        console.log("Title:", title);
-        console.log("Notes:", notes);
-        console.log("------------------------------");
-    }
+    console.log("------------------------------");
+    console.log("Title:", title);
+    console.log("Notes:", notes);
+    console.log("------------------------------");
+  }
 };
 
 // Call the function to fetch items
@@ -86,48 +85,49 @@ const fetchApiItems = async () => {
 const receiver = new WebhookReceiver("apikey", "apisecret");
 
 export const webhook_receiver = async (c: Context) => {
-    console.log("Webhook received:");
+  console.log("Webhook received:");
 
-    const auth_header = c.req.header("Authorization");
-    //console.log('auth_header', auth_header)
-    //console.log(c.json())
+  const auth_header = c.req.header("Authorization");
+  //console.log('auth_header', auth_header)
+  //console.log(c.json())
 
-    return c.json({ success: true });
+  return c.json({ success: true });
 };
 
 async function connect_to_livekit(options: { identity: string }) {
-    console.log("options", options);
+  console.log("options", options);
 
-    // Default identity if not provided
-    if (!options.identity) {
-        options.identity =
-            "anonymous" + Math.random().toString(36).substring(2, 15);
-    }
+  // Default identity if not provided
+  if (!options.identity) {
+    options.identity =
+      "anonymous" + Math.random().toString(36).substring(2, 15);
+  }
 
-    // Creating a new AccessToken
-    const token = new AccessToken(apiKey, apiSecret, {
-        identity: options.identity,
-    });
+  // Creating a new AccessToken
+  const token = new AccessToken(apiKey, apiSecret, {
+    identity: options.identity,
+  });
 
-    // Add grant to the token (e.g., room access)
-    token.addGrant({
-        room: "example-room", // Replace with your actual room name
-        roomJoin: true,
-        canPublish: true,
-    });
+  // Add grant to the token (e.g., room access)
+  token.addGrant({
+    room: "example-room", // Replace with your actual room name
+    roomJoin: true,
+    canPublish: true,
+  });
 
-    // Generate the JWT token
-    const jwt = await token.toJwt();
+  // Generate the JWT token
+  const jwt = await token.toJwt();
 
-    // Return token and WebSocket URL
-    return { token: jwt, wsUrl };
+  // Return token and WebSocket URL
+  return { token: jwt, wsUrl };
 }
 
 export const Layout = (content: string) => {
-    return fs
-        .readFileSync("src/utils/layout.html", "utf8")
-          .replace("{{content}}", content).toString()
-}
+  return fs
+    .readFileSync("src/utils/layout.html", "utf8")
+    .replace("{{content}}", content)
+    .toString();
+};
 
 //  <a class="float-right" href="https://buy.stripe.com/test_28o6oZelUe8g2HubII">pay via stripe </a><
 //after 1k signups - lower price to course by 10% by 1k till $5 for life.
@@ -146,23 +146,23 @@ export const indexPage = `<div>
   </div>`;
 
 export const livekit_connect = async (c) => {
-    console.log("livekit_connect");
+  console.log("livekit_connect");
 
-    // Identity creation with timestamp to avoid conflicts
-    const jsonData = { identity: "voice to prompt?" + Date.now() };
-    const identity = jsonData.identity;
+  // Identity creation with timestamp to avoid conflicts
+  const jsonData = { identity: "voice to prompt?" + Date.now() };
+  const identity = jsonData.identity;
 
-    if (!identity) {
-        return c.text("Identity parameter is missing", 400);
-    }
+  if (!identity) {
+    return c.text("Identity parameter is missing", 400);
+  }
 
-    // Connecting to LiveKit
-    const json = await connect_to_livekit(jsonData);
-    //console.log('Generated token and wsUrl:', json);
+  // Connecting to LiveKit
+  const json = await connect_to_livekit(jsonData);
+  //console.log('Generated token and wsUrl:', json);
 
-    return new Response(JSON.stringify(json), {
-        headers: { 'Content-Type': 'application/javascript' }
-    });
+  return new Response(JSON.stringify(json), {
+    headers: { "Content-Type": "application/javascript" },
+  });
 };
 
 // the wizards are humans too -- shodan was right.
@@ -275,7 +275,7 @@ const blog = `<div class="bg-slate-900 font-white">
 
               <section class="mb-6">
                 <section class="">
-                  <div><a href="/llama-tools">LLama Tools</a></div>
+                  <div><a href="/tools">LLama Tools</a></div>
                   <div><a href="/cgi-tools">Computer Graphics Tools</a></div>
                   <div><a href="/hardware-tools">Hardware Tools</a></div>
                 </section>
@@ -306,101 +306,100 @@ export { blog };
 
 //import { Resend } from "resend";
 
-
 console.log(process.cwd());
 
 async function magic_llama(msg) {
-    const result = await ollama.chat({
-        model: "llama3.1",
-        prompt: msg,
-    });
-    return result;
+  const result = await ollama.chat({
+    model: "llama3.1",
+    prompt: msg,
+  });
+  return result;
 }
 
 export { magic_llama };
 
 async function generate_blog() {
-    const modules = [
-        "assembly-disassembly.md  kinematics-dynamics.md  preventative-maintenance.md",
-        "camera-calibration.md",
-        "object-detection.md",
-        "vision-transformers.md",
-        "attention-mechanisms.md",
-        "llms-vs-classical.md",
-        "agri-logistics.md",
-        "cat-food.md",
-        "house-garden.md",
-        "Science-Math-Magic.md",
-        "simulation-and-ui.md",
-        "real-world-applications.md",
-        "robotics-odyssey.md",
-        "llama-tools.md",
-        "blag.md",
-    ];
+  const modules = [
+    "assembly-disassembly.md  kinematics-dynamics.md  preventative-maintenance.md",
+    "camera-calibration.md",
+    "object-detection.md",
+    "vision-transformers.md",
+    "attention-mechanisms.md",
+    "llms-vs-classical.md",
+    "agri-logistics.md",
+    "cat-food.md",
+    "house-garden.md",
+    "Science-Math-Magic.md",
+    "simulation-and-ui.md",
+    "real-world-applications.md",
+    "robotics-odyssey.md",
+    "llama-tools.md",
+    "blag.md",
+  ];
 
-    const result = await Promise.all(
-        modules.map(async (module) => {
-            const response = await magic_llama(
-                `generate a blog post about the topic ${module}`,
-            );
-            return (
-                response.message ||
-                response.content ||
-                response.response ||
-                JSON.stringify(response)
-            );
-        }),
-    );
-    console.log(result);
-    //fs.writeFileSync('./src/llama-tools/blog.md', result.join('\n\n'))
+  const result = await Promise.all(
+    modules.map(async (module) => {
+      const response = await magic_llama(
+        `generate a blog post about the topic ${module}`,
+      );
+      return (
+        response.message ||
+        response.content ||
+        response.response ||
+        JSON.stringify(response)
+      );
+    }),
+  );
+  console.log(result);
+  //fs.writeFileSync('./src/llama-tools/blog.md', result.join('\n\n'))
 }
 
 async function generateJetsonDocs() {
-    const topics = [
-        "Initial setup and hardware requirements",
-        "Installing JetPack SDK",
-        "Setting up CUDA and cuDNN",
-        "Power modes and thermal management",
-        "Common troubleshooting steps",
-    ];
+  const topics = [
+    "Initial setup and hardware requirements",
+    "Installing JetPack SDK",
+    "Setting up CUDA and cuDNN",
+    "Power modes and thermal management",
+    "Common troubleshooting steps",
+  ];
 
-    const systemPrompt = `You are a technical documentation expert. Create clear, step-by-step documentation for Jetson Orin installation.
+  const systemPrompt = `You are a technical documentation expert. Create clear, step-by-step documentation for Jetson Orin installation.
     Include command examples, prerequisites, and troubleshooting tips. Format the output in markdown.`;
 
-    const docs = await Promise.all(
-        topics.map(async (topic) => {
-            const result = await ollama.chat({
-                model: "llama3.1",
-                messages: [
-                    { role: "system", content: systemPrompt },
-                    {
-                        role: "user",
-                        content: `Generate documentation section for: ${topic}`,
-                    },
-                ],
-            });
-            console.log(result);
-            return {
-                topic,
-                content: result.message.content,
-            };
-        }),
-    );
+  const docs = await Promise.all(
+    topics.map(async (topic) => {
+      const result = await ollama.chat({
+        model: "llama3.1",
+        messages: [
+          { role: "system", content: systemPrompt },
+          {
+            role: "user",
+            content: `Generate documentation section for: ${topic}`,
+          },
+        ],
+      });
+      console.log(result);
+      return {
+        topic,
+        content: result.message.content,
+      };
+    }),
+  );
 
-    // Combine all sections into a single markdown document
-    const fullDoc = docs
-        .map(
-            (section) => `
+  // Combine all sections into a single markdown document
+  const fullDoc = docs
+    .map(
+      (section) => `
   ## ${section.topic}
 
   ${section.content}
   `,
-        )
-        .join("\n\n");
+    )
+    .join("\n\n");
 
-    // Write to file
-    fs.writeFileSync("./jetson-orin-guide.md", fullDoc);
-    return fullDoc;
+  // Write to file
+  fs.writeFileSync("./jetson-orin-guide.md", fullDoc);
+  return fullDoc;
 }
 
 export { generateJetsonDocs };
@@ -423,56 +422,56 @@ export { generate_blog };
 //paper mario
 
 function webhooks(app) {
-    return {
-        resend: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        livekit: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        github: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        twitter: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        twitch: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        stripe: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        dockerhub: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        observablehq: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        discord: async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-        "google-drive": async (c) => {
-            const body = await c.req.json();
-            console.log(body);
-            return c.text("ok");
-        },
-    };
+  return {
+    resend: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    livekit: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    github: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    twitter: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    twitch: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    stripe: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    dockerhub: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    observablehq: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    discord: async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+    "google-drive": async (c) => {
+      const body = await c.req.json();
+      console.log(body);
+      return c.text("ok");
+    },
+  };
 }
