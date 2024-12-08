@@ -5,4 +5,12 @@
 https://www.youtube.com/watch?v=UTuS9s0pR7o
 https://github.com/huggingface/lerobot
 https://eternagame.org/
-make a reflect / notion / gist and then get a game
+make a reflect / notion / gist and then get a game - adaptive infra
+https://www.remotion.dev/ https://jsfiddle.net/designsystemweb/Lvgeo41w/ 
+
+GREENSAP  https://stackblitz.com/edit/stackblitz-starters-bwzzx9jn?description=GSAP%20with%20React&file=src%2FApp.js&title=GSAP%20Starter https://www.youtube.com/shorts/aTRLoZi0scI --- carla  + livekit
+https://dagster.io/
+Deterministic CI pipelines for simulation infrastructure  https://github.com/NVIDIA/warp/blob/main/warp/examples/sim/example_granular.py https://ale.farama.org/
+Continous Eval = CI for robots https://nbsanity.com/ - simulator answers questions
+karaoke / club penguin - rosebud.ai but 183 games in one minigame-map - ml robot comedy
+add 1 api + 1 game  + 1 jupyter notebook - o1 writes code much faster so traditional organization schemes require improvemnt - obs = editor for game
