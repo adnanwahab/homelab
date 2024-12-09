@@ -9,3 +9,4 @@
 # Devops 
 1. caddy
 2. cloudflare / porkbun / dnssiple
+https://github.com/facebookresearch/AnimatedDrawings?tab=readme-ov-file
