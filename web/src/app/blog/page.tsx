@@ -11,16 +11,16 @@ export default function Blog() {
 function PortfolioSite() {
   const writings = [
     {
-      title: "Dynamicland is the future of Biotech",
+      title: "Dynamicland makes intractable problems tractable",
       description:
-        "Multi-cell-omics, openproblems.bio, and how spatial computing improves reasoning",
-      slug: "/articles/dynamicland",
+        "",
+      slug: "/blog/articles/dynamicland",
     },
     {
-      title: "Mechanics Case Study in Robotics Infrastructure",
+      title: "Robotics Design Award Winners 2024",
       description:
-        "50 min tour through Robotics Systems from absolute beginner to craftsman.",
-      slug: "/articles/300_dollar_robot",
+        "",
+      slug: "/blog/articles/robotics_design_award_winners_2024",
     },
     // ... other writings
   ];
@@ -33,7 +33,7 @@ function PortfolioSite() {
         <div>
           <h1 className="text-xl font-medium text-blue-100">Adnan Wahab</h1>
           <p className="shiny-text text-blue-100">
-            robotics, cgi, and infrastructure.
+            robotics, cgi, and infrastructure!
           </p>
         </div>
 
