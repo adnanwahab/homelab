@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Loader2 } from 'lucide-react'
-import { iterateSteps } from '../actions/iterate-steps'
-import { clsx } from 'clsx'
-import React from 'react' 
-import SimpleThreeDemo from './SimpleThreeDemo'
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
+//import { iterateSteps } from '../actions/iterate-steps'
+import { clsx } from "clsx";
+import React from "react";
+import SimpleThreeDemo from "./SimpleThreeDemo";
 
 const initialCode = `
 export default function Page() {
@@ -16,10 +16,10 @@ export default function Page() {
     </div>
   )
 }
-`
+`;
 
 function CodeEditor() {
-  const [code, setCode] = useState(initialCode)
+  const [code, setCode] = useState(initialCode);
 
   return (
     <div className="w-1/2 h-full border-r border-gray-200 dark:border-gray-800">
@@ -29,7 +29,7 @@ function CodeEditor() {
         onChange={(e) => setCode(e.target.value)}
       />
     </div>
-  )
+  );
 }
 
 function Preview() {
@@ -41,15 +41,14 @@ function Preview() {
       {/* <iframe src="https://www.dynabot.dev/articles/dynamicland/game/page.tsx" width="100%" height="100%"></iframe> */}
       <SimpleThreeDemo />
     </div>
-  )
+  );
 }
 
 export default function Home() {
-    return (
-      <div className="flex h-screen">
-        <CodeEditor />
-        <Preview />
-      </div>
-    )
-  }
-  
+  return (
+    <div className="flex h-screen">
+      <CodeEditor />
+      <Preview />
+    </div>
+  );
+}
