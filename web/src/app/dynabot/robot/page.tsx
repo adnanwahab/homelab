@@ -3,12 +3,9 @@
 import Footer from "@/components/footer";
 import HardwareConfigurator from "@/components/hardware_configurator";
 import Livekit_Desktop_Viewer from "@/components/Livekit_Desktop_Viewer";
-
-
-
+//import Rtings from "@/components/rtings";
 import Livekit_Callibration from "@/components/Livekit_Callibration";
 
-//import Rtings from "@/components/rtings";
 
 export const MainComponent = function () {
   return     <div className="min-h-screen bg-gray-950 text-white">
@@ -18,10 +15,6 @@ export const MainComponent = function () {
     <h1 className="text-center text-4xl md:text-6xl font-bold text-gray-300 mb-4">
      Self Driving Robot for $141
     </h1>
-
-
-    
-
 
     {/* <h2 className="text-center text-3xl md:text-5xl font-bold mb-12">
       The fastest way to get a robot you want

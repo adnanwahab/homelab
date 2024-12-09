@@ -16,3 +16,9 @@ karaoke / club penguin - rosebud.ai but 183 games in one minigame-map - ml robot
 add 1 api + 1 game  + 1 jupyter notebook - o1 writes code much faster so traditional organization schemes require improvemnt - obs = editor for game 
 
 # Gary's mod with music - tools = guaranteed hits - vercel music physics - wiki + drawing - https://neocities.org/ - fastest indie game ever shipped to 100k
+
+
+//     
+ //<a href="https://nanosaur.ai">nanosaur.ai</a>
+ //<a href="https://hello-robot.com">hello robot.ai</a>
+ //<a href="https://innate.bot">Maurice</a>

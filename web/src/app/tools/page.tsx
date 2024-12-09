@@ -1,3 +1,17 @@
+export default function Tools() {
+  return <ul>
+    <li>
+    <a href="/tools/replay_analyzer">Replay Analyzer</a>
+    <a href="/tools/parallel_llm">Parallel LLM</a>
+    <a href="/tools/playwright_snapshot_test">Playwright Snapshot Test</a>
+    <a href="/tools/dynamicland_arm">Dynamicland Arm</a>
+    <a href="/tools/walk_to_yilo">walk to yilo</a>
+
+    </li>
+  </ul>
+}
+
+
 // "use client"
 // import { useState } from 'react'
 // import { Radio, RadioGroup } from '@headlessui/react'

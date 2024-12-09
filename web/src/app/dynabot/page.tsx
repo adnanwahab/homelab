@@ -1,8 +1,4 @@
 
-//     
- //<a href="https://nanosaur.ai">nanosaur.ai</a>
- //<a href="https://hello-robot.com">hello robot.ai</a>
- //<a href="https://innate.bot">Maurice</a>
 const attempt = `<div>
       <div class="bg-homeBackground relative" id="page-top">
    <div class="relative z-10">
