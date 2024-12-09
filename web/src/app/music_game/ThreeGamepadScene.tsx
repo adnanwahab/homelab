@@ -98,6 +98,7 @@ const ThreeGamepadScene = () => {
                     Base Cube Color: <input type="color" value={baseCubeColor} onChange={(e) => setBaseCubeColor(e.target.value)} />
                 </label>
                 <p>Audio Reactive: Cubes scale according to music amplitude</p>
+                <button className="reset-button" onClick={() => setBaseCubeColor('#9b59b6')}>Play / Pause</button>
 
             </div>
             <div ref={mountRef}></div>
