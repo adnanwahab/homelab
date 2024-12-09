@@ -18,7 +18,7 @@ business = tailscale + tailwind + three.js = foxglove for observing ai like dyna
 
 data = symlinks made from scripts - to keep computers homogenous
 
-notebooks = 10 python notebooks - 
+notebooks = 10 python notebooks -
 
 perception = livekit + 2i
 prediction = llama + video-understander
@@ -32,3 +32,7 @@ web = next.js + denowebgpu
   - dynamicland = collaborative thinking space for robotics + biotech + shared reasoning
   - all pages of dynabot.dev viewable on one page = sitemap
   - business = tailscale + tailwind + three.js = foxglove for observing ai like dynamciland. cellbox.
+https://bookofhook.blogspot.com/ - prediction -
+50 prompts a day + 50 commits a day
+learn all of robotics in 7 sentences in 7 days Launch Date - Dec 12
+https://www.bestbuy.com/site/searchpage.jsp?st=7900XTX+pc&_dyncharset=UTF-8&_dynSessConf=&id=pcat17071&type=page&sc=Global&cp=1&nrp=&sp=&qp=&list=n&af=true&iht=y&usc=All+Categories&ks=960&keys=keys
