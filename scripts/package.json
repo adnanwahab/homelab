@@ -5,7 +5,8 @@
     "pdf-lib": "^1.17.1",
     "pdf-parse": "^1.1.1",
     "pdf.js-extract": "^0.2.1",
-    "playwright": "^1.49.0"
+    "playwright": "^1.49.0",
+    "resend": "^4.0.1"
   },
   "name": "scripts",
   "module": "index.ts",

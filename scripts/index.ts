@@ -31,9 +31,31 @@ const index_html = `
   </html>
 `;
 
+function one_password_5_agents_1_password() {
+    return 'one password 5 agents 1 password'
+}
 
-function mailwind() {
-return 'email sent'
+import { Resend } from 'resend';
+
+  
+
+
+async function mailwind() {
+    const resend_api_key = `re_gPBiq268_5gRCCNH2bLAwyaXQ6qJ6qLfJ`
+    const email = `eggnog.wahab@gmail.com`
+    const subject = `Hello World!`
+    const body = `Hello World!`
+
+    const resend = new Resend(resend_api_key);
+
+    const data = await resend.emails.send({
+        from: '_@llama-tools.com',
+        to: ['eggnog.wahab@gmail.com'],
+        subject: 'Hello World',
+        html: '<strong>It works!</strong>'
+      });
+  
+      return JSON.stringify(data);
 }
 
 function deno_webgpu() {
