@@ -12,7 +12,8 @@
     "postbuild": "next-sitemap",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "tunnel": "sudo tailscale serve 8000"
   },
   "dependencies": {
     "@tldraw/tldraw": "^3.6.0",
