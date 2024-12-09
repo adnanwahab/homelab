@@ -36,10 +36,10 @@ export default function Home() {
       imgSrc: "https://worrydream.com/MagicInk/p/communication_model.png",
     },
     {
-      slug: "/llama-tools",
-      title: "183 wiki-science games",
+      slug: "/music_game",
+      title: "Music Game",
       description: "",
-      logoSrc: "/llama-tools/",
+      logoSrc: "/music_game/",
       imgSrc: "https://worrydream.com/MagicInk/p/communication_model.png",
       //steps-kirby-demo
     },
