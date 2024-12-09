@@ -88,9 +88,9 @@ const attempt = `<div>
          </div>
       </header>
       <div class="ui-mx-auto ui-px-4 sm:ui-px-8 ui-max-w-8xl md:ui-px-8 relative z-20 justify-between gap-20 pt-12 overflow-hidden text-white md:pt-24 lg:px-8">
-         <h1 class="flex-1 text-4xl font-bold max-sm:max-w-80 md:text-[56px]/[70px]">Build UIs without the grunt work</h1>
+         <h1 class="flex-1 text-4xl font-bold max-sm:max-w-80 md:text-[56px]/[70px]">Adopt a robust Robot</h1>
          <div class="flex-1 pt-4 mb-8 md:mb-20">
-            <p class="mb-8 max-w-[500px] leading-7 sm:mb-12">Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation. It's open source and free.</p>
+            <p class="mb-8 max-w-[500px] leading-7 sm:mb-12">Dynabot is a simulation editor  for building Robots and managing complexity. Thousands of teams use it for Robotics development, testing, and documentation. It's open source and free.</p>
             <div class="flex items-center justify-between">
                <div class="flex flex-col gap-8 sm:flex-row">
                   <div class="flex gap-4">

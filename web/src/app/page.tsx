@@ -33,14 +33,14 @@ export default function Home() {
       title: "Dynabot - adopt a robot",
       description: "",
       logoSrc: "/dynabot/",
-      imgSrc: "https://worrydream.com/MagicInk/p/communication_model.png",
+      imgSrc: "https://nanosaur.ai/assets/images/nanosaur-wireframe-bw.png",
     },
     {
       slug: "/music_game",
       title: "Music Game",
       description: "",
       logoSrc: "/music_game/",
-      imgSrc: "https://worrydream.com/MagicInk/p/communication_model.png",
+      imgSrc: "https://assetsio.gnwcdn.com/Rez2.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
       //steps-kirby-demo
     },
   ];
@@ -61,8 +61,11 @@ export default function Home() {
         </div>
 
         <nav className="flex gap-6">
+        <a href="/tools" className="hover:opacity-70">
+            Tools
+          </a>
           <a href="/blog" className="hover:opacity-70">
-            Blog!
+            Blog
           </a>
         </nav>
       </header>
