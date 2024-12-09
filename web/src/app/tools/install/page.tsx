@@ -1,8 +1,6 @@
 // app/page.tsx
 'use client';
-
 import { saveAs } from 'file-saver';
-
 export default function DownloadPage() {
   const handleDownload = () => {
     const content = "echo hello tyvm";
