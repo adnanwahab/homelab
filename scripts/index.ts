@@ -22,21 +22,47 @@ const index_html = `
     Hello world!
   </h1>
   <ul>
-<li><a href="/tools/setup_desktop">Setup Desktop 1</a></li>
-<li><a href="/tools/mailwind">Setup Desktop 2</a></li>
-<li><a href="/tools/deno_webgpu">Deno WebGPU </a></li>
-<li><a href="/tools/ollama">ollama 200,000 requests </a></li>
-<li><a href="/tools/git_visualizer">git visualizer </a></li>
+<li><a href="/tools/mailwind">Click to send an email to eggnog.wahab@gmail.com</a></li>
+
+<li><a href="/tools/deno_webgpu">Deno WebGPU render dynamic content to make it easy to iterate</a></li>
 <ul>
 </div>
 </body>
   </html>
 `;
 
+
+function mailwind() {
+return 'email sent'
+}
+
+function deno_webgpu() {
+return 'deno webgpu'
+}   
+
 const server = Bun.serve({
   port: 8000,
   async fetch(req) {
     const url = new URL(req.url);
+
+    if (url.pathname === "/tools/mailwind") {
+      const result = await mailwind();
+      return new Response(result, {
+        headers: {
+          "Content-Type": "text/html",
+        },
+      });
+    }
+
+
+    if (url.pathname === "/tools/deno_webgpu") {
+        const result = await deno_webgpu();
+        return new Response(result, {
+          headers: {
+            "Content-Type": "text/html",
+          },
+        });
+      }
 
     if (url.pathname === "/tools/setup_desktop") {
       const result = await setup_desktop();
