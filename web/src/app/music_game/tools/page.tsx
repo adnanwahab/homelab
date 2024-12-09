@@ -1,3 +1,7 @@
+export default function () {
+  return <>tools and games and robots?</>;
+}
+
 // import Chatbot from "@/components/Chatbot";
 // import Livekit from "@/components/Livekit_Desktop_Viewer";
 
