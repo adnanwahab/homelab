@@ -49,9 +49,9 @@ async function mailwind() {
     const resend = new Resend(resend_api_key);
 
     const data = await resend.emails.send({
-        from: '_@llama-tools.com',
+        from: 'adnan@human-advancement-institute.org',
         to: ['eggnog.wahab@gmail.com'],
-        subject: 'Hello World',
+        subject: 'Comedy comic-book - 7 part series',
         html: '<strong>It works!</strong>'
       });
   

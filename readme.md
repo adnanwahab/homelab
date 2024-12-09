@@ -1,4 +1,13 @@
 # Dynabot.dev = fool-proof robotcs simulation games validation and verification  to measure perpection performance and impact on robot behavior
+
+# Deliverables Jan 1
+Course_content = https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
+notebooks = 30 python-jupyter notebooks that plug into observablehq
+web = next.js framing for observablehq
+
+
+
+
 1. 2025 - dynabot.dev - Music Game + $3,000 robot for medicine.
 # WebGPU
 1. spline
@@ -13,7 +22,6 @@ https://github.com/facebookresearch/AnimatedDrawings?tab=readme-ov-file
 Dynamicland = collaborative thinking space for robotics + biotech + shared reasoning
 All Pages of dynabot.dev viewable on one page = sitemap
 business = tailscale + tailwind + three.js = foxglove for observing ai like dynamciland. cellbox.
-
 
 
 data = symlinks made from scripts - to keep computers homogenous
@@ -36,3 +44,9 @@ https://bookofhook.blogspot.com/ - prediction -
 50 prompts a day + 50 commits a day
 learn all of robotics in 7 sentences in 7 days Launch Date - Dec 12
 https://www.bestbuy.com/site/searchpage.jsp?st=7900XTX+pc&_dyncharset=UTF-8&_dynSessConf=&id=pcat17071&type=page&sc=Global&cp=1&nrp=&sp=&qp=&list=n&af=true&iht=y&usc=All+Categories&ks=960&keys=keys
+# Routes
+dynabot.dev/ - robot or music_game.
+
+
+dynabot.dev/tools/${tool_name}
+dynabot.dev/music_game/${tool_name}
