@@ -1,4 +1,14 @@
-import setup_desktop from "./setup_desktop";
+import setup_desktop from "./src/setup_desktop";
+import parallel_ollama from "./src/parallel-ollama";
+
+const scripts = [
+  setup_desktop,
+  parallel_ollama,
+];
+
+
+setup_desktop()
+
 
 const index_html = `
   <html>
@@ -23,30 +33,30 @@ const index_html = `
   </html>
 `;
 
-const server = Bun.serve({
-  port: 8000,
-  async fetch(req) {
-    const url = new URL(req.url);
+// const server = Bun.serve({
+//   port: 8000,
+//   async fetch(req) {
+//     const url = new URL(req.url);
 
-    if (url.pathname === "/tools/setup_desktop") {
-      const result = await setup_desktop();
+//     if (url.pathname === "/tools/setup_desktop") {
+//       const result = await setup_desktop();
 
-      return new Response(result, {
-        headers: {
-          "Content-Type": "text/html",
-        },
-      });
-    }
+//       return new Response(result, {
+//         headers: {
+//           "Content-Type": "text/html",
+//         },
+//       });
+//     }
 
-    if (url.pathname === "/tools/test") {
-    }
+//     if (url.pathname === "/tools/test") {
+//     }
 
-    return new Response(index_html, {
-      headers: {
-        "Content-Type": "text/html",
-      },
-    });
-  },
-});
+//     return new Response(index_html, {
+//       headers: {
+//         "Content-Type": "text/html",
+//       },
+//     });
+//   },
+// });
 
-console.log(`Server is running on http://localhost:${server.port}`);
+// console.log(`Server is running on http://localhost:${server.port}`);

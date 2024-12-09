@@ -26,6 +26,7 @@ function getRemoteCommitHash(): string {
     }
 }
 
+function compare_commits() {
 const localHash = getLocalCommitHash()
 const remoteHash = getRemoteCommitHash()
 
@@ -44,18 +45,32 @@ if (localHash !== remoteHash) {
 } else {
     console.log('Already up to date')
 }
+}
 
 
+const latest_commit = `#!/usr/bin/env bash
+
+# Set your repository owner and name
+OWNER="adnanwahab"
+REPO="homelab"
+
+# Fetch the latest commit using GitHub CLI's API endpoint for commits
+latest_commit_sha=$(gh api repos/$OWNER/$REPO/commits --jq '.[0].sha')
+
+echo "The latest commit SHA for $OWNER/$REPO is: $latest_commit_sha"`
 export default async function setup_desktop() {
-    //Bun.spawn(["sudo", "apt-get", "update", "-y"]); 
     const result = await $`echo "Hello World!!"`.text();
+    // const { stdout, stderr } =  await $`${latest_commit}`.quiet();
 
-    //const result = 'hi_world';
+    // try {
+    //     const output = await $`${latest_commit}`.text();
+    //     console.log(output);
+    //   } catch (err) {
+    //     console.log(`Failed with code ${err.exitCode}`);
+    //     console.log(err.stdout.toString());
+    //     console.log(err.stderr.toString());
+    //   }
 
-    const latest_commit_sha = await $`./latest_commit.sh`.text();
-
-
-
-    return result + latest_commit_sha;
+    return result + result;
 }
 
