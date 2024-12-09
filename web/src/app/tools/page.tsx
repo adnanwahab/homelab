@@ -20,6 +20,8 @@ export default function Tools() {
       items: [
         { href: "/tools/playwright_snapshot_test", label: "Playwright Snapshot Test" },
         { href: "/tools/mailwind", label: "Mailwind Resend" },
+        { href: "/tools/", label: "" },
+
       ]
     },
     {
@@ -50,8 +52,15 @@ export default function Tools() {
                 </li>
               ))}
             </ul>
+
           </div>
         ))}
+
+        <div className="space-y-4"> 
+          <h2 className="text-xl font-semibold">Magic Iframe</h2>
+          <iframe src="https://gpu.jerboa-kokanue.ts.net/" className="w-full h-full"></iframe>
+
+        </div>
       </div>
     </div>
   );

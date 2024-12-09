@@ -1,12 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
@@ -46,7 +40,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
       <html lang="en">
         <Head>
           <title>Dynabot.dev = Robotics Simulation As a Service</title>
@@ -98,6 +91,5 @@ export default function RootLayout({
           <SpeedInsights />
         </body>
       </html>
-    </ClerkProvider>
   );
 }
