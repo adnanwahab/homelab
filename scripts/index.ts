@@ -8,6 +8,7 @@ const index_html = `hello world
 
 <a href="/tools/mailwind">Deno WebGPU </a>
 <a href="/tools/mailwind">ollama 200,000 requests </a>
+<a href="/tools/git_visualizer">git visualizer </a>
 `
 
 Bun.serve({

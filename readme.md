@@ -23,3 +23,9 @@ add 1 api + 1 game  + 1 jupyter notebook - o1 writes code much faster so traditi
  //<a href="https://hello-robot.com">hello robot.ai</a>
  //<a href="https://innate.bot">Maurice</a>
 all files = 60 lines - store all code in observablehq etc
+
+1. webgpu = jupyter ML game - https://wwwtyro.github.io/vixel-editor/
+2. meche = notebooks
+3. infra = scripts https://github.com/oven-sh/bun https://bun.sh/docs/runtime/hot
+
+virtual drone - live-shared-collaboration with 1000 people. 
