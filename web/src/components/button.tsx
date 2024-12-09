@@ -26,8 +26,10 @@ export function Button({
     className,
   )
 
+  const { href, replace, scroll, shallow, prefetch, locale, ...buttonProps } = props
+
   return typeof props.href === 'undefined' ? (
-    <button className={className} {...props} />
+    <button className={className} {...buttonProps} />
   ) : (
     <Link className={className} {...props} />
   )

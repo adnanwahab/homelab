@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import React from "react";
 //spatial computing with robotics and dynamicland
 //biotech with robots
-import PeriodicTable from "./llama-tools/deno-webgpu-threejs/periodic";
 //5 livekits always running
 //$500 livekit
 //$500 fly.io gpu
@@ -29,7 +28,7 @@ export default function Home() {
 
   const projects = [
     {
-    slug: "/dynabot",
+      slug: "/dynabot",
       title: "Dynabot - adopt a robot",
       description: "",
       logoSrc: "/dynabot/",
@@ -40,7 +39,8 @@ export default function Home() {
       title: "Music Game",
       description: "",
       logoSrc: "/music_game/",
-      imgSrc: "https://assetsio.gnwcdn.com/Rez2.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
+      imgSrc:
+        "https://assetsio.gnwcdn.com/Rez2.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
       //steps-kirby-demo
     },
   ];
@@ -61,7 +61,7 @@ export default function Home() {
         </div>
 
         <nav className="flex gap-6">
-        <a href="/tools" className="hover:opacity-70">
+          <a href="/tools" className="hover:opacity-70">
             Tools
           </a>
           <a href="/blog" className="hover:opacity-70">
@@ -74,9 +74,11 @@ export default function Home() {
         {projects.slice(0, 7).map((project, index) => (
           <a key={project.slug} href={`${project.slug}`} className="block">
             <div className="aspect-video bg-black rounded-lg flex items-center justify-center">
-
-              {index === 0 ?  <img src={project.imgSrc} className="w-full h-full" /> : <iframe src={project.logoSrc} className="w-full h-full" />}
-
+              {index === 0 ? (
+                <img src={project.imgSrc} className="w-full h-full" />
+              ) : (
+                <iframe src={project.logoSrc} className="w-full h-full" />
+              )}
             </div>
 
             <div className="mt-4">
