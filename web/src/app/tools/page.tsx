@@ -31,6 +31,14 @@ export default function Tools() {
         { href: "/tools/walk_to_yilo", label: "Walk to Yilo" },
       ]
     },
+
+    {
+      title: "Simulation Tools & Testing Continuous CI Deterministic",
+      items: [
+        { href: "/tools/medbot_simulation_testing", label: "Medbot Simulation Testing" },
+        { href: "/tools/music_game", label: "Music Game" },
+      ]
+    },
     {
       title: "Integrations",
       items: [
@@ -70,9 +78,9 @@ export default function Tools() {
             <iframe src="https://gpu.jerboa-kokanue.ts.net/" className="w-full h-full border rounded-lg"></iframe>
           <iframe src="http://localhost:8000" className="w-full h-full border rounded-lg"></iframe>
 
-            <iframe src="http://dynabot.dev/scripts" className="w-full h-full border rounded-lg"></iframe>
-            <iframe src="http://dynabot.dev/music_game" className="w-full h-full border rounded-lg"></iframe>
-            <iframe src="http://dynabot.dev/medbot_simulation_testing" className="w-full h-full border rounded-lg"></iframe>
+            <iframe src="https://dynabot.dev/scripts" className="w-full h-full border rounded-lg"></iframe>
+            <iframe src="https://dynabot.dev/music_game" className="w-full h-full border rounded-lg"></iframe>
+            <iframe src="https://dynabot.dev/medbot_simulation_testing" className="w-full h-full border rounded-lg"></iframe>
           </div>
 
           <p>
