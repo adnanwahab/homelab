@@ -74,9 +74,9 @@ export default function Home() {
         {projects.slice(0, 7).map((project, index) => (
           <a key={project.slug} href={`${project.slug}`} className="block">
             <div className="aspect-video bg-black rounded-lg flex items-center justify-center">
-              <img src={project.imgSrc} className="w-full h-full" />
 
-              {/* <iframe src={project.logoSrc} className="w-full h-full" /> */}
+              {index === 0 ?  <img src={project.imgSrc} className="w-full h-full" /> : <iframe src={project.logoSrc} className="w-full h-full" />}
+
             </div>
 
             <div className="mt-4">

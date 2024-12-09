@@ -30,6 +30,12 @@ export default function Tools() {
         { href: "/tools/dynamicland_arm", label: "Dynamicland Arm" },
         { href: "/tools/walk_to_yilo", label: "Walk to Yilo" },
       ]
+    },
+    {
+      title: "Integrations",
+      items: [
+        { href: "https://replit.com/@dynabot/dynabot-replit-integration", label: "Dynabot Replit Integration" },
+      ]
     }
   ];
 
