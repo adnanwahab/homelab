@@ -71,16 +71,31 @@ export default function Tools() {
         ))}
 
         <div className="space-y-4"> 
-          <h2 className="text-xl font-semibold">Magic Iframe - 4 Gpus</h2>
+          <h2 className="text-xl font-semibold">Scripts hosted + clickable + logging + dockerized</h2>
           
           <div className="grid grid-cols-2 gap-4 h-[600px]">
 
-            <iframe src="https://gpu.jerboa-kokanue.ts.net/" className="w-full h-full border rounded-lg"></iframe>
+<div>
+<h3>macbook</h3>
           <iframe src="http://localhost:8000" className="w-full h-full border rounded-lg"></iframe>
+          </div>
+          <div>
+<h3>texas-gpu</h3>
+            <iframe src="https://gpu.jerboa-kokanue.ts.net/" className="w-full h-full border rounded-lg"></iframe>
+            </div>
+            <div>
+<h3>arizona-desktop</h3>
+          <iframe src="https://adnan-all-series.jerboa-kokanue.ts.net/" className="w-full h-full border rounded-lg"></iframe>
+          </div>
 
-            <iframe src="https://dynabot.dev/scripts" className="w-full h-full border rounded-lg"></iframe>
-            <iframe src="https://dynabot.dev/music_game" className="w-full h-full border rounded-lg"></iframe>
-            <iframe src="https://dynabot.dev/medbot_simulation_testing" className="w-full h-full border rounded-lg"></iframe>
+          </div>
+
+
+          <h2 className="text-xl font-semibold">PythonNotebooks jetson, desktopx2</h2>
+          
+          <div className="grid grid-cols-2 gap-4 h-[600px]">
+          <iframe src="https://jupyter.hashirama.blog" className="w-full h-full border rounded-lg"></iframe>
+
           </div>
 
           <p>

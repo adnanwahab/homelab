@@ -12,12 +12,11 @@ const index_html = `
     Hello world!
   </h1>
   <ul>
-<a href="/tools/setup_desktop">Setup Desktop 1</a>
-<a href="/tools/mailwind">Setup Desktop 2</a>
-
-<a href="/tools/mailwind">Deno WebGPU </a>
-<a href="/tools/mailwind">ollama 200,000 requests </a>
-<a href="/tools/git_visualizer">git visualizer </a>
+<li><a href="/tools/setup_desktop">Setup Desktop 1</a></li>
+<li><a href="/tools/mailwind">Setup Desktop 2</a></li>
+<li><a href="/tools/deno_webgpu">Deno WebGPU </a></li>
+<li><a href="/tools/ollama">ollama 200,000 requests </a></li>
+<li><a href="/tools/git_visualizer">git visualizer </a></li>
 <ul>
 </div>
 </body>
