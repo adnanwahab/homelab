@@ -3,6 +3,8 @@ export default function Tools() {
     {
       title: "Analysis Tools",
       items: [
+        { href: "/tools/find_my_keys", label: "Find My Keys" },
+
         { href: "/tools/replay_analyzer", label: "Replay Analyzer" },
         { href: "/tools/auto_debugger", label: "Auto Debugger" },
       ]
