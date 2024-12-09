@@ -104,9 +104,27 @@ export default function Tools() {
           </p>
         </div>
       </div>
+
+
+
+      <div>
+      <PersonalDashboard />
+
+      </div>
     </div>
   );
 }
 
 // get ramen profitable in 3 weeks 
 // day 0 = dec 9 
+
+
+
+function PersonalDashboard() {
+  return <>
+  <h2> Favorite Documentation and APis - 20</h2>
+    <iframe src="https://bun.sh" className="w-full h-full border rounded-lg"></iframe>
+
+  <iframe src="https://rescuetime.com/dashboard" className="w-full h-full border rounded-lg"></iframe>
+  </>
+}
