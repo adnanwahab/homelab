@@ -57,8 +57,18 @@ export default function Tools() {
         ))}
 
         <div className="space-y-4"> 
-          <h2 className="text-xl font-semibold">Magic Iframe</h2>
-          <iframe src="https://gpu.jerboa-kokanue.ts.net/" className="w-full h-full"></iframe>
+          <h2 className="text-xl font-semibold">Magic Iframe - 4 Gpus</h2>
+          
+          <div className="grid grid-cols-2 gap-4 h-[600px]">
+
+            <iframe src="https://gpu.jerboa-kokanue.ts.net/" className="w-full h-full border rounded-lg"></iframe>
+          <iframe src="http://localhost:8000" className="w-full h-full border rounded-lg"></iframe>
+
+            <iframe src="http://dynabot.dev/scripts" className="w-full h-full border rounded-lg"></iframe>
+            <iframe src="http://dynabot.dev/music_game" className="w-full h-full border rounded-lg"></iframe>
+            <iframe src="http://dynabot.dev/medbot_simulation_testing" className="w-full h-full border rounded-lg"></iframe>
+          </div>
+
           <p>
             This is a magic iframe that allows you to run any website on the GPU.
             And it has uptime for 3 Gpus.
@@ -69,3 +79,5 @@ export default function Tools() {
   );
 }
 
+// get ramen profitable in 3 weeks 
+// day 0 = dec 9 
