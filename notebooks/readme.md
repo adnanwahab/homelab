@@ -1,3 +1,15 @@
+1. deps_manager = UV / micromamba / poetry_nix
+2. compute = fly.io / modal / runpod
+3. 20tb - storage = gdrive + caddy - get a drive
+4. nano-saur deubgger + keys-finder
+5. public-cloud-dynamicland-tools - 8 https://docs.google.com/spreadsheets/d/1OnfAFnLCV1Byok44qe6xTzdNwMpmnHxJreR8nXcnCuI/edit?gid=0#gid=0
+# course_layout for ML_Devops for Robotics
+1. course_content = observablehq
+2. notebooks = 30 python notebooks for 5 modules - retirement
+3. web = WebGpu_DENO-music_game + landing pages for 1000 tools - 2 years
+4. data = JSON of 4TB for robotics - https://docs.google.com/spreadsheets/d/1OnfAFnLCV1Byok44qe6xTzdNwMpmnHxJreR8nXcnCuI/edit?gid=0#gid=0
+5. scripts = infra to manage 50PB pipeline
+
 # TDD for ML Engineering w/ UV/mamba/poetry/nix python simple Asserts - 32 notebooks in by Dec 6
 1. https://nextjournal.com/leahneukirchen/determining-an-election-in-k
 2. https://pyodide.org/en/stable/console.html
