@@ -29,7 +29,7 @@ export default function Home() {
 
   const projects = [
     {
-      slug: "/dynabot",
+    slug: "/dynabot",
       title: "Dynabot - adopt a robot",
       description: "",
       logoSrc: "/dynabot/",

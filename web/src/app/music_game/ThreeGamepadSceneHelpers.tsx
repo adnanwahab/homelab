@@ -1,4 +1,3 @@
-
 import * as THREE from 'three';
 
 const AUDIO_URL = '/music_game.mp3';
@@ -83,24 +82,14 @@ export const cleanupRendering = (mountRef, rendererRef, cubesRef) => {
 };
 
 export const initAudio = (audioContextRef, analyserRef, frequencyDataRef) => {
-    // Start audio on user interaction
-    const startAudioOnInteraction = () => {
-        setupAudio(audioContextRef, analyserRef, frequencyDataRef);
-        // Remove the event listeners after starting audio
-        document.removeEventListener('mousedown', startAudioOnInteraction);
-        document.removeEventListener('touchstart', startAudioOnInteraction);
-    };
-
-    // Add event listeners for user interaction
-    document.addEventListener('mousedown', startAudioOnInteraction);
-    document.addEventListener('touchstart', startAudioOnInteraction);
+    setupAudio(audioContextRef, analyserRef, frequencyDataRef);
 };
 
 export const cleanupAudio = (audioContextRef) => {
     if (audioContextRef.current) {
         audioContextRef.current.close();
+        audioContextRef.current = null;
     }
-    // No need to remove event listeners here since they are removed once audio starts
 };
 
 const setupAudio = async (audioContextRef, analyserRef, frequencyDataRef) => {

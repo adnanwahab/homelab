@@ -91,13 +91,14 @@ const ThreeGamepadScene = () => {
                 fontFamily: 'sans-serif',
                 color: '#fff'
             }}>
-                <p>Connect a DualSense controller and press any button.</p>
+                <h1>MMO Karaoke Game</h1>
                 <p>Left stick: Move around<br/>Right stick: Look around<br/>Hold X (button 0) for a visual cue</p>
                 <p><strong>Keyboard Controls:</strong><br/>WASD: Move<br/>Q/E: Move Up/Down<br/>Mouse Drag: Look Around</p>
                 <label style={{ display: 'block', marginTop: '10px' }}>
                     Base Cube Color: <input type="color" value={baseCubeColor} onChange={(e) => setBaseCubeColor(e.target.value)} />
                 </label>
                 <p>Audio Reactive: Cubes scale according to music amplitude</p>
+
             </div>
             <div ref={mountRef}></div>
         </div>
