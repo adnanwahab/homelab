@@ -16,11 +16,45 @@ import { Testimonials } from "@/components/testimonials";
 import { Heading, Subheading } from "@/components/text";
 import { ChevronRightIcon } from "@heroicons/react/16/solid";
 
-// export const metadata = {
-//   description:
-//     "Radiant helps you sell more by revealing sensitive information about your customers.",
-// };
+// Add pageData at the top of the file
+const pageData = {
+  hero: {
+    title: "Adopt a robot!",
+    description: "Dynabot is a robot that can be adopted by anyone.",
+    banner: {
+      text: "Radiant raises $100M Series A from Tailwind Ventures",
+      link: "/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
+    },
+    buttons: {
+      primary: "Get started",
+      secondary: "See pricing"
+    }
+  },
+  features: {
+    title: "A snapshot of your entire sales pipeline."
+  },
+  sales: {
+    subheading: "Sales",
+    heading: "Know more about your customers than they do.",
+    cards: [
+      {
+        eyebrow: "Insight",
+        title: "Get perfect clarity",
+        description: "Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
+      },
+      // ... other cards data
+    ]
+  },
+  outreach: {
+    subheading: "Outreach",
+    heading: "Customer outreach has never been easier.",
+    cards: [
+      // ... outreach cards data
+    ]
+  }
+};
 
+// Example of updated Hero component using pageData
 function Hero() {
   return (
     <div className="relative">
@@ -29,28 +63,24 @@ function Hero() {
         <Navbar
           banner={
             <a
-              href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
+              href={pageData.hero.banner.link}
               className="flex items-center gap-1 rounded-full bg-fuchsia-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-[hover]:bg-fuchsia-950/30"
             >
-              Radiant raises $100M Series A from Tailwind Ventures
+              {pageData.hero.banner.text}
               <ChevronRightIcon className="size-4" />
             </a>
           }
         />
         <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-          <h1 className="font-display text-balance text-6xl/[0.9] font-m
-          edium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
-            Close every deal.
+          <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
+            {pageData.hero.title}
           </h1>
           <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Radiant helps you sell more by revealing sensitive information about
-            your customers.
+            {pageData.hero.description}
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="#">Get started</Button>
-            <Button  href="/pricing">
-              See pricing
-            </Button>
+            <Button href="#">{pageData.hero.buttons.primary}</Button>
+            <Button href="/pricing">{pageData.hero.buttons.secondary}</Button>
           </div>
         </div>
       </Container>
@@ -63,7 +93,7 @@ function FeatureSection() {
     <div className="overflow-hidden">
       <Container className="pb-24">
         <Heading as="h2" className="max-w-3xl">
-          A snapshot of your entire sales pipeline.
+          {pageData.features.title}
         </Heading>
         <Screenshot
           width={1216}
@@ -79,22 +109,27 @@ function FeatureSection() {
 function BentoSection() {
   return (
     <Container>
-      <Subheading>Sales</Subheading>
+      <Subheading>
+        {pageData.sales.subheading}
+      </Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
-        Know more about your customers than they do.
+        {pageData.sales.heading}
       </Heading>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
-        <BentoCard
-          eyebrow="Insight"
-          title="Get perfect clarity"
-          description="Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
-          graphic={
-            <div className="h-80 bg-[url(/screenshots/profile.png)] bg-[size:1000px_560px] bg-[left_-109px_top_-112px] bg-no-repeat" />
-          }
-          fade={["bottom"]}
-          className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
-        />
+        {pageData.sales.cards.map((card, index) => (
+          <BentoCard
+            key={index}
+            eyebrow={card.eyebrow}
+            title={card.title}
+            description={card.description}
+            graphic={
+              <div className="h-80 bg-[url(/screenshots/profile.png)] bg-[size:1000px_560px] bg-[left_-109px_top_-112px] bg-no-repeat" />
+            }
+            fade={["bottom"]}
+            className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
+          />
+        ))}
         <BentoCard
           eyebrow="Analysis"
           title="Undercut your competitors"
@@ -139,9 +174,11 @@ function DarkBentoSection() {
   return (
     <div className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
       <Container>
-        <Subheading dark>Outreach</Subheading>
+        <Subheading dark>
+          {pageData.outreach.subheading}
+        </Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
-          Customer outreach has never been easier.
+          {pageData.outreach.heading}
         </Heading>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
