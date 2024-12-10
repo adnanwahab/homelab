@@ -1,10 +1,10 @@
 import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/plus-grid'
-import { Button } from './button'
-import { Container } from './container'
-import { Gradient } from './gradient'
-import { Link } from './link'
-import { Logo } from './logo'
-import { Subheading } from './text'
+import { Button } from '@/components/button'
+import { Container } from '@/components/container'
+import { Gradient } from '@/components/gradient'
+import { Link } from '@/components/link'
+import { Logo } from '@/components/logo'
+import { Subheading } from '@/components/text'
 
 function CallToAction() {
   return (
@@ -21,10 +21,11 @@ function CallToAction() {
         Sign up for the next cohort starting Jan 1st 2025
       </p>
       <div className="mt-6">
-        
-        <Button className="w-full sm:w-auto" href="#">
-         Start Learning Now!
-        </Button>
+        <Link href="/dynabot/join">
+          <Button className="w-full sm:w-auto">
+            Start Learning Now!
+          </Button>
+        </Link>
       </div>
     </div>
   )

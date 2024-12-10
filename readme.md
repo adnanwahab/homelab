@@ -4,4 +4,10 @@
 
 ## Who is this for?
 
-1. Advanced Beginners to the robotics field especially mechanical engineering and machine learning.
+1. Advanced Beginners to the robotics field 
+
+
+## Curriculum / Syllabus for auto-didacts
+1. mechanical engineering
+2. machine learning.
+3. dynamicland
