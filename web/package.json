@@ -55,6 +55,7 @@
     "react-microsoft-clarity": "^1.2.0",
     "react-use-measure": "^2.1.1",
     "remark-gfm": "^4.0.0",
+    "resend": "^4.0.1",
     "three": "latest",
     "tldraw": "^3.6.0"
   },
