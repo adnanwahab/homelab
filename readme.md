@@ -4,6 +4,7 @@
 ## 0. Devops = scripts/
 ## 1. ML = Course_content = https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 ## 2. UI = musicgame / dynamicland demo
+## Biotech / robotics / dynamicland
 
 notebooks = 30 python-jupyter notebooks that plug into observablehq
 web = next.js framing for observablehq
