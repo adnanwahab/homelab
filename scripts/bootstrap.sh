@@ -140,12 +140,12 @@ pip install transformers huggingface_hub datasets
 
 # 7. Running LeRobot
 
-python lerobot.py
+#python lerobot.py
 
-python main.py
+#python main.py
 
-import torch
-print(torch.cuda.is_available())
+#import torch
+#print(torch.cuda.is_available())
 
 huggingface-cli login
 
