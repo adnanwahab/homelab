@@ -1,3 +1,12 @@
+$300 robot + rtings by Jan 1
+
+
+course_content = tmp till jan 1
+data = backup with google drive
+notebooks = python - https://docs.astral.sh/uv/guides/integration/jupyter/
+scripts = hardware management
+web = frontend ui dyamicland
+
 1. deps_manager = UV / micromamba / poetry_nix
 2. compute = fly.io / modal / runpod
 3. 20tb - storage = gdrive + caddy - get a drive
