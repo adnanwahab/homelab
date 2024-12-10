@@ -1,9 +1,10 @@
 # Dynabot.dev = fool-proof robotcs simulation games validation and verification  to measure perpection performance and impact on robot behavior
 
 # Deliverables Jan 1
-## 1. Course_content = https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
-## 2. musicgame / dynamicland demo
-## 3. wiki-course-game-robot 20 tools for desisnging robot like dynamciland
+## 0. Devops = scripts/
+## 1. ML = Course_content = https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
+## 2. UI = musicgame / dynamicland demo
+
 notebooks = 30 python-jupyter notebooks that plug into observablehq
 web = next.js framing for observablehq
 https://x82mxc2nciximl-8888.proxy.runpod.net/lab/workspaces/auto-f?reset - https://docs.runpod.io/references/faq?_gl=1*1lbh0xa*_gcl_aw*R0NMLjE3MzM3ODE3NDcuQ2owS0NRaUF4OXE2QmhDREFSSXNBQ3dVeHU2MjFwTkR4LXh6ck5yWW1Jd2p5bFlibkJJTy1Obm80eWljc2xoTHNCQ0tVMWM2YXFpVVV1OGFBb29FRUFMd193Y0I.*_gcl_au*NDEwODMyMzI5LjE3MzM3ODE0OTY.*_ga*NjA1MDQwNDIwLjE3MzM3ODE0OTY.*_ga_KMF5V28LQG*MTczMzc4Nzk2Ni4yLjEuMTczMzc4ODEyOS42MC4wLjE3OTQzMTg5NA..
@@ -50,7 +51,7 @@ dynabot.dev/ - robot or music_game.
 
 dynabot.dev/tools/${tool_name}
 dynabot.dev/music_game/${tool_name}
- 
+
 flyctl apps create homelab-prediction -  https://www.google.com/search?q=fast+api&rlz=1C5CHFA_enUS1125US1125&oq=fast+api&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGD0yBggDEEUYPNIBCDE3OThqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8
 
 storage - litefs, upstash-redis, psotgres-supabase

@@ -8,7 +8,32 @@
 
 
 install_zed_2i () {
-    echo "installing zed2i"
+    echo "https://www.stereolabs.com/docs/gstreamer"
+    sudo apt install build-essential
+    sudo apt install cmake
+    sudo apt install \
+   libgstreamer1.0-0 \
+   gstreamer1.0-libav \
+   libgstrtspserver-1.0-0 \
+   gstreamer1.0-tools \
+   gstreamer1.0-x \
+   gstreamer1.0-alsa \
+   gstreamer1.0-gl \
+   gstreamer1.0-gtk3 \
+   gstreamer1.0-qt5 \
+   gstreamer1.0-pulseaudio \
+   libgstreamer1.0-dev \
+   libgstrtspserver-1.0-dev \
+   libgstreamer-plugins-base1.0-0 \
+   libgstreamer-plugins-base1.0-dev \
+   libgstreamer-plugins-good1.0-0 \
+   libgstreamer-plugins-good1.0-dev \
+   libgstreamer-plugins-bad1.0-0 \
+   libgstreamer-plugins-bad1.0-dev
+   sudo apt install libopencv-dev libopencv-contrib-dev
+
+
+    #echo "installing zed2i"
 }
 
 install_nanosaur () {
