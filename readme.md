@@ -1,7 +1,9 @@
 # Dynabot.dev = fool-proof robotcs simulation games validation and verification  to measure perpection performance and impact on robot behavior
 
 # Deliverables Jan 1
-Course_content = https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
+## 1. Course_content = https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
+## 2. musicgame / dynamicland demo
+## 3. wiki-course-game-robot 20 tools for desisnging robot like dynamciland
 notebooks = 30 python-jupyter notebooks that plug into observablehq
 web = next.js framing for observablehq
 https://x82mxc2nciximl-8888.proxy.runpod.net/lab/workspaces/auto-f?reset - https://docs.runpod.io/references/faq?_gl=1*1lbh0xa*_gcl_aw*R0NMLjE3MzM3ODE3NDcuQ2owS0NRaUF4OXE2QmhDREFSSXNBQ3dVeHU2MjFwTkR4LXh6ck5yWW1Jd2p5bFlibkJJTy1Obm80eWljc2xoTHNCQ0tVMWM2YXFpVVV1OGFBb29FRUFMd193Y0I.*_gcl_au*NDEwODMyMzI5LjE3MzM3ODE0OTY.*_ga*NjA1MDQwNDIwLjE3MzM3ODE0OTY.*_ga_KMF5V28LQG*MTczMzc4Nzk2Ni4yLjEuMTczMzc4ODEyOS42MC4wLjE3OTQzMTg5NA..
@@ -15,6 +17,7 @@ https://x82mxc2nciximl-8888.proxy.runpod.net/lab/workspaces/auto-f?reset - https
 # Devops - zig + bazel
 1. caddy
 2. cloudflare / porkbun / dnssiple
+slack webview
 https://github.com/facebookresearch/AnimatedDrawings?tab=readme-ov-file
 Dynamicland = collaborative thinking space for robotics + biotech + shared reasoning
 All Pages of dynabot.dev viewable on one page = sitemap
@@ -28,7 +31,7 @@ notebooks = 10 python notebooks -
 perception = livekit + 2i
 prediction = llama + video-understander
 simulation = unreal + three.js
-
+x.com
 
 scripts = infra for python in bun
   - cloudflare management for self-hosted homelab robotics.
@@ -47,3 +50,11 @@ dynabot.dev/ - robot or music_game.
 
 dynabot.dev/tools/${tool_name}
 dynabot.dev/music_game/${tool_name}
+ 
+flyctl apps create homelab-prediction -  https://www.google.com/search?q=fast+api&rlz=1C5CHFA_enUS1125US1125&oq=fast+api&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGD0yBggDEEUYPNIBCDE3OThqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8
+
+storage - litefs, upstash-redis, psotgres-supabase
+adnan@arizona - 2tb
+adnan@texas - 4tb
+
+litestream / upstash / supabase / turso = db for game

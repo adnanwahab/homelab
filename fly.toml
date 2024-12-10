@@ -1,15 +1,28 @@
-app = "https://prediction-module-self-hosted.fly.dev" # Change this to your app's name
-primary_region = "ord"                                # If you change this, ensure it's to a region that offers GPUs
-vm.size = "a100-40gb"                                 # A shorthand for the size preset in the [[vm]] section
-swap_size_mb = 32768                                  # This enables 32GB swap
+# fly.toml app configuration file generated for prediction-homelab-cloudflare-jupyter-sqlite-litefs-1pb-public-cloud on 2024-12-09T17:30:25-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'prediction-homelab-cloudflare-jupyter-sqlite-litefs-1pb-public-cloud'
+primary_region = 'ord'
+swap_size_mb = 32768
 
 [build]
-[build.args]
-NONROOT_USER = "pythonuser" # Access this value in the Dockerfile using `ARG NONROOT_USER`
 
-# Use a volume to store LLMs or any big file that doesn't fit in a Docker image
-# This whole volume will be the non-root user's home directory
-[mounts]
-source = "data"
-destination = "/home/pythonuser" # Make sure this matches the value of the NONROOT_USER build arg
-# initial_size = "200gb" # Uncomment to set the size for the volume created on first deployment
+[[mounts]]
+  source = 'data'
+  destination = '/home/pythonuser'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  size = 'a100-40gb'
+  memory = '32gb'
+  cpu_kind = 'performance'
+  cpus = 8
