@@ -215,17 +215,11 @@ main_exec_bootsrap_script_from_install () {
     #install_zed_2i
     #install_lerobot
     #install_nanosaur
-    setup_docker_and_lerbot
+    setup_docker_lerbot
     echo "setup_docker_lerbot compplete"
-
-    # curl -fsSL https://tailscale.com/install.sh | sh
-
-
-    #https://github.com/adnanwahab/hashirama_last_archive/blob/main/scripts/_gen_install.sh
-    #https://google.github.io/styleguide/shellguide.html#s7.1-function-names
 }
 
-main_exec_bootsrap_script_from_install()
+main_exec_bootsrap_script_from_install
 
 
 
