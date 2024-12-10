@@ -1,4 +1,21 @@
-curl dynabot.dev/install.sh | sh
+# repo =
+  1. scripts = hardware devops + api + storage
+  2. python for notebooks
+  3. web = next.js + deno_webGPU
+    music_game = Dec_11
+    dynabot/robot
+    dynabot/course_wiki
+    tools = notebooks+scripts folders
+    blog = JAN_12 + 200 - ethos for course + extra shit that dont fit but related to robotics / self-hosed like xie iaso
+
+
+1 script + 1 notebooks a day
+- hardware connected
+  - zed2i
+  - roomba create 3 playground
+  - arm w/ lerobot
+
+# curl dynabot.dev/install.sh | sh
 
 1. git clones repo
 2. installs depenencies
@@ -6,10 +23,6 @@ curl dynabot.dev/install.sh | sh
 - repo
 
 
-# repo =
-  1. python for notebooks
-  2. web = next.js + deno_webGPU
-  3. scripts = hardware devops + api + storage
 
 # Hardware DevOps for
 
