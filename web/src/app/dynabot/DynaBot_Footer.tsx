@@ -18,12 +18,12 @@ function CallToAction() {
         </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
-        Get the cheat codes for selling and unlock your team&apos;s revenue
-        potential.
+        Sign up for the next cohort starting Jan 1st 2025
       </p>
       <div className="mt-6">
+        
         <Button className="w-full sm:w-auto" href="#">
-          Get started
+         Start Learning Now!
         </Button>
       </div>
     </div>

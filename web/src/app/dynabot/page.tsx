@@ -1,7 +1,7 @@
 import { BentoCard } from "@/components/bento-card";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
-import { Footer } from "@/components/footer";
+import { Footer } from "./Dynabot_footer";
 import { Gradient } from "@/components/gradient";
 import { Keyboard } from "@/components/keyboard";
 
