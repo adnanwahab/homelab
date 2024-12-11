@@ -18,36 +18,7 @@ import Link from 'next/link'
 
 ///we want 3 to 15 possibiles - scenario- rendered 
 
-const level_list = [
-    {
-        name: "Music Game",
-        imgsrc: "https://media4.giphy.com/media/3otPoo8NDLOmzvTJF6/giphy.gif?cid=6c09b9524cu16ebo4tsyoifh0dxzoiho2unj1os0ytb9wxf1&ep=v1_gifs_search&rid=giphy.gif&ct=g",
-        description: "Create and play with interactive music visualizations",
-        type: "music_game",
-        link: "/games/music_game"
-    },
-    {
-        name: "Physics Playground",
-        imgsrc: "https://picsum.photos/200/300",
-        description: "Experiment with physics-based interactions and puzzles",
-        type: "physics_game",
-        link: "/games/physics_game"
-    },
-    {
-        name: "Puzzle Challenge",
-        imgsrc: "https://picsum.photos/200/300",
-        description: "Solve mind-bending puzzles and challenges",
-        type: "puzzle_game",
-        link: "/games/puzzle_game"
-    },
-    {
-        name: "Dwarf Game",
-        imgsrc: "https://picsum.photos/200/300",
-        description: "A dwarf fortress inspired simulation game",
-        type: "simulation_game",
-        link: "/games/dwarf_game"
-    }
-];
+const level_list = import('./games.json');
 
 function LevelsGrid() {
     return (
