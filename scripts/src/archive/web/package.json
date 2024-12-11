@@ -1,0 +1,20 @@
+{
+    "name": "my-app",
+    "scripts": {
+        "style": "npx tailwindcss -i ./public/index.css -o ./public/output.css --watch",
+        "dev": "bun run --watch web.ts",
+        "webgpu": "deno run --unstable --allow-gpu your_script.ts",
+        "show_dev_on_interweb": "sudo tailscale serve 3333"
+    },
+    "dependencies": {
+        "@heroicons/react": "^2.1.5",
+        "clsx": "^2.1.1",
+        "htmx": "^0.0.2",
+        "livekit-server-sdk": "^2.8.1",
+        "marked": "^14.1.3",
+        "playwright": "^1.48.2",
+        "react-dom": "^18.3.1",
+        "resend": "^4.0.1-alpha.0",
+        "tldraw": "^3.4.1"
+    }
+}

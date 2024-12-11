@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three.js Physics Demo</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.module.js';
+        import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/controls/OrbitControls.js';
+        import { JoltPhysics } from '/js/JoltPhysics.ts';
+        import Stats from 'https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/libs/stats.module.js';
+
+        let camera, scene, renderer, stats;
+        let physics, position;
+        let boxes, spheres;
+
+        async function init() {
+            try {
+                physics = await JoltPhysics();
+                
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color(0x666666);
+                
+                camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
+                camera.position.set(-1, 1.5, 2);
+                camera.lookAt(0, 0.5, 0);
+                
+                const hemiLight = new THREE.HemisphereLight();
+                scene.add(hemiLight);
+                
+                const dirLight = new THREE.DirectionalLight(0xffffff, 3);
+                dirLight.position.set(5, 5, 5);
+                dirLight.castShadow = true;
+                dirLight.shadow.camera.zoom = 2;
+                scene.add(dirLight);
+                
+                const floor = new THREE.Mesh(
+                    new THREE.BoxGeometry(10, 5, 10),
+                    new THREE.ShadowMaterial({ color: 0x444444 })
+                );
+                floor.position.y = -2.5;
+                floor.receiveShadow = true;
+                floor.userData.physics = { mass: 0, shape: 'box' };
+                scene.add(floor);
+                
+                position = new THREE.Vector3();
+                
+                await createInstances();
+                
+                renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setPixelRatio(window.devicePixelRatio);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+                document.body.appendChild(renderer.domElement);
+                
+                stats = new Stats();
+                document.body.appendChild(stats.dom);
+                
+                const controls = new OrbitControls(camera, renderer.domElement);
+                controls.target.y = 0.5;
+                controls.update();
+                
+                await physics.addScene(scene);
+                
+                renderer.setAnimationLoop(animate);
+                
+                setInterval(updatePhysics, 1000 / 60);
+                
+                window.addEventListener('resize', onWindowResize);
+                
+            } catch (error) {
+                console.error('Physics initialization failed:', error);
+            }
+        }
+
+        async function createInstances() {
+            const material = new THREE.MeshLambertMaterial();
+            const matrix = new THREE.Matrix4();
+            const color = new THREE.Color();
+            
+            const geometryBox = new THREE.BoxGeometry(0.075, 0.075, 0.075);
+            boxes = new THREE.InstancedMesh(geometryBox, material, 400);
+            boxes.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+            boxes.castShadow = true;
+            boxes.receiveShadow = true;
+            boxes.userData.physics = { mass: 1, shape: 'box' };
+            
+            for (let i = 0; i < boxes.count; i++) {
+                matrix.setPosition(
+                    Math.random() - 0.5,
+                    Math.random() * 2,
+                    Math.random() - 0.5
+                );
+                boxes.setMatrixAt(i, matrix);
+                boxes.setColorAt(i, color.setHex(0xffffff * Math.random()));
+            }
+            scene.add(boxes);
+            
+            const geometrySphere = new THREE.IcosahedronGeometry(0.05, 4);
+            spheres = new THREE.InstancedMesh(geometrySphere, material, 400);
+            spheres.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+            spheres.castShadow = true;
+            spheres.receiveShadow = true;
+            spheres.userData.physics = { mass: 1, shape: 'sphere' };
+            
+            for (let i = 0; i < spheres.count; i++) {
+                matrix.setPosition(
+                    Math.random() - 0.5,
+                    Math.random() * 2,
+                    Math.random() - 0.5
+                );
+                spheres.setMatrixAt(i, matrix);
+                spheres.setColorAt(i, color.setHex(0xffffff * Math.random()));
+            }
+            scene.add(spheres);
+        }
+
+        function updatePhysics() {
+            try {
+                const index = Math.floor(Math.random() * boxes.count);
+                position.set(0, Math.random() + 1, 0);
+                physics.setMeshPosition(boxes, position, index);
+                
+                const sphereIndex = Math.floor(Math.random() * spheres.count);
+                position.set(0, Math.random() + 1, 0);
+                physics.setMeshPosition(spheres, position, sphereIndex);
+            } catch (error) {
+                console.error('Physics update failed:', error);
+            }
+        }
+
+        function animate() {
+            try {
+                physics.update();
+                renderer.render(scene, camera);
+                stats.update();
+            } catch (error) {
+                console.error('Animation loop failed:', error);
+            }
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        init().catch(console.error);
+    </script>
+</body>
+</html>

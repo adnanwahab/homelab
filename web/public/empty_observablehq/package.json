@@ -1,0 +1,14 @@
+{
+  "name": "a91415fbf2263143",
+  "main": "a91415fbf2263143@2.js",
+  "version": "2.0.0",
+  "homepage": "https://observablehq.com/d/a91415fbf2263143",
+  "author": {
+    "name": "roboticsuniversity",
+    "url": "https://observablehq.com/@roboticsuniversity"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
