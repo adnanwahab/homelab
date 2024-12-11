@@ -1,5 +1,5 @@
 'use client'
-const Games = [
+let games = [
     {
         "name": "Music Game",
         "imgsrc": "https://media4.giphy.com/media/3otPoo8NDLOmzvTJF6/giphy.gif?cid=6c09b9524cu16ebo4tsyoifh0dxzoiho2unj1os0ytb9wxf1&ep=v1_gifs_search&rid=giphy.gif&ct=g",
@@ -29,6 +29,12 @@ const Games = [
         "link": "/games/dwarf_game"
     }
 ]
+games.forEach(game => {
+    game.link = `/games/${game.type}`;
+    game.imgsrc = `https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000000153/de697f487a36d802dd9a5ff0341f717c8486221f2f1219b675af37aca63bc453`;
+    game.description = `A ${game.type} game`;
+    game.type = game.type.replace(/_/g, ' ');
+});
 
 
 import { Tldraw } from '@tldraw/tldraw'
