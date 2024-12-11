@@ -1,6 +1,8 @@
 "use client"
 import React, { useRef } from 'react';
 
+import { cool_beans } from './multi_editor';
+
 export default function Editor() {
   const editorRef = useRef(null);
 
@@ -65,15 +67,12 @@ export default function Editor() {
       >
         <h2 className="text-xl font-bold mb-4">Edit This Text</h2>
         <p>
-          This is a english language diagram generator - say anything - 
-        </p>
- <h1>this is canvas</h1>
- <canvas id="canvas" width="100" height="100"></canvas>
+          This is a english language diagram generator - 
 
-         <iframe src="https://www.littleworkshop.fr/projects/5milliondevs/" />
-         <iframe width="100%" height="500" 
-   className="bg-white"
-  src="https://observablehq.com/embed/@enjalot/replicate-api-controlnet-scribble?cells=viewof+input"></iframe>
+        </p>
+ <h1>          Draw to make anything!</h1>
+
+
       </div>
     </div>
   );
