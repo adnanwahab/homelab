@@ -1,3 +1,1 @@
-[View Documentation](/web/public/docs.html)
-[Download PDF](/web/public/document.pdf)
-[See Image](/web/public/image.png)
+![App Screenshot](https://github.com/adnanwahab/homelab/blob/main/web/public/screenshot_per_day.png)
