@@ -20,3 +20,4 @@ uv run notebooks/roombacat_dynabot # python app that serves 32 notebooks for (ML
 # todo
 1. tauri app
 2. upstash for drawable canvas
+.env.local
