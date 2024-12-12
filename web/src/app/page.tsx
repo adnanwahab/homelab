@@ -1,26 +1,4 @@
-
-"use client";
-import { useState, useEffect } from "react";
-import React from "react";
-//spatial computing with robotics and dynamicland
-//biotech with robots
-//5 livekits always running
-//$500 livekit
-//$500 fly.io gpu
-//$2000 hardware - RTINGS - Where to spend $2000 on Hardware to get a innate.bot sibling :)
-//$3000 Total
-//$2000 O1 - Diagrams - 400,000
-//
-//
-
-//
-//have 500 blog posts - images + observablehq notebooks --- ask people if i can walter isaacsoon.
-
-//10 computers - how much shit can you code --- 10 fulltime - software engineers - 1 on 1s once a week.
-
 export default function Home() {
-
-
   const projects = [
     {
       slug: "/dynabot",
@@ -93,3 +71,18 @@ export default function Home() {
     </div>
   );
 }
+//spatial computing with robotics and dynamicland
+//biotech with robots
+//5 livekits always running
+//$500 livekit
+//$500 fly.io gpu
+//$2000 hardware - RTINGS - Where to spend $2000 on Hardware to get a innate.bot sibling :)
+//$3000 Total
+//$2000 O1 - Diagrams - 400,000
+//
+//
+
+//
+//have 500 blog posts - images + observablehq notebooks --- ask people if i can walter isaacsoon.
+
+//10 computers - how much shit can you code --- 10 fulltime - software engineers - 1 on 1s once a week.
