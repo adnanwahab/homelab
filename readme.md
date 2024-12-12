@@ -1,4 +1,6 @@
-# hi
+#
+# notebooks = python
+# web = next
 
 
 2. http://localhost:3000/games/edit
