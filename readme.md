@@ -21,4 +21,4 @@ https://www.youtube.com/watch?v=LPZh9BOjkQs
 # open source = cooelst thing forever because people contrib cool stuff togeher
 
 
-demo -> wiki-course -> 2026
+demo -> wiki-course -> 2026 - tailscale = excellent self-hosted
