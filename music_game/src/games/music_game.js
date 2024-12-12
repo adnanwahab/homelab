@@ -1,9 +1,5 @@
 import * as THREE from 'three';
-
-const dimensions = {
-    width: window.innerWidth / 3,
-    height: window.innerHeight / 3
-}
+import { dimensions } from '../utils/constants.js';
 
 class GameMusic {
     constructor(canvas) {

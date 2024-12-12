@@ -116,6 +116,17 @@ function init() {
 
     }
 
+    const template = `<div id="menu">
+    <button id="table">TABLE</button>
+    <button id="sphere">SPHERE</button>
+    <button id="helix">HELIX</button>
+    <button id="grid">GRID</button>
+</div>`
+
+    const div = document.createElement('div');
+    div.innerHTML = template;
+    document.body.appendChild(div);
+
     //
 
     renderer = new CSS3DRenderer();

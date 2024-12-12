@@ -130,20 +130,21 @@
 				color: #000000;
 				background-color: rgba(0,255,255,0.75);
 			}
+            .canvas-purple {
+                border: 1px solid purple;
+            }
+            .canvas-teal {
+                border: 1px solid teal;
+            }
     </style>
 </head>
 <body>
 <h1>GameKit for Dynabot - origami</h1>
 <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> css3d - periodic table.</div>
 <div id="container"></div>
-<!-- <div id="menu">
-    <button id="table">TABLE</button>
-    <button id="sphere">SPHERE</button>
-    <button id="helix">HELIX</button>
-    <button id="grid">GRID</button>
-</div> -->
 
-<div class="flex flex-rowr">
+
+<div class="flex flex-row" id="game-container">
     <div class="flex flex-col">
         <div class="text-center mb-2">Music</div>
         <canvas class="canvas-red"></canvas>
@@ -156,6 +157,14 @@
         <div class="text-center mb-2">Physics</div>
         <canvas class="canvas-green"></canvas>
     </div>
+    <!-- <div class="flex flex-col">
+        <div class="text-center mb-2">drawing</div>
+        <canvas class="canvas-purple"></canvas>
+    </div>
+    <div class="flex flex-col">
+        <div class="text-center mb-2">science lab</div>
+        <canvas class="canvas-teal"></canvas>
+    </div> -->
     <div class="flex flex-col border-4 border-blue-300 border-r-0 border-t-0 border-b-0 h-screen  hidden">
         <div class="text-center mb-2">Tools</div>
         <iframe width="300" height="300" frameborder="0"
@@ -190,3 +199,4 @@
     <script type="module" src="./script.js"></script>
 </body>
 </html>
+<!-- tree based encapsulation 4-7 things for robotics -->
