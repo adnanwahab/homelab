@@ -5,8 +5,9 @@ const CANVAS_WIDTH = 200;
 const CANVAS_HEIGHT = 200;
 
 class MultiCubeRenderer {
-    constructor() {
-        this.container = document.createElement('div');
+    constructor(multiplex_canvas, count) {
+        this.count = count;
+        this.container = multiplex_canvas;
         this.container.style.display = 'flex';
         this.container.style.flexWrap = 'wrap';
         document.body.appendChild(this.container);
@@ -33,7 +34,7 @@ class MultiCubeRenderer {
     }
 
     setupRenderers() {
-        for (let i = 0; i < CANVAS_COUNT; i++) {
+        for (let i = 0; i < this.count; i++) {
             const canvas = document.createElement('canvas');
             canvas.width = CANVAS_WIDTH;
             canvas.height = CANVAS_HEIGHT;
@@ -71,7 +72,14 @@ class MultiCubeRenderer {
 // Usage
 //const app = new MultiCubeRenderer();
 
-export default MultiCubeRenderer;
+export default function Multiplex(multiplex_canvas) {
+    return {
+        init: (count) => {
+            count = count || 5;
+            return new MultiCubeRenderer(multiplex_canvas, count);
+        }
+    }
+}
 
 // To clean up later if needed:
 // app.dispose();
