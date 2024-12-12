@@ -15,10 +15,8 @@ const objects = [];
 const targets = { table: [], sphere: [], helix: [], grid: [] };
 
 function init() {
-
     camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
     camera.position.z = 3000;
-
     scene = new THREE.Scene();
 
     // table

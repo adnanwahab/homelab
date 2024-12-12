@@ -18,14 +18,15 @@ auto_debugger();
 // const game = new Game(document.querySelector('.canvas-red'));
 // new game_music(document.querySelector('.canvas-blue'));
 // GamePhysics(document.querySelector('.canvas-green'));
-//Multiplex(document.querySelector('.multiplex-canvas'));
+platformer(document.querySelector('.canvas-red'));
+
+Multiplex(document.querySelector('.multiplex-canvas'));
 
 
 import Games_collection from './utils/games_collection.json';
 
 //console.log(Games_collection);
 
-//platformer(document.querySelector('.canvas-red'));
 
 import games_list_view from './utils/games_list_view.js';
 //src/utils/games_list_view.js
