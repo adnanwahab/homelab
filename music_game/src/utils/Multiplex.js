@@ -4,9 +4,30 @@ const CANVAS_COUNT = 2;
 const CANVAS_WIDTH = 200;
 const CANVAS_HEIGHT = 200;
 
+const renderHtml = function () {
+    const html = `<div class="editor-container h-48 border-2 border-gray-300">
+    <div>
+        <!-- <label for="comment" class="block text-sm/6 font-medium text-gray-900">Add your comment</label> -->
+        <div class="mt-2">
+          <textarea rows="4" name="comment" id="comment" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+        </div>
+      </div>
+    <button id="send">Generate 3 possibilites</button>
+
+
+    <button id="autocomplete">change styling of css to slate blue 300</button>
+
+</div>`
+document.body.innerHTML += html;
+return html;
+}
+
 class MultiCubeRenderer {
     constructor(multiplex_canvas, count) {
+        //renderHtml();
         this.count = count;
+        this.count = 5
+        console.log(multiplex_canvas, 'multiplex_canvas');
         this.container = multiplex_canvas;
         this.container.style.display = 'flex';
         this.container.style.flexWrap = 'wrap';
@@ -76,6 +97,8 @@ export default function Multiplex(multiplex_canvas) {
     return {
         init: (count) => {
             count = count || 5;
+            console.log('niggar');
+
             return new MultiCubeRenderer(multiplex_canvas, count);
         }
     }
