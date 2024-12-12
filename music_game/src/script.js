@@ -17,5 +17,5 @@ import jolt from './jolt.js';
 
 // import game_music from './Game_music.js';
 // new game_music();
-import initializeWebSocket from './main.js';
+import initializeWebSocket from './websocket.js';
 initializeWebSocket();
