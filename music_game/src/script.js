@@ -11,9 +11,11 @@ import * as THREE from 'three';
 import jolt from './jolt.js';
 
 
-const game = new Game();
-jolt();
+// const game = new Game();
+// jolt();
 
 
-import game_music from './Game_music.js';
-new game_music();
+// import game_music from './Game_music.js';
+// new game_music();
+import initializeWebSocket from './main.js';
+initializeWebSocket();

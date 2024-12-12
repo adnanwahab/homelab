@@ -56,14 +56,14 @@ export default function Home() {
 
             <div className="mt-4">
               <h2 className="text-xl font-medium">{project.title}</h2>
-              <p className="text-gray-600">
+              {/* <p className="text-gray-600">
                 {project.description.split("\n").map((line, i) => (
                   <React.Fragment key={i}>
                     {line}
                     {i === 0 && <br />}
                   </React.Fragment>
                 ))}
-              </p>
+              </p> */}
             </div>
           </a>
         ))}
