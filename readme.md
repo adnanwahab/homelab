@@ -1,4 +1,7 @@
 2. http://localhost:3000/games/edit
+   1. llama -> three.js
+   2. observablhq to vis the scenegraph + whatever 2 way data 
+
 1. http://localhost:3000/games/physics_game
 
 
@@ -8,6 +11,12 @@
 #### Avatar Notebook - observable, reflect, livekit+threjs
 ##### https://wifi-solver.com/ 
 #### https://threejs.org/examples/?q=tsl#webgpu_tsl_vfx_linkedparticles
+
+#### text -> diagram -> simulation -> autonomous system
+##### with two-way data flow over time
+#### show inter-mediate representations that ai changes so we can follor their work!
+#### vpri roombacat.com -- 2025 smell reosies
+# been trying to figure out infinite infinites since 2025
 
 https://www.littleworkshop.fr/projects/5milliondevs/
 

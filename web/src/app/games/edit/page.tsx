@@ -40,7 +40,7 @@ export default function App() {
   return (
     <div className="h-screen w-screen flex flex-col bg-gray-900 text-gray-100">
       <header className="p-4 border-b border-gray-800 flex items-center justify-between bg-gray-900 shadow-sm">
-        <h1 className="font-mono text-lg tracking-wide">My Cool LightTable-Inspired Editor</h1>
+        <h1 className="font-mono text-lg tracking-wide shiny-text">My Cool LightTable-Inspired Editor</h1>
         <div className="inline-flex rounded-md border border-gray-700 overflow-hidden shadow-sm">
           {[
             { id: 'webgl', label: 'WebGL', icon: '⬡' },

@@ -13,7 +13,8 @@
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "tunnel": "sudo tailscale serve 8000"
+    "tunnel": "sudo tailscale serve 8000",
+    "lint_on_save": "node lint_on_save.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "latest",
