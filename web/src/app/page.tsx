@@ -1,3 +1,4 @@
+
 "use client";
 import { useState, useEffect } from "react";
 import React from "react";
@@ -18,13 +19,7 @@ import React from "react";
 //10 computers - how much shit can you code --- 10 fulltime - software engineers - 1 on 1s once a week.
 
 export default function Home() {
-  const [hostname, setHostname] = useState("Dynabot.dev");
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setHostname(window.location.hostname);
-    }
-  }, []);
 
   const projects = [
     {
