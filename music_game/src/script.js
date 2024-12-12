@@ -46,6 +46,7 @@ GamePhysics(document.querySelector('.canvas-green'), [
         console.log('done');
         add_object();
     }, 1000);
+    window.addEventListener('mousemove', add_object);   
 });
 
 
