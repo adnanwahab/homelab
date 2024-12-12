@@ -3,8 +3,28 @@ import React, { useRef } from 'react';
 
 import { cool_beans } from './multi_editor';
 
-export default function Editor() {
+export default function Editor(props) {
+  const url = "https://raw.githubusercontent.com/adnanwahab/homelab/refs/heads/main/music_game/src/SimpleCube.js"
   const editorRef = useRef(null);
+  const [fileContent, setFileContent] = React.useState('');
+
+  React.useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Failed to fetch file content');
+        const text = await response.text();
+        setFileContent(text);
+      } catch (error) {
+        console.error('Error fetching file:', error);
+      }
+    };
+    fetchContent();
+  }, []);
+
+  if (props.draft) {
+    return <div>{props.draft}</div>;
+  }
 
   const execCmd = (cmd) => {
     document.execCommand(cmd, false, null);
@@ -65,14 +85,12 @@ export default function Editor() {
         suppressContentEditableWarning
         onInput={handleChange}
       >
-        <h2 className="text-xl font-bold mb-4">Edit This Text</h2>
-        <p>
-          This is a english language diagram generator - 
-
-        </p>
- <h1>          Draw to make anything!</h1>
-
-
+        {fileContent || (
+          <>
+            <h2 className="text-xl font-bold mb-4">Edit This Text</h2>
+            <p>Loading content...</p>
+          </>
+        )}
       </div>
     </div>
   );
