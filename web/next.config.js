@@ -1,6 +1,11 @@
 // next.config.js
 module.exports = {
   env: {PORT: "8000"},
+  experimental: {
+    serverActions: {
+      allowedOrigins: ["observablehq.com"],
+    },
+  },
   serverRuntimeConfig: {
     LIVEKIT_API_KEY: 'APItSbwXvSjh4cf',
     LIVEKIT_WS_URL: 'wss://omnissiah-university-kmuz0plz.livekit.cloud',
