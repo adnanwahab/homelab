@@ -1,0 +1,5 @@
+Build/
+dist/
+node_modules
+Examples/js/jolt-physics.*.js
+__pycache__
