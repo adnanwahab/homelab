@@ -2,9 +2,17 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import gsap from 'gsap';
+//wiki editable dynamicland - jason rubin
 
+const template = `
+<div class="point point-0">
+    <div class="label">1</div>
+    <div class="text">Front and top screen with HUD aggregating terrain and battle informations.</div>
+</div>
+`
 class Game {
     constructor() {
+        document.body.insertAdjacentHTML('beforeend', template);
         this.scene = new THREE.Scene();
         this.canvas = document.querySelector('.canvas-1');
         this.sizes = {
@@ -66,7 +74,8 @@ class Game {
             (itemUrl, itemsLoaded, itemsTotal) => {
                 // Calculate the progress and update the loadingBarElement
                 const progressRatio = itemsLoaded / itemsTotal;
-                loadingBarElement.style.transform = `scaleX(${progressRatio})`;
+                console.log(progressRatio);
+                //loadingBarElement.style.transform = `scaleX(${progressRatio})`;
             }
         );
 
@@ -139,15 +148,15 @@ class Game {
 
         // Models
         // Uncomment to load models
-        // this.gltfLoader.load(
-        //     '/models/DamagedHelmet/glTF/DamagedHelmet.gltf',
-        //     (gltf) => {
-        //         gltf.scene.scale.set(2.5, 2.5, 2.5);
-        //         gltf.scene.rotation.y = Math.PI * 0.5;
-        //         this.scene.add(gltf.scene);
-        //         this.updateAllMaterials();
-        //     }
-        // );
+        this.gltfLoader.load(
+            '/models/DamagedHelmet/glTF/DamagedHelmet.gltf',
+            (gltf) => {
+                gltf.scene.scale.set(2.5, 2.5, 2.5);
+                gltf.scene.rotation.y = Math.PI * 0.5;
+                this.scene.add(gltf.scene);
+                this.updateAllMaterials();
+            }
+        );
 
         // Points of Interest
         this.raycaster = new THREE.Raycaster();

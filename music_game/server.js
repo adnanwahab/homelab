@@ -1,5 +1,16 @@
 // server.js
 import { serve } from 'bun';
+import ollama from 'ollama'
+
+async function chat(message) {
+    const response = await ollama.chat({
+        model: 'llama3.2',
+        messages: [{ role: 'user', content: message }],
+    })
+    console.log(response.message.content)
+    return response
+}
+
 
 serve({
   port: 8080,
@@ -30,6 +41,11 @@ serve({
       console.log("Received message from client:", message);
       // Echo the message back to the client
       ws.send(`You said: ${message}`);
+      const response = chat(message).then(response => {
+        console.log('ollama response', response)
+        ws.send(response.message.content)
+      })
+      
     },
 
     // Called when the client closes the WebSocket connection.

@@ -13,6 +13,20 @@ socket.addEventListener('open', () => {
     // setInterval(() => {
     //     socket.send("Hello server");
     // }, 1000);
+
+
+
+    document.getElementById('send').addEventListener('click', () => {
+        const message = document.getElementById('input').value;
+        console.log(message);
+        socket.send(message);
+    });
+
+    document.getElementById('autocomplete').addEventListener('click', () => {
+        //const message = document.getElementById('input').value;
+        console.log('autocomplete');
+        socket.send('change styling of css to slate blue 300');
+    });
 }
 
 export default initializeWebSocket;

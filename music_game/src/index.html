@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mixing HTML and WebGL</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #send, #autocomplete {
+            background-color: blue;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<h1>Hello World</h1>
+<h1>GameKit for Dynabot</h1>
+    <input type="text" id="input" placeholder="Enter your message">
+
+    <button id="send">Generate 3 possibilites</button>
+
+
+    <button id="autocomplete">change styling of css to slate blue 300</button>
+
+
     <canvas class="canvas-1"></canvas>
     <canvas class="canvas-2"></canvas>
 
@@ -25,7 +44,7 @@
         <div class="label">3</div>
         <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
     </div>
-    
+
     <script type="module" src="./script.js"></script>
 </body>
 </html>
