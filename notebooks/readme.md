@@ -1,5 +1,10 @@
-🌈 $300 robot + rtings by Jan 1 🌈
 
+🌈 $300 robot + rtings by Jan 1 🌈
+# fomr shodan + matt -- dififuclt ot make sense of coext efrom one to another
+# try to make reainbow contexts from one context to another to alll contexts..? 2025
+
+# notebooks = python
+# make simplest next app ever for web
 
 🔴 course_content = tmp till jan 1
 🟡 data = backup with google drive
