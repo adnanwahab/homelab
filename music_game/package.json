@@ -16,8 +16,6 @@
   "dependencies": {
     "gsap": "^3.12.5",
     "lil-gui": "^0.19.2",
-    "ollama": "^0.5.11",
-    "playwright": "^1.49.1",
     "three": "^0.166.1"
   }
 }
