@@ -10,9 +10,9 @@ socket.addEventListener('open', () => {
         console.log("Message from server:", event.data);
     });
 
-    setInterval(() => {
-        socket.send("Hello server");
-    }, 1000);
+    // setInterval(() => {
+    //     socket.send("Hello server");
+    // }, 1000);
 }
 
 export default initializeWebSocket;
