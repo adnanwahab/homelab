@@ -1,1 +1,0 @@
-start_docker_lerbot.sh

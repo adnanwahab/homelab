@@ -1,6 +1,0 @@
-fastapi
-uvicorn
-redis
-supabase
-python-dotenv
-pydantic
