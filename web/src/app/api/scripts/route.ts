@@ -7,7 +7,7 @@ const scripts = [
 ]
 
 export async function GET() {
-  return Response.json({ message:"hello" });
+  return Response.json({ message:scripts });
 }
 
 
