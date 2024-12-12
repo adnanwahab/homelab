@@ -16,11 +16,13 @@ export async function GET(request: Request) {
     headers['Access-Control-Allow-Origin'] = origin;
   }
 
+  
+
   return Response.json({ message:scripts }, { headers });
 }
 
 
-export async function POST(request: Request) {
-    const { script } = await request.json();
-    return Response.json({ message:"hello" });
-  }
+// export async function POST(request: Request) {
+//     const { script } = await request.json();
+//     return Response.json({ message:"hello" });
+//   }

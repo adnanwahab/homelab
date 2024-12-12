@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "playwright_snapshot_musicgame2025.netlify.com": "npx playwright screenshot https://musicgame2025.netlify.app foo.png",
+    "tailscale_server_5173": "sudo tailscale serve  5173"
   },
   "devDependencies": {
     "vite": "^5.3.3",
@@ -14,6 +16,7 @@
   "dependencies": {
     "gsap": "^3.12.5",
     "lil-gui": "^0.19.2",
+    "playwright": "^1.49.1",
     "three": "^0.166.1"
   }
 }

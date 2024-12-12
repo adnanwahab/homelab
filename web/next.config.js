@@ -1,6 +1,8 @@
 // next.config.js
 module.exports = {
   env: {PORT: "8000"},
+  crossOrigin: 'anonymous',
+
   experimental: {
     serverActions: {
       allowedOrigins: ["observablehq.com"],
