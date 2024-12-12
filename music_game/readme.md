@@ -1,4 +1,4 @@
-# Three.js Journey
+# GameKit for Dynabot - learn robotics by playing and editing games w/ diagrams and english
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
@@ -14,3 +14,5 @@ npm run dev
 # Build for production in the dist/ directory
 npm run build
 ```
+
+# tauri --- steamfirst + webrtc via brwoser not native

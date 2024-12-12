@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
-import initJolt from './jolt-physics.wasm-compat.js';
+import initJolt from '../utils/jolt-physics.wasm-compat.js';
 
 
 // Graphics variables

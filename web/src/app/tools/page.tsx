@@ -5,6 +5,37 @@ const all_tools = [
   "replicate",
 ];
 
+
+export default function Tools() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-6">Tools</h1>
+      <div>
+        1. playwright observable <button> send new gif</button>
+      </div>
+      <div>3. book flights via playwright</div>
+      <div>2. BrowserBase + val.town</div>
+
+      <div>
+        {all_tools.map((tool, i) => (
+          <div key={i} className="">
+            <a
+              href={"/tools/" + tool}
+              className="text-blue-500 hover:text-blue-700 hover:underline"
+            >
+              {tool}
+            </a>
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">{Iframes}</div>
+
+      <div></div>
+    </div>
+  );
+}
+
+
 const Iframes = (
   <div className="space-y-4">
     <h2 className="text-xl font-semibold">
@@ -50,34 +81,6 @@ const Iframes = (
     </p>
   </div>
 );
-
-export default function Tools() {
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">Tools</h1>
-      <div>
-        playwright observable <button> send new gif</button>
-      </div>
-      <div>BrowserBase + val.town</div>
-
-      <div>
-        {all_tools.map((tool, i) => (
-          <div key={i} className="">
-            <a
-              href={"/tools/" + tool}
-              className="text-blue-500 hover:text-blue-700 hover:underline"
-            >
-              {tool}
-            </a>
-          </div>
-        ))}
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">{Iframes}</div>
-
-      <div></div>
-    </div>
-  );
-}
 
 // get ramen profitable in 3 weeks
 // day 0 = dec 9
