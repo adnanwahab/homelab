@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { dimensions } from '../utils/constants.js';
-
+export const label = 'music_game';
 class GameMusic {
     constructor(canvas) {
         // Audio setup
@@ -30,11 +30,29 @@ class GameMusic {
         this.floor.rotation.x = -Math.PI / 2;
         this.scene.add(this.floor);
 
-        // Add lights
-        const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(0, 10, 10);
-        this.scene.add(light);
-        this.scene.add(new THREE.AmbientLight(0x404040));
+        // Replace existing lighting setup with enhanced lighting
+        // Main directional light (like sunlight)
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(5, 15, 5);
+        this.scene.add(directionalLight);
+
+        // Point light for accent lighting
+        const pointLight = new THREE.PointLight(0xff9000, 1, 30);
+        pointLight.position.set(-5, 8, -5);
+        this.scene.add(pointLight);
+
+        // Softer point light for fill
+        const fillLight = new THREE.PointLight(0x4040ff, 0.5, 25);
+        fillLight.position.set(5, 5, -8);
+        this.scene.add(fillLight);
+
+        // Ambient light for overall scene brightness
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
+        this.scene.add(ambientLight);
+
+        // Optional: Add light helpers for debugging
+        // this.scene.add(new THREE.PointLightHelper(pointLight));
+        // this.scene.add(new THREE.DirectionalLightHelper(directionalLight));
 
         // Set camera position
         this.camera.position.z = 15;

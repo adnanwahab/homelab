@@ -117,4 +117,6 @@ function platformer(canvas) {
   animate();
 }
 
+export const label = 'platformer';
+
 export default platformer;

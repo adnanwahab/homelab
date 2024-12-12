@@ -5,6 +5,9 @@ import { gsap } from 'gsap'
 import initJolt from '../utils/jolt-physics.wasm-compat.js';
 import { dimensions } from '../utils/constants.js';
 
+export const label = 'physics';
+
+
 // Graphics variables
 var container, stats;
 var camera, controls, scene, renderer;
@@ -435,7 +438,7 @@ function addMarker(location, size, color) {
 // In case you haven't built the library yourself, replace URL with: https://www.unpkg.com/jolt-physics/dist/jolt-physics.wasm-compat.js
 
 
-function cool_beans(canvas) {
+function cool_beans(canvas, initial_object_list) {
 			initJolt().then(function (Jolt) {
 				// Initialize this example
 				initExample(Jolt, null, canvas);
