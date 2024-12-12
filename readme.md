@@ -15,3 +15,8 @@ uv run notebooks/roombacat_dynabot # python app that serves 32 notebooks for (ML
 ![App Screenshot](https://github.com/adnanwahab/homelab/blob/main/web/public/screenshot_per_day.png)
 ![Infinite](https://github.com/adnanwahab/homelab/blob/main/web/public/Infinite.gif)
 ![https://worrydream.com/SeeingSpaces/SeeingSpaces.jpg](https://worrydream.com/SeeingSpaces/SeeingSpaces.jpg)
+
+
+# todo
+1. tauri app
+2. upstash for drawable canvas
