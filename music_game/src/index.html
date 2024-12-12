@@ -15,11 +15,52 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        .canvas-1 {
+            /* position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 30%; */
+            border: 1px solid red;
+        }
+        .canvas-2 {
+            /* position: absolute;
+            top: 0;
+            left: 30%;
+            width: 30%;
+            height: 30%; */
+            border: 1px solid blue;
+        }
+
+        .canvas-3 {
+            /* position: absolute;
+            top: 30%;
+            left: 0;
+            width: 30%;
+            height: 30%;     */
+            border: 1px solid green;
+        }
     </style>
 </head>
 <body>
 <h1>GameKit for Dynabot</h1>
+<div>
+    canvas 1 = music
+    canvas 2 = multiplayer
+    canvas 3 = physics
+</div>
 <!-- <img src="https://mllz4unfrokx.i.optimole.com/w:auto/h:auto/q:mauto/f:best/https://lifetrainingcounseling.org/wp-content/uploads/2023/11/Screen-Shot-2023-11-10-at-7.35.34-PM.webp" alt="Dynabot logo"> -->
+
+
+<div class="flex flex-rowr">
+    <canvas class="canvas-red"></canvas>
+    <canvas class="canvas-blue"></canvas>
+    <canvas class="canvas-green"></canvas>
+
+</div>
+
+<div class="editor-container">
     <input type="text" id="input" placeholder="Enter your message">
 
     <button id="send">Generate 3 possibilites</button>
@@ -27,9 +68,10 @@
 
     <button id="autocomplete">change styling of css to slate blue 300</button>
 
+</div>
+<div class="editable-views"></div>
 
-    <canvas class="canvas-1"></canvas>
-    <canvas class="canvas-2"></canvas>
+
 
     <div class="loading-bar"></div>
 

@@ -1,17 +1,22 @@
 import * as THREE from 'three';
 
+const dimensions = {
+    width: window.innerWidth / 3,
+    height: window.innerHeight / 3
+}
+
 class GameMusic {
-    constructor() {
+    constructor(canvas) {
         // Audio setup
         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
         this.setupAudio();
 
         // Three.js setup
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        this.renderer = new THREE.WebGLRenderer();
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(this.renderer.domElement);
+        this.camera = new THREE.PerspectiveCamera(75, dimensions.width / dimensions.height, 0.1, 1000);
+        this.renderer = new THREE.WebGLRenderer({ canvas: canvas });
+        this.renderer.setSize(dimensions.width, dimensions.height);
+        //document.body.appendChild(this.renderer.domElement);
 
         // Create sphere
         this.sphere = new THREE.Mesh(
@@ -48,6 +53,9 @@ class GameMusic {
 
         // Start animation
         this.animate();
+
+        // Add resize event listener
+        window.addEventListener('resize', this.handleResize.bind(this));
     }
 
     setupAudio() {
@@ -94,6 +102,15 @@ class GameMusic {
         }
 
         this.renderer.render(this.scene, this.camera);
+    }
+
+    // Add window resize handler
+    handleResize() {
+        dimensions.width = window.innerWidth / 2;
+        dimensions.height = window.innerHeight / 2;
+        this.camera.aspect = dimensions.width / dimensions.height;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(dimensions.width, dimensions.height);
     }
 }
 

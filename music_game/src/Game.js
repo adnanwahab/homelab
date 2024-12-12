@@ -11,13 +11,13 @@ const template = `
 </div>
 `
 class Game {
-    constructor() {
+    constructor(canvas) {
         document.body.insertAdjacentHTML('beforeend', template);
         this.scene = new THREE.Scene();
-        this.canvas = document.querySelector('.canvas-1');
+        this.canvas = canvas
         this.sizes = {
-            width: window.innerWidth / 2,
-            height: window.innerHeight / 2
+            width: window.innerWidth / 3,
+            height: window.innerHeight / 3
         };
 
         this.setLoadingManager();
@@ -74,7 +74,7 @@ class Game {
             (itemUrl, itemsLoaded, itemsTotal) => {
                 // Calculate the progress and update the loadingBarElement
                 const progressRatio = itemsLoaded / itemsTotal;
-                console.log(progressRatio);
+                //console.log(progressRatio);
                 //loadingBarElement.style.transform = `scaleX(${progressRatio})`;
             }
         );

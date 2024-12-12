@@ -57,12 +57,16 @@ function onWindowResize() {
 	renderer.setSize(dimensions.width, dimensions.height);
 }
 
-function initGraphics() {
+function initGraphics(canvas) {
+	if (!canvas) {
+		throw new Error('Canvas is required');
+	}
 	// Initialize container first
-	container = document.createElement('div');
-	document.body.appendChild(container);
-
-	renderer = new THREE.WebGLRenderer({canvas: document.querySelector('.canvas-2')});
+	//canvas = document.querySelector('.canvas-green');
+	//container = document.createElement('div');
+	//document.body.appendChild(container);
+	console.log(canvas);
+	renderer = new THREE.WebGLRenderer({canvas: canvas});
 	renderer.setClearColor(0xbfd1e5);
 	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setSize(dimensions.width, dimensions.height);
@@ -77,9 +81,9 @@ function initGraphics() {
 	dirLight.position.set(10, 10, 5);
 	scene.add(dirLight);
 
-	controls = new OrbitControls(camera, container);
+	controls = new OrbitControls(camera, canvas);
 
-	container.appendChild(renderer.domElement);
+	//container.appendChild(renderer.domElement);
 
 	// stats = new Stats();
 	// stats.domElement.style.position = 'absolute';
@@ -135,11 +139,11 @@ function updatePhysics(deltaTime) {
 	jolt.Step(deltaTime, numSteps);
 }
 
-function initExample(Jolt, updateFunction) {
+function initExample(Jolt, updateFunction, canvas) {
 	window.Jolt = Jolt;
 
 	onExampleUpdate = updateFunction;
-	initGraphics();
+	initGraphics(canvas);
 	initPhysics();
 	renderExample();
 }
@@ -434,10 +438,10 @@ function addMarker(location, size, color) {
 // In case you haven't built the library yourself, replace URL with: https://www.unpkg.com/jolt-physics/dist/jolt-physics.wasm-compat.js
 
 
-function cool_beans() {
+function cool_beans(canvas) {
 			initJolt().then(function (Jolt) {
 				// Initialize this example
-				initExample(Jolt, null);
+				initExample(Jolt, null, canvas);
 
 				// Create a basic floor
 				createFloor();

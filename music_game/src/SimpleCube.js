@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const CANVAS_COUNT = 16;
+const CANVAS_COUNT = 2;
 const CANVAS_WIDTH = 200;
 const CANVAS_HEIGHT = 200;
 
