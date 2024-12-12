@@ -40,7 +40,13 @@ GamePhysics(document.querySelector('.canvas-green'), [
         position: [0, 0, 0],
         size: [1, 1, 1]
     }
-]);
+], function (add_object) {
+    console.log('done');
+    setInterval(() => {
+        console.log('done');
+        add_object();
+    }, 1000);
+});
 
 
 // drawing(document.querySelector('.canvas-purple'));

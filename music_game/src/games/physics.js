@@ -438,7 +438,7 @@ function addMarker(location, size, color) {
 // In case you haven't built the library yourself, replace URL with: https://www.unpkg.com/jolt-physics/dist/jolt-physics.wasm-compat.js
 
 
-function cool_beans(canvas, initial_object_list) {
+function cool_beans(canvas, initial_object_list, call_back_function) {
 			initJolt().then(function (Jolt) {
 				// Initialize this example
 				initExample(Jolt, null, canvas);
@@ -453,12 +453,23 @@ function cool_beans(canvas, initial_object_list) {
 				let creationSettings = new Jolt.BodyCreationSettings(shape, new Jolt.RVec3(0, 0, 0), Jolt.Quat.prototype.sIdentity(), Jolt.EMotionType_Dynamic, LAYER_MOVING);
 				creationSettings.mAllowedDOFs = Jolt.EAllowedDOFs_Plane2D;
 
-				for (let x = 0; x < initial_object_list.length; ++x)
+				for (let x = 0; x < initial_object_list.length; ++x) {
 					for (let y = 0; y < 1; ++y) { 
 						creationSettings.mPosition = new Jolt.RVec3(-10 + x, 10 + y, -5)
 						let body = bodyInterface.CreateBody(creationSettings);
 						addToScene(body, 0xff0000);
 					}
+				}
+
+				call_back_function(function (){
+					const x = Math.random() * 20;
+					const y = Math.random() * 10;
+					creationSettings.mPosition = new Jolt.RVec3(-10 + x, 10 + y, -5)
+					let body = bodyInterface.CreateBody(creationSettings);
+					addToScene(body, 0xff0000);
+				} );
+
+
 			});
 		}
 		export default cool_beans;
