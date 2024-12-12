@@ -14,10 +14,4 @@ uv run notebooks/roombacat_dynabot # python app that serves 32 notebooks for (ML
 -----
 ![App Screenshot](https://github.com/adnanwahab/homelab/blob/main/web/public/screenshot_per_day.png)
 ![Infinite](https://github.com/adnanwahab/homelab/blob/main/web/public/Infinite.gif)
-https://worrydream.com/SeeingSpaces/SeeingSpaces.jpg
-https://augustberchelmann.com/mario/
-# Make Cool stuff - devops+ui+ml for omniverse
-https://www.youtube.com/watch?v=LPZh9BOjkQs
-# stories = either educational or humrous
-# open source = cooelst thing forever because people contrib cool stuff togeher
-# replay analyzer - Dec 13 - fly.io + webrtc - as simple as possible - no deps
+![https://worrydream.com/SeeingSpaces/SeeingSpaces.jpg](https://worrydream.com/SeeingSpaces/SeeingSpaces.jpg)
