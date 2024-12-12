@@ -38,6 +38,12 @@ const LAYER_NON_MOVING = 0;
 const LAYER_MOVING = 1;
 const NUM_OBJECT_LAYERS = 2;
 
+// Add at the top with other constants
+const dimensions = {
+    width: 500,
+    height: 500
+};
+
 function getRandomQuat() {
 	let vec = new Jolt.Vec3(0.001 + Math.random(), Math.random(), Math.random());
 	let quat = Jolt.Quat.prototype.sRotation(vec.Normalized(), 2 * Math.PI * Math.random());
@@ -46,21 +52,22 @@ function getRandomQuat() {
 }
 
 function onWindowResize() {
-
-	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.aspect = dimensions.width / dimensions.height;
 	camera.updateProjectionMatrix();
-
-	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setSize(dimensions.width, dimensions.height);
 }
 
 function initGraphics() {
+	// Initialize container first
+	container = document.createElement('div');
+	document.body.appendChild(container);
 
-	renderer = new THREE.WebGLRenderer();
+	renderer = new THREE.WebGLRenderer({canvas: document.querySelector('.canvas-2')});
 	renderer.setClearColor(0xbfd1e5);
 	renderer.setPixelRatio(window.devicePixelRatio);
-	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setSize(dimensions.width, dimensions.height);
 
-	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.2, 2000);
+	camera = new THREE.PerspectiveCamera(60, dimensions.width / dimensions.height, 0.2, 2000);
 	camera.position.set(0, 15, 30);
 	camera.lookAt(new THREE.Vector3(0, 0, 0));
 
@@ -131,24 +138,10 @@ function updatePhysics(deltaTime) {
 function initExample(Jolt, updateFunction) {
 	window.Jolt = Jolt;
 
-	container = document.body;
-	container.innerHTML = "";
-
-	//if (WebGL.isWebGLAvailable()) {
-		onExampleUpdate = updateFunction;
-
-		initGraphics();
-		initPhysics();
-		renderExample();
-	// } else {
-	// 	const warning = WebGL.getWebGLErrorMessage();
-	// 	container.appendChild(warning);
-	// }
-
-	// The memory profiler doesn't have an ID so we can't mess with it in css, set an ID here
-	let memoryprofilerCanvas = document.getElementById("memoryprofiler_canvas");
-	if (memoryprofilerCanvas)
-		memoryprofilerCanvas.parentElement.id = "memoryprofiler";
+	onExampleUpdate = updateFunction;
+	initGraphics();
+	initPhysics();
+	renderExample();
 }
 
 function renderExample() {

@@ -6,10 +6,10 @@ import gsap from 'gsap';
 class Game {
     constructor() {
         this.scene = new THREE.Scene();
-        this.canvas = document.querySelector('canvas.webgl');
+        this.canvas = document.querySelector('.canvas-1');
         this.sizes = {
-            width: window.innerWidth,
-            height: window.innerHeight
+            width: window.innerWidth / 2,
+            height: window.innerHeight / 2
         };
 
         this.setLoadingManager();
@@ -19,7 +19,6 @@ class Game {
         this.setLights();
         this.setEnvironmentMap();
         this.addObjects();
-        this.setEventListeners();
         this.tick();
     }
 
@@ -180,21 +179,7 @@ class Game {
         });
     }
 
-    setEventListeners() {
-        window.addEventListener('resize', () => {
-            // Update sizes
-            this.sizes.width = window.innerWidth;
-            this.sizes.height = window.innerHeight;
 
-            // Update camera
-            this.camera.aspect = this.sizes.width / this.sizes.height;
-            this.camera.updateProjectionMatrix();
-
-            // Update renderer
-            this.renderer.setSize(this.sizes.width, this.sizes.height);
-            this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        });
-    }
 
     tick() {
         const animate = () => {

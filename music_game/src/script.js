@@ -5,9 +5,15 @@ import gsap from 'gsap';
 import * as THREE from 'three';
 
 // Instantiate the game
-//const game = new Game();
+
 
 
 import jolt from './jolt.js';
 
+
+const game = new Game();
 jolt();
+
+
+import game_music from './Game_music.js';
+new game_music();
