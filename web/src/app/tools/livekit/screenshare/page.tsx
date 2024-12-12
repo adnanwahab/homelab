@@ -1,6 +1,7 @@
 'use client'
 import { useState, useRef, useCallback } from 'react';
 
+
 export default function ScreenShare() {
   const [isSharing, setIsSharing] = useState(false);
   const [error, setError] = useState(null);

@@ -19,3 +19,19 @@ npm run build
 ```
 
 # tauri --- steamfirst + webrtc via brwoser not native
+
+
+
+
+
+important routes
+/game/edit 
+/tools 
+/dynabot
+/dynabot/pisaur
+/dynabot/wikicourse
+
+/api
+/livekit - connectivity
+/scripts - compute
+/supabase - storage

@@ -1,19 +1,24 @@
-function MagicIframe() {
-  return <iframe 
-  className="position-absolute top-0 right-0 border-1 border-green-500"
-  src="/tools/livekit/screenshare" width="500px" height="500px"></iframe>
-}
-
+'use client'
+import MagicIframe from '@/components/MagicIframe';
+import { useState } from 'react';
 export default function Livekit() {
+  const [isMouseOver, setIsMouseOver] = useState('publish_webcam');
+  const handleMouseOver = (tool: string) => {
+    setIsMouseOver(tool);
+  }
   return (
     <div>
       <h1>Livekit</h1>
       <h2>complete</h2>
-      <div><a href="/tools/livekit/publish_webcam">publish_webcam</a></div>
-      <div><a href="/tools/livekit/screenshare">screenshare</a></div>
-     {/* <MagicIframe /> */}
+      <div >
+      <div onMouseOver={() => handleMouseOver('publish_webcam') }> <a href="/tools/livekit/publish_webcam">publish_webcam</a></div>
+      <div onMouseOver={() => handleMouseOver('screenshare') }><a href="/tools/livekit/screenshare">screenshare</a></div>
+      <div onMouseOver={() => handleMouseOver('view_all') }><a href="/tools/livekit/view_all">viewall</a></div>
+      </div>
+    <h1>MagicIframe = {isMouseOver}</h1>
+     <MagicIframe src={`/tools/livekit/${isMouseOver}`}/>
 
-<br></br>
+      <br></br>
       <h2>incomplete</h2>
       <br></br>
 
