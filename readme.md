@@ -1,4 +1,4 @@
-# how to
+# how to - https://observablehq.com/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h
 ```bash
 go run main.go from data folder # https://fly.io/docs/languages-and-frameworks/golang/
 bun run dev # from music_game -- autodeploy to fly.io - ws
