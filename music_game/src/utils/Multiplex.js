@@ -5,7 +5,18 @@ const CANVAS_WIDTH = 200;
 const CANVAS_HEIGHT = 200;
 
 const renderHtml = function () {
-    const html = `<div class="editor-container h-48 border-2 border-gray-300">
+    const html = `
+       <div class="multiplex-views h-48 border-2 border-gray-300">
+        <h1>Multiplex</h1>
+        <div class="multiplex-canvas"></div>
+    </div>
+    
+    
+    
+    
+    
+    <div class="editor-container h-48 border-2 border-gray-300">
+    
     <div>
         <!-- <label for="comment" class="block text-sm/6 font-medium text-gray-900">Add your comment</label> -->
         <div class="mt-2">
@@ -18,13 +29,36 @@ const renderHtml = function () {
     <button id="autocomplete">change styling of css to slate blue 300</button>
 
 </div>`
-document.body.innerHTML += html;
-return html;
+const div = document.createElement('div')
+div.innerHTML = html;
+document.body.appendChild(div);
+
+    const inputElement = document.querySelector('textarea');
+    
+    if (!inputElement) {
+        console.error('Input element not found');
+    }
+
+    inputElement.addEventListener('input', (e) => {
+        console.log('Input value:', e.target.value);
+        const multiplexCanvas = document.querySelector('.multiplex-canvas');
+        console.log(multiplexCanvas);
+        // if (!multiplexCanvas) {
+        //     console.error('Multiplex canvas not found');
+        //     return;
+        // }
+
+        const app = Multiplex(multiplexCanvas);
+        app.init(e.target.value);
+    });
+    console.log(inputElement);
+
+return div;
 }
 
 class MultiCubeRenderer {
     constructor(multiplex_canvas, count) {
-        //renderHtml();
+
         this.count = count;
         this.count = 5
         console.log(multiplex_canvas, 'multiplex_canvas');
@@ -94,14 +128,19 @@ class MultiCubeRenderer {
 //const app = new MultiCubeRenderer();
 
 export default function Multiplex(multiplex_canvas) {
-    return {
+
+    const multiplex_container = renderHtml();
+       const instance = {
         init: (count) => {
             count = count || 5;
             console.log('niggar');
 
-            return new MultiCubeRenderer(multiplex_canvas, count);
+            return new MultiCubeRenderer(multiplex_container, count);
         }
     }
+    //instance.init(5);
+
+    return instance;
 }
 
 // To clean up later if needed:

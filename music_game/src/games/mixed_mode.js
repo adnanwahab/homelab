@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import gsap from 'gsap';
 //wiki editable dynamicland - jason rubin
+import { dimensions } from '../utils/constants.js';
 
 const template = `
 <div class="point point-0">
@@ -15,10 +16,7 @@ class Game {
         document.body.insertAdjacentHTML('beforeend', template);
         this.scene = new THREE.Scene();
         this.canvas = canvas
-        this.sizes = {
-            width: window.innerWidth / 3,
-            height: window.innerHeight / 3
-        };
+        this.sizes = dimensions;
 
         this.setLoadingManager();
         this.setRenderer();

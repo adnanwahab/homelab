@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
 import initJolt from '../utils/jolt-physics.wasm-compat.js';
-
+import { dimensions } from '../utils/constants.js';
 
 // Graphics variables
 var container, stats;
@@ -39,10 +39,7 @@ const LAYER_MOVING = 1;
 const NUM_OBJECT_LAYERS = 2;
 
 // Add at the top with other constants
-const dimensions = {
-    width: 500,
-    height: 500
-};
+
 
 function getRandomQuat() {
 	let vec = new Jolt.Vec3(0.001 + Math.random(), Math.random(), Math.random());
