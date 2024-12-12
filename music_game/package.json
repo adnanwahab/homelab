@@ -11,6 +11,9 @@
     "tailscale_server_5173": "sudo tailscale serve  5173"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
     "vite": "^5.3.3"
   },
   "dependencies": {
