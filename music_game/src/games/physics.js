@@ -453,8 +453,8 @@ function cool_beans(canvas, initial_object_list) {
 				let creationSettings = new Jolt.BodyCreationSettings(shape, new Jolt.RVec3(0, 0, 0), Jolt.Quat.prototype.sIdentity(), Jolt.EMotionType_Dynamic, LAYER_MOVING);
 				creationSettings.mAllowedDOFs = Jolt.EAllowedDOFs_Plane2D;
 
-				for (let x = 0; x < 20; ++x)
-					for (let y = 0; y < 10; ++y) { 
+				for (let x = 0; x < initial_object_list.length; ++x)
+					for (let y = 0; y < 1; ++y) { 
 						creationSettings.mPosition = new Jolt.RVec3(-10 + x, 10 + y, -5)
 						let body = bodyInterface.CreateBody(creationSettings);
 						addToScene(body, 0xff0000);
