@@ -1,6 +1,9 @@
+# hi
+
+
 2. http://localhost:3000/games/edit
    1. llama -> three.js
-   2. observablhq to vis the scenegraph + whatever 2 way data 
+   2. observablhq to vis the scenegraph + whatever 2 way data
 
 1. http://localhost:3000/games/physics_game
 
@@ -9,7 +12,7 @@
 ## + Derp = index gifs! - 400TB of cool animations
 ### animations = generalize physics
 #### Avatar Notebook - observable, reflect, livekit+threjs
-##### https://wifi-solver.com/ 
+##### https://wifi-solver.com/
 #### https://threejs.org/examples/?q=tsl#webgpu_tsl_vfx_linkedparticles
 
 #### text -> diagram -> simulation -> autonomous system

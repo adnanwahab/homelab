@@ -1,4 +1,0 @@
-
-
-when converting from vanilla threejs to react, prefer useRef for canvas interface.
-prefer namespaces i think
