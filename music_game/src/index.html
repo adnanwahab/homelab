@@ -6,144 +6,12 @@
     <title>Mixing HTML and WebGL</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-
-        
-        #send, #autocomplete {
-            background-color: blue;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .canvas-red {
-            /* position: absolute;
-            top: 0;
-            left: 0;
-            width: 30%;
-            height: 30%; */
-            border: 1px solid red;
-        }
-        .canvas-blue {
-            /* position: absolute;
-            top: 0;
-            left: 30%;
-            width: 30%;
-            height: 30%; */
-            border: 1px solid blue;
-        }
-
-        .canvas-green {
-            /* position: absolute;
-            top: 30%;
-            left: 0;
-            width: 30%;
-            height: 30%;     */
-            border: 1px solid green;
-        }
-        .pill-input {
-            border: 1px solid red;
-            border-radius: 9999px;
-            padding: 10px 20px;
-            width: 100%;
-        }
-
-        canvas:hover{
-            cursor: pointer;
-            transform: scale(1.01);
-        }
-
-
-
-        /* add new idea then reorganizae - 6 weeks/months */
-        a {
-				color: #8ff;
-			}
-
-			#menu {
-				position: absolute;
-				bottom: 20px;
-				width: 100%;
-				text-align: center;
-			}
-
-			.element {
-				width: 120px;
-				height: 160px;
-				box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
-				border: 1px solid rgba(127,255,255,0.25);
-				font-family: Helvetica, sans-serif;
-				text-align: center;
-				line-height: normal;
-				cursor: default;
-			}
-
-			.element:hover {
-				box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
-				border: 1px solid rgba(127,255,255,0.75);
-			}
-
-				.element .number {
-					position: absolute;
-					top: 20px;
-					right: 20px;
-					font-size: 12px;
-					color: rgba(127,255,255,0.75);
-				}
-
-				.element .symbol {
-					position: absolute;
-					top: 40px;
-					left: 0px;
-					right: 0px;
-					font-size: 60px;
-					font-weight: bold;
-					color: rgba(255,255,255,0.75);
-					text-shadow: 0 0 10px rgba(0,255,255,0.95);
-				}
-
-				.element .details {
-					position: absolute;
-					bottom: 15px;
-					left: 0px;
-					right: 0px;
-					font-size: 12px;
-					color: rgba(127,255,255,0.75);
-				}
-
-			button {
-				color: rgba(127,255,255,0.75);
-				background: transparent;
-				outline: 1px solid rgba(127,255,255,0.75);
-				border: 0px;
-				padding: 5px 10px;
-				cursor: pointer;
-			}
-
-			button:hover {
-				background-color: rgba(0,255,255,0.5);
-			}
-
-			button:active {
-				color: #000000;
-				background-color: rgba(0,255,255,0.75);
-			}
-            .canvas-purple {
-                border: 1px solid purple;
-            }
-            .canvas-teal {
-                border: 1px solid teal;
-            }
-    </style>
+  <link href="./static/index.css" rel="stylesheet">
 </head>
-<body>
+<body class="slate-90">
 <h1>GameKit for Dynabot - origami</h1>
 <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> css3d - periodic table.</div>
 <div id="container"></div>
-
-
 <div class="flex flex-row" id="game-container">
     <div class="flex flex-col">
         <div class="text-center mb-2" id="label-one"></div>
@@ -165,38 +33,33 @@
         <div class="text-center mb-2">science lab</div>
         <canvas class="canvas-teal"></canvas>
     </div> -->
-    <div class="flex flex-col border-4 border-blue-300 border-r-0 border-t-0 border-b-0 h-screen  hidden">
+</div>
+
+    <script type="module" src="./script.js"></script>
+
+    <div id="observablehq-25a283dc"></div>
+    <p>Credit: <a href="https://observablehq.com/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h">ObservableHQ Simulation Editor - Launch Date Jan 1 - happy new Year by dynabot.dev</a></p>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+    <script type="module">
+    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h.js?v=4";
+    const runtime = new Runtime().module(define, Inspector.into("#observablehq-25a283dc"));
+    console.log(runtime);
+    </script>
+      <!-- <div class="flex flex-col border-4 border-blue-300 border-r-0 border-t-0 border-b-0 h-screen  hidden"></div>
         <div class="text-center mb-2">Tools</div>
         <iframe width="300" height="300" frameborder="0"
   src="https://observablehq.com/embed/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h?cell=*"></iframe>
   <iframe width="300" height="300" frameborder="0"
   src="https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/"></iframe>
-  <!-- <iframe width="300" height="300" frameborder="0"
-  src="https://shels-macbook-pro.jerboa-kokanue.ts.net"></iframe> -->
+  <iframe width="300" height="300" frameborder="0"
+  src="https://shels-macbook-pro.jerboa-kokanue.ts.net"></iframe>
   <iframe width="300" height="300" frameborder="0"
   src="https://first-flyio-fastapi.fly.dev"></iframe>
-</div>
+</div> -->
+<img src="./4.png" alt="dynabot" class="w-24">
 
-    <!-- <div class="loading-bar"></div>
-
-    <div class="point-container">
-        <div class="point point-0">
-            <div class="label">1</div>
-            <div class="text">Front and top screen with HUD aggregating terrain and battle informations.</div>
-            <div class="point point-1">
-                <div class="label">2</div>
-                <div class="text">Ventilation with air purifier and detection of environment toxicity.</div>
-            </div>
-            <div class="point point-2">
-                <div class="label">3</div>
-                <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
-            </div>
-    </div> -->
-
- 
-
-
-    <script type="module" src="./script.js"></script>
 </body>
 </html>
 <!-- tree based encapsulation 4-7 things for robotics -->

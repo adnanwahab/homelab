@@ -1,7 +1,7 @@
 # GameKit for Dynabot - learn robotics by playing and editing games w/ diagrams and english
 ### dynabot.dev/games/edit === this repo
 ## 183 mini games
-
+ https://observablehq.com/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
