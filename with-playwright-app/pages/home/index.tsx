@@ -24,6 +24,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           <Link href="/home/about" className={styles.card}>
+          
             <h2>About Page &rarr;</h2>
             <p>Playwright will test if this link is working.</p>
           </Link>

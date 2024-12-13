@@ -23,6 +23,8 @@
     }
   },
   "bundle": {
+    "category": "Utility",
+
     "active": true,
     "targets": "all",
     "icon": [
