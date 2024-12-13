@@ -1,3 +1,8 @@
+# Happy-bear-landia
+
+generates at different time points 
+video-vision-transformer-o1/llama/claude
+
 # GameKit for Dynabot - learn robotics by playing and editing games w/ diagrams and english
 ### dynabot.dev/games/edit === this repo
 ## 183 mini games
