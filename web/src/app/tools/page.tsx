@@ -5,11 +5,18 @@ const all_tools = [
   "replicate",
 ];
 
-
 export default function Tools() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">Tools</h1>
+      <h2>Jan 1 - launch-wiki-game-course</h2>
+      <h3>dailies - 3</h3>
+      <div>1. deploy - https://vercel.com/adnanwahabs-projects</div>
+      <div>2. verify - next.js playwright</div>
+      <div>3. flirtflow</div>
+      <div>4. wc -l **/*.js </div>
+      <div>20 days </div>
+      {/* /tools, /games/edit, /dynabot/pisaur */}
       <div>
         1. playwright observable <button> send new gif</button>
       </div>
@@ -34,7 +41,6 @@ export default function Tools() {
     </div>
   );
 }
-
 
 const Iframes = (
   <div className="space-y-4">

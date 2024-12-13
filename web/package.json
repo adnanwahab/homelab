@@ -10,7 +10,7 @@
     "symlink": "ln -s ~/derp/support_bret ./public/support_bret",
     "send_obs_email": "node send_obs_email.js",
     "postbuild": "next-sitemap",
-    "test": "jest",
+    "test": "npx playwright test",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "tunnel": "sudo tailscale serve 8000",
