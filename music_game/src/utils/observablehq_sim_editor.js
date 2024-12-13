@@ -12,30 +12,31 @@ document.getElementById("toggle-button").addEventListener("click", () => {
 
 document.getElementById("textarea").addEventListener("keydown", async (event) => {
     if (event.key === "Enter") {
-
         event.preventDefault();
-        console.log("about to send")
+        console.log("about to send");
 
         const text = document.getElementById("textarea").value;
-        
         const encodedText = encodeURIComponent(text);
-        const response = await fetch(`https://gpu.jerboa-kokanue.ts.net?msg=${encodedText}`, {
-            method: 'GET',
-            // headers: {
-            //     'Content-Type': 'application/json'
-            // }
-        })
-
-        const data = await response.text()
-        console.log(data)
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log('Success:', data);
-            //     document.getElementById("response").innerHTML = data.message.content;
-            // })
-            // .catch((error) => {
-            //     console.error('Error:', error);
-            // });
+        
+        try {
+            const response = await fetch(`https://gpu.jerboa-kokanue.ts.net?msg=${encodedText}`, {
+                method: 'GET',
+                mode: 'cors',
+                headers: {
+                    'Accept': 'text/plain'
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.text();
+            document.getElementById("response").innerHTML = data;
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById("response").innerHTML = "Sorry, there was an error processing your request.";
+        }
     }
 });
 }

@@ -2,13 +2,29 @@
 import { serve } from "bun";
 import ollama from "ollama";
 
+import fs from "fs";
+
+async function handleGithubWebhook(req) {
+  const payload = await req.json();
+  
+  // Log or process the webhook payload
+  console.log('Received webhook:', payload.action, payload.repository?.full_name);
+  
+  // You might want to save webhooks to a file
+  fs.appendFileSync('github-webhooks.log', 
+    `${new Date().toISOString()}: ${payload.action} on ${payload.repository?.full_name}\n`
+  );
+  
+  return new Response('Webhook received', { status: 200 });
+}
+
 async function chat(message) {
   const response = await ollama.chat({
     model: "llama3.2",
     messages: [{ role: "user", content: message }],
   });
   console.log(response.message.content);
-  return response;
+  return response.message.content;
 }
 serve({
   port: 8080,
@@ -17,15 +33,13 @@ serve({
     const msg = url.searchParams.get('msg');
     const response = await chat(msg);
     // If it's a preflight request
-    // if (req.method === 'OPTIONS') {
-    //     return new Response(null, {
-    //       headers: {
-    //         'Access-Control-Allow-Origin': '*',
-    //         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    //         'Access-Control-Allow-Headers': 'Content-Type'
-    //       }
-    //     });
-    //   }
+     // Add webhook route
+     if (url.pathname === '/webhook/github') {
+        if (req.method === 'POST') {
+          return handleGithubWebhook(req);
+        }
+        return new Response('Only POST requests are accepted', { status: 405 });
+      }
 
     return new Response(response, {
         headers: {
