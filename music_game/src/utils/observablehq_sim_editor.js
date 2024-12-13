@@ -23,6 +23,7 @@ document.getElementById("textarea").addEventListener("keydown", (event) => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                document.getElementById("response").innerHTML = data.message.content;
             })
             .catch((error) => {
                 console.error('Error:', error);

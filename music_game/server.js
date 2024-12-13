@@ -16,12 +16,25 @@ serve({
     const url = new URL(req.url);
     const msg = url.searchParams.get('msg');
     const response = await chat(msg);
-    return new Response(response, {
-      headers: {
-        'Content-Type': 'application/json'
+    // If it's a preflight request
+    if (req.method === 'OPTIONS') {
+        return new Response(null, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type'
+          }
+        });
       }
+
+    return new Response(response, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',           // Allow all domains (for development)
+            'Access-Control-Allow-Methods': 'GET, POST',  // Specify allowed methods
+            'Access-Control-Allow-Headers': 'Content-Type'
+          }
     });
 
   },
 });
-console.log("server started")
