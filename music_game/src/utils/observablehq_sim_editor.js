@@ -12,23 +12,21 @@ document.getElementById("toggle-button").addEventListener("click", () => {
 
 document.getElementById("textarea").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        event.preventDefault(); // Prevents adding a new line
+
+        event.preventDefault();
+        console.log("about to send")
+
         const text = document.getElementById("textarea").value;
         
-        fetch('https://gpu.jerboa-kokanue.ts.net', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ content: text })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+        const encodedText = encodeURIComponent(text);
+        fetch(`https://gpu.jerboa-kokanue.ts.net?msg=${encodedText}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }
 });
 }
