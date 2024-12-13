@@ -58,3 +58,4 @@ System design - don’t guess; decide empirically
 5 tools
 1. playwright flight
 2.
+# devops = bun tailscale 

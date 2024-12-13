@@ -13,10 +13,9 @@ async function chat(message) {
 serve({
   port: 8080,
   async fetch(req) {
-    console.log(req.body)
-    const body = await req.json()
-    console.log(body)
-    const response = await chat(body.content);
+    const url = new URL(req.url);
+    const msg = url.searchParams.get('msg');
+    const response = await chat(msg);
     return new Response(response, {
       headers: {
         'Content-Type': 'application/json'
