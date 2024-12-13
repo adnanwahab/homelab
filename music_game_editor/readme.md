@@ -34,7 +34,7 @@ System design - don’t guess; decide empirically
 5 tools
 # devops = bun tailscale
 notification on git-push -- update server
-
+https://culdesac.com
 
 # 6pm to 8pm
 supabase, cloudflare, etc
