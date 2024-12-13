@@ -1,6 +1,7 @@
 # GameKit for Dynabot - learn robotics by playing and editing games w/ diagrams and english
 ### dynabot.dev/games/edit === this repo
 ## 183 mini games
+#### seeingspace + communalscience lab = sims + idk
 https://observablehq.com/@roboticsuniversity/simulation-editor
 # tauri --- steamfirst + webrtc via brwoser not native
 
