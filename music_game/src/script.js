@@ -1,3 +1,5 @@
+import observablehq_sim_editor from "./utils/observablehq_sim_editor.js";
+observablehq_sim_editor()
 import Game from "./games/mixed_mode.js";
 import GamePhysics from "./games/physics.js";
 import Multiplex from "./utils/Multiplex.js";

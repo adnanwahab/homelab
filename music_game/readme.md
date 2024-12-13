@@ -1,8 +1,7 @@
 # GameKit for Dynabot - learn robotics by playing and editing games w/ diagrams and english
 ### dynabot.dev/games/edit === this repo
 ## 183 mini games
- https://observablehq.com/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h
-
+https://observablehq.com/@roboticsuniversity/simulation-editor
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
@@ -25,8 +24,8 @@ npm run build
 
 
 important routes
-# /game/edit 
-# /tools 
+# /game/edit
+# /tools
 
 ## /dynabot
 ## /dynabot/pisaur
@@ -54,8 +53,8 @@ System design - don’t guess; decide empirically
 
 
 5 components
-5 apis 
+5 apis
 
 5 tools
 1. playwright flight
-2. 
+2.
