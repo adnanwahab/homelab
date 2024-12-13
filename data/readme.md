@@ -1,34 +1,51 @@
-data = derp
-derp/sensor_data/cam1 - environmental - for isometric / stereoscopic - livekit-react-native
-derp/sensor_data/cam2 - front facing -  livekit-react-native
-derp/sensor_data/imu/ imu_data.csv
-derp/sensor_data/odometry/
+1. sh <(curl https://create.tauri.app/sh)
+2. browserbase + val.town
+3. fly.io proxy for robot - supabase - make impossible to have bugs
 
+fly-apps/ollama-demo: @jmorganca's ollama.ai demo app on Fly.io
+https://github.com/fly-apps/ollama-demo
 
-DERP
+fly-apps/dockerfile-node: Dockerfile generator for Node.js
+https://github.com/fly-apps/dockerfile-node
 
-Dynamic
-Environmental
-Robotics
-Policy
-----
-a small language model
-1. https://github.com/karpathy/llm.c
---
+fly-apps/hello-static: Create a static website with Fly - HTML from the example
+https://github.com/fly-apps/hello-static
 
-https://observablehq.com/@saneef/pdf-view
+fly-apps/self-host-ollama: A simple repo for deploying Ollama on Fly.io.
+https://github.com/fly-apps/self-host-ollama
 
-case studies https://scale.com/
+fly-apps/nextjs-dictaphone: A sample MDN Web Docs app that records audio snippets, using Next.js and Tigris.
+https://github.com/fly-apps/nextjs-dictaphone
 
+fly-apps/go-example-tigris: A sample Go web app that showcases connection to a Tigris bucket using AWS SDK for Go.
+https://github.com/fly-apps/go-example-tigris
 
+fly-apps/fly-replay-js: An example VanillaJS app showing off `fly-replay`
+https://github.com/fly-apps/fly-replay-js
 
+fly-apps/cog-whisper: Run OpenAI Whisper as a Cog model on Fly GPUs
+https://github.com/fly-apps/cog-whisper
 
-no email - no waitlist
+fly-apps/hello-fastapi: Example project demonstrating how to deploy a FastAPI app to Fly.io.
+https://github.com/fly-apps/hello-fastapi
 
+fly-apps/js-sqlite-in-tigris: Demo with SQLite DB stored in a Tigris bucket
+https://github.com/fly-apps/js-sqlite-in-tigris
 
-View Demo
-login with observablehq.com
-login with twitter.com
+fly-apps/colab-gpu-runtime: Connect your Google Colaboratory to a runtime on Fly GPUs
+https://github.com/fly-apps/colab-gpu-runtime
 
+fly-apps/litefs-js: JavaScript utilities for working with LiteFS on Fly.io
+https://github.com/fly-apps/litefs-js
 
-https://www.youtube.com/watch?v=klTjiXjqHrQ&t=466s&ab_channel=ColinReckons - enjalot 4
+fly-apps/headless-steam: A demo app on how to run @Steam-headless on Fly.io GPU machines
+https://github.com/fly-apps/headless-steam
+
+fly-apps/livebook-on-gpu-demo: Livebook running on Fly.io GPUs
+https://github.com/fly-apps/livebook-on-gpu-demo
+
+fly-apps/tailscale-router
+https://github.com/fly-apps/tailscale-router
+
+fly-apps/python_gpu_example: A setup with Jupyter for GPU-enabled ML tinkering
+https://github.com/fly-apps/python_gpu_example

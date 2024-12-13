@@ -16,4 +16,4 @@ uv run notebooks/roombacat_dynabot # python app that serves 32 notebooks for (ML
 1. tauri app
 2. upstash for drawable canvas
 .env.local
-level 5 agents browser + robot - each person supervise 20
+level 5 agents browser + robot - each person supervise 20 = all world's problems compelted in 24 hours or less.' --- 3% productivity improvenet -> 20% each year per person. -- store 20 datums for self in supabase/litefs
