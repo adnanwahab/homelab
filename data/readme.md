@@ -9,13 +9,7 @@ https://github.com/fly-apps/fly-replay-js
 
 https://github.com/fly-apps/headless-steam
 
-https://github.com/fly-apps/cog-whisper
-https://github.com/fly-apps/hello-fastapi
-
-
-
-
-https://github.com/fly-apps/colab-gpu-runtime
-https://github.com/fly-apps/python_gpu_example
 https://livebook.dev
-https://github.com/fly-apps/go-example-tigris
+https://github.com/Steam-Headless/docker-steam-headless
+https://gwern.net/spaced-repetition
+https://worrydream.com/KillMath/

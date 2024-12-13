@@ -6,8 +6,8 @@ const resend = new Resend(resendApiKey);
 
 const from = '_@llama-tools.com';
 const to = 'adnan.f.wahab@gmail.com';
-const subject = 'scheduled send via obs';
-const html = '<p>scheduled send via obs</p>';
+const subject = 'package delivery';
+
 
 // Add GET method to test if route is accessible
 export async function GET() {
@@ -24,6 +24,8 @@ export async function POST() {
   return Response.json({ message: "Post test 123" });
 }
 
+import EmailTemplate  from './EmailTemplate';
+
 async function sendEmail() {
   console.log('Received POST request to /api/resend');
   console.log('resendApiKey exists:', !!resendApiKey); // Safe way to check if key exists
@@ -33,8 +35,14 @@ async function sendEmail() {
       from,
       to,
       subject,
-      html,
+      //react: EmailTemplate,
+      react: EmailTemplate({ firstName: "John" }) as React.ReactElement,
+
+
+      //scheduledAt: new Date(Date.now() + 1000 * 60 * 60 * 24), // 24 hours from now
     });
 
     return { data, error };
 }
+//enron diagram oas 3d adventure
+//healthy obsession is what every girl wants - esther perel.

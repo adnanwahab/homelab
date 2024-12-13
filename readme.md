@@ -21,3 +21,4 @@ level 5 agents browser + robot - each person supervise 20 = all world's problems
 flyio, tauri, bun, uv,tailscale, supabase
 tauri build --bundles app --target universal-apple-darwin
 https://tauri.app/start/
+https://x.com/YoheiNishitsuji/status/1867487121759424723

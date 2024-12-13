@@ -76,7 +76,7 @@ export default function App() {
           style={{ width: `${splitPosition}%` }}
         >
           <Editor />
-          <Editor />
+          <Editor draft={}/>
         </div>
 
         {/* Resizer */}
