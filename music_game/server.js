@@ -13,7 +13,10 @@ async function chat(message) {
 serve({
   port: 8080,
   async fetch(req) {
-    const response = await chat("hi how are you");
+    console.log(req.body)
+    const body = await req.json()
+    console.log(body)
+    const response = await chat(body.content);
     return new Response(response, {
       headers: {
         'Content-Type': 'application/json'
