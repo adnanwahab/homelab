@@ -10,7 +10,7 @@ document.getElementById("toggle-button").addEventListener("click", () => {
     iframe.src = iframe.src === url_1 ? url_2 : url_1;
 });
 
-document.getElementById("textarea").addEventListener("keydown", (event) => {
+document.getElementById("textarea").addEventListener("keydown", async (event) => {
     if (event.key === "Enter") {
 
         event.preventDefault();
@@ -19,15 +19,23 @@ document.getElementById("textarea").addEventListener("keydown", (event) => {
         const text = document.getElementById("textarea").value;
         
         const encodedText = encodeURIComponent(text);
-        fetch(`https://gpu.jerboa-kokanue.ts.net?msg=${encodedText}`)
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                document.getElementById("response").innerHTML = data.message.content;
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+        const response = await fetch(`https://gpu.jerboa-kokanue.ts.net?msg=${encodedText}`, {
+            method: 'GET',
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // }
+        })
+
+        const data = await response.text()
+        console.log(data)
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log('Success:', data);
+            //     document.getElementById("response").innerHTML = data.message.content;
+            // })
+            // .catch((error) => {
+            //     console.error('Error:', error);
+            // });
     }
 });
 }
