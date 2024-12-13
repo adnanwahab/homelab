@@ -8,7 +8,7 @@ uv run notebooks/roombacat_dynabot # python app that serves 32 notebooks for (ML
 
 
 # api
-1.notebooks = python -
+1. notebooks = python -
 1. data = python fly.io # proxy to selfhosted gpu + cloud storage
 
 
