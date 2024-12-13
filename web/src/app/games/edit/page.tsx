@@ -1,5 +1,21 @@
+"use client";
+import { Remirror, useRemirror } from "@remirror/react";
+import { htmlToProsemirrorNode } from "remirror";
+import {
+  BoldExtension,
+  ItalicExtension,
+  UnderlineExtension,
+} from "remirror/extensions";
+import "@remirror/styles/all.css";
+//https://nullprogram.com/blog/2014/06/29/
 export default function EditGamePage() {
-  return <div>Edit Game Page</div>;
+  return (
+    <div>
+      Edit Game Page
+      <Remirror />
+      <iframe src="https://localhost:5174" />
+    </div>
+  );
 }
 // "use client";
 // //1. english -> llama

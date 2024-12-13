@@ -8,7 +8,7 @@ def read_root():
     return {"message": "Hello, Tailscale + FastAPI + Fly.io!"}
 
 
- 
+
 @app.get("/iframe", response_class=HTMLResponse)
 def iframe():
     return '''
@@ -30,7 +30,7 @@ def iframe():
         </style>
     </head>
     <body>
-        <iframe src="https://bun.sh"></iframe>
+        <iframe src="https://www.dynabot.dev/tools/supabase"></iframe>
 
 
         <iframe src="https://gpu.jerboa-kokanue.ts.net/"></iframe>
