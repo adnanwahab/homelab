@@ -35,3 +35,10 @@ flyio, tauri, bun, uv,tailscale, supabase
 tauri build --bundles app --target universal-apple-darwin
 https://tauri.app/start/
 https://x.com/YoheiNishitsuji/status/1867487121759424723
+
+| Frontend      | Backend       | Python API    | Deploy |
+|--------------|--------------|---------------|---------|
+| music_game   | scripts      | notebooks     | fly.io |
+| web          | data         | roombacat     | tauri |
+
+jupyter, observablehq, figma, livekit/tauri/phone - for research agents
