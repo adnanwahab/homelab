@@ -1,29 +1,37 @@
-import Three_galery from '@/components/threejs_galery'
+import Three_galery from "@/components/threejs_galery";
 
 // import React from 'react'
 // import BlogHeader from './BlogHeader'
 // import AuthorInfo from './AuthorInfo'
 // import GDPRIcon from './GDPRIcon'
 // https://radiant.tailwindui.com/blog/gdpr-is-just-a-suggestion-a-guide-to-european-privacy-laws
-import  ThreeCube from '@/components/attempt_three_import'
-const tags = ['Insights', 'Knowledge']
+import ThreeCube from "@/components/attempt_three_import";
+const tags = ["Insights", "Knowledge"];
 
 interface BlogPostProps {
-  date: string
-  title: string
-  author: string
-  tags: string[]
-  content: string
+  date: string;
+  title: string;
+  author: string;
+  tags: string[];
+  content: string;
 }
 
 const BlogPost: React.FC<BlogPostProps> = () => {
-  const date = "Thursday, August 29, 2024"
-  const title = "Why dynamicland is cool and how it will improve collaboration in 2025"
-  const author = "Marcus Eldridge"
-  const tags = ['Insights', 'Knowledge']
-  const content = `Since its introduction in 2018, GDPR has completely upturned the data collection field and needlessly forced a lot of respectable companies out of business. At Radiant, we’ve built our reputation on evading the reach of privacy regulators, and so we thought it’s about time we shared our strategies with the broader community.`
+  const date = "Thursday, August 29, 2024";
+  const title =
+    "Why dynamicland is cool and how it will improve collaboration in 2025";
+  const author = "Marcus Eldridge";
+  const tags = ["Insights", "Knowledge"];
+  const content = `Since its introduction in 2018, GDPR has completely upturned the data collection field and needlessly forced a lot of respectable companies out of business. At Radiant, we’ve built our reputation on evading the reach of privacy regulators, and so we thought it’s about time we shared our strategies with the broader community.`;
   return (
     <article className="max-w-3xl mx-auto px-4 py-12 ">
+      <div>
+        2014 -2024 the history of technology, media and society by peter drucker
+      </div>
+      <div>
+        Bibliography 1. paul graham 2. paul bucheit 3. avery penarrum 4.
+        kalzumeus 5. tptacek 6.
+      </div>
       <BlogHeader date={date} title={title} />
       <Three_galery />
       <ThreeCube />
@@ -38,9 +46,7 @@ const BlogPost: React.FC<BlogPostProps> = () => {
 
           <div className="flex justify-center">
             <GDPRIcon />
-            <button>
-              hover over button to file write to repo
-            </button>
+            <button>hover over button to file write to repo</button>
           </div>
         </div>
       </div>
@@ -48,19 +54,21 @@ const BlogPost: React.FC<BlogPostProps> = () => {
       <div className="prose prose-invert max-w-none text-gray-300">
         <p>{content}</p>
       </div>
-      <img src="https://worrydream.com/SeeingSpaces/SeeingSpaces.jpg" alt="placeholder" />
+      <img
+        src="https://worrydream.com/SeeingSpaces/SeeingSpaces.jpg"
+        alt="placeholder"
+      />
     </article>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;
 
-
-import React from 'react'
+import React from "react";
 
 interface BlogHeaderProps {
-  date: string
-  title: string
+  date: string;
+  title: string;
 }
 
 const BlogHeader: React.FC<BlogHeaderProps> = ({ date, title }) => {
@@ -69,14 +77,12 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({ date, title }) => {
       <p className="text-sm text-gray-400">{date}</p>
       <h1 className="text-3xl font-bold text-white mt-2">{title}</h1>
     </header>
-  )
-}
-
-
+  );
+};
 
 interface AuthorInfoProps {
-  name: string
-  tags: string[]
+  name: string;
+  tags: string[];
 }
 
 const AuthorInfo: React.FC<AuthorInfoProps> = ({ name, tags }) => {
@@ -87,21 +93,17 @@ const AuthorInfo: React.FC<AuthorInfoProps> = ({ name, tags }) => {
       <div>
         <p className="text-white font-medium">{name}</p>
         <div className="flex space-x-2 mt-1">
-          {tags.map(tag => (
+          {tags.map((tag) => (
             <TagPill key={tag} label={tag} />
           ))}
         </div>
       </div>
     </div>
-  )
-}
-
-
-
-
+  );
+};
 
 interface TagPillProps {
-  label: string
+  label: string;
 }
 
 const TagPill: React.FC<TagPillProps> = ({ label }) => {
@@ -109,17 +111,15 @@ const TagPill: React.FC<TagPillProps> = ({ label }) => {
     <span className="text-xs text-gray-300 bg-gray-700 rounded-full px-3 py-1">
       {label}
     </span>
-  )
-}
-
-
+  );
+};
 
 /**
  * This component uses inline SVG to approximate the icon shown:
  * - A circle with a gradient stroke
  * - 12 stars arranged in a circle
  * - A slash across the circle
- * 
+ *
  * You can adjust the stars, colors, and stroke as needed.
  */
 const GDPRIcon: React.FC = () => {
@@ -162,7 +162,7 @@ const GDPRIcon: React.FC = () => {
 
       {/* Stars (12 of them) arranged roughly in a circle.
           Simplified: Just use a simple star path or a polygon.
-          Adjust transform rotate for spacing. 
+          Adjust transform rotate for spacing.
       */}
       {[...Array(12)].map((_, i) => {
         const angle = (i * 360) / 12;
@@ -176,9 +176,8 @@ const GDPRIcon: React.FC = () => {
         );
       })}
     </svg>
-  )
-}
-
+  );
+};
 
 const ExamplePage = () => {
   return (
@@ -187,11 +186,9 @@ const ExamplePage = () => {
         date="Thursday, August 29, 2024"
         title="GDPR is just a suggestion - A guide to European privacy laws"
         author="Marcus Eldridge"
-        tags={['Insights', 'Knowledge']}
+        tags={["Insights", "Knowledge"]}
         content={`Since its introduction in 2018, GDPR has completely upturned the data collection field and needlessly forced a lot of respectable companies out of business. At Radiant, we’ve built our reputation on evading the reach of privacy regulators, and so we thought it’s about time we shared our strategies with the broader community.`}
       />
     </div>
-  )
-}
-
-
+  );
+};

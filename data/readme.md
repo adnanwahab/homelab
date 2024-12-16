@@ -1,3 +1,5 @@
+# Tauri app 2025 jan 1
+
 1. sh <(curl https://create.tauri.app/sh)
 2. browserbase + val.town
 3. fly.io proxy for robot - supabase - make impossible to have bugs
