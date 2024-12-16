@@ -12,7 +12,6 @@
 
 //tone = happy
 const captions = [
-  ///"I miss you, and i'm sorry for letting you down before the pandemic",
 ];
 
 //https://arxiv.org/pdf/2407.21285
