@@ -1,4 +1,5 @@
-# how to - https://observablehq.com/@roboticsuniversity/simulation-editor
+# gamekit -> https://observablehq.com/@roboticsuniversity/simulation-editor -> synthetetic data
+## dedicated to VPRI launch jan 1 -  dynabot.dev
 ```bash
 go run main.go from data folder # https://fly.io/docs/languages-and-frameworks/golang/
 bun run dev # from music_game -- autodeploy to fly.io - ws
@@ -42,3 +43,4 @@ https://x.com/YoheiNishitsuji/status/1867487121759424723
 | web          | data         | roombacat     | tauri |
 
 jupyter, observablehq, figma, livekit/tauri/phone - for research agents
+https://5-million-devs.netlify.com/
