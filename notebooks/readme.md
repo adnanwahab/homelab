@@ -1,3 +1,5 @@
+"Long term, we intend to distribute the ideas in the form of kits+games which will guide communities through building their own computing environments that they fully understand and control." - dynamicland.org
+
 
 🌈 $300 robot + rtings by Jan 1 🌈
 # fomr shodan + matt -- dififuclt ot make sense of coext efrom one to another
