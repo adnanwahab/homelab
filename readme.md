@@ -40,3 +40,5 @@ https://observablehq.com/d/f5affe250da98b2b
 1. 🌟 https://nextjournal.com/leahneukirchen/determining-an-election-in-k
 2. ⭐ https://pyodide.org/en/stable/console.html
 https://tinlizzie.org/IA/index.php/Papers_from_Viewpoints_Research_Institute
+https://threejs.org/examples/css3d_periodictable.html
+https://www.amazon.com/hz/mycd/digital-console/contentlist/booksAll/dateDsc/ - bookshelf
