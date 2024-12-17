@@ -2,16 +2,8 @@
 # dynabot = dynamicland + medbot matsu gravas nightgale
 
 ![medbot](https://raw.githubusercontent.com/adnanwahab/homelab/refs/heads/main/web/public/medbot.webp)
-
-
-
-
-
-
-
-
-# non profit
 # english code gen
+# nonprofit
 # 10,000 books for next 27 years
 
 https://observablehq.com/d/66b261ca53371a08
