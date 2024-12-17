@@ -1,6 +1,8 @@
-
+# text 713-677-3669 for excel of every manufacturing company on earth -- new devices 2025
 
 # observableHQ to manufacturing ---- we work with our hands and our friends --- to learn how to make new robotis for 2025
+# buying flights fr rena and al our friends
+# obbserrvablehq + horatiou + mark chathkan + mark rev + adel wahab + farah wahab ellis + everyone we every met on facebook, youtube and
 
 # observables organiizing the owrlds informations
 # shaun doug;as to luke cianni to bret itor to 2025 to
