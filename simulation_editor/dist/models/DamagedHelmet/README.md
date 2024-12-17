@@ -1,4 +1,5 @@
 # text 713-677-3669 for excel of every manufacturing company on earth -- new devices 2025
+# arcology = architecture + ecology
 
 # observableHQ to manufacturing ---- we work with our hands and our friends --- to learn how to make new robotis for 2025
 # buying flights fr rena and al our friends
