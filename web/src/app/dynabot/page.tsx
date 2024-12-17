@@ -118,7 +118,13 @@ const StoryBookFooter = () => {
 };
 
 import React from "react";
-import { Command, ExternalLink, Github } from "lucide-react";
+import {
+  Command,
+  ExternalLink,
+  Github,
+  Code,
+  ChevronRight,
+} from "lucide-react";
 
 const StoryBookLanding = () => {
   return (
@@ -237,10 +243,122 @@ const StoryBookLanding = () => {
   );
 };
 
+const LandingPage = () => {
+  const techLogos = [
+    { name: "React", icon: <div className="text-2xl">⚛️</div> },
+    { name: "Vue", icon: <div className="text-2xl">💚</div> },
+    { name: "Angular", icon: <div className="text-2xl">🅰️</div> },
+    { name: "HTML5", icon: <div className="text-2xl">🌐</div> },
+    { name: "More", icon: <div className="text-2xl">+7</div> },
+  ];
+
+  const topBrands = [
+    { name: "VS Code", icon: "◇" },
+    { name: "GitHub", icon: "GH" },
+    { name: "Airbnb", icon: "⌂" },
+    { name: "Mozilla", icon: "Moz" },
+    { name: "Monday", icon: "◆" },
+    { name: "BBC", icon: "BBC" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white">
+      {/* Top brands bar */}
+      <div className="w-full border-b border-gray-800">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex justify-between items-center space-x-8">
+            {topBrands.map((brand) => (
+              <div
+                key={brand.name}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                {brand.icon}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <div className="container mx-auto px-6 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="space-y-8">
+            <h1 className="text-5xl font-bold leading-tight">
+              Develop durable user interfaces
+            </h1>
+            <p className="text-xl text-gray-400">
+              Storybook provides a workshop to build UIs in isolation. It helps
+              you develop hard-to-reach states and edge cases without needing to
+              run the whole app.
+            </p>
+
+            {/* Tech stack badges */}
+            <div className="space-y-4">
+              <p className="text-sm uppercase tracking-wider text-gray-500">
+                MADE FOR
+              </p>
+              <div className="flex space-x-4">
+                {techLogos.map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="flex items-center justify-center w-10 h-10 rounded bg-gray-800 hover:bg-gray-700 transition-colors"
+                  >
+                    {tech.icon}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="flex space-x-4">
+              <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center space-x-2">
+                <Code size={20} />
+                <span>Get Started</span>
+                <ChevronRight size={20} />
+              </button>
+              <button className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg">
+                Browse docs
+              </button>
+            </div>
+          </div>
+
+          {/* Preview Section */}
+          <div className="relative">
+            <div className="bg-gray-800 rounded-lg p-4 shadow-xl">
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="col-span-1 bg-gray-700 rounded-lg p-4">
+                  <div className="space-y-2">
+                    <div className="h-4 bg-gray-600 rounded w-3/4"></div>
+                    <div className="h-4 bg-gray-600 rounded w-1/2"></div>
+                    <div className="h-4 bg-gray-600 rounded w-2/3"></div>
+                  </div>
+                </div>
+                <div className="col-span-2 bg-gray-700 rounded-lg p-4">
+                  <div className="space-y-4">
+                    <div className="h-32 bg-gray-600 rounded"></div>
+                    <div className="h-4 bg-gray-600 rounded w-1/2"></div>
+                    <div className="h-4 bg-gray-600 rounded w-3/4"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function () {
   return (
     <>
       <StoryBookLanding />
+      <LandingPage />
       <StoryBookFooter />
     </>
   );
