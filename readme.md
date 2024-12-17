@@ -1,7 +1,7 @@
 
 # dynabot = dynamicland + medbot matsu gravas nightgale
 
-![medbot](/medbot.webp)
+![medbot](/web/public/medbot.webp)
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-# non profit + anonymous
+# non profit
 # english code gen
 # 10,000 books for next 27 years
 
