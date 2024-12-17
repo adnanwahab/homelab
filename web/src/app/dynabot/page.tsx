@@ -98,7 +98,7 @@ const StoryBookFooter = () => {
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
         <div className="flex items-center gap-4 mb-4 md:mb-0">
           <span className="text-gray-400">Open source software</span>
-          <img src="/api/placeholder/32/32" alt="Storybook" className="h-8" />
+          <img src="/api/placeholder/W32/32" alt="Storybook" className="h-8" />
           <span className="text-gray-400">Maintained by</span>
           <img src="/api/placeholder/32/32" alt="Chromatic" className="h-8" />
         </div>
@@ -117,7 +117,6 @@ const StoryBookFooter = () => {
   );
 };
 
-import React from "react";
 import {
   Command,
   ExternalLink,
@@ -354,11 +353,199 @@ const LandingPage = () => {
   );
 };
 
+import React from "react";
+import {
+  LineChart,
+  Line,
+  AreaChart,
+  Area,
+  PieChart,
+  Pie,
+  BarChart,
+  Bar,
+  Cell,
+} from "recharts";
+import {
+  Eye,
+  Box,
+  MousePointer2,
+  Accessibility,
+  Code2,
+  ListTodo,
+} from "lucide-react";
+
+const TestingDashboard = () => {
+  const lineData = [
+    { time: "20ms", value: 5 },
+    { time: "30ms", value: 15 },
+    { time: "40ms", value: 20 },
+  ];
+
+  const pieData = [
+    { name: "Slice 1", value: 25 },
+    { name: "Slice 2", value: 25 },
+    { name: "Slice 3", value: 25 },
+    { name: "Slice 4", value: 12.5 },
+    { name: "Slice 5", value: 12.5 },
+  ];
+
+  const barData = [
+    { time: "20ms", value: 5 },
+    { time: "25ms", value: 15 },
+    { time: "30ms", value: 15 },
+    { time: "35ms", value: 18 },
+    { time: "40ms", value: 22 },
+    { time: "45ms", value: 15 },
+  ];
+
+  const calendar = Array.from({ length: 35 }, (_, i) => i + 1);
+
+  const COLORS = ["#00C49F", "#0088FE", "#FFBB28", "#8884D8", "#FF8042"];
+
+  return (
+    <div className="min-h-screen bg-navy-900 p-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-12">
+          <h1 className="text-5xl font-bold text-white mb-4">
+            Test UIs with less effort and no flake
+          </h1>
+          <p className="text-gray-300">
+            Stories capture the "known good" states of UI components. They're a
+            pragmatic, reproducible way to keep track of UI edge cases. Reuse
+            stories to power automated tests
+          </p>
+          <button className="mt-4 bg-gray-600 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors">
+            Learn about UI tests
+          </button>
+        </div>
+
+        <div className="grid grid-cols-2 gap-6 mb-8">
+          <div className="bg-white p-4 rounded-lg shadow">
+            <AreaChart width={300} height={200} data={lineData}>
+              <Area
+                type="monotone"
+                dataKey="value"
+                stroke="#8884d8"
+                fill="#8884d8"
+                fillOpacity={0.3}
+              />
+            </AreaChart>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow">
+            <PieChart width={300} height={200}>
+              <Pie
+                data={pieData}
+                cx={150}
+                cy={100}
+                innerRadius={60}
+                outerRadius={80}
+                paddingAngle={5}
+                dataKey="value"
+              >
+                {pieData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index % COLORS.length]}
+                  />
+                ))}
+              </Pie>
+            </PieChart>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow">
+            <BarChart width={300} height={200} data={barData}>
+              <Bar dataKey="value" fill="#8884d8" />
+            </BarChart>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow">
+            <div className="grid grid-cols-7 gap-1">
+              <div className="col-span-7 grid grid-cols-7 text-center text-xs text-gray-500 mb-2">
+                <div>Su</div>
+                <div>Mo</div>
+                <div>Tu</div>
+                <div>We</div>
+                <div>Th</div>
+                <div>Fr</div>
+                <div>Sa</div>
+              </div>
+              {calendar.map((day) => (
+                <div
+                  key={day}
+                  className={`aspect-square flex items-center justify-center text-sm ${
+                    day === 8 ? "bg-blue-500 text-white rounded-full" : ""
+                  }`}
+                >
+                  {day}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          {[
+            {
+              icon: Eye,
+              title: "Spot test",
+              description: "Stories are tests you can debug in dev and QA.",
+              color: "bg-blue-500",
+            },
+            {
+              icon: Box,
+              title: "Visual test appearance",
+              description: "Pinpoint UI changes down to the pixel.",
+              color: "bg-emerald-500",
+            },
+            {
+              icon: MousePointer2,
+              title: "Component test behavior",
+              description: "Simulate user behavior and assert in the browser.",
+              color: "bg-blue-600",
+            },
+            {
+              icon: Accessibility,
+              title: "Accessibility tests",
+              description: "Check stories for WCAG and ARIA issues.",
+              color: "bg-purple-500",
+            },
+            {
+              icon: Code2,
+              title: "Snapshot test markup",
+              description: "Detect regressions in DOM markup.",
+              color: "bg-orange-500",
+            },
+            {
+              icon: ListTodo,
+              title: "Reuse tests in other test tools",
+              description:
+                "Write stories once to reuse across your test suite.",
+              color: "bg-gray-500",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="p-4 bg-navy-800 rounded-lg flex items-center space-x-4"
+            >
+              <div className={`p-2 ${item.color} rounded-lg`}>
+                <item.icon className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-white font-semibold">{item.title}</h3>
+                <p className="text-gray-400">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function () {
   return (
     <>
       <StoryBookLanding />
       <LandingPage />
+      <TestingDashboard />
       <StoryBookFooter />
     </>
   );
