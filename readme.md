@@ -119,3 +119,4 @@ https://docs.google.com/spreadsheets/d/1iW--Rys40_wqqvcGlSVYiYP3vcUTlHvVbXX5bqS6
 
 
 # 2025 - we want a civlization without followers and leaders - 2019 pandemic proved that hierarchy is out of date
+# people are slices of knowledge of VPRI
