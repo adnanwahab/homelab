@@ -42,3 +42,8 @@ https://observablehq.com/d/f5affe250da98b2b
 https://tinlizzie.org/IA/index.php/Papers_from_Viewpoints_Research_Institute
 https://threejs.org/examples/css3d_periodictable.html
 https://www.amazon.com/hz/mycd/digital-console/contentlist/booksAll/dateDsc/ - bookshelf
+
+7,000 hospitals in USA
+
+10,000 cities in the world
+10,000 factories
