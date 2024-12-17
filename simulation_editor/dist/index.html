@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixing HTML and WebGL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" crossorigin src="/assets/index-BfKx4OSI.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Zpc_hVDV.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <!-- Main container with grid layout -->
+    <div class=" mx-auto w-full">
+        <!-- Header -->
+        <header class="mb-6">
+            <h1 class="text-3xl font-bold shiny-text">GameKit for Dynabot - origami</h1>
+        </header>
+
+        <!-- Main content grid -->
+        <div class="grid grid-cols-4 gap-4">
+            <!-- Canvas section - spans 3 columns -->
+            <div class="col-span-3">
+                <div class="grid grid-cols-3 gap-4">
+                    <!-- Canvas 1 -->
+                    <div class="bg-slate-800 rounded-lg p-4 shadow-lg">
+                        <div class="text-center mb-2" id="label-one"></div>
+                        <canvas class="canvas-red w-full aspect-square"></canvas>
+                    </div>
+                    
+                    <!-- Canvas 2 -->
+                    <div class="bg-slate-800 rounded-lg p-4 shadow-lg">
+                        <div class="text-center mb-2" id="label-two"></div>
+                        <canvas class="canvas-blue w-full aspect-square"></canvas>
+                    </div>
+                    
+                    <!-- Canvas 3 -->
+                    <div class="bg-slate-800 rounded-lg p-4 shadow-lg">
+                        <div class="text-center mb-2" id="label-three"></div>
+                        <canvas class="canvas-green w-full aspect-square"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Textarea section - spans 1 column -->
+            <div class="col-span-1">
+                <div class="bg-slate-800 rounded-lg p-4 shadow-lg h-full">
+                    <label class="block text-sm font-medium mb-2">Notes/spec/diagrams</label>
+                    <textarea 
+                    id="textarea"
+                    class="w-full h-36 bg-slate-700 rounded-md p-3 text-sm resize-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your notes here..."></textarea>
+                    <div id="response" class="text-sm text-slate-400  h-36w-48 border-2 border-slate-600 rounded-md p-3"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-3 gap-4 mt-8">
+            <div class="bg-slate-800 rounded-lg p-4 shadow-lg">
+                <div id="observablehq-25a283dc"></div>
+                <p>Credit: <a href="https://observablehq.com/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h">ObservableHQ Simulation Editor - Launch Date Jan 1 - happy new Year by dynabot.dev</a></p>
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+            </div>
+
+            <div class="bg-slate-800 rounded-lg p-4 shadow-lg col-span-2">
+                <button class="bg-slate-700 rounded-lg p-2 shadow-lg" id="toggle-button">toggle</button>
+                <!-- <iframe width="300" height="300" frameborder="0"
+                src="https://observablehq.com/embed/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h?cell=*"></iframe> -->
+
+                <iframe 
+                id="observablehq-iframe"
+                width="100%" height="100%" frameborder="0"
+                class="bg-slate-100"
+
+  src="https://observablehq.com/embed/@roboticsuniversity/simulation-editor?cells=viewof+table&banner=false"></iframe>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- Keep your scripts -->
+</body>
+</html>
+<!-- tree based encapsulation 4-7 things for robotics -->

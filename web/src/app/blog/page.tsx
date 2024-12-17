@@ -35,8 +35,12 @@ const BlogPost: React.FC<BlogPostProps> = () => {
       <BlogHeader date={date} title={title} />
       <Three_galery />
       <ThreeCube />
+      <div>
+        https://www.youtube.com/watch?v=cTyBiqH2elU The orthodox called paul
+        graham an anti-semite.{" "}
+      </div>
+      <div>Badani blocked me - june 5 2020.</div>
       {/* <AuthorInfo name={author} tags={tags} /> */}
-
       <div className="my-8">
         {/* The "card" containing the GDPR icon */}
         <div className="bg-[#0f172a] rounded-lg p-8 relative overflow-hidden">
@@ -50,7 +54,6 @@ const BlogPost: React.FC<BlogPostProps> = () => {
           </div>
         </div>
       </div>
-
       <div className="prose prose-invert max-w-none text-gray-300">
         <p>{content}</p>
       </div>

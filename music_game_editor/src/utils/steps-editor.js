@@ -1,1 +1,0 @@
-//goal - kriby any demo on net via magic iframe + proxy + llama  using periodic to display 150 datums

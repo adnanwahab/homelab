@@ -1,3 +1,6 @@
+# simulation + testing for medical bots
+## basic first aid bot - 2026 - $1000 for nursing
+
 
 # dynabot = dynamicland + medbot matsu gravas nightgale
 
@@ -47,3 +50,4 @@ https://www.amazon.com/hz/mycd/digital-console/contentlist/booksAll/dateDsc/ - b
 
 10,000 cities in the world
 10,000 factories
+https://online-engineering.case.edu/blog/medical-robots-making-a-difference - 5

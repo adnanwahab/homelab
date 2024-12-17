@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixing HTML and WebGL</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100">
+<h1 class="shiny-text ">GameKit for Dynabot - origami</h1>
+<div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> css3d - periodic table.</div>
+<div id="container"></div>
+<div class="flex flex-row" id="game-container">
+    <div class="flex flex-col">
+        <div class="text-center mb-2" id="label-one"></div>
+        <canvas class="canvas-red"></canvas>
+    </div>
+    <div class="flex flex-col">
+        <div class="text-center mb-2" id="label-two"></div>
+        <canvas class="canvas-blue"></canvas>
+    </div>
+    <div class="flex flex-col">
+        <div class="text-center mb-2" id="label-three"></div>
+        <canvas class="canvas-green"></canvas>
+    </div>
+    <!-- <div class="flex flex-col">
+        <div class="text-center mb-2">drawing</div>
+        <canvas class="canvas-purple"></canvas>
+    </div>
+    <div class="flex flex-col">
+        <div class="text-center mb-2">science lab</div>
+        <canvas class="canvas-teal"></canvas>
+    </div> -->
+</div>
+
+    <script type="module" src="./script.js"></script>
+
+    <div id="observablehq-25a283dc"></div>
+    <p>Credit: <a href="https://observablehq.com/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h">ObservableHQ Simulation Editor - Launch Date Jan 1 - happy new Year by dynabot.dev</a></p>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+    <script type="module">
+    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h.js?v=4";
+    const runtime = new Runtime().module(define, Inspector.into("#observablehq-25a283dc"));
+    console.log(runtime);
+    </script>
+      <!-- <div class="flex flex-col border-4 border-blue-300 border-r-0 border-t-0 border-b-0 h-screen  hidden"></div>
+        <div class="text-center mb-2">Tools</div>
+        <iframe width="300" height="300" frameborder="0"
+  src="https://observablehq.com/embed/@dynabot-dev/observablehq-simulation-editor-launch-date-jan-1-h?cell=*"></iframe>
+  <iframe width="300" height="300" frameborder="0"
+  src="https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/"></iframe>
+  <iframe width="300" height="300" frameborder="0"
+  src="https://shels-macbook-pro.jerboa-kokanue.ts.net"></iframe>
+  <iframe width="300" height="300" frameborder="0"
+  src="https://first-flyio-fastapi.fly.dev"></iframe>
+</div> -->
+<img src="./4.png" alt="dynabot" class="w-24">
+
+</body>
+</html>
+<!-- tree based encapsulation 4-7 things for robotics -->
