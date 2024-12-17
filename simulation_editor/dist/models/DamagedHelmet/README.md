@@ -56,3 +56,5 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API
 # music + science + art
 https://observablehq.com/@tomlarkworthy/audio-inputs
 https://observablehq.com/d/66b261ca53371a08 - 10,000 books from 2025 -2052
+https://suno.com/
+https://www.udio.com/?utm_source=google&utm_medium=cpc&utm_campaign=21895383022&utm_content=174058371990&utm_term=%EF%BD%95%EF%BD%84%EF%BD%89%EF%BD%8F&gad_source=1&gclid=CjwKCAiA34S7BhAtEiwACZzv4flSVN10axH_KcnkF9IFmf0HhrMLfnjO80gsY7fiPrWgbpswtr4bYBoCO3UQAvD_BwE
