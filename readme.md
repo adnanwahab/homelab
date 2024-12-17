@@ -1,5 +1,6 @@
 
 # dynabot = dynamicland + medbot matsu gravas nightgale
+# non profit + anonymous
 
 https://observablehq.com/d/66b261ca53371a08
 https://observablehq.com/d/f5affe250da98b2b
