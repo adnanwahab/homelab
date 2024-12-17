@@ -46,3 +46,6 @@ https://sketchfab.com/models/b81008d513954189a063ff901f7abfe4
 ## Modifications
 
 The original model was built on an early draft of glTF 2.0 that did not become final.  This new model has been imported and re-exported from Blender to bring it into alignment with the final release glTF 2.0 specification.
+https://www.kevinrooke.com/book-recommendations/peter-thiel
+https://github.com/Steam-Headless/docker-steam-headless
+https://www.google.com/search?q=gravity+falls+midi+collision&rlz=1C5CHFA_enUS1125US1125&oq=gravity+falls+midi+collision&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDQzMzFqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
