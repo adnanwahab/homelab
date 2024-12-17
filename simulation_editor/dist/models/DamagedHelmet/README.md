@@ -49,3 +49,10 @@ The original model was built on an early draft of glTF 2.0 that did not become f
 https://www.kevinrooke.com/book-recommendations/peter-thiel
 https://github.com/Steam-Headless/docker-steam-headless
 https://www.google.com/search?q=gravity+falls+midi+collision&rlz=1C5CHFA_enUS1125US1125&oq=gravity+falls+midi+collision&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDQzMzFqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
+https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API
+
+
+
+# music + science + art
+https://observablehq.com/@tomlarkworthy/audio-inputs
+https://observablehq.com/d/66b261ca53371a08 - 10,000 books from 2025 -2052
