@@ -1,8 +1,16 @@
 
 
+# observableHQ to manufacturing ---- we work with our hands and our friends --- to learn how to make new robotis for 2025
+
 # observables organiizing the owrlds informations
 # shaun doug;as to luke cianni to bret itor to 2025 to
 # include all of our friends for hardwre manufuacturing
+
+
+# future city to blender to unreal to unity to cognition enginein to pdf to markdwon eceryone write am akdown and make our own github repos for hardware nufuctauiing
+
+# VR to spatial AI to mEdTEch from 2019 all our friends text 713-677-3669 - new job researching - medTech to manufacturing with mike xia - voltaeg park
+
 
 
 # dynamicland to zoox o medtech for
