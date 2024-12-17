@@ -1,6 +1,8 @@
 
 
 # observables organiizing the owrlds informations
+# shaun doug;as to luke cianni to bret itor to 2025 to
+# include all of our friends for hardwre manufuacturing
 
 
 # dynamicland to zoox o medtech for
