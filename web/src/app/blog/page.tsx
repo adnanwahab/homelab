@@ -36,6 +36,11 @@ const BlogPost: React.FC<BlogPostProps> = () => {
       <Three_galery />
       <ThreeCube />
       <div>
+        This is a living blog post - that will be added to every day or the next
+        10,000 days or 27 year.
+      </div>
+      <div>200 people - emailed daily for contributions</div>
+      <div>
         https://www.youtube.com/watch?v=cTyBiqH2elU The orthodox called paul
         graham an anti-semite.{" "}
       </div>

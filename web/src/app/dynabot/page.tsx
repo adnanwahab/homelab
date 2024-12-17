@@ -1,3 +1,60 @@
+
+const Header = function Header() {
+   return (
+     <header className="w-full relative z-50 border-b border-white/20">
+       <div className="mx-auto max-w-8xl">
+         <div className="h-18 py-4 px-4 sm:px-8 md:px-8 lg:border-0 flex items-center justify-between">
+           <div className="flex items-center gap-6">
+             {/* Logo link */}
+             <a className="pl-2 md:px-3 h-8 flex items-center" href="/" aria-label="Home">
+               {/* ... SVG content ... */}
+             </a>
+ 
+             {/* Navigation */}
+             <nav aria-label="Main" data-orientation="horizontal" dir="ltr" className="min-[940px]:block hidden">
+               <div className="relative">
+                 <ul data-orientation="horizontal" className="flex gap-2" dir="ltr">
+                   {/* Nav items */}
+                   <li>
+                     <a className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 dark:focus-visible:ring-slate-300 duration-300 h-8 px-2 group flex items-center justify-center gap-2 text-white hover:bg-white/10 hover:text-white" 
+                        href="/docs">
+                       Docs
+                     </a>
+                   </li>
+                   {/* ... other nav items ... */}
+                 </ul>
+               </div>
+             </nav>
+           </div>
+ 
+           {/* Right side controls */}
+           <div className="flex">
+             {/* GitHub link */}
+             <a className="h-8 flex items-center justify-center border rounded-full transition-colors max-[1040px]:hidden px-3 gap-2 mr-4 border-white/30 hover:border-white text-white"
+                href="https://github.com/storybookjs/storybook" 
+                rel="noreferrer noopener" 
+                target="_blank"
+                aria-label="Star Storybook on GitHub">
+               {/* ... GitHub icon and star count ... */}
+             </a>
+ 
+             {/* Search button */}
+             <div className="[&_.DocSearch-Button]:bg-transparent [&_.DocSearch-Button]:max-[440px]:bg-slate-100 [&_.DocSearch-Button]:max-[440px]:w-full [&_.DocSearch-Button]:rounded-full [&_.DocSearch-Button]:h-8 [&_.DocSearch-Button]:px-3 [&_.DocSearch-Button]:m-0 [&_.DocSearch-Button]:border [&_.DocSearch-Button]:border-white/30 [&_.DocSearch-Button]:text-white [&_.DocSearch-Button]:w-44">
+               {/* ... Search button content ... */}
+             </div>
+ 
+             {/* Mobile menu button */}
+             <button className="group flex items-center gap-2 justify-center h-8 w-8 rounded min-[940px]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 dark:focus-visible:ring-slate-300 duration-300 ml-4 text-white font-bold hover:bg-white/10 hover:text-white" 
+                     type="button">
+               {/* ... Menu icon ... */}
+             </button>
+           </div>
+         </div>
+       </div>
+     </header>
+   );
+ }
+
 const attempt = `<div>
       <div class="bg-homeBackground relative" id="page-top">
    <div class="relative z-10">
@@ -13,75 +70,7 @@ const attempt = `<div>
             </svg>
          </a>
       </div>
-      <header class="ui-w-full ui-relative ui-z-50 ui-border-b ui-border-white/20">
-         <div class="ui-mx-auto ui-max-w-8xl">
-            <div class="ui-h-18 ui-py-4 ui-px-4 sm:ui-px-8 md:ui-px-8 lg:ui-border-0 ui-flex ui-items-center ui-justify-between">
-               <div class="ui-flex ui-items-center ui-gap-6">
-                  <a class="ui-pl-2 md:ui-px-3 ui-h-8 ui-flex ui-items-center" href="/" aria-label="Home">
-                     <svg fill="none" height="24" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
-                        <path class="ui-fill-[#333333] dark:ui-fill-white ui-fill-white" clip-rule="evenodd" d="M26.64 15.8314C25.7867 15.8314 24.9653 15.7168 24.176 15.4874C23.3867 15.2581 22.7307 14.9408 22.208 14.5354L23.008 12.7594C24.096 13.5168 25.3173 13.8954 26.672 13.8954C27.376 13.8954 27.9173 13.7808 28.296 13.5514C28.6747 13.3221 28.864 13.0048 28.864 12.5994C28.864 12.2368 28.6907 11.9541 28.344 11.7514C27.9973 11.5488 27.3813 11.3514 26.496 11.1594C25.504 10.9568 24.712 10.7114 24.12 10.4234C23.528 10.1354 23.096 9.78076 22.824 9.35943C22.552 8.93809 22.416 8.4181 22.416 7.79943C22.416 7.11676 22.6053 6.50876 22.984 5.97543C23.3627 5.44209 23.8933 5.02343 24.576 4.71943C25.2587 4.41543 26.048 4.26343 26.944 4.26343C27.744 4.26343 28.5147 4.38076 29.256 4.61543C29.9973 4.8501 30.5867 5.16476 31.024 5.55943L30.224 7.33543C29.1893 6.57809 28.1013 6.19943 26.96 6.19943C26.3093 6.19943 25.7973 6.32476 25.424 6.57543C25.0507 6.8261 24.864 7.17009 24.864 7.60743C24.864 7.86343 24.936 8.07409 25.08 8.23943C25.224 8.40476 25.464 8.55143 25.8 8.67943C26.136 8.80743 26.6133 8.94076 27.232 9.07943C28.6827 9.39943 29.7253 9.81009 30.36 10.3114C30.9947 10.8128 31.312 11.5061 31.312 12.3914C31.312 13.4581 30.9013 14.2981 30.08 14.9114C29.2587 15.5248 28.112 15.8314 26.64 15.8314ZM37.1042 14.0393C37.3495 14.0393 37.6055 14.0233 37.8722 13.9913L37.7442 15.7513C37.4348 15.794 37.1255 15.8153 36.8162 15.8153C35.6215 15.8153 34.7495 15.554 34.2002 15.0313C33.6508 14.5087 33.3762 13.714 33.3762 12.6473V9.63934H31.8882V7.83134H33.3762V5.52734H35.7922V7.83134H37.7602V9.63934H35.7922V12.6313C35.7922 13.57 36.2295 14.0393 37.1042 14.0393ZM42.72 15.8154C41.888 15.8154 41.1573 15.6474 40.528 15.3114C39.8987 14.9754 39.4133 14.5008 39.072 13.8874C38.7307 13.2741 38.56 12.5514 38.56 11.7194C38.56 10.8874 38.7307 10.1648 39.072 9.55143C39.4133 8.93809 39.8987 8.4661 40.528 8.13543C41.1573 7.80476 41.888 7.63943 42.72 7.63943C43.552 7.63943 44.2827 7.80476 44.912 8.13543C45.5413 8.4661 46.0267 8.93809 46.368 9.55143C46.7093 10.1648 46.88 10.8874 46.88 11.7194C46.88 12.5514 46.7093 13.2741 46.368 13.8874C46.0267 14.5008 45.5413 14.9754 44.912 15.3114C44.2827 15.6474 43.552 15.8154 42.72 15.8154ZM42.72 13.9754C43.8933 13.9754 44.48 13.2234 44.48 11.7194C44.48 10.9621 44.328 10.3968 44.024 10.0234C43.72 9.65009 43.2853 9.46343 42.72 9.46343C41.5467 9.46343 40.96 10.2154 40.96 11.7194C40.96 13.2234 41.5467 13.9754 42.72 13.9754ZM53.5681 9.62354L52.2081 9.76754C51.5361 9.83154 51.0615 10.0209 50.7841 10.3355C50.5068 10.6502 50.3681 11.0689 50.3681 11.5915V15.6875H47.9521V7.83154H50.2721V9.15954C50.6668 8.25286 51.4828 7.75687 52.7201 7.67154L53.4241 7.62354L53.5681 9.62354ZM60.588 7.84743H62.956L58.22 18.5674H55.772L57.276 15.2554L54.044 7.84743H56.556L58.54 12.8394L60.588 7.84743ZM68.5559 7.63947C69.2386 7.63947 69.8412 7.8048 70.3639 8.13547C70.8866 8.46614 71.2946 8.93813 71.5879 9.55147C71.8812 10.1648 72.0279 10.8768 72.0279 11.6875C72.0279 12.4981 71.8812 13.2155 71.5879 13.8395C71.2946 14.4635 70.8839 14.9488 70.3559 15.2955C69.8279 15.6421 69.2279 15.8155 68.5559 15.8155C68.0119 15.8155 67.5212 15.7008 67.0839 15.4715C66.6466 15.2421 66.3106 14.9248 66.0759 14.5195V15.6875H63.6919V4.40747H66.1079V8.88747C66.3426 8.4928 66.6759 8.18614 67.1079 7.96747C67.5399 7.7488 68.0226 7.63947 68.5559 7.63947ZM67.8522 13.9755C68.4175 13.9755 68.8548 13.7755 69.1642 13.3755C69.4735 12.9755 69.6282 12.4128 69.6282 11.6875C69.6282 10.9728 69.4735 10.4262 69.1642 10.0475C68.8548 9.66882 68.4175 9.47949 67.8522 9.47949C67.2868 9.47949 66.8495 9.67416 66.5402 10.0635C66.2308 10.4528 66.0762 11.0048 66.0762 11.7195C66.0762 12.4448 66.2308 13.0022 66.5402 13.3915C66.8495 13.7808 67.2868 13.9755 67.8522 13.9755ZM77.2762 15.8154C76.4442 15.8154 75.7135 15.6474 75.0842 15.3114C74.4549 14.9754 73.9695 14.5007 73.6282 13.8874C73.2869 13.2741 73.1162 12.5514 73.1162 11.7194C73.1162 10.8874 73.2869 10.1647 73.6282 9.5514C73.9695 8.93807 74.4549 8.46607 75.0842 8.1354C75.7135 7.80474 76.4442 7.6394 77.2762 7.6394C78.1082 7.6394 78.8389 7.80474 79.4682 8.1354C80.0975 8.46607 80.5829 8.93807 80.9242 9.5514C81.2655 10.1647 81.4362 10.8874 81.4362 11.7194C81.4362 12.5514 81.2655 13.2741 80.9242 13.8874C80.5829 14.5007 80.0975 14.9754 79.4682 15.3114C78.8389 15.6474 78.1082 15.8154 77.2762 15.8154ZM77.2761 13.9754C78.4495 13.9754 79.0361 13.2234 79.0361 11.7194C79.0361 10.962 78.8841 10.3967 78.5801 10.0234C78.2761 9.65004 77.8414 9.46338 77.2761 9.46338C76.1028 9.46338 75.5161 10.2154 75.5161 11.7194C75.5161 13.2234 76.1028 13.9754 77.2761 13.9754ZM86.284 15.8154C85.452 15.8154 84.7213 15.6474 84.092 15.3114C83.4627 14.9754 82.9773 14.5008 82.636 13.8874C82.2947 13.2741 82.124 12.5514 82.124 11.7194C82.124 10.8874 82.2947 10.1648 82.636 9.55143C82.9773 8.93809 83.4627 8.4661 84.092 8.13543C84.7213 7.80476 85.452 7.63943 86.284 7.63943C87.116 7.63943 87.8467 7.80476 88.476 8.13543C89.1053 8.4661 89.5907 8.93809 89.932 9.55143C90.2733 10.1648 90.444 10.8874 90.444 11.7194C90.444 12.5514 90.2733 13.2741 89.932 13.8874C89.5907 14.5008 89.1053 14.9754 88.476 15.3114C87.8467 15.6474 87.116 15.8154 86.284 15.8154ZM86.284 13.9754C87.4574 13.9754 88.044 13.2234 88.044 11.7194C88.044 10.9621 87.892 10.3968 87.588 10.0234C87.284 9.65009 86.8493 9.46343 86.284 9.46343C85.1107 9.46343 84.524 10.2154 84.524 11.7194C84.524 13.2234 85.1107 13.9754 86.284 13.9754ZM100 15.6875H97.0402L94.0322 12.1835V15.6875H91.6162V4.40747H94.0322V11.1915L96.9282 7.84747H99.8082L96.5122 11.5915L100 15.6875Z" fill-rule="evenodd"></path>
-                        <path d="M0.620279 18.4293L0.000720095 1.92089C-0.0197415 1.37568 0.398305 0.913625 0.942836 0.879592L14.9844 0.00199235C15.5387 -0.0326493 16.0161 0.38859 16.0507 0.942857C16.052 0.96374 16.0527 0.984658 16.0527 1.00558V18.9945C16.0527 19.5498 15.6025 20 15.0471 20C15.0321 20 15.0171 19.9997 15.002 19.999L1.58 19.3962C1.05727 19.3727 0.639903 18.9522 0.620279 18.4293Z" fill="#FF4785"></path>
-                        <path clip-rule="evenodd" d="M13.8804 0.0710449L11.9479 0.191825L11.8536 2.45837C11.8522 2.49321 11.8629 2.52747 11.884 2.55526C11.9341 2.62126 12.0282 2.63418 12.0942 2.58411L12.9746 1.91625L13.7182 2.50205C13.7461 2.524 13.7808 2.53536 13.8163 2.53413C13.8991 2.53124 13.9639 2.46178 13.961 2.37898L13.8804 0.0710449ZM12.3763 7.66099C12.0225 7.93579 9.38733 8.12329 9.38733 7.73208C9.44302 6.23927 8.77469 6.17383 8.40339 6.17383C8.05066 6.17383 7.45659 6.28046 7.45659 7.08017C7.45659 7.89512 8.32476 8.35519 9.34377 8.8952C10.7914 9.66232 12.5433 10.5908 12.5433 12.927C12.5433 15.1662 10.724 16.4031 8.40339 16.4031C6.00853 16.4031 3.91569 15.4342 4.15205 12.075C4.24488 11.6806 7.2895 11.7743 7.2895 12.075C7.25237 13.4612 7.56798 13.8689 8.36626 13.8689C8.9789 13.8689 9.25737 13.5312 9.25737 12.9625C9.25737 12.1019 8.35281 11.594 7.31222 11.0098C5.90324 10.2187 4.24488 9.28767 4.24488 7.15126C4.24488 5.01868 5.7115 3.59696 8.32913 3.59696C10.9468 3.59696 12.3763 4.9969 12.3763 7.66099Z" fill="white" fill-rule="evenodd"></path>
-                     </svg>
-                  </a>
-                  <nav aria-label="Main" data-orientation="horizontal" dir="ltr" class="min-[940px]:ui-block ui-hidden">
-                     <div style="position:relative">
-                        <ul data-orientation="horizontal" class="ui-flex ui-gap-2" dir="ltr">
-                           <li><a class="ui-inline-flex ui-items-center ui-justify-center ui-whitespace-nowrap ui-rounded-md ui-text-sm ui-font-bold ui-transition-all focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-blue-700 dark:ui-focus-visible:ring-slate-300 ui-duration-300 ui-h-8 ui-px-2 ui-group ui-flex ui-items-center ui-justify-center ui-gap-2 ui-text-sm ui-text-white ui-font-bold hover:ui-bg-white/10 hover:ui-text-white" href="/docs" data-radix-collection-item="">Docs</a></li>
-                           <li><a class="ui-inline-flex ui-items-center ui-justify-center ui-whitespace-nowrap ui-rounded-md ui-text-sm ui-font-bold ui-transition-all focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-blue-700 dark:ui-focus-visible:ring-slate-300 ui-duration-300 ui-h-8 ui-px-2 ui-group ui-flex ui-items-center ui-justify-center ui-gap-2 ui-text-sm ui-text-white ui-font-bold hover:ui-bg-white/10 hover:ui-text-white" href="/addons" data-radix-collection-item="">Addons</a></li>
-                           <li><a class="ui-inline-flex ui-items-center ui-justify-center ui-whitespace-nowrap ui-rounded-md ui-text-sm ui-font-bold ui-transition-all focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-blue-700 dark:ui-focus-visible:ring-slate-300 ui-duration-300 ui-h-8 ui-px-2 ui-group ui-flex ui-items-center ui-justify-center ui-gap-2 ui-text-sm ui-text-white ui-font-bold hover:ui-bg-white/10 hover:ui-text-white" href="/showcase" data-radix-collection-item="">Showcase</a></li>
-                           <li><a class="ui-inline-flex ui-items-center ui-justify-center ui-whitespace-nowrap ui-rounded-md ui-text-sm ui-font-bold ui-transition-all focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-blue-700 dark:ui-focus-visible:ring-slate-300 ui-duration-300 ui-h-8 ui-px-2 ui-group ui-flex ui-items-center ui-justify-center ui-gap-2 ui-text-sm ui-text-white ui-font-bold hover:ui-bg-white/10 hover:ui-text-white" href="/blog" data-radix-collection-item="">Blog</a></li>
-                           <li>
-                              <a class="ui-inline-flex ui-items-center ui-justify-center ui-whitespace-nowrap ui-rounded-md ui-text-sm ui-font-bold ui-transition-all focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-blue-700 dark:ui-focus-visible:ring-slate-300 ui-duration-300 ui-h-8 ui-px-2 ui-group ui-flex ui-items-center ui-justify-center ui-gap-2 ui-text-sm ui-text-white ui-font-bold hover:ui-bg-white/10 hover:ui-text-white" href="https://www.chromatic.com/storybook?utm_source=storybook_website&amp;utm_medium=global_nav&amp;utm_campaign=storybook" target="_blank" data-radix-collection-item="">
-                                 Visual Test
-                                 <div class="ui-h-full ui-flex ui-items-start ui-py-1.5">
-                                    <svg fill="none" height="8" viewBox="0 0 8 8" width="8" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M2.63695 1.23752C2.63695 1.07155 2.77149 0.937012 2.93746 0.937012L6.76232 0.937012C6.92829 0.937012 7.06283 1.07155 7.06283 1.23752V5.06239C7.06283 5.22835 6.92829 5.36289 6.76232 5.3629C6.59636 5.36289 6.46181 5.22835 6.46181 5.06239L6.46181 1.96302L1.45001 6.97482C1.33266 7.09217 1.14239 7.09217 1.02503 6.97482C0.907673 6.85746 0.907673 6.66719 1.02503 6.54983L6.03683 1.53803L2.93746 1.53803C2.77149 1.53803 2.63695 1.40349 2.63695 1.23752Z" fill="currentColor"></path>
-                                    </svg>
-                                 </div>
-                              </a>
-                           </li>
-                           <li>
-                              <a class="ui-inline-flex ui-items-center ui-justify-center ui-whitespace-nowrap ui-rounded-md ui-text-sm ui-font-bold ui-transition-all focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-blue-700 dark:ui-focus-visible:ring-slate-300 ui-duration-300 ui-h-8 ui-px-2 ui-group ui-flex ui-items-center ui-justify-center ui-gap-2 ui-text-sm ui-text-white ui-font-bold hover:ui-bg-white/10 hover:ui-text-white" href="https://www.chromatic.com/enterprise?utm_source=storybook_website&amp;utm_medium=global_nav&amp;utm_campaign=storybook" target="_blank" data-radix-collection-item="">
-                                 Enterprise
-                                 <div class="ui-h-full ui-flex ui-items-start ui-py-1.5">
-                                    <svg fill="none" height="8" viewBox="0 0 8 8" width="8" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M2.63695 1.23752C2.63695 1.07155 2.77149 0.937012 2.93746 0.937012L6.76232 0.937012C6.92829 0.937012 7.06283 1.07155 7.06283 1.23752V5.06239C7.06283 5.22835 6.92829 5.36289 6.76232 5.3629C6.59636 5.36289 6.46181 5.22835 6.46181 5.06239L6.46181 1.96302L1.45001 6.97482C1.33266 7.09217 1.14239 7.09217 1.02503 6.97482C0.907673 6.85746 0.907673 6.66719 1.02503 6.54983L6.03683 1.53803L2.93746 1.53803C2.77149 1.53803 2.63695 1.40349 2.63695 1.23752Z" fill="currentColor"></path>
-                                    </svg>
-                                 </div>
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
-               <div class="ui-flex">
-                  <a aria-label="Star Storybook on GitHub" class="ui-h-8 ui-flex ui-items-center ui-justify-center ui-border ui-rounded-full ui-transition-colors max-[1040px]:ui-hidden ui-px-3 ui-gap-2 ui-mr-4 ui-border-white/30 hover:ui-border-white ui-text-white" href="https://github.com/storybookjs/storybook" rel="noreferrer noopener" target="_blank">
-                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0C3.132 0 0 3.132 0 7a6.996 6.996 0 004.786 6.641c.35.062.482-.149.482-.332 0-.166-.01-.718-.01-1.304-1.758.324-2.213-.429-2.353-.823-.079-.2-.42-.822-.717-.988-.246-.132-.596-.455-.01-.464.552-.009.946.508 1.077.717.63 1.06 1.636.762 2.039.578.061-.455.245-.761.446-.936-1.558-.175-3.185-.779-3.185-3.457 0-.76.271-1.39.717-1.88-.07-.176-.314-.893.07-1.856 0 0 .587-.183 1.925.718a6.495 6.495 0 011.75-.236c.595 0 1.19.078 1.75.236 1.34-.91 1.926-.718 1.926-.718.385.963.14 1.68.07 1.855.446.49.717 1.111.717 1.881 0 2.687-1.636 3.282-3.194 3.457.254.218.473.638.473 1.295 0 .936-.009 1.688-.009 1.925 0 .184.131.402.481.332A7.012 7.012 0 0014 7c0-3.868-3.133-7-7-7z" fill="currentColor"></path>
-                     </svg>
-                     <span class="ui-text-xs ui-font-bold ui-text-white">84,832</span>
-                  </a>
-                  <div class="[&amp;_.DocSearch-Button]:ui-bg-transparent [&amp;_.DocSearch-Button]:max-[440px]:ui-bg-slate-100 [&amp;_.DocSearch-Button]:max-[440px]:ui-w-full [&amp;_.DocSearch-Button]:ui-rounded-full [&amp;_.DocSearch-Button]:ui-h-8 [&amp;_.DocSearch-Button]:ui-px-3 [&amp;_.DocSearch-Button]:ui-m-0 [&amp;_.DocSearch-Button_.DocSearch-Search-Icon]:ui-w-[14px] [&amp;_.DocSearch-Button_.DocSearch-Search-Icon]:ui-h-[14px] [&amp;_.DocSearch-Button-Placeholder]:ui-text-sm max-[768px]:[&amp;_.DocSearch-Button-Placeholder]:ui-flex [&amp;_.DocSearch-Button-Keys]:ui-bg-red-500 [&amp;_.DocSearch-Button-Keys]:ui-min-w-0 [&amp;_.DocSearch-Button-Keys]:ui-flex [&amp;_.DocSearch-Button-Keys]:ui-items-center [&amp;_.DocSearch-Button-Keys]:ui-gap-1 [&amp;_.DocSearch-Button-Keys]:ui-px-1.5 [&amp;_.DocSearch-Button-Keys]:ui-rounded-sm [&amp;_.DocSearch-Button-Key]:ui-mr-0 [&amp;_.DocSearch-Button-Key]:ui-bg-none [&amp;_.DocSearch-Button-Key]:ui-rounded-none [&amp;_.DocSearch-Button-Key]:ui-shadow-none [&amp;_.DocSearch-Button-Key]:ui-top-0 [&amp;_.DocSearch-Button-Key]:ui-p-0 [&amp;_.DocSearch-Button-Key]:ui-w-auto [&amp;_.DocSearch-Button-Key]:ui-text-[11px] [&amp;_.DocSearch-Button]:ui-border [&amp;_.DocSearch-Button]:ui-border-solid [&amp;_.DocSearch-Button]:ui-border-white/30 [&amp;_.DocSearch-Button]:ui-text-white [&amp;_.DocSearch-Button_.DocSearch-Search-Icon]:ui-text-white [&amp;_.DocSearch-Button]:ui-px-3 [&amp;_.DocSearch-Button]:ui-w-44 [&amp;_.DocSearch-Button-Keys]:ui-bg-white/10 [&amp;_.DocSearch-Button-Key]:ui-text-white max-[440px]:ui-hidden" style="--docsearch-primary-color:#5468ff;--docsearch-text-color:#1c1e21;--docsearch-spacing:12px;--docsearch-icon-stroke-width:1.4;--docsearch-highlight-color:var(--docsearch-primary-color);--docsearch-muted-color:#969faf;--docsearch-container-background:rgba(101,108,133,0.8);--docsearch-logo-color:#5468ff;--docsearch-modal-width:560px;--docsearch-modal-height:600px;--docsearch-modal-background:#f5f6f7;--docsearch-modal-shadow:inset 1px 1px 0 0 hsla(0,0%,100%,0.5),0 3px 8px 0 #555a64;--docsearch-hit-height:56px;--docsearch-hit-color:#444950;--docsearch-hit-active-color:#fff;--docsearch-hit-background:#fff;--docsearch-hit-shadow:0 1px 3px 0 #d4d9e1;--docsearch-key-gradient:linear-gradient(-225deg,#d5dbe4,#f8f8f8);--docsearch-key-shadow:inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 2px 1px rgba(30,35,90,0.4);--docsearch-key-pressed-shadow:inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 1px 0 rgba(30,35,90,0.4);--docsearch-footer-height:44px;--docsearch-footer-background:#fff;--docsearch-footer-shadow:0 -1px 0 0 #e0e3e8,0 -3px 6px 0 rgba(69,98,155,0.12)">
-                     <button type="button" class="DocSearch DocSearch-Button" aria-label="Search docs">
-                        <span class="DocSearch-Button-Container">
-                           <svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20" aria-hidden="true">
-                              <path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-                           </svg>
-                           <span class="DocSearch-Button-Placeholder">Search docs</span>
-                        </span>
-                        <span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key">⌘</kbd><kbd class="DocSearch-Button-Key">K</kbd></span>
-                     </button>
-                  </div>
-                  <button class="ui-group ui-flex ui-items-center ui-gap-2 ui-justify-center ui-h-8 ui-w-8 ui-rounded min-[940px]:ui-hidden focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-blue-700 dark:ui-focus-visible:ring-slate-300 ui-duration-300 ui-ml-4 ui-text-white ui-font-bold hover:ui-bg-white/10 hover:ui-text-white" type="button" id="radix-:R3j1cvbba:" aria-haspopup="menu" aria-expanded="false" data-state="closed">
-                     <svg width="18" height="18" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 3.5a.5.5 0 010 1H1a.5.5 0 010-1h12zM13.5 10a.5.5 0 00-.5-.5H1a.5.5 0 000 1h12a.5.5 0 00.5-.5zM13 6.5a.5.5 0 010 1H1a.5.5 0 010-1h12z" fill="currentColor"></path>
-                     </svg>
-                  </button>
-               </div>
-            </div>
-         </div>
-      </header>
+
       <div class="ui-mx-auto ui-px-4 sm:ui-px-8 ui-max-w-8xl md:ui-px-8 relative z-20 justify-between gap-20 pt-12 overflow-hidden text-white md:pt-24 lg:px-8">
          <h1 class="flex-1 text-4xl font-bold max-sm:max-w-80 md:text-[56px]/[70px]">Adopt a robust Robot</h1>
          <div class="flex-1 pt-4 mb-8 md:mb-20">
@@ -139,7 +128,7 @@ const attempt = `<div>
                         <defs>
                            <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_195_11225" x1="7" x2="7" y1="0" y2="14">
                               <stop stop-color="white"></stop>
-                              <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                              <stop offset="1" stop-color="white" stop-opacity="0"></stop>a
                            </linearGradient>
                         </defs>
                      </svg>
