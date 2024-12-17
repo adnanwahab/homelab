@@ -1,4 +1,11 @@
+
+
 # observables organiizing the owrlds informations
+
+
+# dynamicland to zoox o medtech for
+# daniel gross, horatiou, goutham ,and tim m and rena and yarko and david badnai
+# from webgpu to hardwremarue nufactring lerogobbt
 
 # scripts
 # 2025
