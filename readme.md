@@ -1,7 +1,7 @@
 
 # dynabot = dynamicland + medbot matsu gravas nightgale
 
-![medbot](/web/public/medbot.webp)
+![medbot](https://raw.githubusercontent.com/adnanwahab/homelab/refs/heads/main/web/public/medbot.webp)
 
 
 
