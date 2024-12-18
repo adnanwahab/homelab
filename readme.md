@@ -1,4 +1,10 @@
+https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanics
+
 # dynamicland -- makes intractable problems more tractable -- so its easier for orboics companies to assit labor for fortune 500
+# https://docs.google.com/document/d/1Mc2b3KUgcaXbm12O0n3wZyVqaszweMICRmXqIYWfzzI/edit?tab=t.0
+
+#  physics https://mitpress.mit.edu/9780262553452/structure-and-interpretation-of-classical-mechanics/
+# observablehq = animation + physics + assisted cognition with visualization + design
 
 https://observablehq.com/d/74d8725c070eed40
 # build new houses for our parents and brothers and sisters
