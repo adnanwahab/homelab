@@ -1,20 +1,19 @@
 export default function Home() {
   const projects = [
     {
-      slug: "/dynabot",
+      slug: "dynabot",
       title: "Dynabot - adopt a robot",
       description: "",
       logoSrc: "/dynabot/",
       imgSrc: "https://nanosaur.ai/assets/images/nanosaur-wireframe-bw.png",
     },
     {
-      slug: "/games/",
+      slug: "games",
       title: "Music Game",
       description: "",
       logoSrc: "/games/",
       imgSrc:
         "https://assetsio.gnwcdn.com/Rez2.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
-      //steps-kirby-demo
     },
   ];
 
