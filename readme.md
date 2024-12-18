@@ -5,6 +5,7 @@ https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanic
 
 #  physics https://mitpress.mit.edu/9780262553452/structure-and-interpretation-of-classical-mechanics/
 # observablehq = animation + physics + assisted cognition with visualization + design
+# thestudio.yoga / katonah yoga for hierarchiacall-less learning from student to student - reconstructionism.com / dynamicland
 
 https://observablehq.com/d/74d8725c070eed40
 # build new houses for our parents and brothers and sisters
