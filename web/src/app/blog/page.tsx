@@ -38,13 +38,7 @@ function TextArea() {
   );
 }
 
-const BlogPost: React.FC<BlogPostProps> = () => {
-  const date = "Thursday, August 29, 2024";
-  const title =
-    "Why dynamicland is cool and how it will improve collaboration in 2025";
-  const author = "Marcus Eldridge";
-  const tags = ["Insights", "Knowledge"];
-  const content = `Since its introduction in 2018, GDPR has completely upturned the data collection field and needlessly forced a lot of respectable companies out of business. At Radiant, we’ve built our reputation on evading the reach of privacy regulators, and so we thought it’s about time we shared our strategies with the broader community.`;
+const BlogPost: React.FC<BlogPostProps> = ({ date, title, author, tags, content }) => {
   return (
     <article className="max-w-3xl mx-auto px-4 py-12 ">
       <div>
@@ -220,7 +214,7 @@ const ExamplePage = () => {
         title="GDPR is just a suggestion - A guide to European privacy laws"
         author="Marcus Eldridge"
         tags={["Insights", "Knowledge"]}
-        content={`Since its introduction in 2018, GDPR has completely upturned the data collection field and needlessly forced a lot of respectable companies out of business. At Radiant, we’ve built our reputation on evading the reach of privacy regulators, and so we thought it’s about time we shared our strategies with the broader community.`}
+        content={`Since its introduction in 2018, GDPR has completely upturned the data collection field and needlessly forced a lot of respectable companies out of business. At Radiant, we've built our reputation on evading the reach of privacy regulators, and so we thought it's about time we shared our strategies with the broader community.`}
       />
     </div>
   );
