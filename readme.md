@@ -1,4 +1,11 @@
-https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanics
+1. http://localhost:8889/lab/tree/Dynamicland.ipynb
+2. https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanics
+3. http://localhost:8889/lab/workspaces/auto-k/tree/Rtings_for_robotics.ipynb - innate.bot
+4. devops = fly.io + https://vercel.com/adnanwahabs-projects/homelab/Hk4MLT9M1so3ooXmw2C7yqAtuN94?filter=errors
+
+
+5. meetup + research paepers = https://www.nature.com/nature/articles?year=2024 + arxiv
+--------- revist each topic everyday from 2024-2050
 
 # dynamicland -- makes intractable problems more tractable -- so its easier for orboics companies to assit labor for fortune 500
 # https://docs.google.com/document/d/1Mc2b3KUgcaXbm12O0n3wZyVqaszweMICRmXqIYWfzzI/edit?tab=t.0
@@ -6,6 +13,8 @@ https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanic
 #  physics https://mitpress.mit.edu/9780262553452/structure-and-interpretation-of-classical-mechanics/
 # observablehq = animation + physics + assisted cognition with visualization + design
 # thestudio.yoga / katonah yoga for hierarchiacall-less learning from student to student - reconstructionism.com / dynamicland
+# https://github.com/seleniumbase/SeleniumBase
+# https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 
 https://observablehq.com/d/74d8725c070eed40
 # build new houses for our parents and brothers and sisters
