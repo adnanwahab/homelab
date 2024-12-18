@@ -6,6 +6,12 @@
 
 5. meetup + research paepers = https://www.nature.com/nature/articles?year=2024 + arxiv
 --------- revist each topic everyday from 2024-2050 - for biotech + robots + dynamicland - dec 19 2024
+https://waymo.com/research/pvtransformer-point-to-voxel-transformer-for-scalable-3d-object-detection/
+------
+
+https://docs.google.com/spreadsheets/d/1vieItTpYDkgyDhjjvzrczWXugibwgaBKGWtBCbKjsf0/edit?gid=385089357#gid=385089357 - dynamixel
+https://regard.com/blog/
+https://www.worldlabs.ai/blog
 
 # dynamicland -- makes intractable problems more tractable -- so its easier for orboics companies to assit labor for fortune 500
 # https://docs.google.com/document/d/1Mc2b3KUgcaXbm12O0n3wZyVqaszweMICRmXqIYWfzzI/edit?tab=t.0
