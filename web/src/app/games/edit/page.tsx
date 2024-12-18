@@ -1,5 +1,13 @@
 export default function EditGamePage() {
-  return <div><iframe src="https://observablehq.com/embed/@enjalot/replicate-api-controlnet-scribble?cells=viewof+input" width="100%" height="100%"></iframe></div>;
+  return (
+    <div>
+      <iframe
+        src="https://observablehq.com/embed/@enjalot/replicate-api-controlnet-scribble?cells=viewof+input"
+        width="100%"
+        height="100%"
+      ></iframe>
+    </div>
+  );
 }
 
 // "use client";
