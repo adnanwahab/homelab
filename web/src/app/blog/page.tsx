@@ -16,6 +16,28 @@ interface BlogPostProps {
   content: string;
 }
 
+function TextArea() {
+  return (
+    <div>
+      <label
+        htmlFor="comment"
+        className="block text-sm/6 font-medium text-gray-900"
+      >
+        Add your comment
+      </label>
+      <div className="mt-2">
+        <textarea
+          id="comment"
+          name="comment"
+          rows={4}
+          className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+          defaultValue={""}
+        />
+      </div>
+    </div>
+  );
+}
+
 const BlogPost: React.FC<BlogPostProps> = () => {
   const date = "Thursday, August 29, 2024";
   const title =
@@ -27,6 +49,9 @@ const BlogPost: React.FC<BlogPostProps> = () => {
     <article className="max-w-3xl mx-auto px-4 py-12 ">
       <div>
         2014 -2024 the history of technology, media and society by peter drucker
+      </div>
+      <div>
+        <TextArea />
       </div>
       <div>
         Bibliography 1. paul graham 2. paul bucheit 3. avery penarrum 4.

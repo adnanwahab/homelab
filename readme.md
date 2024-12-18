@@ -9,6 +9,8 @@
 https://waymo.com/research/pvtransformer-point-to-voxel-transformer-for-scalable-3d-object-detection/
 ------
 
+Book Club + Research Paper Meetup.com - SF + nyc - monthly - 2025-2045
+
 https://docs.google.com/spreadsheets/d/1vieItTpYDkgyDhjjvzrczWXugibwgaBKGWtBCbKjsf0/edit?gid=385089357#gid=385089357 - dynamixel
 https://regard.com/blog/
 https://www.worldlabs.ai/blog
