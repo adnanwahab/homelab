@@ -1,5 +1,9 @@
+# dynamicland -- makes intractable problems more tractable -- so its easier for orboics companies to assit labor for fortune 500
+
 https://observablehq.com/d/74d8725c070eed40
 # build new houses for our parents and brothers and sisters
+# https://www.figma.com/slides/o3O7QfBPWCzEc2oC3p4cxG/Untitled?node-id=9-9&t=CJXQWfjjdVG2COxT-0
+# https://rive.app/
 
 # simulation + testing for medical bots
 ## basic first aid bot - 2026 - $1000 for nursing
