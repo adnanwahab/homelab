@@ -5,7 +5,7 @@
 
 
 5. meetup + research paepers = https://www.nature.com/nature/articles?year=2024 + arxiv
---------- revist each topic everyday from 2024-2050 - for biotech + robots + dynamicland
+--------- revist each topic everyday from 2024-2050 - for biotech + robots + dynamicland - dec 19 2024
 
 # dynamicland -- makes intractable problems more tractable -- so its easier for orboics companies to assit labor for fortune 500
 # https://docs.google.com/document/d/1Mc2b3KUgcaXbm12O0n3wZyVqaszweMICRmXqIYWfzzI/edit?tab=t.0
