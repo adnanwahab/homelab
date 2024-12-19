@@ -7,8 +7,19 @@ const _ = `https://www.youtube.com/watch?v=_gXiVOmaVSo
 export default function () {
   return (
     <div>
+      <div>
+        Xeriox only wanted to make bilions -
+        https://www.youtube.com/watch?v=NdSD07U5uBs
+      </div>
+
+      <h1>download all emails - add to periodic table dec 19 </h1>
+      <h1>download all VPRI + dynamicland + robot content + biotech </h1>
+      <div>3 hour a day replay analyzer</div>
+      <div>for your birtday i made this - it 100,000 views in 6 hours</div>
+
       <h1>https://threejs.org/examples/css3d_periodictable.html </h1>
       <div>make a youtube for day for 50 minute read + git visualiezr </div>
+      <div>https://spectrum.ieee.org/xerox-parc</div>
       <h1>
         let's go to dynamicland - put a calendar to signup - steve jobs to alan
         kay to bret to shaun douglas --- show the email
