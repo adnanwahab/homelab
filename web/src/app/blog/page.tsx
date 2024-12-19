@@ -16,6 +16,7 @@ export default function () {
       <h1>download all VPRI + dynamicland + robot content + biotech </h1>
       <div>3 hour a day replay analyzer</div>
       <div>for your birtday i made this - it 100,000 views in 6 hours</div>
+      <div>4 systems - perception prediction and siulation and mechE</div>
 
       <h1>https://threejs.org/examples/css3d_periodictable.html </h1>
       <div>make a youtube for day for 50 minute read + git visualiezr </div>
