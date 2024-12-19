@@ -16,7 +16,6 @@ export default function () {
         height="315"
         src="https://www.youtube.com/embed/_gXiVOmaVSo?si=Qf8Z5HvkKuOJJ04D"
         title="YouTube video player"
-        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
