@@ -17,8 +17,6 @@ export default function () {
         src="https://www.youtube.com/embed/_gXiVOmaVSo?si=Qf8Z5HvkKuOJJ04D"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
       ></iframe>
 
       <h1>
@@ -26,7 +24,7 @@ export default function () {
       </h1>
 
       <h1>
-        goal: 18k to 180k by march 2025 for{" "}
+        goal: 18k to 180k by march 2025 for - magic iframe magic llama
         <a href="">https://www.youtube.com/watch?v=_gXiVOmaVSo</a>
       </h1>
     </div>
