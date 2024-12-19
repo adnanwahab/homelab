@@ -79,7 +79,18 @@ export default function () {
   );
 }
 
+const mechE_practice_theory_material_list = [
+  "https://www.turtlebot.com/purchase/ - locomtion -- 300",
+  "manipulation = lerbot - 200",
+  "diffusion 3d polciy 2023",
+  "orin - 2025 - 500 + tailscale for phone app - observablehq - robotic remote control - tauri.app",
+  "800 robot - sensors picamera + surgery(hello-robotc.com innate.bot)",
+  "nanosaur.ai",
+  "foxglove - ros visualization",
+];
+
 const people = [
+  // collaborative design new cities - https://techcrunch.com/2023/09/21/cruise-would-join-the-call-to-ban-human-drivers-in-city-centers-says-ceo/
   "sebastian thrun / waymo",
   "daphne koller / insitro",
   "shaun douglas + luke Cianni/ dynamicland.org",
@@ -89,6 +100,9 @@ const people = [
   "bungie - unreal -> unity -> webGPU -> tauri.app -> rive -> thought to s3/ec2 w/ boto",
   "mark chatkhan + rev = musicGame w/ jolt phsyics + three.js for planning new neighborhoods + buildings w/ latent scope",
   "https://www.coursera.org/learn/probabilistic-graphical-models/lecture/tEZ6S/factors", //2012
+  "raspberry pi + saronic for making boats",
+  //"https://www.youtube.com/watch?v=NdSD07U5uBs" - simplicity
+  //eurekalabs.ai + ssi.org - daniel gross - pioneer.app
   //coding the mmatrix
   //HCI -> information systems -> science -> data pipelines -> golang -> tools for compute (anthroipci / gpt)
 ];
