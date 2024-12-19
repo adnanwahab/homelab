@@ -8,6 +8,16 @@ export default function () {
   return (
     <div>
       <h1>
+        Semi-autonomous vehicle systems + robotic systems - next 5 years -
+        dynamicland.org -
+        https://techcrunch.com/2023/09/21/cruise-would-join-the-call-to-ban-human-drivers-in-city-centers-says-ceo/
+        - design together - 2. https://www.youtube.com/watch?v=_gXiVOmaVSo
+        dynamicland – collaborative thinking space 3. Observablehq- + latent
+        Scope + enjalot + meetup.com
+      </h1>
+      <h1>10 million factories -- map</h1>
+      <h1></h1>
+      <h1>
         Shawn Douglas - Nanoscale Instruments for Visualizing Small Proteins &
         Bret Victor - Dynamicland
       </h1>
