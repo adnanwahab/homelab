@@ -8,16 +8,34 @@ export default function () {
   return (
     <div>
       <div>
+        convert reasoning model from eletrons in neurons to atom-based structure
+        - for shared direct collabroation with figma + observablehq + jupyter
+      </div>
+      <h3>knowledge flying machine - knlwedge silver ,perspective is gold</h3>
+      <div>living robot demos</div>
+      <div>
         Xeriox only wanted to make bilions -
         https://www.youtube.com/watch?v=NdSD07U5uBs
       </div>
-
+      Don’t just read books, re-read books. What's your favorite book to
+      re-read? https://x.com/RyanHoliday/status/1869472705080353041
+      https://x.com/DrJimFan/status/1869092155991773681
+      {/* - Sr. Research Engineer, Robotics Systems
+      - Sr. RE, Reinforcement Learning
+      - Sr. RE, Foundation Model Training Infrastructure
+      - Sr. RE, Simulation
+      - Sr. RE, ML Data Pipelines
+      - Research Scientist */}
+      <div>
+        https://www.tsa.gov/precheck?utm_source=google&utm_medium=cpc&utm_adgroup=
+        {AdGroupName}&utm_campaign={CampaignName}
+        &gad_source=1&gclid=CjwKCAiAgoq7BhBxEiwAVcW0LK8siUs8CPs_I0SOFV2KKFZTKQcK6UqW7yBE7CrnxHZv4ry5NxEdjRoCZ6AQAvD_BwE
+      </div>
       <h1>download all emails - add to periodic table dec 19 </h1>
       <h1>download all VPRI + dynamicland + robot content + biotech </h1>
       <div>3 hour a day replay analyzer</div>
       <div>for your birtday i made this - it 100,000 views in 6 hours</div>
       <div>4 systems - perception prediction and siulation and mechE</div>
-
       <h1>https://threejs.org/examples/css3d_periodictable.html </h1>
       <div>make a youtube for day for 50 minute read + git visualiezr </div>
       <div>https://spectrum.ieee.org/xerox-parc</div>
@@ -47,11 +65,9 @@ export default function () {
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
-
       <h1>
         Collaborative conscious + collaboartive thinking space = dynamicland
       </h1>
-
       <h1>
         goal: 18k to 180k by march 2025 for - magic iframe magic llama
         <a href="">https://www.youtube.com/watch?v=_gXiVOmaVSo</a>
