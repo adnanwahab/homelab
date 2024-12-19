@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=_gXiVOmaVSo
 1. http://localhost:8889/lab/tree/Dynamicland.ipynb
 2. https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanics
 3. http://localhost:8889/lab/workspaces/auto-k/tree/Rtings_for_robotics.ipynb - innate.bot
