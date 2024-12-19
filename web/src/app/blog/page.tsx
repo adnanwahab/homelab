@@ -15,6 +15,7 @@ export default function () {
         dynamicland – collaborative thinking space 3. Observablehq- + latent
         Scope + enjalot + meetup.com
       </h1>
+      <h1>text was only issue - dynamicland fixes that</h1>
       <h1>10 million factories -- map</h1>
       <h1></h1>
       <h1>
