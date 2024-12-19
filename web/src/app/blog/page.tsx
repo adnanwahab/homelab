@@ -7,6 +7,12 @@ const _ = `https://www.youtube.com/watch?v=_gXiVOmaVSo
 export default function () {
   return (
     <div>
+      <h1>https://threejs.org/examples/css3d_periodictable.html </h1>
+      <div>make a youtube for day for 50 minute read + git visualiezr </div>
+      <h1>
+        let's go to dynamicland - put a calendar to signup - steve jobs to alan
+        kay to bret to shaun douglas --- show the email
+      </h1>
       <h1>
         Semi-autonomous vehicle systems + robotic systems - next 5 years -
         dynamicland.org -
