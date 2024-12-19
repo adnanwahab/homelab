@@ -71,6 +71,9 @@ export default function () {
       <h1>
         goal: 18k to 180k by march 2025 for - magic iframe magic llama
         <a href="">https://www.youtube.com/watch?v=_gXiVOmaVSo</a>
+        {people.map(function (_) {
+          return <span>_</span>;
+        })}
       </h1>
     </div>
   );
@@ -81,5 +84,11 @@ const people = [
   "daphne koller / insitro",
   "shaun douglas + luke Cianni/ dynamicland.org",
   "observablehq + jupyter + collab.research.google.com", //sorry for not showing cloud-hosted jupyter notebooks for finance interop 2019
+  "will brown morgan stanley -llm finance - prediction kai wang - zoox ",
+  "abhinav + keheng + pleiffer / perception - sensors to lidar",
+  "bungie - unreal -> unity -> webGPU -> tauri.app -> rive -> thought to s3/ec2 w/ boto",
+  "mark chatkhan + rev = musicGame w/ jolt phsyics + three.js for planning new neighborhoods + buildings w/ latent scope",
+  "https://www.coursera.org/learn/probabilistic-graphical-models/lecture/tEZ6S/factors", //2012
   //coding the mmatrix
+  //HCI -> information systems -> science -> data pipelines -> golang -> tools for compute (anthroipci / gpt)
 ];
