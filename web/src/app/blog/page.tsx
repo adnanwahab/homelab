@@ -1,3 +1,5 @@
+import { Murecho } from "next/font/google";
+
 const _ = `https://www.youtube.com/watch?v=_gXiVOmaVSo
 1. http://localhost:8889/lab/tree/Dynamicland.ipynb
 2. https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanics
@@ -75,6 +77,10 @@ export default function () {
           return <span>_</span>;
         })}
       </h1>
+      <h3>
+        "mechE_practice_theory_material_list" ={" "}
+        {mechE_practice_theory_material_list}
+      </h3>
     </div>
   );
 }
