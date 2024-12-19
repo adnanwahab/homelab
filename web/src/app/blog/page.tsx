@@ -28,11 +28,7 @@ export default function () {
       - Sr. RE, Simulation
       - Sr. RE, ML Data Pipelines
       - Research Scientist */}
-      <div>
-        https://www.tsa.gov/precheck?utm_source=google&utm_medium=cpc&utm_adgroup=
-        {AdGroupName}&utm_campaign={CampaignName}
-        &gad_source=1&gclid=CjwKCAiAgoq7BhBxEiwAVcW0LK8siUs8CPs_I0SOFV2KKFZTKQcK6UqW7yBE7CrnxHZv4ry5NxEdjRoCZ6AQAvD_BwE
-      </div>
+      <div>https://www.tsa.gov/precheck</div>
       <h1>download all emails - add to periodic table dec 19 </h1>
       <h1>download all VPRI + dynamicland + robot content + biotech </h1>
       <div>3 hour a day replay analyzer</div>
@@ -85,6 +81,8 @@ export default function () {
   );
 }
 
+const biotech_industry_insitro = [];
+
 const mechE_practice_theory_material_list = [
   "https://www.turtlebot.com/purchase/ - locomtion -- 300",
   "manipulation = lerbot - 200",
@@ -111,4 +109,61 @@ const people = [
   //eurekalabs.ai + ssi.org - daniel gross - pioneer.app
   //coding the mmatrix
   //HCI -> information systems -> science -> data pipelines -> golang -> tools for compute (anthroipci / gpt)
+];
+
+const design_collaborative_mathematics = [
+  "https://threejs.org/examples/css3d_periodictable.html", //css3d,
+  "probability_theory",
+];
+
+const history = [
+  "https://spectrum.ieee.org/xerox-parc",
+
+  "30_inventions_from_HCI_to_networking",
+];
+// tools = https://app.dover.com/apply/269adc8b-72b8-46d3-85b9-3a15ea901c84/35826b4b-2394-4f65-99bc-2b4cf2dc51f5/
+// https://claude.ai/chat/16a6e358-104f-4c48-85fd-0235bed3d981
+// https://www.google.com/maps/search/community+college/@33.5007767,-112.0124277,12z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D
+//
+//
+// //papers - https://genesis-embodied-ai.github.io/
+//
+// /https://openai.com/index/o1-and-new-tools-for-developers/ - realtime agents
+// maarthon walking everyday - 3 hours - 2025-2030
+
+//x86 -m4 - imessage - recolor to silversh-blue-pirple --- 2025--- android +  apple
+// https://x.com/krea_ai - webGpu in browser diffusion poilcy
+
+//hscreenshots - -- - -e ttps://x.com/noio_games/status/1869065160754634814 - -- little big adventure
+
+//https://news.ycombinator.com/item?id=42434947 - systems - rpc protocol buffers
+// https://x.com/mejwh_/status/1869346816774517167
+// https://x.com/nicolasosharp/status/1869437430513926276
+const jupyter_observablheHQ_deno = [
+  "https://news.ycombinator.com/item?id=42430080",
+];
+
+const dynamicland_tools_2025 = [
+  "Docs: https://docs.google.com/document/d/1k8N5a3Rhrsj2EGIGEyhu0cHhXxbJ7U-Pw2LQx-SBNxM/edit?tab=t.0",
+  "paperPile - https://app.paperpile.com/my-library/all",
+];
+
+const domains = ["taiyongrobotics.com"];
+
+const economics = ["https://www.openresearchlab.org/"];
+const fundamentals = [
+  "https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanics",
+  "https://dynamicland.org/2024/Roots/",
+];
+
+const sister_robots = {
+  twenty_five_thousand: "https://hello-robot.com/",
+  three_thousand: "innate.bot",
+};
+const design = ["https://www.timjchin.com/digital/one-to-many/"];
+// https://observablehq.com/d/54cf23c0879fc6e2
+//
+
+const plan_dynamicland_in_thousand_cities = [
+  "https://gist.github.com/Miserlou/11500b2345d3fe850c92",
 ];
