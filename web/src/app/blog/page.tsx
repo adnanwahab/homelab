@@ -75,3 +75,11 @@ export default function () {
     </div>
   );
 }
+
+const people = [
+  "sebastian thrun / waymo",
+  "daphne koller / insitro",
+  "shaun douglas + luke Cianni/ dynamicland.org",
+  "observablehq + jupyter + collab.research.google.com", //sorry for not showing cloud-hosted jupyter notebooks for finance interop 2019
+  //coding the mmatrix
+];
