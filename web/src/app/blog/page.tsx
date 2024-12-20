@@ -32,6 +32,13 @@ export default function () {
       <div>
         https://blogs.nvidia.com/blog/nvidia-zoox-autonomous-ride-hailing/
       </div>
+      <div>
+        <iframe
+          width="800"
+          height="450"
+          src="https://embed.figma.com/board/eGgmRsiDKQ3DCSGdEkNxMS/Untitled?node-id=0-1&embed-host=share"
+        ></iframe>
+      </div>
       <h1>download all emails - add to periodic table dec 19 </h1>
       <h1>download all VPRI + dynamicland + robot content + biotech </h1>
       <div>3 hour a day replay analyzer</div>
