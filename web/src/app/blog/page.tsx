@@ -29,6 +29,9 @@ export default function () {
       - Sr. RE, ML Data Pipelines
       - Research Scientist */}
       <div>https://www.tsa.gov/precheck</div>
+      <div>
+        https://blogs.nvidia.com/blog/nvidia-zoox-autonomous-ride-hailing/
+      </div>
       <h1>download all emails - add to periodic table dec 19 </h1>
       <h1>download all VPRI + dynamicland + robot content + biotech </h1>
       <div>3 hour a day replay analyzer</div>
