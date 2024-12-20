@@ -43,6 +43,7 @@ export default function () {
         and design manager for iphone X and ios 12.
         <iframe src="https://folklore.org/0-index.html" />
       </div>
+      <div>will brown - morgan stanley</div>
       <img src="https://i.ytimg.com/vi/XAfTXYa36f4/maxresdefault.jpg" />
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlj1nrmHBxVuWn8IS25ltqrVLOa3kZXnvbcw&s" />
       <img src="https://dynamicland.org/2023/People/e55ce15ad42de0512c4dead1582b6d7e.jpg" />
