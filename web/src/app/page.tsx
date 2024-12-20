@@ -3,27 +3,30 @@ import Link from "next/link";
 
 export default function Home() {
   // You could move this to a separate data file
-  const visualizations = Array(12).fill({
+  const visualizations = Array(4).fill({
     src: "/shit.png",
     alt: "Visualization",
     href: "#"
-  });
+  }).map((viz, index) => ({
+    ...viz,
+    href: `/viz${index + 1}`
+  }));
 
   return (
     <div className="max-w-7xl mx-auto px-5">
       <header className="flex justify-between items-center py-8">
-        <h1 className="text-5xl font-bold">Jason Davies</h1>
+        <h1 className="text-5xl font-bold">Adnan Wahab</h1>
       </header>
 
       <div className="space-y-1 mb-8">
-        <Link href="https://twitter.com/jasondavies" className="block hover:underline">
-          @jasondavies
+        <Link href="https://twitter.com/dynabot" className="block hover:underline">
+          @dynabot
         </Link>
-        <Link href="mailto:jason@jasondavies.com" className="block hover:underline">
-          jason@jasondavies.com
+        <Link href="mailto:adnan.f.wahab@gmail.com" className="block hover:underline">
+          adnan.f.wahab@gmail.com
         </Link>
-        <Link href="https://github.com/jasondavies" className="block hover:underline">
-          github.com/jasondavies
+        <Link href="https://github.com/adnanwahab" className="block hover:underline">
+          github.com/adnanwahab
         </Link>
       </div>
 
