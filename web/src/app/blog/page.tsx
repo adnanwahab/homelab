@@ -22,6 +22,17 @@ export default function () {
           height="968"
           src="https://observablehq.com/embed/@roboticsuniversity/alan_how?cells=pdfViewer"
         ></iframe>
+        <img src="https://thejanenyc.com/wp-content/uploads/2015/08/homepage.jpg" />
+      </div>
+      <div>
+        <iframe
+          width="100%"
+          height="135"
+          src="https://observablehq.com/embed/@roboticsuniversity/llama-maximization@480?cells=power&banner=false"
+        ></iframe>
+      </div>
+      <div>
+        <iframe src="https://dynamicland.org/" />
       </div>
       <iframe src="https://blogs.nvidia.com/blog/nvidia-zoox-autonomous-ride-hailing/" />
       <div>court room of the future</div>
