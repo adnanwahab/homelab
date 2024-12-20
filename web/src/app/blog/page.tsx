@@ -17,6 +17,32 @@ export default function () {
         ></iframe>
       </div>
       <div>
+        I felt that what happened before in june 2020 wrong but i didnt have the
+        knoweldge to really articulate it unti now.
+        <img src="https://raw.githubusercontent.com/enjalot/latent-scope/refs/heads/main/documentation/end.png" />
+        https://github.com/enjalot/latent-scope?tab=readme-ov-file
+      </div>
+      <div>
+        why we broke up - my sister said it was because "she just wanted to be
+        behave better". so i started to read behave by saposlyk. and blank slate
+        by steven pinker. 150 books.
+      </div>
+      <div>
+        We were good in person, but the pandemic tore us apart. devices and the
+        communication pattersn they instill. so i worked on dynamicland.org -
+        $300 billion in funding - thanks to alan kay.
+      </div>
+      <img src="https://i.ytimg.com/vi/XAfTXYa36f4/maxresdefault.jpg" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlj1nrmHBxVuWn8IS25ltqrVLOa3kZXnvbcw&s" />
+      <img src="https://dynamicland.org/2023/People/e55ce15ad42de0512c4dead1582b6d7e.jpg" />
+      <div>
+        Determined by sapolsky --- zebras got ulcers ---
+        <h1>
+          Spaciousness of mind = fre will -- kapil gupta - theory and practice
+          from connectome to kirshnmauthi{" "}
+        </h1>
+      </div>
+      <div>
         <iframe
           width="100%"
           height="968"
