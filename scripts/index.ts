@@ -2,14 +2,14 @@
 import { serve } from "bun";
 
 let latestData = {};
-
+ 
 // setInterval(async () => {
 //   const response = await fetch("https://example.com/data");
 //   latestData = await response.json();
 // }, 60_000);
 
 serve({
-  port: 3000,
+  port: 8000,
   async fetch(req) {
     let data = Object.assign(latestData, await getAllKV());
     return new Response(JSON.stringify(latestData), {

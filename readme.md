@@ -1,3 +1,4 @@
+https://www.ocw.mit.edu/search/?t=Mechanical+Engineering
 https://www.youtube.com/watch?v=_gXiVOmaVSo
 1. http://localhost:8889/lab/tree/Dynamicland.ipynb
 2. https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Classical_Mechanics
