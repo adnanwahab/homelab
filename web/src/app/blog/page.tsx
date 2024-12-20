@@ -16,6 +16,13 @@ export default function () {
           src="https://observablehq.com/embed/@roboticsuniversity/simulation?cells=ezgifComOptimize13&banner=false"
         ></iframe>
       </div>
+      <div>
+        <iframe
+          width="100%"
+          height="968"
+          src="https://observablehq.com/embed/@roboticsuniversity/alan_how?cells=pdfViewer"
+        ></iframe>
+      </div>
       <iframe src="https://blogs.nvidia.com/blog/nvidia-zoox-autonomous-ride-hailing/" />
       <div>court room of the future</div>
       <div>https://www.tiktok.com/@nechamanikky/video/7205957396798278958</div>
