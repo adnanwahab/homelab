@@ -13,10 +13,10 @@ export default function () {
         <iframe
           width="100%"
           height="422"
-          frameborder="0"
           src="https://observablehq.com/embed/@roboticsuniversity/simulation?cells=ezgifComOptimize13&banner=false"
         ></iframe>
       </div>
+      <div></div>
       <div>
         convert reasoning model from eletrons in neurons to atom-based structure
         - for shared direct collabroation with figma + observablehq + jupyter
