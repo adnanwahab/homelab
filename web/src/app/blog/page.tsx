@@ -192,7 +192,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Timeline() {
+function Timeline() {
   return (
     <nav aria-label="Progress">
       <ol role="list" className="flex items-center">
