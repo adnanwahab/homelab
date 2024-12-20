@@ -32,6 +32,17 @@ export default function () {
         communication pattersn they instill. so i worked on dynamicland.org -
         $300 billion in funding - thanks to alan kay.
       </div>
+      <div>
+        the devices we used were designed by people i used to work with in san
+        francisco. Burell Smith, Andy Hertzfled designed the first iphone. Bret
+        Victor worked on the first ipad, designed after dynabook - by alan kay.
+        I also worked with david valdman and a friend whose father is the
+        chairman of apple. and with the author of probablistic robots which
+        founded coursera, insitro, waymo and cruise. My cousin fariba alam
+        <iframe src="https://www.faribaalam.com/" /> was a full bright scholar
+        and design manager for iphone X and ios 12.
+        <iframe src="https://folklore.org/0-index.html" />
+      </div>
       <img src="https://i.ytimg.com/vi/XAfTXYa36f4/maxresdefault.jpg" />
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlj1nrmHBxVuWn8IS25ltqrVLOa3kZXnvbcw&s" />
       <img src="https://dynamicland.org/2023/People/e55ce15ad42de0512c4dead1582b6d7e.jpg" />
