@@ -5,6 +5,8 @@
 #learn-math.org / $1 for once steam game
 # avatar-notebook - earth = claude/llama, livekit=dynamicland / water / biotech, fire = nuclear fusion, air- obs/jupyter
 # supabase / litefs for db - keyvalue - resend - enter email of 30 million academics - dynamicland.org improves scince / shared reasoning by 100x
+# jan 1 - o3 - 100,000 pull requests - resend - 100
+# march 1 - 200 million emails - gmail - 2 million seconds = 1 month - dynamicland.org -- vote for next one built - openresearch UBI double economy - 2027
 ```sh
 uv run hello.py
 ```
