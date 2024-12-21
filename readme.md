@@ -1,4 +1,8 @@
-# usage instrauctions for agent
+# usage instrauctions for replit-agent - for 1 billion people cooperatively thinking about robotics using dynamicland.org
+#llama-tools.com - grid of iframes / livekit videos / three.js canvas
+#adnanwahab.com / blog / vis
+#hashirama.blog / scripts folder - desktop1
+#learn-math.org / $1 for once steam game
 ```sh
 uv run hello.py
 ```
