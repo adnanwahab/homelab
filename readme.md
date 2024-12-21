@@ -4,6 +4,13 @@ uv run hello.py
 ```
 
 
+# RTings for robots
+1. maurice = innate.bot 2000-3000
+2. hello-robot = 20,000 - (2000 refurbished)
+3. jetbot - 150 - no arm
+4. trossen - 750 - px100
+5. nanosaur.ai - 350-500 depending on orin, r-pi or pi-camera
+
 # homelab - gamekkit dynamicland
 
 # Bridge Building Game - two dimensional - triangles - truss - strongest shape distributes tension evenly - computeLines - three.js - gpu physics - mikola - shader tyro
