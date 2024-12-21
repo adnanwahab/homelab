@@ -1,4 +1,7 @@
-
+# usage instrauctions for agent
+```sh
+uv run hello.py
+```
 
 
 # homelab - gamekkit dynamicland
@@ -23,6 +26,7 @@ https://app.dover.com/apply/269adc8b-72b8-46d3-85b9-3a15ea901c84/35826b4b-2394-4
 https://boards.greenhouse.io/stackav/jobs/4509947007
 
 https://www.kaggle.com/competitions - data science - https://seunglab.org/ neuralink
+------
 
 # webrtc - llama on fly.io - queue a series of prompts - innate.bot - $2000 for reorganizing robot policeman megaman
 
