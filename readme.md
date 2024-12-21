@@ -1,3 +1,31 @@
+
+
+
+# homelab - gamekkit dynamicland
+
+# Bridge Building Game - two dimensional - triangles - truss - strongest shape distributes tension evenly - computeLines - three.js - gpu physics - mikola - shader tyro
+
+https://modal.com/docs
+- [ ] https://observablehq.com/d/01e25d1d93187ec4 - 7 notebooks - mechanical engeering
+- [ ] https://tailwindui.com/components/application-ui/lists/grid-lists
+- [ ] fly.io, cloudflare (https://github.com/cloudflare/cloudflare-typescript), azure, 5000 ec2 DevOps
+- [ ] https://compute.toys/view/1335 - webGPU - jeremy howard
+- [ ] o1 + anthropic -
+- [ ] zed.dev - MCP - anthropic
+- [ ] scripts folder running on 2 desktops
+- [ ] data folder - synchronized with backblaze - daily on post-commit
+- [ ] https://replit.com/@nyc-map/Supabasejs-Database
+- [ ] https://news.ycombinator.com/item?id=34979910 - tauri
+- [ ] https://www.coursera.org/account/accomplishments/verify/P4FWSNAFMZMB?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate - pgm - future medications
+
+https://app.dover.com/apply/269adc8b-72b8-46d3-85b9-3a15ea901c84/35826b4b-2394-4f65-99bc-2b4cf2dc51f5/
+
+https://boards.greenhouse.io/stackav/jobs/4509947007
+
+https://www.kaggle.com/competitions - data science - https://seunglab.org/ neuralink
+
+# webrtc - llama on fly.io - queue a series of prompts - innate.bot - $2000 for reorganizing robot policeman megaman
+
 https://www.ocw.mit.edu/search/?t=Mechanical+Engineering
 https://www.youtube.com/watch?v=_gXiVOmaVSo
 1. http://localhost:8889/lab/tree/Dynamicland.ipynb

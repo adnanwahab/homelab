@@ -126,7 +126,7 @@ export default function Home() {
 
       <div className="space-y-1 mb-8">
         <Link
-          href="https://twitter.com/dynabot"
+          href="https://twitter.com/dynabotdevs"
           className="block hover:underline"
         >
           @dynabotdev
