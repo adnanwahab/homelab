@@ -2,9 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 let visualizations = [
-  "https://www.jasondavies.com/maps/gingery/thumb.png",
-  "https://www.jasondavies.com/maps/zoom/thumb.png",
-  "https://www.jasondavies.com/bbp/thumb.png",
   "https://www.jasondavies.com/simplify/thumb.png",
   "https://www.jasondavies.com/maps/circle-tree/thumb.png",
   "https://www.jasondavies.com/poisson-disc/thumb.png",
@@ -106,18 +103,20 @@ let visualizations = [
   "https://www.jasondavies.com/tuebingen/thumb.png",
   "https://www.jasondavies.com/fibonacci/thumb.png",
   "https://www.jasondavies.com/flip/thumb.png",
-  "https://www.jasondavies.com/american-forces-in-afghanistan-and-iraq/thumb.png"
-].map(url => ({
+  "https://www.jasondavies.com/american-forces-in-afghanistan-and-iraq/thumb.png",
+].map((url) => ({
   src: url,
-  href: url.replace('/thumb.png', '').replace('.small.jpg', ''),
-  alt: url.split('/').slice(-2)[0].replace('-', ' ').replace('thumb.png', '').replace('.small.jpg', '')
+  href: url.replace("/thumb.png", "").replace(".small.jpg", ""),
+  alt: url
+    .split("/")
+    .slice(-2)[0]
+    .replace("-", " ")
+    .replace("thumb.png", "")
+    .replace(".small.jpg", ""),
 }));
-
-
 
 export default function Home() {
   // You could move this to a separate data file
- 
 
   return (
     <div className="max-w-7xl mx-auto px-5">
@@ -126,13 +125,22 @@ export default function Home() {
       </header>
 
       <div className="space-y-1 mb-8">
-        <Link href="https://twitter.com/dynabot" className="block hover:underline">
-          @dynabot
+        <Link
+          href="https://twitter.com/dynabot"
+          className="block hover:underline"
+        >
+          @dynabotdev
         </Link>
-        <Link href="mailto:adnan.f.wahab@gmail.com" className="block hover:underline">
+        <Link
+          href="mailto:adnan.f.wahab@gmail.com"
+          className="block hover:underline"
+        >
           adnan.f.wahab@gmail.com
         </Link>
-        <Link href="https://github.com/adnanwahab" className="block hover:underline">
+        <Link
+          href="https://github.com/adnanwahab"
+          className="block hover:underline"
+        >
           github.com/adnanwahab
         </Link>
       </div>
@@ -141,7 +149,11 @@ export default function Home() {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {visualizations.map((viz, index) => (
-          <Link href={viz.href} key={index} className="aspect-square relative group">
+          <Link
+            href={viz.href}
+            key={index}
+            className="aspect-square relative group"
+          >
             <Image
               src={viz.src}
               alt={viz.alt}
