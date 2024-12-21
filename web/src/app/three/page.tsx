@@ -19,13 +19,9 @@ export default function MyWebGPUScene() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-        // Check if browser supports WebGPU
-    if (!navigator.gpu) {
-      console.warn("WebGPU not supported in this browser!");
-      return;
-    }
 
-    const canvas = canvasRef.current;
+
+    const canvas = canvasRef.current!;
     const clock = new Clock();
 
     // Create the renderer
