@@ -3,6 +3,7 @@
 #adnanwahab.com / blog / vis
 #hashirama.blog / scripts folder - desktop1
 #learn-math.org / $1 for once steam game
+# avatar-notebook - earth = claude/llama, livekit=dynamicland / water / biotech, fire = nuclear fusion, air- obs/jupyter
 ```sh
 uv run hello.py
 ```
