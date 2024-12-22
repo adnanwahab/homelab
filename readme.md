@@ -1,4 +1,4 @@
-#learn-math.org - gamekit for dynamicland
+# learn-math.org - gamekit for dynamicland + botparty music game
 
 # 1 dynamicland.org - 2014 - synthesize a vaccine in 2022
 # 3 dynamicland.orgs - berekly, oakdla dn and mountain view - 2024
@@ -6,3 +6,10 @@
 
 # 20% more scientific advancement over next 5-20 years
 # tell story of dynamicland bookshelf - like ff17
+
+1. https://dynamicland.org/2024/The_communal_science_lab.pdf html+webgl
+2. jolt physics + music - webgpu compute lines
+3. surgeon simulator for robots s
+https://5-million-devs.netlify.com/
+
+# 95% of profits go to dynamicland.org

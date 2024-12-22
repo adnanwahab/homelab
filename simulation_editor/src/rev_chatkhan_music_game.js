@@ -2,6 +2,8 @@
 import * as THREE from "three";
 // import "./style.css";
 
+gravity_falls_collision_editor();
+
 function gravity_falls_collision_editor() {
   console.log("hi");
   const canvas = document.querySelector("canvas");

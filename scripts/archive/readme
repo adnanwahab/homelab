@@ -10,6 +10,10 @@ https://observablehq.com/@roboticsuniversity/llama-maximization
 2. webgpu - threejs - physic
 
 
+# https://bun.sh/docs/api/sqlite
+
+# turso / upstash / supabase
+
 music_game_editor - vite
 scripts - bun
 notebooks/course_content - python + uv
