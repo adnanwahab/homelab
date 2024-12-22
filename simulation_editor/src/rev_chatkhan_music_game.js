@@ -1,104 +1,107 @@
 //document.body.innerHTML = "";
 import * as THREE from "three";
 // import "./style.css";
-console.log("hi");
-const canvas = document.querySelector("canvas");
-// Scene setup
-const scene = new THREE.Scene();
-const camera = new THREE.OrthographicCamera(-5, 5, 5, -5, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x8ba870); // Sage green background
-//document.body.appendChild(renderer.domElement);
 
-// Create player (square)
-const squareGeometry = new THREE.PlaneGeometry(0.5, 0.5);
-const squareMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff });
-const square = new THREE.Mesh(squareGeometry, squareMaterial);
-scene.add(square);
+function gravity_falls_collision_editor() {
+  console.log("hi");
+  const canvas = document.querySelector("canvas");
+  // Scene setup
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-5, 5, 5, -5, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x8ba870); // Sage green background
+  //document.body.appendChild(renderer.domElement);
 
-// Create platforms (white paths)
-const platformGeometry = new THREE.PlaneGeometry(2, 10);
-const platformMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-const platform = new THREE.Mesh(platformGeometry, platformMaterial);
-platform.position.set(0, 0, -1);
-scene.add(platform);
+  // Create player (square)
+  const squareGeometry = new THREE.PlaneGeometry(0.5, 0.5);
+  const squareMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff });
+  const square = new THREE.Mesh(squareGeometry, squareMaterial);
+  scene.add(square);
 
-// Physics variables
-let velocity = new THREE.Vector3(0, 0, 0);
-const gravity = -9.8;
-let isJumping = false;
-let canJump = true;
-const jumpForce = 5;
+  // Create platforms (white paths)
+  const platformGeometry = new THREE.PlaneGeometry(2, 10);
+  const platformMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  const platform = new THREE.Mesh(platformGeometry, platformMaterial);
+  platform.position.set(0, 0, -1);
+  scene.add(platform);
 
-// Camera position
-camera.position.z = 5;
+  // Physics variables
+  let velocity = new THREE.Vector3(0, 0, 0);
+  const gravity = -9.8;
+  let isJumping = false;
+  let canJump = true;
+  const jumpForce = 5;
 
-// Game state
-let gameOver = false;
+  // Camera position
+  camera.position.z = 5;
 
-// Controls
-document.addEventListener("keydown", (event) => {
-  if (event.code === "Space" && canJump) {
-    velocity.y = jumpForce;
-    isJumping = true;
-    canJump = false;
-  }
-});
+  // Game state
+  let gameOver = false;
 
-document.addEventListener("keyup", (event) => {
-  if (event.code === "Space") {
-    canJump = true;
-  }
-});
+  // Controls
+  document.addEventListener("keydown", (event) => {
+    if (event.code === "Space" && canJump) {
+      velocity.y = jumpForce;
+      isJumping = true;
+      canJump = false;
+    }
+  });
 
-// Animation loop
-const clock = new THREE.Clock();
+  document.addEventListener("keyup", (event) => {
+    if (event.code === "Space") {
+      canJump = true;
+    }
+  });
 
-function animate() {
-  requestAnimationFrame(animate);
+  // Animation loop
+  const clock = new THREE.Clock();
 
-  if (!gameOver) {
-    const deltaTime = clock.getDelta();
+  function animate() {
+    requestAnimationFrame(animate);
 
-    // Apply gravity
-    velocity.y += gravity * deltaTime;
+    if (!gameOver) {
+      const deltaTime = clock.getDelta();
 
-    // Update position
-    square.position.y += velocity.y * deltaTime;
+      // Apply gravity
+      velocity.y += gravity * deltaTime;
 
-    // Basic collision detection with bottom
-    if (square.position.y < -4) {
-      square.position.y = -4;
-      velocity.y = 0;
-      isJumping = false;
+      // Update position
+      square.position.y += velocity.y * deltaTime;
+
+      // Basic collision detection with bottom
+      if (square.position.y < -4) {
+        square.position.y = -4;
+        velocity.y = 0;
+        isJumping = false;
+      }
+
+      // Basic collision detection with top
+      if (square.position.y > 4) {
+        square.position.y = 4;
+        velocity.y = 0;
+      }
+
+      // Auto-move right
+      square.position.x += 2 * deltaTime;
+      camera.position.x = square.position.x;
     }
 
-    // Basic collision detection with top
-    if (square.position.y > 4) {
-      square.position.y = 4;
-      velocity.y = 0;
-    }
-
-    // Auto-move right
-    square.position.x += 2 * deltaTime;
-    camera.position.x = square.position.x;
+    renderer.render(scene, camera);
   }
 
-  renderer.render(scene, camera);
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  });
+
+  // Start animation
+  animate();
 }
-
-// Handle window resize
-window.addEventListener("resize", () => {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-
-  camera.updateProjectionMatrix();
-  renderer.setSize(width, height);
-});
-
-// Start animation
-animate();
 
 // "use client";
 // import React, { useEffect, useRef, useState } from "react";
