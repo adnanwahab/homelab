@@ -1,7 +1,10 @@
 //document.body.innerHTML = "";
 import * as THREE from "three";
 // import "./style.css";
-
+const dimensions = {
+  width: 900,
+  height: 500,
+};
 gravity_falls_collision_editor();
 
 function gravity_falls_collision_editor() {
@@ -11,7 +14,7 @@ function gravity_falls_collision_editor() {
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-5, 5, 5, -5, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(dimensions.width, dimensions.height);
   renderer.setClearColor(0x8ba870); // Sage green background
   //document.body.appendChild(renderer.domElement);
 

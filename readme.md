@@ -13,3 +13,4 @@
 https://5-million-devs.netlify.com/
 
 # 95% of profits go to dynamicland.org
+# tech stack = three.js webgpu + w/e
