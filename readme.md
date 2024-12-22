@@ -1,6 +1,29 @@
 #learn-math.org - gamekit for dynamicland
 
 
+
+# garrys mod -
+cooperative voting = gradual staircase to morpheus - human revolution / mankind divided
+
+webgl can draw 6 million triangle - altered qualia - all in one draw call
+
+objects table
+int vec3 vece3
+ID pox_xyz rotation_xyz_ object_type
+
+
+
+object_type_list
+chair - model_id - massimo
+tree - "prompt, note"
+
+
+1. every object is a time series of position xyz - centroid -
+2. every person has a room - copy of all the objects
+3.
+paper mario world maker - dynamicland gamekit - 1million views by jan 1 2025 - play game to learn robotics - an ad for (maurice + jetbot + hello-robot) etc
+
+
 npm install node-osc
 https://chatgpt.com/c/6767555e-af3c-800a-b581-c9e32fd9dcbe
 
