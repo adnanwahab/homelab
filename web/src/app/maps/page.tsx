@@ -61,13 +61,18 @@ const DATA = [
   }
 ];
 
-
+// Add interface for City type
+interface City {
+  name: string;
+  latitude: number;
+  longitude: number;
+}
 
 export default function Home() {
   const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedCity, setSelectedCity] = useState<City | null>(null);
 
-  const handleCityHover = (city) => {
+  const handleCityHover = (city: City | null) => {
     setSelectedCity(city);
     if (city) {
       setViewState({
