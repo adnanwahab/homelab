@@ -45,7 +45,26 @@ export default function Home() {
   ];
 
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+      <div style={{ 
+        position: 'absolute', 
+        top: 0,
+        left: 0,
+        zIndex: 1,
+        background: 'rgba(255, 255, 255, 0.9)',
+        padding: '20px',
+        borderRadius: '8px',
+        margin: '20px'
+      }}>
+        <h1>Cities</h1>
+        <ul>
+          <li>New York</li>
+          <li>San Francisco</li>
+          <li>Los Angeles</li>
+          <li>Chicago</li>
+          <li>Houston</li>
+        </ul>
+      </div>
       <DeckGL
         initialViewState={INITIAL_VIEW_STATE}
         controller={true}
