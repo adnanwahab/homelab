@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "deck.gl": "^9.0.38",
+    "mapbox-gl": "^3.9.0",
     "next": "15.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-map-gl": "^7.1.8",
     "three": "^0.171.0"
   },
   "devDependencies": {

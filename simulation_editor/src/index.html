@@ -40,48 +40,6 @@
         </div>
 
         <script type="module" src="./rev_chatkhan_music_game.js"></script>
-        
-        <script>
-            // Get slider elements
-            const gravitySlider = document.getElementById('gravity');
-            const speedSlider = document.getElementById('speed');
-            const bounceSlider = document.getElementById('bounce');
-            
-            // Get value display elements
-            const gravityValue = document.getElementById('gravityValue');
-            const speedValue = document.getElementById('speedValue');
-            const bounceValue = document.getElementById('bounceValue');
-            
-            // Update values on slider change
-            gravitySlider.addEventListener('input', (e) => {
-                gravityValue.textContent = e.target.value;
-                // You can emit a custom event or use a global variable to communicate with your game
-                window.dispatchEvent(new CustomEvent('gravityChange', { detail: parseFloat(e.target.value) }));
-            });
-
-            speedSlider.addEventListener('input', (e) => {
-                speedValue.textContent = e.target.value;
-                window.dispatchEvent(new CustomEvent('speedChange', { detail: parseFloat(e.target.value) }));
-            });
-
-            bounceSlider.addEventListener('input', (e) => {
-                bounceValue.textContent = e.target.value;
-                window.dispatchEvent(new CustomEvent('bounceChange', { detail: parseFloat(e.target.value) }));
-            });
-
-            // Function to update object positions display
-            function updatePositions(objects) {
-                const positionsElement = document.getElementById('positions');
-                let positionText = '';
-                objects.forEach((obj, index) => {
-                    positionText += `Object ${index + 1}: X=${obj.x.toFixed(2)}, Y=${obj.y.toFixed(2)}\n`;
-                });
-                positionsElement.textContent = positionText;
-            }
-
-            // Expose the update function globally
-            window.updatePositions = updatePositions;
-        </script>
     </body>
 </html>
 <!-- tree based encapsulation 4-7 things for robotics -->

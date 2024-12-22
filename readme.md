@@ -14,3 +14,7 @@ https://5-million-devs.netlify.com/
 
 # 95% of profits go to dynamicland.org
 # tech stack = three.js webgpu + w/e
+
+
+# communal science lab + 100x more science
+# 2025 - every pool in new york + scottsdale
