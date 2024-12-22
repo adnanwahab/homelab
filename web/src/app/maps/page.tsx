@@ -8,43 +8,38 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MAPBOX_TOKEN = 
 `pk.eyJ1IjoiYXdhaGFiIiwiYSI6ImNrdjc3NW11aTJncmIzMXExcXRiNDNxZWYifQ.tqFU7uVd6mbhHtjYsjtvlg`
+import cities from './cities.json';
 
-interface City {
-  name: string;
-  latitude: number;
-  longitude: number;
-}
-
-const cities = {
-  "cities": [
-    {
-      "name": "New York",
-      "latitude": 40.7128,
-      "longitude": -74.0060
-    },
-    {
-      "name": "San Francisco",
-      "latitude": 37.7749,
-      "longitude": -122.4194
-    },
-    {
-      "name": "Los Angeles",
-      "latitude": 34.0522,
-      "longitude": -118.2437
-    },
-    {
-      "name": "Chicago",
-      "latitude": 41.8781,
-      "longitude": -87.6298
-    },
-    {
-      "name": "Houston",
-      "latitude": 29.7604,
-      "longitude": -95.3698
-    }
-  ],
-  "note": "These coordinates are approximate and can vary slightly by source. They are widely recognized central coordinates to represent each city's general location."
-}
+// const cities = {
+//   "cities": [
+//     {
+//       "name": "New York",
+//       "latitude": 40.7128,
+//       "longitude": -74.0060
+//     },
+//     {
+//       "name": "San Francisco",
+//       "latitude": 37.7749,
+//       "longitude": -122.4194
+//     },
+//     {
+//       "name": "Los Angeles",
+//       "latitude": 34.0522,
+//       "longitude": -118.2437
+//     },
+//     {
+//       "name": "Chicago",
+//       "latitude": 41.8781,
+//       "longitude": -87.6298
+//     },
+//     {
+//       "name": "Houston",
+//       "latitude": 29.7604,
+//       "longitude": -95.3698
+//     }
+//   ],
+//   "note": "These coordinates are approximate and can vary slightly by source. They are widely recognized central coordinates to represent each city's general location."
+// }
 
 
 //process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
@@ -70,9 +65,9 @@ const DATA = [
 
 export default function Home() {
   const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
-  const [selectedCity, setSelectedCity] = useState<City | null>(null);
+  const [selectedCity, setSelectedCity] = useState(null);
 
-  const handleCityHover = (city: City) => {
+  const handleCityHover = (city) => {
     setSelectedCity(city);
     if (city) {
       setViewState({
