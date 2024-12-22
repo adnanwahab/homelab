@@ -1,8 +1,12 @@
+#learn-math.org - gamekit for dynamicland
+https://claude.ai/chat/cca2ec62-87c3-4d08-87f9-315baea97a7f
+https://nextjournal.com/a/8oSCdDffXWLDt8Wdi1iSnW/edit?token=2MmTGzA2KmeocbtP5ULyra
+https://docs.astral.sh/uv/guides/projects/#running-commands
+
 # usage instrauctions for replit-agent - for 1 billion people cooperatively thinking about robotics using dynamicland.org
 #llama-tools.com - grid of iframes / livekit videos / three.js canvas
 #adnanwahab.com / blog / vis
 #hashirama.blog / scripts folder - desktop1
-#learn-math.org / $1 for once steam game
 # avatar-notebook - earth = claude/llama, livekit=dynamicland / water / biotech, fire = nuclear fusion, air- obs/jupyter
 # supabase / litefs for db - keyvalue - resend - enter email of 30 million academics - dynamicland.org improves scince / shared reasoning by 100x
 # jan 1 - o3 - 100,000 pull requests - resend - 100
