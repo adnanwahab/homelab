@@ -26,7 +26,7 @@ const MusicGame = () => {
             source.connect(audioRef.current.analyser);
             audioRef.current.dataArray = new Uint8Array(audioRef.current.analyser.frequencyBinCount);
         } catch (err) {
-            console.error('Error accessing microphone:', err);
+            console.erroar('Error accessing microphone:', err);
         }
     };
 

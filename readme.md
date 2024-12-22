@@ -1,7 +1,13 @@
 #learn-math.org - gamekit for dynamicland
+
+
+npm install node-osc
+https://chatgpt.com/c/6767555e-af3c-800a-b581-c9e32fd9dcbe
+
 https://claude.ai/chat/cca2ec62-87c3-4d08-87f9-315baea97a7f
 https://nextjournal.com/a/8oSCdDffXWLDt8Wdi1iSnW/edit?token=2MmTGzA2KmeocbtP5ULyra
 https://docs.astral.sh/uv/guides/projects/#running-commands
+https://www.tldraw.com/
 
 # usage instrauctions for replit-agent - for 1 billion people cooperatively thinking about robotics using dynamicland.org
 #llama-tools.com - grid of iframes / livekit videos / three.js canvas
