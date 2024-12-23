@@ -8,14 +8,19 @@ const files = [
   // More files...
 ]
 
+const first = ["image-1734920937558.jpeg","image-1734920936946.png","image-1734920931999.png","image-1734920937867.png","image-1734920933546.png","image-1734920937252.png","image-1734920935097.png","image-1734920932924.png","image-1734920932306.png","image-1734920938173.png","image-1734920935715.jpeg","image-1734920933233.jpeg","image-1734920934165.jpeg","image-1734920934477.png","image-1734920932617.png","image-1734920938479.png","image-1734920936640.png","image-1734920933856.png","image-1734920935406.png","image-1734920936334.png","image-1734920936026.png","image-1734920934787.png"]
+
+const second = ["image-1734920971166.png","image-1734920993444.png","image-1734920981068.png","image-1734920975507.png","image-1734920969306.png","image-1734920970858.png","image-1734920993137.png","image-1734920989423.png","image-1734920966829.png","image-1734920984476.png","image-1734920969930.png","image-1734920994063.png","image-1734920996847.png","image-1734920972096.png","image-1734920981693.png","image-1734920967448.png","image-1734920992827.png","image-1734920982624.jpeg","image-1734920964357.png","image-1734920982003.png","image-1734920964975.png","image-1734920991283.png","image-1734920973951.png","image-1734920980761.png","image-1734920961574.png","image-1734920977672.png","image-1734920976744.png","image-1734920970241.png","image-1734920992207.png","image-1734920983861.png","image-1734920983243.png","image-1734920977366.png","image-1734920966519.png","image-1734920979217.png","image-1734920975820.png","image-1734920990661.png","image-1734920964045.png","image-1734920987876.png","image-1734920981383.png","image-1734920961263.png","image-1734920962191.png","image-1734920971477.png","image-1734920976132.png","image-1734920985092.png","image-1734920979836.png","image-1734920989733.png","image-1734920977980.png","image-1734920961884.png","image-1734920975198.png","image-1734920986950.png","image-1734920963738.png","image-1734920983551.png","image-1734920982315.png","image-1734920978291.png","image-1734920978905.png","image-1734920993754.png","image-1734920994991.png","image-1734920982936.png","image-1734920994371.png","image-1734920968685.png","image-1734920968065.png","image-1734920988185.png","image-1734920967140.png","image-1734920991588.png","image-1734920996231.png","image-1734920974263.png","image-1734920970549.png","image-1734920995300.png","image-1734920963119.png","image-1734920988806.png","image-1734920973334.png","image-1734920972406.png","image-1734920992519.png","image-1734920980451.png","image-1734920986021.png","image-1734920995920.png","image-1734920973645.png","image-1734920990045.png","image-1734920964665.png","image-1734920989114.png","image-1734920985712.png","image-1734920960952.png","image-1734920984169.png","image-1734920969618.png","image-1734920974885.png","image-1734920965591.png","image-1734920984784.png","image-1734920987258.png","image-1734920967757.png","image-1734920962808.png","image-1734920990971.png","image-1734920988496.png","image-1734920990352.png","image-1734920977053.png","image-1734920979526.png","image-1734920985399.png","image-1734920995611.png","image-1734920987567.png","image-1734920996536.png","image-1734920980143.png","image-1734920972716.png","image-1734920968996.png","image-1734920986640.png","image-1734920976438.png","image-1734920974574.png","image-1734920994682.png","image-1734920963430.png","image-1734920965282.png","image-1734920966210.png","image-1734920965902.png","image-1734920991897.png","image-1734920971787.png","image-1734920962499.png","image-1734920973026.png","image-1734920978601.png","image-1734920968374.png","image-1734920986332.png"]
+const third = []
 for (let i = 0; i < 100; i++) {
   files.push({
     title: `IMG_4985.HEIC ${i}`,
     size: '3.9 MB',
     source:
-      'https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80',
+      `/thumbnails/vis/${first[i]}`,
   })
 }
+
 
 const vis = {
   "topics": [
@@ -320,6 +325,7 @@ function Header () {
 
 
 export default function Home() {
+
     return <div>
       <Header />
       <PortfolioGrid />

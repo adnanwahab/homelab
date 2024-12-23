@@ -8,17 +8,42 @@ let latestData = {};
 //   latestData = await response.json();
 // }, 60_000);
 
+import fs from "fs";
+
+
 serve({
   port: 8000,
   async fetch(req) {
-    let data = Object.assign(latestData, await getAllKV());
-    return new Response(JSON.stringify(latestData), {
+
+
+
+    const files = fs.readdirSync("/Users/shelbernstein/homelab/web/public/thumbnails/games");
+    return new Response(JSON.stringify({ files }), {
       headers: { "Content-Type": "application/json" },
     });
-  },
-});
+  } 
+})
 
-console.log("hi");
+//   return new Response("Not found", { status: 404 });
+// }
+
+
+
+
+
+
+
+
+
+
+//     let data = Object.assign(latestData, await getAllKV());
+//     return new Response(JSON.stringify(latestData), {
+//       headers: { "Content-Type": "application/json" },
+//     });
+//   },
+// });
+
+//console.log("hi");
 
 import { createClient } from "@supabase/supabase-js";
 
