@@ -18,3 +18,14 @@ https://5-million-devs.netlify.com/
 
 # communal science lab + 100x more science
 # 2025 - every pool in new york + scottsdale
+
+games/ 
+maps/ 50 maps
+demos/ 50 three.js demos / games
+vis/ 50 vis with d3 
+
+blog/ - 7 articles - dynamicland
+
+
+
+
