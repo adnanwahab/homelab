@@ -2,7 +2,7 @@
 # message - 713-6777-3669 all friefireins 
 
 # tim is going to apple  mike bostock enjalto  - work teoget github
-# Adam Cmeil
+# Adam Cmeield , polaris yoga - sam altman
 # Will schnieder + polairs yoga
 # mark chakthan
 #  KEheng Zhang + david PLeiffer Abhinav Prasasd + Risharbh 
