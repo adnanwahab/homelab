@@ -1,3 +1,12 @@
+//dynamicland
+//ros 
+//webgpu 
+//docker eseentials
+//tailscale essentials
+
+
+
+
 import { Murecho } from "next/font/google";
 
 const _ = `https://www.youtube.com/watch?v=_gXiVOmaVSo
