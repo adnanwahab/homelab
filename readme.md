@@ -26,6 +26,11 @@ vis/ 50 vis with d3
 
 blog/ - 7 articles - dynamicland
 
+ports
+5173 - sim-editor
+8000 - scripts api - uv bun ollama
+8001 fly.io
+3000 vercel
 
 
-
+doble value of ZARs - from Dec 23 2024 - Jan 1 2025
