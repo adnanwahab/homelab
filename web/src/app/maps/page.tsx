@@ -80,7 +80,7 @@ export default function Home() {
         longitude: city.longitude,
         latitude: city.latitude,
         zoom: 10,
-        transitionDuration: 1000
+        //transitionDuration: 1000
       });
     }
   };
