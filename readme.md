@@ -6,7 +6,8 @@
 # Will schnieder + polairs yoga
 # mark chakthan
 #  KEheng Zhang + david PLeiffer Abhinav Prasasd + Risharbh 
-
+# mike Bostock Melody Mckfessel
+# bring will sncheider + polaris yhoga  to zoox
 
 # learn-math.org - gamekit for dynamicland + botparty music game
 
