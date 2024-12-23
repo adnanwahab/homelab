@@ -135,7 +135,7 @@ export default function Home() {
       <DeckGL
         initialViewState={INITIAL_VIEW_STATE}
         viewState={viewState}
-        onViewStateChange={({viewState}) => setViewState(viewState)}
+        //onViewStateChange={({viewState}) => setViewState(viewState)}
         controller={true}
         layers={[
           new LineLayer({
