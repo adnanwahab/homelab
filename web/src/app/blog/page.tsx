@@ -5,6 +5,9 @@
 //tailscale essentials
 
 
+const extra_referenves = `
+On the crimes against humanity of Duvie Badani, Estee Braun and Yakov Kahan.
+`
 
 
 import { Murecho } from "next/font/google";
@@ -19,6 +22,7 @@ export default function () {
   return (
     <div>
       <div>
+        {extra_referenves}
         <iframe
           width="100%"
           height="422"
