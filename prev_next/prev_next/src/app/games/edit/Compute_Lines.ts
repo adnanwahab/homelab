@@ -1,1 +1,0 @@
-//todo: compute lines from svg
