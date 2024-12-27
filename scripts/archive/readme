@@ -16,7 +16,7 @@ https://observablehq.com/@roboticsuniversity/llama-maximization
 
 music_game_editor - vite
 scripts - bun
-notebooks/course_content - python + uv
+notebooks/course_content - python + uv + https://github.com/enjalot/latent-scope
 web/tools, web/blog - next.js
 
 fb, ig, twitter, linkedin, wordpress
