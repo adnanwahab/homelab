@@ -1,5 +1,8 @@
+# jetson Container + Jetson Inference
+
+
 # map of energy industry in saudi arabia with airassass
-# message - 713-6777-3669 all friefireins
+# message - 713-677-3669 all friefireins
 
 # tim is going to apple  mike bostock enjalto  - work teoget github
 # Adam Cmeield , polaris yoga - sam altman
