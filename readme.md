@@ -1,11 +1,11 @@
-# map of energy industry in saudi arabia with airassass 
-# message - 713-6777-3669 all friefireins 
+# map of energy industry in saudi arabia with airassass
+# message - 713-6777-3669 all friefireins
 
 # tim is going to apple  mike bostock enjalto  - work teoget github
 # Adam Cmeield , polaris yoga - sam altman
 # Will schnieder + polairs yoga
 # mark chakthan
-#  KEheng Zhang + david PLeiffer Abhinav Prasasd + Risharbh 
+#  KEheng Zhang + david PLeiffer Abhinav Prasasd + Risharbh
 # mike Bostock Melody Mckfessel
 # bring will sncheider + polaris yhoga  to zoox
 
@@ -30,10 +30,10 @@ https://5-million-devs.netlify.com/
 # communal science lab + 100x more science
 # 2025 - every pool in new york + scottsdale
 
-games/ 
+games/
 maps/ 50 maps
 demos/ 50 three.js demos / games
-vis/ 50 vis with d3 
+vis/ 50 vis with d3
 
 blog/ - 7 articles - dynamicland
 
@@ -42,6 +42,3 @@ ports
 8000 - scripts api - uv bun ollama
 8001 fly.io
 3000 vercel
-
-
-doble value of ZARs - from Dec 23 2024 - Jan 1 2025
