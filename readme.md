@@ -1,5 +1,15 @@
+# simulation as as service - 10 billion dollar industry - expected to double in 5 years - unity , unreal and now three.js
+
+
+# raytracing webGPU - add to all browsers - rustSDK - reference implementation 
+
 # jetson Container + Jetson Inference
 
+
+1. Anomaly detection - observe abnormal activity
+2. Capacity planning - extrapolate non-linear trends
+3. Crisis diagnosis - see interactions between services
+4. System design - don’t guess; decide empirically
 
 pythin -= scripts/kindlepy
 

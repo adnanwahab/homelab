@@ -4,6 +4,15 @@
 //docker eseentials
 //tailscale essentials
 
+const titles = [
+"Dynamicland is the future of robotics UI and Biotech", 
+"Hospital of the future - healthTensor / withRegard",
+"music creation with Livekit - karaoke - 500 people"
+
+
+
+]
+
 
 const extra_referenves = `
 On the crimes against humanity of Duvie Badani, Estee Braun and Yakov Kahan.
