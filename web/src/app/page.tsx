@@ -355,19 +355,19 @@ const vis = {
 
 function Header() {
   return (
-    <div className="flex justify-between items-center p-8 border-b border-gray-200">
+    <div className="flex justify-between items-center p-8 border-b border-gray-700 bg-[#1e2231] text-[#8b98e8]">
       <div className="flex flex-col space-y-2">
-        <h1 className="text-5xl font-bold tracking-tight">Adnan Wahab</h1>
-        <div className="flex space-x-4 text-gray-600">
-          <a href="https://github.com/adnanwahab" className="hover:text-gray-900">github</a>
-          <a href="https://x.com/dynabotdev" className="hover:text-gray-900">twitter</a>
-          <a href="/blog" className="hover:text-gray-900">blog</a>
+        <h1 className="text-5xl font-bold tracking-tight text-[#8b98e8]">Adnan Wahab</h1>
+        <div className="flex space-x-4 text-gray-400">
+          <a href="https://github.com/adnanwahab" className="hover:text-[#8b98e8]">github</a>
+          <a href="https://x.com/dynabotdev" className="hover:text-[#8b98e8]">twitter</a>
+          <a href="/blog" className="hover:text-[#8b98e8]">blog</a>
         </div>
       </div>
       <img 
         src="/personal/friends.jpg" 
         alt="Profile"
-        className="w-32 h-32 rounded-lg "
+        className="w-32 h-32 rounded-lg"
       />
     </div>
   )
@@ -375,22 +375,22 @@ function Header() {
 
 function PortfolioGrid() {
   return (
-    <div className="p-8">
-      <h2 className="text-2xl font-semibold mb-6">Visualisations</h2>
+    <div className="p-8 bg-[#1e2231]">
+      <h2 className="text-2xl font-semibold mb-6 text-[#8b98e8]">Visualisations</h2>
       <ul role="list" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
         {files.map((file, index) => (
           <Link href={`/vis/${index}`} key={index}>
             <li className="relative group">
-              <div className="aspect-[10/7] overflow-hidden rounded-lg bg-gray-100">
+              <div className="aspect-[10/7] overflow-hidden rounded-lg bg-gray-800">
                 <img
                   alt=""
                   src={file.source}
                   className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity"
                 />
               </div>
-              <p className="mt-2 text-sm font-medium text-gray-900 truncate">{file.title}</p>
+              <p className="mt-2 text-sm font-medium text-[#8b98e8] truncate">{file.title}</p>
               {file.size && (
-                <p className="text-sm text-gray-500">{file.size}</p>
+                <p className="text-sm text-gray-400">{file.size}</p>
               )}
             </li>
           </Link>
@@ -402,7 +402,7 @@ function PortfolioGrid() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#1e2231]">
       <Header />
       <PortfolioGrid />
     </div>
