@@ -8,10 +8,7 @@ const titles = [
 "Dynamicland is the future of robotics UI and Biotech", 
 "Hospital of the future - healthTensor / withRegard",
 "music creation with Livekit - karaoke - 500 people"
-
-
-
-]
+]i
 
 
 const extra_referenves = `
