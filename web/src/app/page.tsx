@@ -1,3 +1,4 @@
+
 const files = [
   {
     title: 'IMG_4985.HEIC',
@@ -375,23 +376,15 @@ function PortfolioGrid() {
 function Header () {
   return <div>
     <h1>Adnan Wahab</h1>
-    
-    {/* <a href="/maps">maps</a> */}
     <div>
-    <a href="/games">games</a>
+    phone : 713-677-3669
     </div>
     <div>
-    <a href="/vis">vis</a>
+    email: adnan.f.wahab@gmail.com
     </div>
     <div>
     <a href="/blog">blog</a>
     </div>
-    {/* <div>
-    <a href="/tools">tools</a>
-    </div> */}
-
-    <h1>Three.js Deck.Gl docker, figma</h1>
-
   </div>
 }
 
