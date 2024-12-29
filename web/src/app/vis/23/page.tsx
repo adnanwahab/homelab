@@ -1,10 +1,9 @@
-
-      "use client"
+"use client"
 import { useRef, useEffect } from 'react'
 import * as THREE from 'three'
 
 export default function Visualization() {
-    const canvasRef = useRef()
+    const canvasRef = useRef<HTMLCanvasElement>(null)
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -14,46 +13,48 @@ export default function Visualization() {
 
         useEffect(() => {
     // Create a geometry for stars
-    const starGeometry = new THREE.Geometry();
+    const starGeometry = new THREE.BufferGeometry()
+    const starVertices = []
     for (let i = 0; i < 1000; i++) {
-        const star = new THREE.Vector3(
+        starVertices.push(
             (Math.random() - 0.5) * 2000,
             (Math.random() - 0.5) * 2000,
             (Math.random() - 0.5) * 2000
-        );
-        starGeometry.vertices.push(star);
+        )
     }
-    const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
-    const starField = new THREE.Points(starGeometry, starMaterial);
-    scene.add(starField);
+    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3))
+    const starMaterial = new THREE.PointsMaterial({ color: 0xffffff })
+    const starField = new THREE.Points(starGeometry, starMaterial)
+    scene.add(starField)
 
     // Create a central geometry with lines
-    const centralGeometry = new THREE.IcosahedronGeometry(40, 2);
+    const centralGeometry = new THREE.IcosahedronGeometry(40, 2)
     const centralMaterial = new THREE.MeshBasicMaterial({
         color: 0xffffff,
         wireframe: true,
         opacity: 0.1,
         transparent: true
-    });
-    const centralMesh = new THREE.Mesh(centralGeometry, centralMaterial);
-    scene.add(centralMesh);
+    })
+    const centralMesh = new THREE.Mesh(centralGeometry, centralMaterial)
+    scene.add(centralMesh)
 
     // Add floating particles
-    const particleGeometry = new THREE.Geometry();
+    const particleGeometry = new THREE.BufferGeometry()
+    const particleVertices = []
     for (let i = 0; i < 200; i++) {
-        const particle = new THREE.Vector3(
+        particleVertices.push(
             (Math.random() - 0.5) * 600,
             (Math.random() - 0.5) * 600,
             (Math.random() - 0.5) * 600
-        );
-        particleGeometry.vertices.push(particle);
+        )
     }
+    particleGeometry.setAttribute('position', new THREE.Float32BufferAttribute(particleVertices, 3))
     const particleMaterial = new THREE.PointsMaterial({
         color: 0xff4500,
         size: 2
-    });
-    const particleField = new THREE.Points(particleGeometry, particleMaterial);
-    scene.add(particleField);
+    })
+    const particleField = new THREE.Points(particleGeometry, particleMaterial)
+    scene.add(particleField)
 });
 
         camera.position.z = 5
