@@ -4,9 +4,6 @@ import json
 import openai
 from pathlib import Path
 
-#openai.api_key = "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"
-openai.api_key = "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"
-
 file_url = "https://raw.githubusercontent.com/adnanwahab/homelab/refs/heads/main/web/public/vis/image-1734920932306.png"
 
 
