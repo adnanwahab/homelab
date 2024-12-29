@@ -1,4 +1,3 @@
-
       "use client"
 import { useRef, useEffect } from 'react'
 import * as THREE from 'three'
@@ -48,17 +47,17 @@ pointLight3.position.set(0, 0, 0);
 scene.add(pointLight3);
 
 // Background color gradient
-const canvas = document.createElement('canvas');
-canvas.width = 512;
-canvas.height = 512;
-const context = canvas.getContext('2d');
+const gradientCanvas = document.createElement('canvas');
+gradientCanvas.width = 512;
+gradientCanvas.height = 512;
+const context = gradientCanvas.getContext('2d');
 const gradient = context.createLinearGradient(0, 0, 512, 512);
 gradient.addColorStop(0, '#0e0e3d');
 gradient.addColorStop(1, '#005bea');
 context.fillStyle = gradient;
 context.fillRect(0, 0, 512, 512);
 
-scene.background = new THREE.CanvasTexture(canvas);
+scene.background = new THREE.CanvasTexture(gradientCanvas);
 
         camera.position.z = 5
 
