@@ -81,3 +81,6 @@ depndencies
 # 6. tailscale
 # 7. bun.sh + deno2 for webGPU + jupyter to observablehq integration
 # 8. three.js webGPU + jolt-physics + tauri or react native.
+# 9. unity + zed 2i sdk
+
+innate.bot - selfhosted - for multiplayer robots
