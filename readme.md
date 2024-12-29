@@ -1,8 +1,10 @@
 # jetson Container + Jetson Inference
 
 
+pythin -= scripts/kindlepy
 
 
+data = golang 
 scripts  = uv 
 web = next.js
 
