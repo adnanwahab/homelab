@@ -5,6 +5,7 @@ pythin -= scripts/kindlepy
 
 
 data = golang 
+notebooks - uv
 scripts  = uv 
 web = next.js
 
