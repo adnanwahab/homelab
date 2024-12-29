@@ -1,4 +1,8 @@
-# scripts
+# scripts bun + UV
+
+
+
+dockerized jupyter notebook on both Desktops - llama guard - llama-tools
 
 To install dependencies:
 

@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "video_vision_transformer_to_three": "bun run scripts/vis_to_three.ts",
+    "auto_debug": "bun run scripts/auto_debug.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
