@@ -1,6 +1,14 @@
 # jetson Container + Jetson Inference
 
 
+
+
+scripts  = uv 
+web = next.js
+
+
+
+
 # map of energy industry in saudi arabia with airassass
 # message - 713-677-3669 all friefireins
 
