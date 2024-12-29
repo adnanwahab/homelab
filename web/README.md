@@ -1,3 +1,16 @@
+# Homelab = robotics UI for 2025
+
+https://app.turso.tech/adnanwahab/databases
+https://supabase.com/blog/self-host-maps-storage-protomaps
+https://tailscale.com/kb
+https://dash.cloudflare.com/f12249d05845494d385d80253a902b04
+https://caddyserver.com/docs/
+
+
+
+
+uv docker jupyter
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
