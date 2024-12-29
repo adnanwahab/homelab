@@ -4,7 +4,7 @@ import json
 import openai
 from pathlib import Path
 
-async def generate_threejs_component(img_path):   
+async def generate_threejs_component(img):   
     response = await openai.ChatCompletion.create(
                     model="gpt-4-vision-preview",
                     messages=[
@@ -81,7 +81,7 @@ async def process_images():
         if img_path.is_file():
             # Send image to OpenAI for processing
             with open(img_path, 'rb') as img:
-                component_code = await generate_threejs_component(img_path)
+                component_code = await generate_threejs_component(img)
             # Save component
             output_file = output_dir / f"{idx}/page.tsx"
             print(output_file)
