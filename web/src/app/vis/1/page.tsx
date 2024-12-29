@@ -1,1 +1,5 @@
-export default function Page() { return <div>Page {i}</div> }
+
+export default function Visualization() {
+    return <div>Hello</div>
+}
+        

@@ -4,7 +4,12 @@ import json
 import openai
 from pathlib import Path
 
-async def generate_threejs_component(img):   
+async def generate_threejs_component(img):
+#     return """
+# export default function Visualization() {
+#     return <div>Hello</div>
+# }
+        # """
     response = await openai.ChatCompletion.create(
                     model="gpt-4-vision-preview",
                     messages=[
