@@ -1,7 +1,7 @@
 # simulation as as service - 10 billion dollar industry - expected to double in 5 years - unity , unreal and now three.js
 
 
-# raytracing webGPU - add to all browsers - rustSDK - reference implementation 
+# raytracing webGPU - add to all browsers - rustSDK - reference implementation
 
 # jetson Container + Jetson Inference
 
@@ -14,9 +14,9 @@
 pythin -= scripts/kindlepy
 
 
-data = golang 
+data = golang
 notebooks - uv
-scripts  = uv 
+scripts  = uv
 web = next.js
 
 
@@ -66,3 +66,18 @@ ports
 8000 - scripts api - uv bun ollama
 8001 fly.io
 3000 vercel
+
+
+
+
+
+depndencies
+#
+# 1. docker setup - nvidia docker runtie
+# 2. jetson containers - 2 orin devkits + 1 jetson nano
+# 3. livekit self-hosted
+# 4. one password cli
+# 5. gh cli
+# 6. tailscale
+# 7. bun.sh + deno2 for webGPU + jupyter to observablehq integration
+# 8. three.js webGPU + jolt-physics + tauri or react native.
