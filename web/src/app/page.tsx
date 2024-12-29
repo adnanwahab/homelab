@@ -17,7 +17,7 @@ for (let i = 0; i < 100; i++) {
     title: `IMG_4985.HEIC ${i}`,
     size: '3.9 MB',
     source:
-      `/thumbnails/vis/${first[i]}`,
+      `../data/vis/${first[i]}`,
   })
 }
 
