@@ -1,5 +1,8 @@
+'use client'
+
 import * as d3 from 'd3'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const files = [
   {
@@ -95,7 +98,7 @@ for (let i = 0; i < images.length; i++) {
       `/vis/${images[i]}`,
   })
 }
-d3.shuffle(files)
+// d3.shuffle(files)
 
 
 const vis = {
@@ -374,11 +377,26 @@ function Header() {
 }
 
 function PortfolioGrid() {
+  const [shuffledFiles, setShuffledFiles] = useState(files);
+
+  useEffect(() => {
+    // Process images and shuffle files here
+    const processedFiles = [...files];
+    for (let i = 0; i < images.length; i++) {
+      processedFiles.push({
+        title: `IMG_4985.HEIC ${i}`,
+        size: '',
+        source: `/vis/${images[i]}`,
+      });
+    }
+    setShuffledFiles(d3.shuffle(processedFiles));
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <div className="p-8 bg-[#1e2231]">
       <h2 className="text-2xl font-semibold mb-6 text-[#8b98e8]">Visualisations</h2>
       <ul role="list" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
-        {files.map((file, index) => (
+        {shuffledFiles.map((file, index) => (
           <Link href={`/vis/${index+1}`} key={index}>
             <li className="relative group">
               <div className="aspect-[10/7] overflow-hidden rounded-lg bg-gray-800">
