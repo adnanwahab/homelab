@@ -1,5 +1,5 @@
-
 import * as d3 from 'd3'
+import Link from 'next/link'
 
 const files = [
   {
@@ -357,20 +357,22 @@ function PortfolioGrid() {
   return (
     <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
       {files.map((file, index) => (
-        <li key={index} className="relative">
-          <div className="group overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-            <img
-              alt=""
-              src={file.source}
-              className="pointer-events-none aspect-[10/7] object-cover group-hover:opacity-75"
-            />
-            <button type="button" className="absolute inset-0 focus:outline-none">
-              <span className="sr-only">View details for {file.title}</span>
-            </button>
-          </div>
-          <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">{file.title}</p>
-          <p className="pointer-events-none block text-sm font-medium text-gray-500">{file.size}</p>
-        </li>
+        <Link href={`/vis/${index}`} key={index}>
+          <li className="relative">
+            <div className="group overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+              <img
+                alt=""
+                src={file.source}
+                className="pointer-events-none aspect-[10/7] object-cover group-hover:opacity-75"
+              />
+              <button type="button" className="absolute inset-0 focus:outline-none">
+                <span className="sr-only">View details for {file.title}</span>
+              </button>
+            </div>
+            <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">{file.title}</p>
+            <p className="pointer-events-none block text-sm font-medium text-gray-500">{file.size}</p>
+          </li>
+        </Link>
       ))}
     </ul>
   )
@@ -380,11 +382,18 @@ function Header () {
   return <div>
     <h1>Adnan Wahab</h1>
     <div>
+      <a href="https://github.com/adnanwahab">github</a>
+    </div>
+
+    <div>
+      <a href="https://x.com/dynabotdev">twitter</a>
+    </div>
+    {/* <div>
     phone : 713-677-3669
     </div>
     <div>
     email: adnan.f.wahab@gmail.com
-    </div>
+    </div> */}
     <div>
     <a href="/blog">blog</a>
     </div>
