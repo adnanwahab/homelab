@@ -1,4 +1,6 @@
 
+import * as d3 from 'd3'
+
 const files = [
   {
     title: 'IMG_4985.HEIC',
@@ -93,6 +95,7 @@ for (let i = -1; i < images.length; i++) {
       `/vis/${images[i]}`,
   })
 }
+d3.shuffle(files)
 
 
 const vis = {
