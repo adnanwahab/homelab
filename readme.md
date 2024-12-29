@@ -72,7 +72,7 @@ ports
 
 
 depndencies
-#
+# Dynamicland Gameit for innate.bot = DERP - Dynamicland environmental Robotics Policy
 # 1. docker setup - nvidia docker runtie
 # 2. jetson containers - 2 orin devkits + 1 jetson nano
 # 3. livekit self-hosted
