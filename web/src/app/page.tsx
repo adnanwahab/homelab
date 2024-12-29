@@ -84,7 +84,7 @@ const images = [
   "waymo_map.webp"
 ];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < images.length; i++) {
   files.push({
     title: `IMG_4985.HEIC ${i}`,
     size: '3.9 MB',
