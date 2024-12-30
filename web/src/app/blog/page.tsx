@@ -8,7 +8,7 @@ const titles = [
 "Dynamicland is the future of robotics UI and Biotech", 
 "Hospital of the future - healthTensor / withRegard",
 "music creation with Livekit - karaoke - 500 people"
-]i
+]
 
 
 const extra_referenves = `
@@ -23,7 +23,7 @@ const _ = `https://www.youtube.com/watch?v=_gXiVOmaVSo
 3. http://localhost:8889/lab/workspaces/auto-k/tree/Rtings_for_robotics.ipynb - innate.bot
 4. devops = fly.io + https://vercel.com/adnanwahabs-projects/homelab/Hk4MLT9M1so3ooXmw2C7yqAtuN94?filter=errors
 `;
-export default function () {
+export default function BlogPage() {
   return (
     <div>
       <div>
@@ -57,9 +57,14 @@ export default function () {
         I also worked with david valdman and a friend whose father is the
         chairman of apple. and with the author of probablistic robots which
         founded coursera, insitro, waymo and cruise. My cousin fariba alam
-        <iframe src="https://www.faribaalam.com/" /> was a full bright scholar
-        and design manager for iphone X and ios 12.
-        <iframe src="https://folklore.org/0-index.html" />
+        <iframe 
+          src="https://www.faribaalam.com/" 
+          title="Fariba Alam"
+        />
+        <iframe 
+          src="https://folklore.org/0-index.html"
+          title="Folklore"
+        />
       </div>
       <div>will brown - morgan stanley</div>
       <div>
@@ -169,10 +174,12 @@ export default function () {
       </h1>
       <h1>
         goal: 18k to 180k by march 2025 for - magic iframe magic llama
-        <a href="">https://www.youtube.com/watch?v=_gXiVOmaVSo</a>
-        {people.map(function (_) {
-          return <span>_</span>;
-        })}
+        <a href="https://www.youtube.com/watch?v=_gXiVOmaVSo">
+          https://www.youtube.com/watch?v=_gXiVOmaVSo
+        </a>
+        {people.map((person, index) => (
+          <span key={index}>{person}</span>
+        ))}
       </h1>
       <h3>
         "mechE_practice_theory_material_list" ={" "}
