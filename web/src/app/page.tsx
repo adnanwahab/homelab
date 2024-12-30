@@ -402,7 +402,7 @@ function PortfolioGrid() {
       <h2 className="text-2xl font-semibold mb-6 text-[#8b98e8]">Visualisations</h2>
       <ul role="list" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
         {shuffledFiles.map((file, index) => (
-          <Link href={`/vis/${index+1}`} key={index}>
+          <Link href={``} key={index}>
             <li className="relative group">
               <div className="aspect-[10/7] overflow-hidden rounded-lg bg-gray-800">
                 <img
