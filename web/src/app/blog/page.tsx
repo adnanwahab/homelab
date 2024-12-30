@@ -12,7 +12,6 @@ const titles = [
 
 
 const extra_referenves = `
-On the crimes against humanity of Duvie Badani, Estee Braun and Yakov Kahan.
 `
 
 
