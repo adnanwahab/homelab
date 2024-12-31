@@ -4,7 +4,7 @@ I recently launched Valence 3D, a 3D modeling and design application for iOS, wh
 
 I thrive at the intersection of design and engineering, solving complex challenges to create products that are both visually compelling and technically robust. I’m looking to bring my blend of design and engineering skills to a team where I can contribute meaningfully to create delightful and innovative products.
 
-Email • Twitter • Instagram • LinkedIn • Hi-Rez • Github`
+Email • Twitter • Instagram • LinkedIn • Github`
 
 
 export default function About() {

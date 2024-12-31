@@ -365,6 +365,10 @@ function Header() {
       <div className="flex flex-col space-y-2">
         <h1 className="text-5xl font-bold tracking-tight text-[#8b98e8] rainbow-text">Adnan Wahab</h1>
         <div className="flex space-x-4 text-gray-400">
+
+
+
+        <a href="mailto:adnan@llama-tools.com" className="hover:text-[#8b98e8]">Email</a>
           <a href="https://github.com/adnanwahab" className="hover:text-[#8b98e8]">github</a>
           <a href="https://x.com/dynabotdev" className="hover:text-[#8b98e8]">twitter</a>
           <a href="https://linkedin.com/in/adnanwahab" className="hover:text-[#8b98e8]">linkedin</a>
