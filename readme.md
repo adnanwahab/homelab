@@ -18,7 +18,7 @@ data = golang
 notebooks - uv
 scripts  = uv
 web = next.js
-
+three.js - webGPU Renderer
 
 
 
