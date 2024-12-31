@@ -14,7 +14,7 @@ export default function Tools() {
       </li>
 
       <li>
-        <a href="/tools/chat">chat</a>
+        <a href="/tools/group_chat">group chat</a>
       </li>
     </ul>
   </div>;

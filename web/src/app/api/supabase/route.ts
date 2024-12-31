@@ -9,7 +9,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 export async function GET() {
   try {
     const { data, error } = await supabase
-      .from('KV')
+      .from('group_chat_messages')
       .select('*')
     
     if (error) throw error
@@ -24,9 +24,9 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { key, value } = body
+    const { content } = body
 
-    if (!key || value === undefined) {
+    if (!content) {
       return NextResponse.json(
         { error: 'Key and value are required' },
         { status: 400 }
@@ -34,8 +34,8 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await supabase
-      .from('KV')
-      .insert([{ key, value }])
+      .from('group_chat_messages')
+        .insert([{ content }])
       .select()
 
     if (error) throw error
