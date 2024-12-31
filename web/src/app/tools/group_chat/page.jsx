@@ -20,7 +20,7 @@ export default function Home() {
       .channel('group_chat_messages') // any unique name
       .on(
         'postgres_changes',
-        { event: 'INSERT', schema: 'public', table: 'messages' },
+        { event: 'INSERT', schema: 'public', table: 'group_chat_messages' },
         (payload) => {
           handleNewMessage(payload.new);
         }
@@ -71,7 +71,7 @@ export default function Home() {
     if (!newMessage.trim()) return;
 
     const { error } = await supabase
-      .from('messages')
+      .from('group_chat_messages')
       .insert([{ content: newMessage.trim() }]);
 
     if (error) {
@@ -155,6 +155,7 @@ export default function Home() {
             padding: 10,
             borderRadius: 4,
             border: '1px solid #ccc',
+            color: 'blue'
           }}
         />
       </form>

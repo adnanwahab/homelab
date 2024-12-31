@@ -1,5 +1,7 @@
 # Gamekit for Dynamicland - realtime scientific art creation - colloborative thinking space
 
+
+## Dynamicland will improve scientifc thinking by 100x in the next 10 years
 # Twitch plays robot - 2025 innate.bot / nanosaur.ai / hello-robot.com
 https://github.com/BotParty/homelab_status_page
 
