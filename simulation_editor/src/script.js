@@ -1,70 +1,13 @@
 // // ... existing code ...
 
 // // Update these imports
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { LineSegments } from 'three';
-import { WireframeGeometry } from 'three';
-import GUI from 'three/examples/jsm/libs/lil-gui.module.min.js';
-import Stats from 'three/examples/jsm/libs/stats.module.js';
-
-
-import { gsap } from 'gsap'
-import initJolt from './utils/jolt-physics.wasm-compat.js';
 
 //import { WebGPURenderer } from 'three/examples/jsm/renderers/webgpu/WebGPURenderer.js';
 
 
 import {createFloor, createSphere, initExample} from './example.js'
 
-initJolt().then(function (Jolt) {
-  // Initialize this example
-  initExample(Jolt, null);
 
-  // Create a basic floor
-  createFloor();
-
-  // Create a sphere
-  createSphere(new Jolt.RVec3(0, 3, 0), 1, Jolt.EMotionType_Dynamic, LAYER_MOVING, 0x00ff00);
-
-  // Get the text box
-  var collisionLog = document.getElementById('collision-log');
-
-  // Register contact listener
-  const contactListener = new Jolt.ContactListenerJS();
-  contactListener.OnContactValidate = (body1, body2, baseOffset, collideShapeResult) => {
-    body1 = Jolt.wrapPointer(body1, Jolt.Body);
-    body2 = Jolt.wrapPointer(body2, Jolt.Body);
-    collideShapeResult = Jolt.wrapPointer(collideShapeResult, Jolt.CollideShapeResult);
-    collisionLog.value += 'OnContactValidate ' + body1.GetID().GetIndex() + ' ' + body2.GetID().GetIndex() + ' ' + collideShapeResult.mPenetrationAxis.ToString() + '\n';
-    return Jolt.ValidateResult_AcceptAllContactsForThisBodyPair;
-  };
-  contactListener.OnContactAdded = (body1, body2, manifold, settings) => {
-    body1 = Jolt.wrapPointer(body1, Jolt.Body);
-    body2 = Jolt.wrapPointer(body2, Jolt.Body);
-    manifold = Jolt.wrapPointer(manifold, Jolt.ContactManifold);
-    settings = Jolt.wrapPointer(settings, Jolt.ContactSettings);
-    collisionLog.value += 'OnContactAdded ' + body1.GetID().GetIndex() + ' ' + body2.GetID().GetIndex() + ' ' + manifold.mWorldSpaceNormal.ToString() + '\n';
-
-    // Override the restitution to 0.5
-    settings.mCombinedRestitution = 0.5;
-  };
-  contactListener.OnContactPersisted = (body1, body2, manifold, settings) => {
-    body1 = Jolt.wrapPointer(body1, Jolt.Body);
-    body2 = Jolt.wrapPointer(body2, Jolt.Body);
-    manifold = Jolt.wrapPointer(manifold, Jolt.ContactManifold);
-    settings = Jolt.wrapPointer(settings, Jolt.ContactSettings);
-    collisionLog.value += 'OnContactPersisted ' + body1.GetID().GetIndex() + ' ' + body2.GetID().GetIndex() + ' ' + manifold.mWorldSpaceNormal.ToString() + '\n';
-
-    // Override the restitution to 0.5
-    settings.mCombinedRestitution = 0.5;
-  };
-  contactListener.OnContactRemoved = (subShapePair) => {
-    subShapePair = Jolt.wrapPointer(subShapePair, Jolt.SubShapeIDPair);
-    collisionLog.value += 'OnContactRemoved ' + subShapePair.GetBody1ID().GetIndex() + ' ' + subShapePair.GetBody2ID().GetIndex() + '\n';
-  };
-  physicsSystem.SetContactListener(contactListener);
-});
 
 // console.log(THREE);
 
