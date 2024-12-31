@@ -1,7 +1,7 @@
 
 export const dimensions = {
-    width: 400,
-    height: 400
+    width: 1200,
+    height: 900
 }
 
 export const websocket_url = "ws://localhost:8080";
