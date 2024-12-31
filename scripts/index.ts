@@ -24,7 +24,7 @@ const html = `
 `;
 
 
-function display_supabase_data() {
+async function display_supabase_data() {
   return new Response(JSON.stringify({ data: await getAllKV() }), {
     headers: {
       "Content-Type": "application/json",
