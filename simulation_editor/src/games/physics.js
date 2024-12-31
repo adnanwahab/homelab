@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
 import initJolt from '../utils/jolt-physics.wasm-compat.js';
 import { dimensions } from '../utils/constants.js';
+import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 
 export const label = 'physics';
 
@@ -63,10 +64,11 @@ function initGraphics(canvas) {
 	}
 	// Initialize container first
 	//canvas = document.querySelector('.canvas-green');
-	//container = document.createElement('div');
+	container = document.querySelector('body');
 	//document.body.appendChild(container);
 	console.log(canvas);
 	renderer = new THREE.WebGLRenderer({canvas: canvas});
+	window.THREE = THREE;
 	renderer.setClearColor(0xbfd1e5);
 	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setSize(dimensions.width, dimensions.height);
@@ -85,10 +87,10 @@ function initGraphics(canvas) {
 
 	//container.appendChild(renderer.domElement);
 
-	// stats = new Stats();
-	// stats.domElement.style.position = 'absolute';
-	// stats.domElement.style.top = '0px';
-	// container.appendChild(stats.domElement);
+	stats = new GUI();
+	stats.domElement.style.position = 'absolute';
+	stats.domElement.style.top = '0px';
+	container.appendChild(stats.domElement);
 
 	window.addEventListener('resize', onWindowResize, false);
 }
