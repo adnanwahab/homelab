@@ -139,8 +139,8 @@ export default function Home() {
           marginBottom: 20,
         }}
       >
-        {messages.map((msg) => (
-          <div key={msg.id} style={{ marginBottom: 8 }}>
+        {messages.map((msg, index) => (
+          <div key={index} style={{ marginBottom: 8 }}>
             <span>{msg.message_data}</span>
           </div>
         ))}
