@@ -11,9 +11,9 @@ const getAllKV = async () => {
   const { data, error } = await supabase.from("KV").select("*");
   if (error) {
     console.error("Supabase error:", error);
-    return [];
+    return error;
   }
-  return data;
+  return JSON.stringify(Object.entries(data)).map(([key, value]) => `<p>${key}: ${value}</p>`).join("");
 };
 
 const html = `
