@@ -1,5 +1,5 @@
 // export default async function Home() {
-  
+
 //   return <div>on break -- 2025 incombing</div>;
 // }
 
@@ -364,6 +364,8 @@ function Header() {
     <div className="flex justify-between items-center p-8 border-b border-gray-700 bg-[#1e2231] text-[#8b98e8]">
       <div className="flex flex-col space-y-2">
         <h1 className="text-5xl font-bold tracking-tight text-[#8b98e8] rainbow-text">Adnan Wahab</h1>
+        <h1 className="text-5xl font-bold tracking-tight text-[#8b98e8] rainbow-text">CGI Robotics Infrastructure</h1>
+
         <div className="flex space-x-4 text-gray-400">
 
 
@@ -374,13 +376,15 @@ function Header() {
           <a href="https://linkedin.com/in/adnanwahab" className="hover:text-[#8b98e8]">linkedin</a>
 
           <a href="/blog" className="hover:text-[#8b98e8]">blog</a>
+          <a href="/blog" className="hover:text-[#8b98e8]">tools</a>
+
         </div>
         <div className="text-sm text-gray-400">
           <a href="/simulation_game" className="hover:text-[#8b98e8] rainbow-text">Play interactive music physics game</a>
         </div>
       </div>
-      <img 
-        src="/personal/friends.jpg" 
+      <img
+        src="/personal/friends.jpg"
         alt="Profile"
         className="w-32 h-32 rounded-lg"
       />

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "robot-remote",
-    "slug": "robot-remote",
+    "name": "chatkhanrevmusicgame",
+    "slug": "chatkhanrevmusicgame",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -36,6 +36,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "8d636c14-f353-44b4-b5e5-692d79c2f6a1"
+      }
+    },
+    "owner": "eggnog92"
   }
 }

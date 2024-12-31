@@ -12,6 +12,10 @@ export default function Tools() {
       <li>
         <a href="/tools/livekit">livekit</a>
       </li>
+
+      <li>
+        <a href="/tools/chat">chat</a>
+      </li>
     </ul>
   </div>;
 }

@@ -1,6 +1,7 @@
 "use client"
 
-import {Button} from '@/components/Buttons'
+import { Button } from '@headlessui/react'
+import Sliders from '../../components/Sliders'
 
 const about = `I’m a design engineer (designer + software engineer) with 15 plus years of experience in real-time graphics, augmented and virtual reality, interface and product design. I specialize in creating next-generation interfaces and interactive experiences for Apple platforms (iOS, macOS, and visionOS), blending technical expertise with a passion for craft and detail.
 
@@ -15,7 +16,7 @@ export default function About() {
   return <>
   
   
-  <Button> </Button>
+  <Sliders> </Sliders>
   <div>{about}</div>
  </>
 }
