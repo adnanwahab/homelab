@@ -371,6 +371,9 @@ function Header() {
 
           <a href="/blog" className="hover:text-[#8b98e8]">blog</a>
         </div>
+        <div className="text-sm text-gray-400">
+          <a href="/simulation_editor" className="hover:text-[#8b98e8]">Play interactive music physics game</a>
+        </div>
       </div>
       <img 
         src="/personal/friends.jpg" 
