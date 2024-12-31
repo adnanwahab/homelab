@@ -17,7 +17,7 @@ export default function Home() {
     // 2. Subscribe to new inserts in real-time
     // ----------------------
     const channel = supabase
-      .channel('public:messages-changes') // any unique name
+      .channel('group_chat_messages') // any unique name
       .on(
         'postgres_changes',
         { event: 'INSERT', schema: 'public', table: 'messages' },
@@ -35,7 +35,7 @@ export default function Home() {
 
   const fetchInitialMessages = async () => {
     const { data, error } = await supabase
-      .from('messages')
+      .from('group_chat_messages')
       .select('*')
       .order('created_at', { ascending: false })
       .limit(100);

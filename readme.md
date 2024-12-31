@@ -1,4 +1,4 @@
-# Gamekit for Dynamicland
+# Gamekit for Dynamicland - realtime scientific art creation - colloborative thinking space
 
 # Twitch plays robot - 2025 innate.bot / nanosaur.ai / hello-robot.com
 https://github.com/BotParty/homelab_status_page
