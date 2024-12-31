@@ -1,6 +1,13 @@
 # simulation as as service - 10 billion dollar industry - expected to double in 5 years - unity , unreal and now three.js
 
 
+## Physics = Jolt Physics
+
+## Audio +Tone.js
+https://github.com/spotify/basic-pitch
+
+## Rendering Three.js + unity webgpu
+
 # raytracing webGPU - add to all browsers - rustSDK - reference implementation
 
 # jetson Container + Jetson Inference
