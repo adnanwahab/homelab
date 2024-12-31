@@ -35,8 +35,8 @@ export default function BlogPage() {
         ></iframe>
       </div>
       <div>
-        I felt that what happened before in june 2020 wrong but i didnt have the
-        knoweldge to really articulate it unti now.
+
+
         <img src="https://raw.githubusercontent.com/enjalot/latent-scope/refs/heads/main/documentation/end.png" />
         https://github.com/enjalot/latent-scope?tab=readme-ov-file
       </div>
