@@ -10,7 +10,7 @@ export default function SimulationEditor() {
       padding: 0,
     }}>
       <iframe 
-        src="https://taiyongrobotics.com" 
+        src="https://simulation-tools.app" 
         width="100%" 
         height="100%" 
         style={{
