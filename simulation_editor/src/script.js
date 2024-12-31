@@ -34,7 +34,7 @@ GamePhysics(
     }, 1000);
     window.addEventListener("mousemove", add_object);
   },
-);
+);  
 
 
 // // drawing(document.querySelector('.canvas-purple'));
