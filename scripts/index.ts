@@ -2,7 +2,8 @@
 import { serve } from "bun";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.SUPABASE_URL || "https://ewkxvbgbzikwwudriebh.supabase.co";
+const supabaseUrl =
+  process.env.SUPABASE_URL || "https://ewkxvbgbzikwwudriebh.supabase.co";
 const supabaseKey = process.env.SUPABASE_KEY || "your-key-here";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -19,10 +20,15 @@ const html = `
 <html>
   <body>
     <h1>Hello World 2025</h1>
+
+
+    <h2>Supabase Data</h2>
+    <pre id="supabase-data">
+      ${getAllKV()}
+    </pre>
   </body>
 </html>
 `;
-
 
 async function display_supabase_data() {
   return new Response(JSON.stringify({ data: await getAllKV() }), {
@@ -35,7 +41,6 @@ async function display_supabase_data() {
 serve({
   port: 8000,
   async fetch(req) {
-
     return new Response(html, {
       headers: {
         "Content-Type": "text/html",
@@ -45,5 +50,3 @@ serve({
 });
 
 console.log("Server running at http://localhost:8000");
-
-
