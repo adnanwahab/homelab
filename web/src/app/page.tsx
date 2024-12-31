@@ -371,7 +371,7 @@ function Header() {
           <a href="https://x.com/dynabotdev" className="hover:text-[#8b98e8]">twitter</a>
           <a href="https://linkedin.com/in/adnanwahab" className="hover:text-[#8b98e8]">linkedin</a>
 
-          <a href="/blog" className="hidden hover:text-[#8b98e8]">blog</a>
+          <a href="/blog" className="hover:text-[#8b98e8]">blog</a>
         </div>
       </div>
       <img 
