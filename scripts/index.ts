@@ -13,7 +13,9 @@ const getAllKV = async () => {
     console.error("Supabase error:", error);
     return error;
   }
-  return JSON.stringify(Object.entries(data)).map(([key, value]) => `<p>${key}: ${value}</p>`).join("");
+  return Object.entries(data)
+    .map(([key, value]) => `<p>${key}: ${JSON.stringify(value)}</p>`)
+    .join("");
 };
 
 const html = `
