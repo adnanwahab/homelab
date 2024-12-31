@@ -41,10 +41,10 @@ export default function Chat() {
       .order('created_at', { ascending: false })
       .limit(50)
 
-    if (error) {
-      console.error('Error fetching messages:', error)
-      return
-    }
+    // if (error) {
+    //   console.error('Error fetching messages:', error)
+    //   return
+    // }
 
     setMessages(data || [])
   }

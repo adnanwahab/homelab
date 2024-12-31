@@ -1,3 +1,6 @@
+# Twitch plays robot - 2025 innate.bot / nanosaur.ai / hello-robot.com
+
+
 # simulation as as service - 10 billion dollar industry - expected to double in 5 years - unity , unreal and now three.js
 
 
