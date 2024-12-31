@@ -1,15 +1,15 @@
 // script.js
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/Addons.js';
+//import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
-import GUI from 'three/examples/jsm/libs/lil-gui.module.min.js';
-
-
+//import GUI from 'three/examples/jsm/libs/lil-gui.module.min.js';
 
 
 
 
-import * as THREE from 'three'
+
+
+//import * as THREE from 'three'
 
 //import { WebGPURenderer } from 'three/examples/jsm/renderers/webgpu/WebGPURenderer.js';
 
@@ -93,7 +93,9 @@ function initGraphics(canvas) {
 	container = document.querySelector('body');
 	//document.body.appendChild(container);
 	console.log(canvas);
-	renderer = new THREE.WebGLRenderer({canvas: canvas});
+	//renderer = new THREE.WebGPURenderer({canvas: canvas});
+    renderer = new THREE.WebGPURenderer({ antialias: false })
+
 	window.THREE = THREE;
 	renderer.setClearColor(0xbfd1e5);
 	renderer.setPixelRatio(window.devicePixelRatio);
@@ -502,16 +504,16 @@ function cool_beans(canvas, initial_object_list, call_back_function) {
 		}
 		//export default cool_beans;
 
-        cool_beans(document.querySelector('canvas'), [
-            {
-                type: "box",
-                position: [0, 0, 0],
-                size: [1, 1, 1],
-            },
-        ], function (add_object) {
-            console.log("done");
-            setInterval(() => {
-                console.log("done");
-                add_object();
-            }, 1000);
-        });
+cool_beans(document.querySelector('canvas'), [
+    {
+        type: "box",
+        position: [0, 0, 0],
+        size: [1, 1, 1],
+    },
+], function (add_object) {
+    console.log("done");
+    setInterval(() => {
+        console.log("done");
+        add_object();
+    }, 1000);
+});
