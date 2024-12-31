@@ -363,7 +363,7 @@ function Header() {
   return (
     <div className="flex justify-between items-center p-8 border-b border-gray-700 bg-[#1e2231] text-[#8b98e8]">
       <div className="flex flex-col space-y-2">
-        <h1 className="text-5xl font-bold tracking-tight text-[#8b98e8]">Adnan Wahab</h1>
+        <h1 className="text-5xl font-bold tracking-tight text-[#8b98e8] rainbow-text">Adnan Wahab</h1>
         <div className="flex space-x-4 text-gray-400">
           <a href="https://github.com/adnanwahab" className="hover:text-[#8b98e8]">github</a>
           <a href="https://x.com/dynabotdev" className="hover:text-[#8b98e8]">twitter</a>
