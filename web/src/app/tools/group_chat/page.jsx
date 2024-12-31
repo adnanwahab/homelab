@@ -66,13 +66,16 @@ export default function Home() {
   // ----------------------
   // 4. Insert new message
   // ----------------------
+
+
+  
   const sendMessage = async (event) => {
     event.preventDefault();
     if (!newMessage.trim()) return;
 
     const { error } = await supabase
       .from('group_chat_messages')
-      .insert([{ content: newMessage.trim() }]);
+      .insert([{ message_data: newMessage.trim() }]);
 
     if (error) {
       console.error('sendMessage error:', error);
@@ -92,7 +95,7 @@ export default function Home() {
   const trimOldMessagesFromDB = async () => {
     // Get all messages, order by new -> old
     const { data, error } = await supabase
-      .from('messages')
+      .from('group_chat_messages')
       .select('id')
       .order('created_at', { ascending: false });
 
@@ -109,7 +112,7 @@ export default function Home() {
 
     // Delete older messages
     const { error: deleteError } = await supabase
-      .from('messages')
+      .from('group_chat_messages')
       .delete()
       .in('id', idsToDelete);
 
@@ -138,7 +141,7 @@ export default function Home() {
       >
         {messages.map((msg) => (
           <div key={msg.id} style={{ marginBottom: 8 }}>
-            <span>{msg.content}</span>
+            <span>{msg.message_data}</span>
           </div>
         ))}
       </div>
