@@ -9,6 +9,16 @@ import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 export const label = 'physics';
 
 
+
+
+
+//import { WebGPURenderer } from 'three/examples/jsm/renderers/webgpu/WebGPURenderer.js';
+
+
+
+
+
+
 // Graphics variables
 var container, stats;
 var camera, controls, scene, renderer;
