@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && mv dist ../web/public/simulation_editor",
+    "build": "vite build",
+    "deploy": "vite build && vercel deploy",
     "server_start": "bun run server.js --watch",
     "playwright_snapshot_musicgame2025.netlify.app": "npx playwright screenshot https://musicgame2025.netlify.app foo.png",
     "tailscale_server_5173": "sudo tailscale serve  5173"
