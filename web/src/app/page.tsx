@@ -9,15 +9,13 @@ import * as d3 from 'd3'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-const files = [
-  {
-    title: 'IMG_4985.HEIC',
-    size: '3.9 MB',
-    source:
-      'https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80',
-  },
+interface FileItem {
+  title: string;
+  size: string;
+  source: string;
+}
 
-]
+const files: FileItem[] = []
 
 const images = [
   "1734731436790.gif",
@@ -97,7 +95,7 @@ const images = [
 
 for (let i = 0; i < images.length; i++) {
   files.push({
-    title: `IMG_4985.HEIC ${i}`,
+    title: ``,
     size: '',
     source:
       `/vis/${images[i]}`,
@@ -384,20 +382,19 @@ function Header() {
 }
 
 function PortfolioGrid() {
-  const [shuffledFiles, setShuffledFiles] = useState(files);
+  const [shuffledFiles, setShuffledFiles] = useState<FileItem[]>(files);
 
   useEffect(() => {
-    // Process images and shuffle files here
-    const processedFiles = [...files];
+    const processedFiles: FileItem[] = [...files];
     for (let i = 0; i < images.length; i++) {
       processedFiles.push({
-        title: `IMG_4985.HEIC ${i}`,
+        title: ``,
         size: '',
         source: `/vis/${images[i]}`,
       });
     }
     setShuffledFiles(d3.shuffle(processedFiles));
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   return (
     <div className="p-8 bg-[#1e2231]">
