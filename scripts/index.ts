@@ -24,7 +24,7 @@ const html = `
 
     <h2>Supabase Data</h2>
     <pre id="supabase-data">
-      ${getAllKV()}
+      ${await getAllKV()}
     </pre>
   </body>
 </html>
