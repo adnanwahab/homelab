@@ -10,10 +10,14 @@ import Stats from 'three/examples/jsm/libs/stats.module.js';
 
 
 import { gsap } from 'gsap'
-import initJolt from 'src/utils/jolt-physics.wasm-compat.js';
+import initJolt from './utils/jolt-physics.wasm-compat.js';
 
 console.log(THREE);
 
+const dimensions = {
+	width: 1024,
+	height: 768
+}
 
 
 // Graphics variables
@@ -74,7 +78,7 @@ function initGraphics(canvas) {
 	container = document.querySelector('body');
 	//document.body.appendChild(container);
 	console.log(canvas);
-	renderer = new THREE.WebGLRenderer({canvas: canvas});
+	renderer = new THREE.WebGPURenderer({canvas: canvas});
 	window.THREE = THREE;
 	renderer.setClearColor(0xbfd1e5);
 	renderer.setPixelRatio(window.devicePixelRatio);
