@@ -15,13 +15,30 @@ const getAllKV = async () => {
   return data;
 };
 
+const html = `
+<html>
+  <body>
+    <h1>Hello World</h1>
+  </body>
+</html>
+`;
+
+
+function display_supabase_data() {
+  return new Response(JSON.stringify({ data: await getAllKV() }), {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
 serve({
   port: 8000,
   async fetch(req) {
 
-    return new Response(JSON.stringify({ data: await getAllKV() }), {
+    return new Response(html, {
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/html",
       },
     });
   },
