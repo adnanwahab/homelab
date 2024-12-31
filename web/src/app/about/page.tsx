@@ -16,7 +16,7 @@ export default function About() {
   return <>
   
   
-  <Sliders> </Sliders>
+  {/* <Sliders> </Sliders> */}
   <div>{about}</div>
  </>
 }
