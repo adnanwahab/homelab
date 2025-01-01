@@ -11,6 +11,11 @@ import { WireframeGeometry } from 'three';
 import { gsap } from 'gsap'
 import initJolt from './utils/jolt-physics.wasm-compat.js';
 
+const size = {
+	width: 1024,
+	height: 768
+}
+
 
 // Graphics variables
 var container, stats;
@@ -53,21 +58,18 @@ function getRandomQuat() {
 }
 
 function onWindowResize() {
-
-	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.aspect = size.width / size.height;
 	camera.updateProjectionMatrix();
-
-	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setSize(size.width, size.height);
 }
 
 function initGraphics() {
-
 	renderer = new THREE.WebGPURenderer();
 	renderer.setClearColor(0xbfd1e5);
 	renderer.setPixelRatio(window.devicePixelRatio);
-	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setSize(size.width, size.height);
 
-	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.2, 2000);
+	camera = new THREE.PerspectiveCamera(60, size.width / size.height, 0.2, 2000);
 	camera.position.set(0, 15, 30);
 	camera.lookAt(new THREE.Vector3(0, 0, 0));
 
