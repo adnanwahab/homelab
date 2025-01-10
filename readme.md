@@ -2,7 +2,7 @@
 # ![Medical Bot](/web/public/med_bot.webp) Matsu Gravas Nightingale - Medical_Bot - $10,000 nurse - hello-robot.com = 20,000
 
 # Gamekit for Dynamicland - realtime scientific art creation - colloborative thinking space
-https://spectrum.ieee.org/xerox-parc 
+https://spectrum.ieee.org/xerox-parc
 ## Twitch plays robot - 2025 innate.bot / nanosaur.ai / hello-robot.com
 ## Dynamicland will improve scientifc thinking by 100x in the next 10 years
 ## Rendering Three.js + unity webgpu
@@ -52,10 +52,12 @@ blog/ - 7 articles - dynamicland
 https://github.com/tldraw/tldraw
 docker run -it ghcr.io/observablehq/framework-runtime
 cloudflared tunnel create caddy-tunnel
-6TB storage 
+6TB storage
    - waymo vis 1tb
-   - music - 500gb 
+   - music - 500gb
    - books - 500gb
    - map data - 500gb
-   
+
 https://github.com/boto/boto3
+https://themanagershandbook.com/information-sharing/transparency
+https://fs.blog/mental-models/
