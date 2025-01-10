@@ -694,6 +694,7 @@ dependencies = [
     { name = "jupyter-ai" },
     { name = "langchain-anthropic" },
     { name = "pytubefix" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
@@ -703,6 +704,7 @@ requires-dist = [
     { name = "jupyter-ai", specifier = ">=2.28.4" },
     { name = "langchain-anthropic", specifier = ">=0.1.23" },
     { name = "pytubefix", specifier = ">=8.8.2" },
+    { name = "uvicorn", specifier = ">=0.23.2" },
 ]
 
 [[package]]

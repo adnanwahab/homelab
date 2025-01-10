@@ -120,3 +120,9 @@ files.cooperative-robotics.com {
 	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
 	header Access-Control-Allow-Headers "Content-Type"
 }
+
+#8888 jupyter
+
+#8080 === bun
+
+# 8000 === cgi-tools.dev

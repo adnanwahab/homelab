@@ -11,3 +11,7 @@ https://dynamicland.org/2024/The_communal_science_lab.pdf
 # Dynamicland.org environmental Robotics Policy
 # ![Medical Bot](/web/public/med_bot.webp) Matsu Gravas Nightingale
 https://spectrum.ieee.org/xerox-parc
+
+
+#8000 = cgi-tools.dev
+#8080 = scripts/index.ts
