@@ -20,7 +20,7 @@ import config from "./observablehq.config";
 config.pages.forEach((page) => {
   page.pages.forEach((page) => {
     const thisPage = page.path;
-    const href = `<a href="https://github.com/BotParty/homelab_status_page/blob/main${thisPage}">click here to edit this document</a>`;
+    const href = `<a href="https://github.com/BotParty/homelab_status_page/blob/main/src/${thisPage}">click here to edit this document</a>`;
     console.log(href);
     fs.unlinkSync("src/" + thisPage);
     fs.appendFileSync("src/" + thisPage + ".md", href);
