@@ -5,7 +5,6 @@ import { basicSetup } from "npm:codemirror";
 
 import octokit from "@octokit/rest";
 
-const token = `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
 //  https://github.com/octokit/octokit.js`
 
 # First get the SHA of the default branch (e.g., main)
