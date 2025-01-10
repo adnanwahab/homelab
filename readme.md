@@ -1,4 +1,4 @@
-# cgi-tools.dev
+# cooperative-robotics.com
 # for Dynamicland.org - scientific art creation - collaborative thinking space
 # Dynamicland will improve scientifc thinking by 100x in the next 10 years
 1. Anomaly detection - observe abnormal activity
