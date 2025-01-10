@@ -3,6 +3,44 @@ import { EditorView, keymap } from "npm:@codemirror/view";
 import { button } from "npm:@observablehq/inputs";
 import { basicSetup } from "npm:codemirror";
 
+import octokit from "@octokit/rest";
+
+const token = `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
+//  https://github.com/octokit/octokit.js`
+
+# First get the SHA of the default branch (e.g., main)
+curl -H "Authorization: Bearer YOUR_GITHUB_TOKEN" \
+     "https://api.github.com/repos/forkOwner/OriginalRepo/git/refs/heads/main"
+
+# Suppose it returns "object": { "sha": "ABC123..." }, use that in the next call
+curl -X POST \
+     -H "Authorization: Bearer YOUR_GITHUB_TOKEN" \
+     -d '{"ref":"refs/heads/my-proposed-change","sha":"ABC123..."}' \
+     "https://api.github.com/repos/forkOwner/OriginalRepo/git/refs"
+
+     curl -X PUT \
+          -H "Authorization: Bearer YOUR_GITHUB_TOKEN" \
+          -d '{
+                "message": "Propose changes to docs",
+                "content": "'"$BASE64_CONTENT"'",
+                "branch": "my-proposed-change"
+              }' \
+          "https://api.github.com/repos/forkOwner/OriginalRepo/contents/docs/README.md"
+
+          curl -X POST \
+               -H "Authorization: Bearer YOUR_GITHUB_TOKEN" \
+               -d '{
+                     "title": "Propose edits to the documentation",
+                     "head": "forkOwner:my-proposed-change",
+                     "base": "main",
+                     "body": "Here is a summary of my changes..."
+                   }' \
+               "https://api.github.com/repos/OriginalOwner/OriginalRepo/pulls"
+
+
+
+
+
 export function Editor({
   value = "",
   style = "font-size: 14px; position: absolute; top:0; right:0; border: 1px solid green;",
