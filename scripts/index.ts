@@ -12,7 +12,7 @@ import { createClient } from "@clickhouse/client";
 //   try {
 //     // Create the table
 //     await client.query({
-//       query: `  
+//       query: `
 //         CREATE TABLE IF NOT EXISTS houston_weather (
 //           date Date,
 //           weather String,
@@ -49,43 +49,43 @@ import { createClient } from "@clickhouse/client";
 // await initializeDatabase();
 
 async function handler(req) {
-  // const query = `
-  //   SELECT
-  //     weather,
-  //     round(AVG(temp_max), 2) AS avg_temp_max,
-  //     round(MAX(temp_max), 2) AS max_temp
-  //   FROM houston_weather
-  //   GROUP BY weather
-  //   ORDER BY avg_temp_max DESC
-  // `;
+    // const query = `
+    //   SELECT
+    //     weather,
+    //     round(AVG(temp_max), 2) AS avg_temp_max,
+    //     round(MAX(temp_max), 2) AS max_temp
+    //   FROM houston_weather
+    //   GROUP BY weather
+    //   ORDER BY avg_temp_max DESC
+    // `;
 
-  // let rows = [];
-  // try {
-  //   const resultSet = await client.query({
-  //     query,
-  //     format: "JSONEachRow",
-  //   });
-  //   rows = await resultSet.json();
-  // } catch (err) {
-  //   console.error("Error querying ClickHouse:", err);
-  //   return new Response("Error querying ClickHouse", { status: 500 });
-  // }
+    // let rows = [];
+    // try {
+    //   const resultSet = await client.query({
+    //     query,
+    //     format: "JSONEachRow",
+    //   });
+    //   rows = await resultSet.json();
+    // } catch (err) {
+    //   console.error("Error querying ClickHouse:", err);
+    //   return new Response("Error querying ClickHouse", { status: 500 });
+    // }
 
-  const tableRows = ``
-  // 4. Build a simple HTML table from the result
-//   const tableRows = rows.data
-//     .map(
-//       (row) => `
-//         <tr>
-//           <td>${row.weather}</td>
-//           <td>${row.avg_temp_max}</td>
-//           <td>${row.max_temp}</td>
-//         </tr>
-//       `
-//     )
-//     .join("");
+    const tableRows = ``;
+    // 4. Build a simple HTML table from the result
+    //   const tableRows = rows.data
+    //     .map(
+    //       (row) => `
+    //         <tr>
+    //           <td>${row.weather}</td>
+    //           <td>${row.avg_temp_max}</td>
+    //           <td>${row.max_temp}</td>
+    //         </tr>
+    //       `
+    //     )
+    //     .join("");
 
-  const html = `
+    const html = `
     <!DOCTYPE html>
     <html>
     <head>
@@ -116,18 +116,18 @@ async function handler(req) {
     </html>
   `;
 
-  // 5. Return the HTML response
-  return new Response(html, {
-    headers: {
-      "Content-Type": "text/html",
-    },
-  });
+    // 5. Return the HTML response
+    return new Response(html, {
+        headers: {
+            "Content-Type": "text/html",
+        },
+    });
 }
 
 // 6. Start the Bun server
 serve({
-  fetch: handler,
-  port: 8000,
+    fetch: handler,
+    port: 8000,
 });
 
-console.log("Server running at http://localhost:3000");
+console.log("Server running at http://localhost:8000");
