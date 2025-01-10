@@ -1,1 +1,1 @@
-/math/real-analysis<a href="https://github.com/BotParty/homelab_status_page/blob/main/math/real-analysis">click here to edit this document</a>
+/math/real-analysis<a href="https://github.com/BotParty/homelab_status_page/blob/main/math/real-analysis">click here to edit this document</a><a href="https://github.com/BotParty/homelab_status_page/blob/main/src//math/real-analysis">click here to edit this document</a>
