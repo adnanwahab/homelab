@@ -22,7 +22,7 @@ config.pages.forEach((page) => {
     const thisPage = page.path;
     const href = `<a href="https://github.com/BotParty/homelab_status_page/blob/main/src/${thisPage}">click here to edit this document</a>`;
     console.log(href);
-    fs.unlinkSync("src/" + thisPage);
+    //fs.unlinkSync("src/" + thisPage);
     fs.appendFileSync("src/" + thisPage + ".md", href);
   });
 });
