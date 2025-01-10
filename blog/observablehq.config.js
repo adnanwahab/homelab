@@ -3,7 +3,7 @@ export default {
 
   pages: [
     {
-      name: "Modern  C++",
+      name: "Modern C++",
       pages: [
         { name: "Memory Management", path: "/cpp/memory-management" },
 
