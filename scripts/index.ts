@@ -127,7 +127,7 @@ async function handler(req) {
 // 6. Start the Bun server
 serve({
     fetch: handler,
-    port: 8000,
+    port: 8080,
 });
 
 console.log("Server running at http://localhost:8000");
