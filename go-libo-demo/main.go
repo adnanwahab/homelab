@@ -2,6 +2,8 @@ package main
 
 import (
 	"encoding/binary"
+	"encoding/base64"
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
@@ -9,13 +11,13 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/apache/arrow/go/v14/arrow"
-	"github.com/apache/arrow/go/v14/arrow/array"
-	"github.com/apache/arrow/go/v14/arrow/memory"
-	"github.com/apache/arrow/go/v14/parquet/pqarrow"
+	//"github.com/apache/arrow/go/v14/arrow"
+	//"github.com/apache/arrow/go/v14/arrow/array"
+	//"github.com/apache/arrow/go/v14/arrow/memory"
+	//"github.com/apache/arrow/go/v14/parquet/pqarrow"
 	"github.com/qedus/osmpbf"
-	"github.com/twpayne/go-geom"
-	"github.com/twpayne/go-geom/encoding/wkb"
+	//"github.com/twpayne/go-geom"
+	//"github.com/twpayne/go-geom/encoding/wkb"
 )
 
 // wkbPoint returns the WKB representation (using LittleEndian) of a Point geometry.
@@ -36,6 +38,36 @@ func quadrantKey(lat, lon float64) string {
 	latIndex := int(math.Floor(lat / dLat))
 	lonIndex := int(math.Floor(lon / dLon))
 	return fmt.Sprintf("%d_%d", latIndex, lonIndex)
+}
+
+// writeJSON will take slices of node information, encode each geometry as base64,
+// and write them to a JSON array on disk.
+func writeJSON(filename string, nodeIDs []uint64, quadrants []string, wkbGeometries [][]byte) error {
+	// Define the data structure we want to encode as JSON
+	type NodeJSON struct {
+		NodeID      uint64 `json:"node_id"`
+		Quadrant    string `json:"quadrant"`
+		WKBGeometry string `json:"geometry"` // base64-encoded WKB
+	}
+
+	// Prepare the slice of records
+	records := make([]NodeJSON, 0, len(nodeIDs))
+	for i := 0; i < len(nodeIDs); i++ {
+		records = append(records, NodeJSON{
+			NodeID:      nodeIDs[i],
+			Quadrant:    quadrants[i],
+			WKBGeometry: base64.StdEncoding.EncodeToString(wkbGeometries[i]),
+		})
+	}
+
+	// Marshal to JSON
+	data, err := json.MarshalIndent(records, "", "  ")
+	if err != nil {
+		return err
+	}
+
+	// Write JSON to file
+	return os.WriteFile(filename, data, 0644)
 }
 
 func main() {
@@ -95,6 +127,13 @@ func main() {
 		log.Fatalf("failed to write GeoParquet: %v", err)
 	}
 	fmt.Println("Wrote GeoParquet file: nodes-latlon.parquet")
+
+	// Now also write the same data to JSON
+	fmt.Printf("Now writing to JSON...\n")
+	if err := writeJSON("nodes-latlon.json", nodeIDs, quadrantVals, wkbGeoms); err != nil {
+		log.Fatalf("failed to write JSON: %v", err)
+	}
+	fmt.Println("Wrote JSON file: nodes-latlon.json")
 }
 
 // writeGeoParquet writes the provided slices into a Parquet file with minimal
