@@ -16,3 +16,6 @@ https://jupyter.cgi-tools.dev/lab? - 8888
 # robotic surgeon - 2026 - approved by jesse + david, palmer luckey @ anduril + mikola + socket.dev
 # DERP = foundation model - Dynamicland.org environmental Robotics Policy
 # ![Medical Bot](/web/public/med_bot.webp) Matsu Gravas Nightingale
+https://github.com/observablehq/framework-runtime - https://observablehq.com/framework/
+https://once.com/writebook - https://www.gitbook.com/
+https://www.brendangregg.com/

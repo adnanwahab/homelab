@@ -9,7 +9,7 @@ export default {
                     name: "Open street maps osmium",
                     path: "/maps/open-street-maps",
                 },
-                { name: "morphocode", path: "/maps/open-street-maps" },
+                { name: "HD Mapping", path: "/maps/hd-mapping" },
             ],
         },
 
