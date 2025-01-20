@@ -1,7 +1,7 @@
 import MagicIframe from '../../components/MagicIframe';
 
 export default function BlogPage() {
-    return <div>Blog
+    return <div>
       <MagicIframe src="https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/" />
     </div>;
 }
