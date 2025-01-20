@@ -8,14 +8,11 @@
 4. System design - don’t guess; decide empirically
 ## 20% more scientific advancement over next 5 years
 https://dynamicland.org/2024/The_communal_science_lab.pdf
-# Dynamicland.org environmental Robotics Policy
-# ![Medical Bot](/web/public/med_bot.webp) Matsu Gravas Nightingale
 https://spectrum.ieee.org/xerox-parc
-
-
-
 #fastapi
 8080 = cooperative-robotics.com - fastapi
 cgi-tools.dev - scripts/index.ts #8000 = bun
 https://jupyter.cgi-tools.dev/lab? - 8888
 # robotic surgeon - 2026 - approved by jesse + david, palmer luckey @ anduril + mikola + socket.dev
+# DERP = foundation model - Dynamicland.org environmental Robotics Policy
+# ![Medical Bot](/web/public/med_bot.webp) Matsu Gravas Nightingale
