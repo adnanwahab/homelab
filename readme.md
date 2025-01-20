@@ -13,6 +13,8 @@ https://dynamicland.org/2024/The_communal_science_lab.pdf
 https://spectrum.ieee.org/xerox-parc
 
 
+
 #fastapi
-#8000 = cgi-tools.dev - scripts/index.ts
+8080 = cooperative-robotics.com 
+cgi-tools.dev - scripts/index.ts #8000 = 
 https://jupyter.cgi-tools.dev/lab? - 8888
