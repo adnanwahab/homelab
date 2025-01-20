@@ -29,7 +29,7 @@ export default {
             name: "Simulation ",
             pages: [
                 {
-                    name: "Dashboard",
+                    name: "Reinforcement Learning",
                     path: "/simulation/reinforcement-learning",
                 },
                 { name: "Unreal Engine", path: "/simulation/Unreal-Engine" },
