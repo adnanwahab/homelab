@@ -13,5 +13,6 @@ https://dynamicland.org/2024/The_communal_science_lab.pdf
 https://spectrum.ieee.org/xerox-parc
 
 
-#8000 = cgi-tools.dev
-#8080 = scripts/index.ts
+#fastapi
+#8000 = cgi-tools.dev - scripts/index.ts
+https://jupyter.cgi-tools.dev/lab? - 8888
