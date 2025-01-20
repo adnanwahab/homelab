@@ -5,8 +5,11 @@ export default {
         {
             name: "Geospatial HD Mapping",
             pages: [
-                { name: "Dashboard", path: "/maps/open-street-maps" },
-                { name: "Report", path: "/maps/open-street-maps" },
+                {
+                    name: "Open street maps osmium",
+                    path: "/maps/open-street-maps",
+                },
+                { name: "morphocode", path: "/maps/open-street-maps" },
             ],
         },
 
