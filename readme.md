@@ -15,6 +15,6 @@ https://spectrum.ieee.org/xerox-parc
 
 
 #fastapi
-8080 = cooperative-robotics.com 
-cgi-tools.dev - scripts/index.ts #8000 = 
+8080 = cooperative-robotics.com - fastapi
+cgi-tools.dev - scripts/index.ts #8000 = bun
 https://jupyter.cgi-tools.dev/lab? - 8888
