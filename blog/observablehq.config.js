@@ -1,5 +1,5 @@
 export default {
-    title: "blog",
+    title: "robotics-odyssey",
 
     pages: [
         {
@@ -34,16 +34,16 @@ export default {
             ],
         },
 
-        // {
-        //     name: "Embedded Systems",
-        //     pages: [
-        //         { name: "zig", path: "/embedded/zig" },
-        //         {
-        //             name: "hardware in the loop simulation",
-        //             path: "/embedded/hardware-in-the-loop-simulation",
-        //         },
-        //     ],
-        // },
+        {
+            name: "Embedded Systems",
+            pages: [
+                { name: "zig", path: "/embedded/zig" },
+                {
+                    name: "hardware in the loop simulation",
+                    path: "/embedded/hardware-in-the-loop-simulation",
+                },
+            ],
+        },
 
         {
             name: "Computer Vision",
