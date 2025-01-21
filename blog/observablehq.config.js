@@ -224,7 +224,7 @@ export default {
     // Some additional configuration options and their defaults:
     theme: "slate", // try "light", "dark", "slate", etc.
     header: "robotics odyssey blog", // what to show in the header (HTML)
-    footer: "<div id='suggest-edit'>Click here to suggest an edit</div>", // what to show in the footer (HTML)
+    footer: "<div id='suggest-edit'>Click here to suggest an edit!!!</div>", // what to show in the footer (HTML)
     sidebar: true, // whether to show the sidebar
     toc: true, // whether to show the table of contents
     pager: true, // whether to show previous & next links in the footer
