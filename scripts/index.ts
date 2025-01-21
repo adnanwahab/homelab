@@ -43,12 +43,13 @@ const urls = [
 
 const iterator = Promise.all(urls.map(getHtml));
 
-//iterator.then((html) => console.log(html));
+iterator.then((html) => console.log(html));
 
-for (let page of iterator) {
-  console.log(page.content);
-}
+// for (let page of iterator) {
+//   console.log(page.content);
+// }
 //playwright
+//if we use yield -
 
 async function parseUrls(urls: string[]) {
   let hasReferenceToVizCom = {};
