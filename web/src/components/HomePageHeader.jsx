@@ -45,14 +45,14 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="text-sm text-gray-400">
+        {/* <div className="text-sm text-gray-400">
           <a
             href="/robotics-odyssey"
             className="underline hover:text-[#8b98e8]"
           >
             Self-teaching Robotics info-course
           </a>
-        </div>
+        </div> */}
       </div>
       {/* <img
           src="/personal/friends.jpg"
