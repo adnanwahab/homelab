@@ -1,215 +1,214 @@
 export default {
-    title: "robotics-odyssey",
+  title: "robotics-odyssey",
 
-    pages: [
+  pages: [
+    {
+      name: "Geospatial HD Mapping",
+      pages: [
         {
-            name: "Geospatial HD Mapping",
-            pages: [
-                {
-                    name: "Open street maps osmium",
-                    path: "/maps/open-street-maps",
-                },
-                { name: "HD Mapping", path: "/maps/hd-mapping" },
-            ],
+          name: "Open street maps osmium",
+          path: "/maps/open-street-maps",
         },
+        { name: "HD Mapping", path: "/maps/hd-mapping" },
+      ],
+    },
 
-        {
-            name: "Modern C++",
-            pages: [
-                { name: "Memory Management", path: "/cpp/memory-management" },
-
-                {
-                    name: "Concurrency & Parallelism",
-                    path: "/cpp/concurrency-parallelism",
-                },
-            ],
-        },
+    {
+      name: "Modern C++",
+      pages: [
+        { name: "Memory Management", path: "/cpp/memory-management" },
 
         {
-            name: "Simulation ",
-            pages: [
-                {
-                    name: "Reinforcement Learning",
-                    path: "/simulation/reinforcement-learning",
-                },
-                { name: "Unreal Engine", path: "/simulation/Unreal-Engine" },
-                { name: "Unity", path: "/simulation/Unity" },
-            ],
+          name: "Concurrency & Parallelism",
+          path: "/cpp/concurrency-parallelism",
         },
+      ],
+    },
 
+    {
+      name: "Simulation ",
+      pages: [
         {
-            name: "Embedded Systems",
-            pages: [
-                { name: "zig", path: "/embedded/zig" },
-                {
-                    name: "hardware in the loop simulation",
-                    path: "/embedded/hardware-in-the-loop-simulation",
-                },
-            ],
+          name: "Reinforcement Learning",
+          path: "/simulation/reinforcement-learning",
         },
+        { name: "Unreal Engine", path: "/simulation/Unreal-Engine" },
+      ],
+    },
 
-        {
-            name: "Computer Vision",
-            pages: [
-                {
-                    name: "Object Detection with yolo",
-                    path: "/perception/object-detection",
-                },
-                {
-                    name: "Scene Understanding",
-                    path: "/perception/scene-understanding",
-                },
-                {
-                    name: "Semantic Segmentation with segment-anything-2",
-                    path: "/perception/semantic-segmentation",
-                },
-                {
-                    name: "Sensor Calibration",
-                    path: "/perception/sensor-calibration",
-                },
-            ],
-        },
-        // {
-        //     name: "Devops",
-        //     pages: [
-        //         { name: "terraform", path: "/devops/terraform" },
-        //         { name: "docker", path: "/devops/docker" },
-        //     ],
-        // },
+    // {
+    //     name: "Embedded Systems",
+    //     pages: [
+    //         { name: "zig", path: "/embedded/zig" },
+    //         {
+    //             name: "hardware in the loop simulation",
+    //             path: "/embedded/hardware-in-the-loop-simulation",
+    //         },
+    //     ],
+    // },
 
-        // {
-        //     name: "Robotics",
-        //     pages: [
-        //         { name: "Motion Planning", path: "/robotics/motion-planning" },
-        //     ],
-        // },
+    // {
+    //   name: "Computer Vision",
+    //   pages: [
+    //     {
+    //       name: "Object Detection with yolo",
+    //       path: "/perception/object-detection",
+    //     },
+    //     {
+    //       name: "Scene Understanding",
+    //       path: "/perception/scene-understanding",
+    //     },
+    //     {
+    //       name: "Semantic Segmentation with segment-anything-2",
+    //       path: "/perception/semantic-segmentation",
+    //     },
+    //     {
+    //       name: "Sensor Calibration",
+    //       path: "/perception/sensor-calibration",
+    //     },
+    //   ],
+    // },
+    // {
+    //     name: "Devops",
+    //     pages: [
+    //         { name: "terraform", path: "/devops/terraform" },
+    //         { name: "docker", path: "/devops/docker" },
+    //     ],
+    // },
 
-        // {
-        //     name: "Hardware Engineering",
-        //     pages: [
-        //         {
-        //             name: "Soldering, PCB, and 3D Printing",
-        //             path: "/hardware/soldering-pcb-3d-printing",
-        //         },
-        //     ],
-        // },
+    // {
+    //     name: "Robotics",
+    //     pages: [
+    //         { name: "Motion Planning", path: "/robotics/motion-planning" },
+    //     ],
+    // },
 
-        {
-            name: "Data Visualization",
-            pages: [
-                {
-                    name: "capacity planning",
-                    path: "/data-vis/capacity-planning",
-                },
-                {
-                    name: "Anomaly Detection",
-                    path: "/data-vis/anomaly-detection",
-                },
-                { name: "Systems Design", path: "/data-vis/systems-design" },
-                {
-                    name: "Crisis Diagnosis",
-                    path: "/data-vis/crisis-diagnosis",
-                },
-            ],
-        },
+    // {
+    //     name: "Hardware Engineering",
+    //     pages: [
+    //         {
+    //             name: "Soldering, PCB, and 3D Printing",
+    //             path: "/hardware/soldering-pcb-3d-printing",
+    //         },
+    //     ],
+    // },
 
-        // {
-        //     name: "Data Analysis",
-        //     pages: [{ name: "olap", path: "/data-analysis/olap" }],
-        // },
+    // {
+    //   name: "Data Visualization",
+    //   pages: [
+    //     {
+    //       name: "capacity planning",
+    //       path: "/data-vis/capacity-planning",
+    //     },
+    //     {
+    //       name: "Anomaly Detection",
+    //       path: "/data-vis/anomaly-detection",
+    //     },
+    //     { name: "Systems Design", path: "/data-vis/systems-design" },
+    //     {
+    //       name: "Crisis Diagnosis",
+    //       path: "/data-vis/crisis-diagnosis",
+    //     },
+    //   ],
+    // },
 
-        // {
-        //     name: "Networking and Connectivity",
-        //     pages: [
-        //         {
-        //             name: "Dashboard",
-        //             path: "/connectivity/tailscale-caddy-dns-porkbun",
-        //         },
-        //         { name: "Report", path: "/connectivity/livekit-webrtc" },
-        //     ],
-        // },
-        // {
-        //     name: "LLMs theory and practice",
-        //     pages: [
-        //         {
-        //             name: "ollama-claude-o1-pro",
-        //             path: "/llms/ollama-claude-o1-pro",
-        //         },
-        //     ],
-        // },
+    // {
+    //     name: "Data Analysis",
+    //     pages: [{ name: "olap", path: "/data-analysis/olap" }],
+    // },
 
-        // {
-        //     name: "Python Fundamentals",
-        //     pages: [
-        //         {
-        //             name: "uv jupyter testing",
-        //             path: "/python/uv_jupyter_testing",
-        //         },
-        //     ],
-        // },
+    // {
+    //     name: "Networking and Connectivity",
+    //     pages: [
+    //         {
+    //             name: "Dashboard",
+    //             path: "/connectivity/tailscale-caddy-dns-porkbun",
+    //         },
+    //         { name: "Report", path: "/connectivity/livekit-webrtc" },
+    //     ],
+    // },
+    // {
+    //     name: "LLMs theory and practice",
+    //     pages: [
+    //         {
+    //             name: "ollama-claude-o1-pro",
+    //             path: "/llms/ollama-claude-o1-pro",
+    //         },
+    //     ],
+    // },
 
-        // {
-        //     name: "NeuroScience and Biotech",
-        //     pages: [
-        //         { name: "Free will", path: "/neuroscience/free-will" },
-        //         {
-        //             name: "Single Cell Analysis",
-        //             path: "/neuroscience/single-cell-analysis",
-        //         },
-        //     ],
-        // },
+    // {
+    //     name: "Python Fundamentals",
+    //     pages: [
+    //         {
+    //             name: "uv jupyter testing",
+    //             path: "/python/uv_jupyter_testing",
+    //         },
+    //     ],
+    // },
 
-        // {
-        //     name: "Dynamicland",
-        //     pages: [{ name: "Dynamicland", path: "/dynamicland/dynamicland" }],
-        // },
+    // {
+    //     name: "NeuroScience and Biotech",
+    //     pages: [
+    //         { name: "Free will", path: "/neuroscience/free-will" },
+    //         {
+    //             name: "Single Cell Analysis",
+    //             path: "/neuroscience/single-cell-analysis",
+    //         },
+    //     ],
+    // },
 
-        // {
-        //     name: "Embedded Systems",
-        //     pages: [
-        //         { name: "zig", path: "/embedded/zig" },
-        //         {
-        //             name: "hardware in the loop simulation",
-        //             path: "/embedded/hardware-in-the-loop-simulation",
-        //         },
-        //     ],
-        // },
+    // {
+    //     name: "Dynamicland",
+    //     pages: [{ name: "Dynamicland", path: "/dynamicland/dynamicland" }],
+    // },
 
-        // {
-        //     name: "Simulation with Unreal Engine",
-        //     pages: [
-        //         {
-        //             name: "Dashboard",
-        //             path: "/simulation/reinforcement-learning",
-        //         },
-        //         { name: "Report", path: "/simulation/reinforcement-learning" },
-        //     ],
-        // },
-        // {
-        //     name: "Computer Vision",
-        //     pages: [
-        //         {
-        //             name: "Object Detection with yolo",
-        //             path: "/perception/object-detection",
-        //         },
-        //         {
-        //             name: "Scene Understanding",
-        //             path: "/perception/scene-understanding",
-        //         },
-        //         {
-        //             name: "Semantic Segmentation with segment-anything-2",
-        //             path: "/perception/semantic-segmentation",
-        //         },
-        //         {
-        //             name: "Sensor Calibration",
-        //             path: "/perception/sensor-calibration",
-        //         },
-        //     ],
-        // },
-    ],
+    // {
+    //     name: "Embedded Systems",
+    //     pages: [
+    //         { name: "zig", path: "/embedded/zig" },
+    //         {
+    //             name: "hardware in the loop simulation",
+    //             path: "/embedded/hardware-in-the-loop-simulation",
+    //         },
+    //     ],
+    // },
 
-    // Content to add to the head of the page, e.g. for a favicon:
-    head: `<script>document.querySelector('#suggest-edit')</script>
+    // {
+    //     name: "Simulation with Unreal Engine",
+    //     pages: [
+    //         {
+    //             name: "Dashboard",
+    //             path: "/simulation/reinforcement-learning",
+    //         },
+    //         { name: "Report", path: "/simulation/reinforcement-learning" },
+    //     ],
+    // },
+    // {
+    //     name: "Computer Vision",
+    //     pages: [
+    //         {
+    //             name: "Object Detection with yolo",
+    //             path: "/perception/object-detection",
+    //         },
+    //         {
+    //             name: "Scene Understanding",
+    //             path: "/perception/scene-understanding",
+    //         },
+    //         {
+    //             name: "Semantic Segmentation with segment-anything-2",
+    //             path: "/perception/semantic-segmentation",
+    //         },
+    //         {
+    //             name: "Sensor Calibration",
+    //             path: "/perception/sensor-calibration",
+    //         },
+    //     ],
+    // },
+  ],
+
+  // Content to add to the head of the page, e.g. for a favicon:
+  head: `<script>document.querySelector('#suggest-edit')</script>
   <style>
   #edit::hover{
   cursor:pointer;
@@ -218,20 +217,20 @@ export default {
 
   `,
 
-    // The path to the source root.
-    root: "src",
+  // The path to the source root.
+  root: "src",
 
-    // Some additional configuration options and their defaults:
-    theme: "slate", // try "light", "dark", "slate", etc.
-    header: "robotics odyssey blog", // what to show in the header (HTML)
-    footer: "<div id='suggest-edit'>Click here to suggest an edit!!!</div>", // what to show in the footer (HTML)
-    sidebar: true, // whether to show the sidebar
-    toc: true, // whether to show the table of contents
-    pager: true, // whether to show previous & next links in the footer
-    // output: "dist", // path to the output root for build
-    search: true, // activate search
-    linkify: true, // convert URLs in Markdown to links
-    typographer: true, // smart quotes and other typographic improvements
-    // preserveExtension: false, // drop .html from URLs
-    // preserveIndex: false, // drop /index from URLs
+  // Some additional configuration options and their defaults:
+  theme: "slate", // try "light", "dark", "slate", etc.
+  header: "robotics odyssey blog", // what to show in the header (HTML)
+  footer: "<div id='suggest-edit'>Click here to suggest an edit!!!</div>", // what to show in the footer (HTML)
+  sidebar: true, // whether to show the sidebar
+  toc: true, // whether to show the table of contents
+  pager: true, // whether to show previous & next links in the footer
+  // output: "dist", // path to the output root for build
+  search: true, // activate search
+  linkify: true, // convert URLs in Markdown to links
+  typographer: true, // smart quotes and other typographic improvements
+  // preserveExtension: false, // drop .html from URLs
+  // preserveIndex: false, // drop /index from URLs
 };
