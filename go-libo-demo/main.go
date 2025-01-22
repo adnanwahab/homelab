@@ -23,3 +23,5 @@ func main() {
 		time.Sleep(time.Second)
 	}
 }
+
+// https://github.com/go-vgo/robotgo
