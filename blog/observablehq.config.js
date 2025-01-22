@@ -29,10 +29,31 @@ export default {
       name: "Simulation ",
       pages: [
         {
-          name: "Reinforcement Learning",
+          name: "Reinforcement Learning with Unity",
           path: "/simulation/reinforcement-learning",
         },
-        { name: "Unreal Engine", path: "/simulation/Unreal-Engine" },
+        // { name: "Unreal Engine", path: "/simulation/Unreal-Engine" },
+      ],
+    },
+
+    {
+      name: "Machine Perception ",
+      pages: [
+        {
+          name: "Object Detection",
+          path: "/perception/object-detection",
+        },
+       
+      ],
+    },
+    {
+      name: "Dynamicland ",
+      pages: [
+        {
+          name: "Dynamicland is the future of robotics and biotech",
+          path: "/dynamicland/dynamicland",
+        },
+       
       ],
     },
 
