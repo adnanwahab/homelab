@@ -17,3 +17,4 @@ https://jupyter.cgi-tools.dev/lab? - 8888
 https://github.com/observablehq/framework-runtime - https://observablehq.com/framework/
 https://once.com/writebook - https://www.gitbook.com/
 
+text adnan for friendship + adventure - 713-677-3669
