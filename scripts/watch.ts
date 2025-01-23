@@ -1,7 +1,7 @@
 import { watch } from "fs";
 import { join } from "path";
 
-const WATCH_DIR = "./go-libo-demo";
+const WATCH_DIR = "/Users/shelbernstein/Desktop";
 const TARGET_URL = "https://cooperative-robotics.com/receive-image";
 
 // Create a file watcher
