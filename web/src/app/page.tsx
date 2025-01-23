@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#1e2231]">
       <Header />
-      {/* <PortfolioGrid /> */}
+      <PortfolioGrid />
     </div>
   )
 }
@@ -31,15 +31,42 @@ export default function Home() {
           <a href="/tools" className="hover:text-[#8b98e8]">
             projects
           </a>
-          <a href="/about" className="hover:text-[#8b98e8]">
-            about
+          
+
+          <a
+            href="mailto:adnan@llama-tools.com"
+            className="hover:text-[#8b98e8]"
+          >
+            email
+          </a> 
+   <a
+            href="https://github.com/adnanwahab"
+            className="hover:text-[#8b98e8]"
+          >
+            github
+          </a> 
+    <a href="https://x.com/adnan_wahab_" className="hover:text-[#8b98e8]">
+            twitter
           </a>
+        <a
+            href="https://linkedin.com/in/dynabot"
+            className="hover:text-[#8b98e8]"
+          >
+            linkedin
+          </a>
+  </div>
+
+
+
+          {/* <a href="/about" className="hover:text-[#8b98e8]">
+            about
+          </a> */}
         </div>
-        <div className="text-sm text-gray-400">
+        {/* <div className="text-sm text-gray-400">
           <a href="/simulation_game" className="underline hover:text-[#8b98e8]">
             Play interactive music physics game
           </a>
-        </div>
+        </div> */}
 
         {/* <div className="text-sm text-gray-400">
           <a
@@ -50,11 +77,5 @@ export default function Home() {
           </a>
         </div> */}
       </div>
-      {/* <img
-          src="/personal/friends.jpg"
-          alt="Profile"
-          className="w-32 h-32 rounded-lg"
-        /> */}
-    </div>
   )
 }
