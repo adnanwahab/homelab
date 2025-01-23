@@ -21,7 +21,7 @@ import initGenerateObject from "./mutateScene.ts";
 
 
 
-const size = { width: 900, height: 500 };
+const size = { width: innerWidth * .9, height: innerHeight * .9 };
 const container = document.getElementById("container");
 const canvas = document.querySelector("canvas");
 const { renderer, scene, camera, controls } = initGraphics(

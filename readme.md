@@ -10,8 +10,6 @@
 
 # documentation - https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 
-### cooperative-robotics.com / cgi-tools.dev / dynabot.dev
-
 # for Dynamicland.org - scientific art creation - collaborative thinking space
 
 # Dynamicland will improve scientifc thinking by 20% in the next 5 years
