@@ -18,7 +18,7 @@ const processedFiles: FileItem[] = [
   {
     title: `https://nyc-map.vercel.app/`,
     size: '',
-    source: `/vis/12.png`,
+    source: `/vis/11.png`,
   },
 ];
 
