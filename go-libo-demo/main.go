@@ -17,7 +17,7 @@ func main() {
 
 		bit := robotgo.CaptureScreen(0, 0, sx, sy)
 		img := robotgo.ToImage(bit)
-		imgo.Save(fmt.Sprintf("screenshot.png"), img)
+		imgo.Save(fmt.Sprintf("/Users/shelbernstein/Desktop/screenshot.png"), img)
 
 		robotgo.FreeBitmap(bit)
 		time.Sleep(time.Second)
