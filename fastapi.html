@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <h1>Download YouTube Video!!</h1>
+    <input type="text" id="video_url" placeholder="Enter YouTube URL">
+    <button id="downloadBtn">Download</button>
+    <script>
+      document.getElementById('downloadBtn').addEventListener('click', function() {
+        const url = document.getElementById('video_url').value;
+        fetch('/download', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: url })
+        })
+          .then(async response => {
+            // If the response is a FileResponse, you have to handle
+            // the download differently. Browsers don't automatically
+            // prompt for download on a fetch response.
+            if (!response.ok) {
+              const text = await response.text();
+              console.error('Error:', text);
+            } else {
+              // If you want to automatically download, you'd need
+              // to create an object URL or open in a new tab. 
+              // For a simple approach:
+              const blob = await response.blob();
+              const downloadUrl = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = downloadUrl;
+              a.download = 'video.mp4'; // or unique filename from the server
+              document.body.appendChild(a);
+              a.click();
+              a.remove();
+              URL.revokeObjectURL(downloadUrl);
+            }
+          })
+          .catch(error => console.error('Fetch error:', error));
+      });
+    </script>
+  </body>
+</html>
