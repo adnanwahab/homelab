@@ -1,5 +1,7 @@
 # CGI-tools.dev - simulation-as-a-service (unreal, unity, blender, three.js to suppprt reinforcement learning for improving robustness of all robots across the industry + increased shared reasoning)
 
+### simulation for making robotic surgery more cost-effective and more accurate by 2026
+
 
 ## Goal - to make a robotic nurse/doctor that can live in an appartment building - costs $1000 - basic first aid, emergency response and diagnostics by 2026
 
@@ -28,4 +30,4 @@ https://spectrum.ieee.org/xerox-parc
 https://jupyter.cgi-tools.dev/lab? - 8888
 https://github.com/observablehq/framework-runtime - https://observablehq.com/framework/
 https://once.com/writebook - https://www.gitbook.com/
-text adnan for inclusion - 713-677-3669
+text adnan for inclusion - 713-677-3669 - https://www.notion.so/Simulation-as-a-Service-184e8aa2982680569710c091ffeb33b5?pvs=4
