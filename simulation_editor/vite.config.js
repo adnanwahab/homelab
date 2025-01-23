@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig ({
 	root: 'src/',
-	publicDir:'../static/',
+	publicDir:'../public/',
 	resolve: {
 		alias: {
 			'three/addons': 'three/examples/jsm',
