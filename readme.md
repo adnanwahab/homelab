@@ -1,6 +1,8 @@
 # CGI-tools.dev - simulation-as-a-service (unreal, unity, blender, three.js to suppprt reinforcement learning for improving robustness of all robots across the industry + increased shared reasoning)
 
 
+## Goal - to make a robotic nurse/doctor that can live in an appartment building - costs $1000 - basic first aid, emergency response and diagnostics
+
 # Dynamicland.org's principles will increase shared reasoning and scientific thinking by at least 20% over next 5 years
 
 
