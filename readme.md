@@ -1,3 +1,4 @@
+# CGI-tools.dev - simulation-as-a-service (unreal, unity, blender, three.js to suppprt reinforcement learning for improving robustness of all robots across the industry)
 # https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 ### cooperative-robotics.com / cgi-tools.dev / dynabot.dev /
 # for Dynamicland.org - scientific art creation - collaborative thinking space
