@@ -15,6 +15,12 @@ new AudioVisualizer();
 //import tsl from 'three/tsl'
 import { setupLighting } from "./lighting.js";
 
+
+
+import initGenerateObject from "./mutateScene.ts";
+
+
+
 const size = { width: 900, height: 500 };
 const container = document.getElementById("container");
 const canvas = document.querySelector("canvas");
@@ -61,6 +67,13 @@ initJolt().then(async (Jolt) => {
             onExampleUpdateRef.fn(time, deltaTime, inputState);
         }
     }
+
+    let generateObject = initGenerateObject(Jolt, physicsSystem, scene);
+
+    document.getElementById('add-objects').addEventListener('click', () => {
+        generateObject();
+    });
+    
 
     // 8) Start render loop
     renderLoop(
