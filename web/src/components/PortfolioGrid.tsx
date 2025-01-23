@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import * as d3 from 'd3'
 import Link from 'next/link'
 
@@ -14,11 +11,6 @@ const completed = 10
 const files: FileItem[] = []
 const processedFiles: FileItem[] = [];
 
-// processedFiles.push({
-//   title: `Map`,
-//   size: '',
-//   source: `/vis/map.png`,
-// });
 
 for (let i = 10; i < 102; i++) {
   processedFiles.push({
