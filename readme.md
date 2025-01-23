@@ -33,3 +33,4 @@ https://once.com/writebook - https://www.gitbook.com/
 text adnan for inclusion - 713-677-3669 - https://www.notion.so/Simulation-as-a-Service-184e8aa2982680569710c091ffeb33b5?pvs=4
 
 <img src="/web/public/med_bot.webp" width="200">
+https://huggingface.co/lerobot
