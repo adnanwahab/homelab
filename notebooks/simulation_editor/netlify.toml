@@ -1,9 +1,0 @@
-[build]
-base = "/simulation_editor/src"
-publish = "dist"
-command = "npm run build"
-
-[dev]
-command = "npm run dev"
-port = 5173
-publish = "dist"
