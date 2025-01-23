@@ -9,10 +9,16 @@ interface FileItem {
 const completed = 10
 
 const files: FileItem[] = []
-const processedFiles: FileItem[] = [];
+const processedFiles: FileItem[] = [
+  {
+    title: `Visualization 1`,
+    size: '',
+    source: `/vis/10.png`,
+  },
+];
 
 
-for (let i = 10; i < 102; i++) {
+for (let i = 11; i < 20; i++) {
   processedFiles.push({
     title: ``,
     size: '',
