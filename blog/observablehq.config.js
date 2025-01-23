@@ -3,6 +3,16 @@ export default {
 
   pages: [
     {
+      name: "Dynamicland.org",
+      pages: [
+        {
+          name: "Dynamicland is the future of robotics and biotech",
+          path: "/dynamicland/dynamicland",
+        },
+       
+      ],
+    },
+    {
       name: "Geospatial HD Mapping",
       pages: [
         {
@@ -46,16 +56,7 @@ export default {
        
       ],
     },
-    {
-      name: "Dynamicland ",
-      pages: [
-        {
-          name: "Dynamicland is the future of robotics and biotech",
-          path: "/dynamicland/dynamicland",
-        },
-       
-      ],
-    },
+
 
     // {
     //     name: "Embedded Systems",
@@ -229,14 +230,7 @@ export default {
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:
-  head: `<script>document.querySelector('#suggest-edit')</script>
-  <style>
-  #edit::hover{
-  cursor:pointer;
-  }
-  </style>
-
-  `,
+  head: ``,
 
   // The path to the source root.
   root: "src",
@@ -244,7 +238,7 @@ export default {
   // Some additional configuration options and their defaults:
   theme: "slate", // try "light", "dark", "slate", etc.
   header: "robotics odyssey blog", // what to show in the header (HTML)
-  footer: "<div id='suggest-edit'>Click here to suggest an edit!!!</div>", // what to show in the footer (HTML)
+  //footer: "", // what to show in the footer (HTML)
   sidebar: true, // whether to show the sidebar
   toc: true, // whether to show the table of contents
   pager: true, // whether to show previous & next links in the footer

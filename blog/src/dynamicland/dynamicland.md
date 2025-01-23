@@ -2,13 +2,51 @@
 Dynamicland is the future of robotics and biotechnology
 ---
 
+# Dynamicland is the future of robotics and Biotechnology
+
+
+in 1975, 25 researchers invented the "office of the future" at xerox parc.
+
+They applied the ideas of constructionism, by seymour papert, to make computing accessible to 100 times more people than a telytype terminal.
+
+
+It took the world 33 to fully implement the "Dynabook" from xerox, which became known as the iphone and ipad.
+
+
+Dynamicland was started in 2014. I was lucky enough to meet bret victor at d3unconf by enjalot.
 
 
 
 
+I believe Dynamicland is the greatest invention of the decade, or century so far.
+
+Because it is a considerable upgrade to human collaboration, and shared reasoning.
 
 
 
+I think Dynamicland.org is a big deal, as big as the invention of the internet, computer or artificial intelligence.
+
+Because Shaun Douglas, Luke Cianni and Bret Victor redesigned the computer from scratch.
+
+
+In a way that makes it easier to extend and share knowledge.
+
+
+
+
+Accoring to xerox parc, knowlege is why Da Vinci couldn't invent a flying machine. He could only imagine one.
+
+
+
+https://observablehq.com/embed/@roboticsuniversity/alan_how?cells=change_in_groups&banner=false
+
+
+<iframe width="100%" height="968" frameborder="0"
+  src="https://observablehq.com/embed/@roboticsuniversity/alan_how?cells=pdfViewer"></iframe>
+
+  # https://spectrum.ieee.org/xerox-parc
+
+#   https://github.com/matthiasn/talk-transcripts/blob/master/Kay_Alan/NonIncrementalFuture.md
 
 
 dynamicland_book_shelf = [
@@ -56,6 +94,21 @@ dynamicland_book_shelf = [
     "https://bookshop.org/book/9781849901154"
 ]
 
+![https://github.com/adnanwahab/homelab/blob/main/web/public/alan_kay/10.png?raw=true](https://github.com/adnanwahab/homelab/blob/main/web/public/alan_kay/10.png?raw=true)
+Bret set these goals back in 2008. When i first read that, i didn't believe that someone could try to do this.
+
+But I think Bret Suceeded.
 
 
-<a href="https://github.com/BotParty/homelab_status_page/blob/main/dynamicland/dynamicland">click here to edit this document</a><a href="https://github.com/BotParty/homelab_status_page/blob/main/dynamicland/dynamicland">click here to edit this document</a><a href="https://github.com/BotParty/homelab_status_page/blob/main/src//dynamicland/dynamicland">click here to edit this document</a><a href="https://github.com/BotParty/homelab_status_page/blob/main/src//dynamicland/dynamicland">click here to edit this document</a>
+![https://github.com/adnanwahab/homelab/blob/main/web/public/alan_kay/SeeingSpaces.jpg?raw=true](https://github.com/adnanwahab/homelab/blob/main/web/public/alan_kay/SeeingSpaces.jpg?raw=true)
+
+![https://github.com/adnanwahab/homelab/blob/main/web/public/alan_kay/office_of_future.png?raw=true](https://github.com/adnanwahab/homelab/blob/main/web/public/alan_kay/office_of_future.png?raw=true)
+
+
+
+![https://github.com/adnanwahab/homelab/blob/main/web/public/alan_kay/3.jpg?raw=true](https://github.com/adnanwahab/homelab/blob/main/web/public/alan_kay/3.jpg?raw=true)
+
+
+
+
+<a href="https://github.com/adnanwahab/homelab/blob/main/blog/src/dynamicland/dynamicland.md">click here to edit this document</a>
