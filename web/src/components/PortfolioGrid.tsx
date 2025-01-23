@@ -11,14 +11,19 @@ const completed = 10
 const files: FileItem[] = []
 const processedFiles: FileItem[] = [
   {
-    title: `Visualization 1`,
+    title: `https://musicgame2026.netlify.app/`,
     size: '',
     source: `/vis/10.png`,
+  },
+  {
+    title: `https://nyc-map.vercel.app/`,
+    size: '',
+    source: `/vis/12.png`,
   },
 ];
 
 
-for (let i = 11; i < 20; i++) {
+for (let i = 11; i < 11; i++) {
   processedFiles.push({
     title: ``,
     size: '',
