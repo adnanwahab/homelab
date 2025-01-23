@@ -220,3 +220,11 @@ body {
     color: #fff;
     -webkit-text-fill-color: #fff;
 }
+
+
+
+canvas {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed white;
+}
