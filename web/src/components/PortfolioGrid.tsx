@@ -30,7 +30,7 @@ const processedFiles: FileItem[] = [
 
 for (let i = 12; i < 100; i++) {
   processedFiles.push({
-    title: ``,
+    title: `/demos/${i}`,
     size: '',
     source: `/vis/${i}.png`,
   });
