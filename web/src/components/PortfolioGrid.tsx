@@ -13,22 +13,22 @@ const processedFiles: FileItem[] = [
   {
     title: `https://musicgame2026.netlify.app/`,
     size: '',
-    source: `/vis/10.png`,
+    source: `/vis/1.png`,
   },
   {
     title: `https://nyc-map.vercel.app/`,
     size: '',
-    source: `/vis/11.png`,
+    source: `/vis/2.png`,
   },
-  // {
-  //   title: `/demos/12`,
-  //   size: '',
-  //   source: `/vis/12.png`,
-  // },
+  {
+    title: `/demos/12`,
+    size: '',
+    source: `/vis/3.png`,
+  },
 ];
 
 
-for (let i = 12; i < 100; i++) {
+for (let i = processedFiles.length + 1; i < 13; i++) {
   processedFiles.push({
     title: `/demos/${i}`,
     size: '',
@@ -55,7 +55,7 @@ export default function PortfolioGrid() {
                   className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity"
                 />
               </div>
-              <p className="mt-2 text-sm font-medium text-[#8b98e8] truncate">{file.title}</p>
+              {/* <p className="mt-2 text-sm font-medium text-[#8b98e8] truncate">{file.title}</p> */}
               {file.size && (
                 <p className="text-sm text-gray-400">{file.size}</p>
               )}
