@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import * as d3 from 'd3'
 import Link from 'next/link'
 
@@ -12,17 +9,28 @@ interface FileItem {
 const completed = 10
 
 const files: FileItem[] = []
-const processedFiles: FileItem[] = [];
+const processedFiles: FileItem[] = [
+  {
+    title: `https://musicgame2026.netlify.app/`,
+    size: '',
+    source: `/vis/10.png`,
+  },
+  {
+    title: `https://nyc-map.vercel.app/`,
+    size: '',
+    source: `/vis/11.png`,
+  },
+  // {
+  //   title: `/demos/12`,
+  //   size: '',
+  //   source: `/vis/12.png`,
+  // },
+];
 
-// processedFiles.push({
-//   title: `Map`,
-//   size: '',
-//   source: `/vis/map.png`,
-// });
 
-for (let i = 10; i < 102; i++) {
+for (let i = 12; i < 100; i++) {
   processedFiles.push({
-    title: ``,
+    title: `/demos/${i}`,
     size: '',
     source: `/vis/${i}.png`,
   });
@@ -38,7 +46,7 @@ export default function PortfolioGrid() {
       <h2 className="text-2xl font-semibold mb-6 text-[#8b98e8]">Visualization Demos</h2>
       <ul role="list" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
         {processedFiles.map((file, index) => (
-          <Link href={ completed > index ? `/demos/${index}` : `/demos/${index}`} key={index}>
+          <Link href={file.title} key={index}>
             <li className="relative group">
               <div className="aspect-[10/7] overflow-hidden rounded-lg bg-gray-800">
                 <img
