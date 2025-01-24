@@ -1,5 +1,4 @@
 "use client"; // If you're using the new app router in Next.js 13+, ensure client rendering
-
 import React, { useEffect, useRef, useState, useCallback } from "react";
 
 // Comment out Google Maps related imports
@@ -66,6 +65,9 @@ export default function FSKPage() {
   const darkness = useRef(null);
   const smoothness = useRef(null);
 
+  // Add canvas ref
+  const canvasRef = useRef(null);
+
   // Initialize twixt values in useEffect
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -103,21 +105,24 @@ export default function FSKPage() {
       // For now, we'll skip the actual street view loading
       console.log("Would load location:", lat, lng);
       
-      // Create a simple gradient canvas as placeholder texture
-      const canvas = document.createElement('canvas');
-      canvas.width = 1024;
-      canvas.height = 512;
-      const ctx = canvas.getContext('2d');
+      // Initialize canvas ref if not already done
+      if (!canvasRef.current) {
+        canvasRef.current = document.createElement('canvas');
+        canvasRef.current.width = 1024;
+        canvasRef.current.height = 512;
+      }
+
+      const ctx = canvasRef.current.getContext('2d');
       if (ctx) {
-        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        const gradient = ctx.createLinearGradient(0, 0, canvasRef.current.width, canvasRef.current.height);
         gradient.addColorStop(0, '#2196f3');
         gradient.addColorStop(1, '#21f3a1');
         ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
       }
 
-      // Create basic texture
-      const texture = new CanvasTexture(canvas);
+      // Create basic texture using the canvas ref
+      const texture = new CanvasTexture(canvasRef.current);
       const equiToCube = new EquirectangularToCubemap(rendererRef.current);
       const cubemap = equiToCube.convert(texture, 1024);
 
