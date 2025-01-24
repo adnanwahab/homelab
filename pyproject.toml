@@ -12,6 +12,7 @@ dependencies = [
     "fastapi[standard]>=0.115.6",
     "uvicorn>=0.23.2",
     "astral>=3.2",
+    "browser-use>=0.1.27",
 ]
 
 # Expose an entry point for your FastAPI server
