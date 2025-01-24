@@ -20,16 +20,21 @@ const processedFiles: FileItem[] = [
     size: '',
     source: `/vis/11.png`,
   },
+  {
+    title: `/demos/12`,
+    size: '',
+    source: `/vis/12.png`,
+  },
 ];
 
 
-for (let i = 11; i < 11; i++) {
-  processedFiles.push({
-    title: ``,
-    size: '',
-    source: `/vis/${i}.png`,
-  });
-}
+// for (let i = 11; i < 11; i++) {
+//   processedFiles.push({
+//     title: ``,
+//     size: '',
+//     source: `/vis/${i}.png`,
+//   });
+// }
 
 //d3.shuffle(processedFiles)
 
@@ -41,7 +46,7 @@ export default function PortfolioGrid() {
       <h2 className="text-2xl font-semibold mb-6 text-[#8b98e8]">Visualization Demos</h2>
       <ul role="list" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
         {processedFiles.map((file, index) => (
-          <Link href={ completed > index ? `/demos/${index}` : `/demos/${index}`} key={index}>
+          <Link href={file.title} key={index}>
             <li className="relative group">
               <div className="aspect-[10/7] overflow-hidden rounded-lg bg-gray-800">
                 <img
