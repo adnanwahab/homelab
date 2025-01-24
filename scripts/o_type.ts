@@ -4,71 +4,78 @@ import path from "path";
 import { watch } from "fs";
 import { serve } from "bun";
 import fetch from "node-fetch";
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from 'openai';
 import { createClient } from "@1password/sdk";
 
-// Fetch Anthropic API key
-async function fetchAnthropicApiKey() {
-    const anthropic_api_key =
-        process.env.ANTHROPIC_API_KEY ||
-        "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";
-    console.log(anthropic_api_key);
-    return anthropic_api_key;
+async function fetchOpenAIApiKey() {
+    const openai_api_key = process.env.OPENAI_API_KEY || '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';
+    return openai_api_key;
 }
 
-const anthropic_api_key = await fetchAnthropicApiKey();
+const openai_api_key = await fetchOpenAIApiKey();
+const client = new OpenAI({ apiKey: openai_api_key });
 
-// Initialize Anthropic client
-const client = new Anthropic({
-    apiKey: anthropic_api_key,
-});
-
-// Constants
 const WATCH_DIR = "/home/adnan/Desktop/";
 const username = os.userInfo().username;
-const PORT = 8080;
+const PORT = 8000;
 const desktopPath = `/home/${username}/Desktop`;
 const imagePath = `${desktopPath}/received-image.png`;
-const connectedClients = new Set<ReadableStreamDefaultController<any>>();
+const connectedClients = new Set<ReadableStreamDefaultController>();
 
-// Function to solve LeetCode problem from image
+/**
+ * Calls OpenAI with an image, receives a textual answer describing
+ * a solution in modern JavaScript, returns the text from the API.
+ */
 async function solve_leet_code_img(img_path: string) {
     const base64EncodedImage = fs.readFileSync(img_path, "base64");
-    const msg = await client.messages.create({
-        model: "claude-3-5-sonnet-20241022",
-        max_tokens: 2024,
+    const response = await client.chat.completions.create({
+        model: "gpt-4o",
         messages: [
             {
                 role: "user",
                 content: [
                     {
                         type: "text",
-                        text: "Describe the simplest solution to the problem in modern JavaScript 2025. return only executable javascript - no comments --- add extra line breaks after each line to improve readability",
+                        text: "Describe the simplest solution to the problem in modern JavaScript 2025",
                     },
                     {
-                        type: "image",
-                        source: {
-                            type: "base64",
-                            media_type: "image/png",
-                            data: base64EncodedImage,
+                        type: "image_url",
+                        image_url: {
+                            url: `data:image/png;base64,${base64EncodedImage}`,
                         },
                     },
                 ],
             },
         ],
+        max_tokens: 2024,
     });
-    return msg.content[0].text;
+
+    // Return the text from the first choice
+    return response.choices[0].message.content || '';
 }
 
-// Function to generate HTML content
+/**
+ * Creates an HTML page that:
+ *   - Uses SSE (Server-Sent Events) to auto-refresh when an image is received
+ *   - Displays the uploaded/received image
+ *   - Loads Terser & Highlight.js from CDNs
+ *   - Shows two code blocks: the original text from OpenAI, and a version
+ *     with comments removed (via Terser)
+ *   - Uses JSON.stringify to safely embed the text from OpenAI in the script
+ */
 function makeHTML(result: string): string {
-    return `<html>
+    // Safely serialize "result" (which may include quotes, backticks, etc.)
+    const safeResult = JSON.stringify(result);
+
+    return `
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Remove Comments with Terser + Highlight.js</title>
+  <title>Terser & Highlight.js Demo</title>
 
-  <!-- Highlight.js Core & Default Theme -->
-  <link rel="stylesheet" 
+  <!-- Highlight.js Default Theme -->
+  <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 
@@ -87,50 +94,68 @@ function makeHTML(result: string): string {
       overflow-x: auto;
     }
     h2 {
-      margin-top: 2em;
+      margin-top: 1.2em;
+      margin-bottom: 0.5em;
     }
   </style>
+
+  <script>
+    // Set up SSE to refresh if "/events" emits "refresh"
+    const eventSource = new EventSource('/events');
+    eventSource.onmessage = (event) => {
+      if (event.data === 'refresh') {
+        window.location.reload();
+      }
+    };
+    eventSource.onerror = (error) => {
+      console.error('EventSource error:', error);
+      window.location.reload();
+    };
+  </script>
 </head>
 <body>
-    <h1>Hello Earth ${Date.now()}</h1>
-    <img src="/image" width="900" height="500" />
-  <h1>Remove Comments with Terser + Highlight.js</h1>
+  <h1>Hello World ${Date.now()}</h1>
+  <img src="/image" width="800" height="450" alt="Received Image" />
 
-  <h2>Original Code (with comments)</h2>
+  <h2>Original Code/Text (from OpenAI)</h2>
   <pre><code id="originalCode" class="language-javascript"></code></pre>
 
   <h2>Processed Code (comments removed)</h2>
   <pre><code id="processedCode" class="language-javascript"></code></pre>
 
   <script>
-    // This is the code snippet (with comments) that we'll process.
-    const codeWithComments = \`${result}\`;
+    // The OpenAI result is safely embedded as a JS string
+    const codeWithComments = ${safeResult};
 
-    // Show the original code (with comments) in the first <pre><code> block
+    // Show the original text in #originalCode
     document.getElementById('originalCode').textContent = codeWithComments;
 
-    // Use Terser to remove comments, keep readable formatting
+    // Run Terser to remove comments, keep it semi-readably formatted
     Terser.minify(codeWithComments, {
       mangle: false,
       compress: false,
       format: {
-        comments: false,  // strip all comments
-        beautify: true,   // keep code readable instead of full minification
+        comments: false,
+        beautify: true,
       },
-    }).then(result => {
-      // Show the stripped code in the second <pre><code> block
-      document.getElementById('processedCode').textContent = result.code;
-
-      // Manually highlight both code blocks
+    })
+    .then((minified) => {
+      document.getElementById('processedCode').textContent =
+        minified.code || "// Terser produced empty code!";
+      // Syntax-highlight both code blocks
       hljs.highlightElement(document.getElementById('originalCode'));
       hljs.highlightElement(document.getElementById('processedCode'));
+    })
+    .catch((err) => {
+      document.getElementById('processedCode').textContent =
+        "// Error removing comments: " + err.toString();
     });
   </script>
 </body>
 </html>`;
 }
 
-// Function to notify all clients to refresh
+/** Notifies all connected SSE clients to reload. */
 function notifyClients() {
     const encoder = new TextEncoder();
     const message = encoder.encode("data: refresh\n\n");
@@ -143,39 +168,39 @@ function notifyClients() {
     }
 }
 
-// Start the server
+/**
+ * Main server logic.
+ * - SSE endpoint at "/events".
+ * - "/receive-image" to store the incoming image, then notify all clients.
+ * - "/image" to serve the uploaded image.
+ * - Default route: read the image with solve_leet_code_img(), render the HTML.
+ */
 function start_server() {
     serve({
-        port: PORT,
-        idleTimeout: 255, // 255 seconds timeout
-
+        port: 8888,
+        idleTimeout: 255,
         async fetch(req, server) {
             const url = new URL(req.url);
             const pathname = url.pathname;
             console.log(pathname);
 
-            // Handle SSE connections
+            // SSE endpoint
             if (pathname === "/events") {
-                let controller: ReadableStreamDefaultController<any>;
-
+                let controller: ReadableStreamDefaultController;
                 const stream = new ReadableStream({
                     start(c) {
                         controller = c;
                         const encoder = new TextEncoder();
-
-                        // Send initial connection message
-                        controller.enqueue(encoder.encode("data: connected\n\n"));
+                        // Send initial message
+                        controller.enqueue(
+                            encoder.encode("data: connected\n\n"),
+                        );
                     },
-
                     cancel() {
-                        // Remove client when the stream is canceled (connection closed)
                         connectedClients.delete(controller);
                     },
                 });
-
-                // Store the controller to be able to send updates
                 connectedClients.add(controller);
-
                 return new Response(stream, {
                     headers: {
                         "Content-Type": "text/event-stream",
@@ -185,7 +210,7 @@ function start_server() {
                 });
             }
 
-            // Handle image reception
+            // Endpoint to receive an image
             if (pathname === "/receive-image") {
                 const body = await req.blob();
                 const arrayBuffer = await body.arrayBuffer();
@@ -194,59 +219,55 @@ function start_server() {
                 return new Response("Image received");
             }
 
-            // Serve the image
+            // Serve the uploaded image
             if (pathname === "/image") {
                 try {
                     const imageData = fs.readFileSync(imagePath);
                     return new Response(imageData, {
-                        headers: {
-                            "Content-Type": "image/png",
-                        },
+                        headers: { "Content-Type": "image/png" },
                     });
                 } catch (error) {
                     return new Response("Image not found", { status: 404 });
                 }
             }
 
-            // Solve LeetCode problem and serve HTML
+            // Default route: run the OCR/solution pipeline, display the HTML
             const result = await solve_leet_code_img(imagePath);
-
             return new Response(makeHTML(result), {
-                headers: {
-                    "Content-Type": "text/html",
-                },
+                headers: { "Content-Type": "text/html" },
             });
         },
     });
 }
 
-// Watch for new screenshots
+// Watch a directory for a new "screenshot.png" and upload it somewhere else
 watch(WATCH_DIR, async (eventType, filename) => {
     if (filename !== "screenshot.png") return;
 
     try {
         const filePath = path.join(WATCH_DIR, filename);
         const file = Bun.file(filePath);
-
         console.log(`Sending ${filename} to server...`);
+
+        // Make sure you define or set this somewhere (e.g. in your .env or code).
+        // For example: const TARGET_URL = "http://yourserver/receive-image";
+        // Otherwise it won't know where to POST.
+        const TARGET_URL =
+            process.env.TARGET_URL || "http://localhost:8080/receive-image";
 
         const response = await fetch(TARGET_URL, {
             method: "POST",
             body: file,
-            headers: {
-                "Content-Type": "image/png",
-            },
+            headers: { "Content-Type": "image/png" },
         });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-
         console.log(`Successfully sent ${filename}`);
     } catch (error) {
         console.error("Error sending file:", error);
     }
 });
 
-// Start the server
 start_server();
