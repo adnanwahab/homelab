@@ -49,9 +49,9 @@ async function solve_leet_code_img(img_path: string) {
         ],
         max_tokens: 2024,
     });
-
-    // Return the text from the first choice
-    return response.choices[0].message.content || '';
+    const result = response.choices[0].message.content || '';
+    
+    return result;
 }
 
 /**
@@ -72,7 +72,7 @@ function makeHTML(result: string): string {
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Terser & Highlight.js Demo</title>
+  <title>o.type</title>
 
   <!-- Highlight.js Default Theme -->
   <link rel="stylesheet"
