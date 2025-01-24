@@ -65,8 +65,8 @@ export default function FSKPage() {
   const darkness = useRef(null);
   const smoothness = useRef(null);
 
-  // Add canvas ref
-  const canvasRef = useRef(null);
+  // Replace canvasRef.current = document.createElement('canvas') with a React ref
+  const textureCanvasRef = useRef(null);
 
   // Initialize twixt values in useEffect
   useEffect(() => {
@@ -102,27 +102,21 @@ export default function FSKPage() {
   // --- The main "load" function (similar to original code) ---
   const load = useCallback(
     async function (lat, lng) {
-      // For now, we'll skip the actual street view loading
       console.log("Would load location:", lat, lng);
       
-      // Initialize canvas ref if not already done
-      if (!canvasRef.current) {
-        canvasRef.current = document.createElement('canvas');
-        canvasRef.current.width = 1024;
-        canvasRef.current.height = 512;
-      }
+      if (!textureCanvasRef.current) return;
 
-      const ctx = canvasRef.current.getContext('2d');
+      const ctx = textureCanvasRef.current.getContext('2d');
       if (ctx) {
-        const gradient = ctx.createLinearGradient(0, 0, canvasRef.current.width, canvasRef.current.height);
+        const gradient = ctx.createLinearGradient(0, 0, textureCanvasRef.current.width, textureCanvasRef.current.height);
         gradient.addColorStop(0, '#2196f3');
         gradient.addColorStop(1, '#21f3a1');
         ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        ctx.fillRect(0, 0, textureCanvasRef.current.width, textureCanvasRef.current.height);
       }
 
-      // Create basic texture using the canvas ref
-      const texture = new CanvasTexture(canvasRef.current);
+      // Create basic texture using the React canvas ref
+      const texture = new CanvasTexture(textureCanvasRef.current);
       const equiToCube = new EquirectangularToCubemap(rendererRef.current);
       const cubemap = equiToCube.convert(texture, 1024);
 
@@ -348,6 +342,14 @@ export default function FSKPage() {
 
   return (
     <div style={{ width: "100vw", height: "100vh", overflow: "hidden", margin: 0 }}>
+      {/* Add hidden canvas element for texture generation */}
+      <canvas 
+        ref={textureCanvasRef}
+        width={1024}
+        height={512}
+        style={{ display: 'none' }}
+      />
+
       {/* Comment out Google Maps related elements */}
       {/* <map-browser
         id="map-browser"
