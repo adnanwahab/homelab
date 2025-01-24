@@ -50,22 +50,42 @@ export default function FSKPage() {
   // Keep track of loaded location
   const [currentLocation, setCurrentLocation] = useState("");
 
-  // Using "twixt" the same way as in your original code:
-  // We store them in refs so we can manipulate them imperatively.
-  const speed = useRef(twixt.create("speed", 1));
-  const textureScale = useRef(twixt.create("scale", 2));
-  const innerScatter = useRef(twixt.create("innerScatter", 5));
-  const outerScatter = useRef(twixt.create("outerScatter", 0));
-  const normalScale = useRef(twixt.create("normalScale", 0.5));
-  const reflectivity = useRef(twixt.create("reflectivity", 0));
-  const roughness = useRef(twixt.create("roughness", 1));
-  const darkness = useRef(twixt.create("darkness", 0));
-  const smoothness = useRef(twixt.create("smoothness", 0));
-
-  // For our internal animation loop
+  // Move twixt references inside useEffect
   const [running, setRunning] = useState(true);
   const timeRef = useRef(0);
-  const prevTimeRef = useRef(performance.now());
+  const prevTimeRef = useRef(0); // Changed from performance.now()
+
+  // Remove twixt initialization from top level
+  const speed = useRef(null);
+  const textureScale = useRef(null);
+  const innerScatter = useRef(null);
+  const outerScatter = useRef(null);
+  const normalScale = useRef(null);
+  const reflectivity = useRef(null);
+  const roughness = useRef(null);
+  const darkness = useRef(null);
+  const smoothness = useRef(null);
+
+  // Initialize twixt values in useEffect
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Import and initialize twixt
+    import('./deps/twixt.js').then(({ twixt }) => {
+      speed.current = twixt.create("speed", 1);
+      textureScale.current = twixt.create("scale", 2);
+      innerScatter.current = twixt.create("innerScatter", 5);
+      outerScatter.current = twixt.create("outerScatter", 0);
+      normalScale.current = twixt.create("normalScale", 0.5);
+      reflectivity.current = twixt.create("reflectivity", 0);
+      roughness.current = twixt.create("roughness", 1);
+      darkness.current = twixt.create("darkness", 0);
+      smoothness.current = twixt.create("smoothness", 0);
+      
+      // Set initial time
+      prevTimeRef.current = performance.now();
+    });
+  }, []);
 
   // --- Helper to resize the renderer ---
   const handleResize = useCallback(() => {
@@ -177,7 +197,8 @@ export default function FSKPage() {
 
   // --- The main render loop (Similar to original "render" function) ---
   const animate = useCallback(() => {
-    if (!rendererRef.current || !sceneRef.current || !cameraRef.current || !controlsRef.current || !material)
+    if (!rendererRef.current || !sceneRef.current || !cameraRef.current || 
+        !controlsRef.current || !material || !speed.current) // Add check for speed
       return;
 
     controlsRef.current.update();
