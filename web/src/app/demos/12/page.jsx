@@ -160,16 +160,16 @@ export default function FSKPage() {
 
   const capture = useCallback(() => {
     if (!rendererRef.current) return;
-    rendererRef.current.domElement.toBlob((blob) => {
-      const url = URL.createObjectURL(blob);
-      const downloadBtn = document.createElement("a");
-      downloadBtn.setAttribute(
-        "download",
-        `fsk-${performance.now()}-${currentLocation}.png`
-      );
-      downloadBtn.setAttribute("href", url);
-      downloadBtn.click();
-    });
+    // rendererRef.current.domElement.toBlob((blob) => {
+    //   const url = URL.createObjectURL(blob);
+    //   const downloadBtn = document.createElement("a");
+    //   downloadBtn.setAttribute(
+    //     "download",
+    //     `fsk-${performance.now()}-${currentLocation}.png`
+    //   );
+    //   downloadBtn.setAttribute("href", url);
+    //   downloadBtn.click();
+    // });
   }, [currentLocation]);
 
   const applyChrome = useCallback(() => {
