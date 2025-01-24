@@ -62,20 +62,16 @@ export default function Home() {
             about
           </a> */}
         </div>
-        <div className="text-sm text-gray-400">
-          <a href="/simulation_game" className="underline hover:text-[#8b98e8]">
-            Play interactive music physics game
-          </a>
-        </div>
 
-        <div className="text-sm text-gray-400">
+
+        {/* <div className="text-sm text-gray-400">
           <a
             href="/robotics-odyssey"
             className="underline hover:text-[#8b98e8]"
           >
             Self-teaching Robotics info-course
           </a>
-        </div>
+        </div> */}
       </div>
   )
 } 
