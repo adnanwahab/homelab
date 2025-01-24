@@ -45,9 +45,9 @@ export default function Home() {
           >
             github
           </a> 
-    <a href="https://x.com/adnan_wahab_" className="hover:text-[#8b98e8]">
+    {/* <a href="https://x.com/adnan_wahab_" className="hover:text-[#8b98e8]">
             twitter
-          </a>
+          </a> */}
         <a
             href="https://linkedin.com/in/dynabot"
             className="hover:text-[#8b98e8]"
