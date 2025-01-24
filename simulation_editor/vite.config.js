@@ -5,13 +5,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig ({
 	root: 'src/',
 	publicDir:'../public/',
-	resolve: {
-		alias: {
-			'three/addons': 'three/examples/jsm',
-			'three/tsl': 'three/webgpu',
-			'three': 'three/webgpu'
-		}
-	},
+// 	resolve: {
+// 		alias: {
+// 			'three/addons': 'three/examples/jsm',
+// 			'three/tsl': 'three/webgpu',
+// 			'three': 'three/webgpu'
+// 		}
+// 	},
   plugins:[
     topLevelAwait({
   		promiseExportName: "__tla",
@@ -19,7 +19,7 @@ export default defineConfig ({
     }),
 	tailwindcss()
 
-  ],
+ ],
   server: {
   	port: 5173,
   }
