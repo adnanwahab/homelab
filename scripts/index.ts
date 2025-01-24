@@ -6,22 +6,15 @@ import { serve } from "bun";
 import fetch from "node-fetch";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@1password/sdk";
+import OpenAI from "openai";
 
-// Fetch Anthropic API key
-async function fetchAnthropicApiKey() {
-    const anthropic_api_key =
-        process.env.ANTHROPIC_API_KEY ||
-        "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";
-    console.log(anthropic_api_key);
-    return anthropic_api_key;
+async function fetchOpenAIApiKey() {
+    const openai_api_key = process.env.OPENAI_API_KEY;
+    return openai_api_key;
 }
 
-const anthropic_api_key = await fetchAnthropicApiKey();
-
-// Initialize Anthropic client
-const client = new Anthropic({
-    apiKey: anthropic_api_key,
-});
+const openai_api_key = await fetchOpenAIApiKey();
+const client = new OpenAI({ apiKey: openai_api_key });
 
 // Constants
 const WATCH_DIR = "/home/adnan/Desktop/";
@@ -34,41 +27,66 @@ const connectedClients = new Set<ReadableStreamDefaultController<any>>();
 // Function to solve LeetCode problem from image
 async function solve_leet_code_img(img_path: string) {
     const base64EncodedImage = fs.readFileSync(img_path, "base64");
-    const msg = await client.messages.create({
-        model: "claude-3-5-sonnet-20241022",
-        max_tokens: 2024,
+    const response = await client.chat.completions.create({
+        model: "gpt-4o",
         messages: [
             {
                 role: "user",
                 content: [
                     {
                         type: "text",
-                        text: "Describe the simplest solution to the problem in modern JavaScript 2025. return only executable javascript - no comments --- add extra line breaks after each line to improve readability",
+                        text: "Describe the simplest solution to the problem in modern JavaScript 2025",
                     },
                     {
-                        type: "image",
-                        source: {
-                            type: "base64",
-                            media_type: "image/png",
-                            data: base64EncodedImage,
+                        type: "image_url",
+                        image_url: {
+                            url: `data:image/png;base64,${base64EncodedImage}`,
                         },
                     },
                 ],
             },
         ],
+        max_tokens: 2024,
     });
-    return msg.content[0].text;
+    const result = response.choices[0].message.content || "";
+    return result;
+
+    // const response_two = await client.chat.completions.create({
+    //     model: "o1-preview",
+    //     messages: [
+    //         {
+    //             role: "user",
+    //             content: [
+    //                 {
+    //                     type: "text",
+    //                     text: "Double check and improve this code and add some simple asserts to prove it is good",
+    //                 },
+    //                 {
+    //                     type: "text",
+    //                     text: result,
+    //                 },
+    //             ],
+    //         },
+    //     ],
+    // });
+    // return response_two.choices[0].message.content || '';
 }
 
 // Function to generate HTML content
 function makeHTML(result: string): string {
+    // Escape backticks, dollar signs, and newlines in the result
+    const safeResult = result
+        .replace(/`/g, "\\`")
+        .replace(/\$/g, "\\$")
+        .replace(/\n/g, "\\n");
+
     return `<html>
 <head>
   <meta charset="utf-8" />
-  <title>Remove Comments with Terser + Highlight.js</title>
+  <title>scripts/index.ts</title>
 
   <!-- Highlight.js Core & Default Theme -->
-  <link rel="stylesheet" 
+  <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 
@@ -103,28 +121,45 @@ function makeHTML(result: string): string {
   <pre><code id="processedCode" class="language-javascript"></code></pre>
 
   <script>
-    // This is the code snippet (with comments) that we'll process.
-    const codeWithComments = \`${result}\`;
+    // Safely inject the code by escaping special characters
+    const codeWithComments = \`${safeResult}\`.replace(/\\n/g, '\n');
 
-    // Show the original code (with comments) in the first <pre><code> block
-    document.getElementById('originalCode').textContent = codeWithComments;
+    // Show the original code
+    const originalCodeElement = document.getElementById('originalCode');
+    originalCodeElement.textContent = codeWithComments;
 
-    // Use Terser to remove comments, keep readable formatting
-    Terser.minify(codeWithComments, {
-      mangle: false,
-      compress: false,
-      format: {
-        comments: false,  // strip all comments
-        beautify: true,   // keep code readable instead of full minification
-      },
-    }).then(result => {
-      // Show the stripped code in the second <pre><code> block
-      document.getElementById('processedCode').textContent = result.code;
+    // Use try-catch to handle Terser errors gracefully
+    async function processCode() {
+        try {
+            // First, wrap the code in a function to ensure it's valid JavaScript
+            const wrappedCode = '(function() {\n' + codeWithComments + '\n})()';
+            
+            const result = await Terser.minify(wrappedCode, {
+                mangle: false,
+                compress: false,
+                format: {
+                    comments: false,
+                    beautify: true,
+                },
+            });
+            
+            const processedCodeElement = document.getElementById('processedCode');
+            // Remove the wrapper function from the result
+            const cleanCode = result.code
+                .replace(/^\(function\(\)\{/, '')
+                .replace(/\}\)\(\);$/, '');
+            processedCodeElement.textContent = cleanCode;
 
-      // Manually highlight both code blocks
-      hljs.highlightElement(document.getElementById('originalCode'));
-      hljs.highlightElement(document.getElementById('processedCode'));
-    });
+            // Highlight both code blocks
+            hljs.highlightElement(originalCodeElement);
+            hljs.highlightElement(processedCodeElement);
+        } catch (error) {
+            console.error('Terser error:', error);
+            document.getElementById('processedCode').textContent = 'Error processing code: ' + error.message;
+        }
+    }
+
+    processCode();
   </script>
 </body>
 </html>`;
@@ -164,7 +199,9 @@ function start_server() {
                         const encoder = new TextEncoder();
 
                         // Send initial connection message
-                        controller.enqueue(encoder.encode("data: connected\n\n"));
+                        controller.enqueue(
+                            encoder.encode("data: connected\n\n"),
+                        );
                     },
 
                     cancel() {
@@ -187,6 +224,7 @@ function start_server() {
 
             // Handle image reception
             if (pathname === "/receive-image") {
+                console.log("Received image");
                 const body = await req.blob();
                 const arrayBuffer = await body.arrayBuffer();
                 fs.writeFileSync(imagePath, Buffer.from(arrayBuffer));
