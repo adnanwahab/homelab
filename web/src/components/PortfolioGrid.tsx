@@ -20,11 +20,11 @@ const processedFiles: FileItem[] = [
     size: '',
     source: `/vis/11.png`,
   },
-  {
-    title: `/demos/12`,
-    size: '',
-    source: `/vis/12.png`,
-  },
+  // {
+  //   title: `/demos/12`,
+  //   size: '',
+  //   source: `/vis/12.png`,
+  // },
 ];
 
 
