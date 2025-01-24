@@ -5,7 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>simulation tools</title>
 
-            <script src="https://d3js.org/d3.v7.min.js"></script>
+            <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+            <script type="importmap">
+                {
+                    "imports": {
+                        "three": "https://threejs.org/build/three.webgpu.js",
+                        "three/webgpu": "https://threejs.org/build/three.webgpu.js",
+                        "three/tsl": "https://threejs.org/build/three.tsl.js",
+                        "three/addons/": "https://threejs.org/examples/jsm/"
+                    }
+                }
+            </script>
             <script type="module" src="./main.js"></script>
             <!-- <script src="https://cdn.tailwindcss.com"></script> -->
             <link href="./output.css" rel="stylesheet">
