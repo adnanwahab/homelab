@@ -24,7 +24,6 @@ https://spectrum.ieee.org/xerox-parc
 #fastapi
 8080 = cooperative-robotics.com - fastapi
 #8000 = bun- cgi-tools.dev - scripts/index.ts 
-## Deno - webgpu + three.js + blender + unity + unreal - 8001
 https://jupyter.cgi-tools.dev/lab? - 8888
 https://github.com/observablehq/framework-runtime - https://observablehq.com/framework/
 https://once.com/writebook - https://www.gitbook.com/
