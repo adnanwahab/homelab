@@ -1,5 +1,5 @@
-import * as THREE from 'three';
-import { WebGPURenderer, PerspectiveCamera, Scene, DirectionalLight } from 'three';
+import * as THREE from 'three/webgpu';
+import { WebGPURenderer, PerspectiveCamera, Scene, DirectionalLight } from 'three/webgpu';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 console.log(THREE);
