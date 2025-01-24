@@ -1,10 +1,10 @@
 import { defineConfig } from "vite";
 import topLevelAwait from "vite-plugin-top-level-await";
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig ({
 	root: 'src/',
-	publicDir:'../static/',
+	publicDir:'../public/',
 	resolve: {
 		alias: {
 			'three/addons': 'three/examples/jsm',

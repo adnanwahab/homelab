@@ -1,5 +1,7 @@
 # CGI-tools.dev - simulation-as-a-service (unreal, unity, blender, three.js to suppprt reinforcement learning for improving robustness of all robots across the industry + increased shared reasoning)
 
+### simulation for making robotic surgery more cost-effective and more accurate by 2026
+
 
 ## Goal - to make a robotic nurse/doctor that can live in an appartment building - costs $1000 - basic first aid, emergency response and diagnostics by 2026
 
@@ -7,8 +9,6 @@
 
 
 # documentation - https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
-
-### cooperative-robotics.com / cgi-tools.dev / dynabot.dev
 
 # for Dynamicland.org - scientific art creation - collaborative thinking space
 
@@ -24,8 +24,7 @@ https://spectrum.ieee.org/xerox-parc
 #fastapi
 8080 = cooperative-robotics.com - fastapi
 #8000 = bun- cgi-tools.dev - scripts/index.ts 
-## Deno - webgpu + three.js + blender + unity + unreal - 8001
 https://jupyter.cgi-tools.dev/lab? - 8888
 https://github.com/observablehq/framework-runtime - https://observablehq.com/framework/
 https://once.com/writebook - https://www.gitbook.com/
-text adnan for inclusion - 713-677-3669
+
