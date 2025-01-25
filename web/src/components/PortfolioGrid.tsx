@@ -21,14 +21,14 @@ const processedFiles: FileItem[] = [
     source: `/vis/2.png`,
   },
   {
-    title: `/demos/12`,
+    title: `/demos/2`,
     size: '',
     source: `/vis/3.png`,
   },
 ];
 
 
-for (let i = processedFiles.length + 1; i < 10; i++) {
+for (let i = processedFiles.length + 1; i < 13; i++) {
   processedFiles.push({
     title: `/demos/${i}`,
     size: '',
