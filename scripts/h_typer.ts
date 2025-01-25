@@ -9,8 +9,7 @@ import { createClient } from "@1password/sdk";
 
 async function fetchAnthropicApiKey() {
     const anthropic_api_key =
-        process.env.ANTHROPIC_API_KEY ||
-        "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";
+        "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";
     console.log(anthropic_api_key);
     return anthropic_api_key;
 }
@@ -77,7 +76,7 @@ function makeHTML(result: string): string {
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Terser & Highlight.js Demo</title>
+  <title>h_typer.ts</title>
 
   <!-- Highlight.js Default Theme -->
   <link rel="stylesheet"

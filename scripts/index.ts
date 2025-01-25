@@ -29,6 +29,7 @@ const connectedClients = new Set<ReadableStreamDefaultController<any>>();
 // Function to solve LeetCode problem from image
 async function solve_leet_code_img(img_path: string) {
     const base64EncodedImage = fs.readFileSync(img_path, "base64");
+    console.log(base64EncodedImage);
     const response = await client.chat.completions.create({
         model: "gpt-4o",
         messages: [
@@ -77,13 +78,13 @@ async function solve_leet_code_img(img_path: string) {
 // Function to generate HTML content
 function makeHTML(result: string): string {
     // Escape backticks, dollar signs, and newlines in the result
-    const safeResult = result
-        .replace(/`/g, "\\`")
-        .replace(/\$/g, "\\$")
-        .replace(/\n/g, "\\n");
+    const safeResult = JSON.stringify(result);
 
-    return `<html>
+    return `
+<!DOCTYPE html>
+<html>
 <head>
+
   <meta charset="utf-8" />
   <title>scripts/index.ts</title>
 
@@ -161,56 +162,49 @@ function makeHTML(result) {
       margin-top: 2em;
     }
   </style>
+
 </head>
 <body>
-    <h1>Hello Earth ${Date.now()}</h1>
+    <h1>hello earth ${new Date().toLocaleString()}</h1>
     <img src="/image" width="900" height="500" />
-  <h1>Remove Comments with Terser + Highlight.js</h1>
+    <h2>Original Code (with comments)</h2>
+    <pre><code id="originalCode" class="language-javascript"></code></pre>
+    <h2>Processed Code (comments removed)</h2>
+    <pre><code id="processedCode" class="language-javascript"></code></pre>
 
-  <h2>Original Code (with comments)</h2>
-  <pre><code id="originalCode" class="language-javascript"></code></pre>
+    <script>
+    (function() {
+        const codeWithComments = ${safeResult};
+        const originalCodeElement = document.getElementById('originalCode');
+        originalCodeElement.textContent = codeWithComments;
 
-  <h2>Processed Code (comments removed)</h2>
-  <pre><code id="processedCode" class="language-javascript"></code></pre>
+        async function processCode() {
+            try {
+                const wrappedCode = '(function() {\\n' + codeWithComments + '\\n})()';
 
-  <script>
-    // Safely inject the code by escaping special characters
-    const codeWithComments = \`${safeResult}\`.replace(/\\n/g, '\n');
+                const result = await Terser.minify(wrappedCode, {
+                    mangle: false,
+                    compress: false,
+                    format: {
+                        comments: false,
+                        beautify: true
+                    }
+                });
 
-    // Show the original code
-    const originalCodeElement = document.getElementById('originalCode');
-    originalCodeElement.textContent = codeWithComments;
+                const processedCodeElement = document.getElementById('processedCode');
+                const cleanCode = result.code
+                    .replace(/^\\(function\\(\\)\\{/, '')
+                    .replace(/\\}\\)\\(\\);$/, '');
+                processedCodeElement.textContent = cleanCode;
 
-    // Use try-catch to handle Terser errors gracefully
-    async function processCode() {
-        try {
-            // First, wrap the code in a function to ensure it's valid JavaScript
-            const wrappedCode = '(function() {\n' + codeWithComments + '\n})()';
-            
-            const result = await Terser.minify(wrappedCode, {
-                mangle: false,
-                compress: false,
-                format: {
-                    comments: false,
-                    beautify: true,
-                },
-            });
-            
-            const processedCodeElement = document.getElementById('processedCode');
-            // Remove the wrapper function from the result
-            const cleanCode = result.code
-                .replace(/^\(function\(\)\{/, '')
-                .replace(/\}\)\(\);$/, '');
-            processedCodeElement.textContent = cleanCode;
-
-            // Highlight both code blocks
-            hljs.highlightElement(originalCodeElement);
-            hljs.highlightElement(processedCodeElement);
-        } catch (error) {
-            console.error('Terser error:', error);
-            document.getElementById('processedCode').textContent = 'Error processing code: ' + error.message;
+                hljs.highlightElement(originalCodeElement);
+                hljs.highlightElement(processedCodeElement);
+            } catch (error) {
+                console.error('Terser error:', error);
+                document.getElementById('processedCode').textContent = 'Error processing code: ' + error.message;
+            }
         }
-    }
+
 
     processCode();
 
@@ -278,6 +272,7 @@ function makeHTML(result) {
     }
 
   </script>
+
 </body>
 </html>`;
 }
@@ -468,4 +463,3 @@ function start_server() {
     },
   });
 }
-
