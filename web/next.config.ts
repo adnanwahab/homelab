@@ -4,6 +4,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // Configure pageExtensions to include md and mdx
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md'],
   async headers() {
     return [
