@@ -41,3 +41,9 @@ https://observablehq.com/d/ad994d0f29ba1ba0
 https://developer.1password.com/docs/cli/scripts
 https://www.brendangregg.com/heatmaps.html
 Pixel Streaming + Server Side Deno + Three.js_WebGPU + 50 used GPUs = mmo pixar
+https://x.com/datashader
+https://flowingdata.com/page/2/
+https://snap.stanford.edu/data/
+https://explorabl.es/all/
+NeurIPS 2025 - sapolsky + seung lab + daniel dennet + dynamicland.org + 
+1. waymo open, GDELT, GAIA(astronomy), Connectome for NeurIPS 2025
