@@ -63,9 +63,9 @@ export default function WebGPUCube() {
 
     // Cleanup on unmount
     return () => {
-      // if (renderer) {
-      //   renderer.dispose();
-      // }
+    //   if (renderer) {
+    //     renderer.dispose();
+    //   }
       if (containerRef.current && renderer?.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
