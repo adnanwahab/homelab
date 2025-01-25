@@ -49,6 +49,12 @@ https://observablehq.com/embed/@roboticsuniversity/alan_how?cells=change_in_grou
 #   https://github.com/matthiasn/talk-transcripts/blob/master/Kay_Alan/NonIncrementalFuture.md
 
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_gXiVOmaVSo?si=9U9QZOYoKQN-9Zcn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+#Dynamicland Bookshelf summaries
+
 dynamicland_book_shelf = [
     "https://bookshop.org/book/9781477325766",
     "https://bookshop.org/book/9780521292429",
