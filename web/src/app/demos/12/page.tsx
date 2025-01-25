@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three/webgpu";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+//import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { color, cos, float, mix, range, sin, time, uniform, uv, vec3, vec4, PI2 } from 'three/tsl';
 
 export default function WebGPUGalaxy() {
@@ -36,10 +36,10 @@ export default function WebGPUGalaxy() {
       camera.position.set(4, 2, 5);
 
       // Controls
-      controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.minDistance = 0.1;
-      controls.maxDistance = 50;
+      //controls = new OrbitControls(camera, renderer.domElement);
+      // controls.enableDamping = true;
+      // controls.minDistance = 0.1;
+      // controls.maxDistance = 50;
 
       // Galaxy material
       const material = new THREE.SpriteNodeMaterial({
@@ -91,9 +91,9 @@ export default function WebGPUGalaxy() {
       if (containerRef.current && renderer?.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
-      if (controls) {
-        controls.dispose();
-      }
+      // if (controls) {
+      //   controls.dispose();
+      // }
     };
   }, []);
 
