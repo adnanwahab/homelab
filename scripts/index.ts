@@ -10,13 +10,13 @@ import { createClient } from "@1password/sdk";
 import OpenAI from "openai";
 
 async function fetchOpenAIApiKey() {
-    const openai_api_key =  "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"
+    const openai_api_key =
+        "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";
     return openai_api_key;
 }
 
 const openai_api_key = await fetchOpenAIApiKey();
 const client = new OpenAI({ apiKey: openai_api_key });
-
 
 const WATCH_DIR = "/home/adnan/Desktop/";
 const username = os.userInfo().username;
@@ -29,7 +29,7 @@ const connectedClients = new Set<ReadableStreamDefaultController<any>>();
 // Function to solve LeetCode problem from image
 async function solve_leet_code_img(img_path: string) {
     const base64EncodedImage = fs.readFileSync(img_path, "base64");
-    console.log(base64EncodedImage);
+    //console.log(base64EncodedImage);
     const response = await client.chat.completions.create({
         model: "gpt-4o",
         messages: [
@@ -52,27 +52,28 @@ async function solve_leet_code_img(img_path: string) {
         max_tokens: 2024,
     });
     const result = response.choices[0].message.content || "";
-    return result;
+    console.log('40, solution')
+    //return result;
 
-    // const response_two = await client.chat.completions.create({
-    //     model: "o1-preview",
-    //     messages: [
-    //         {
-    //             role: "user",
-    //             content: [
-    //                 {
-    //                     type: "text",
-    //                     text: "Double check and improve this code and add some simple asserts to prove it is good",
-    //                 },
-    //                 {
-    //                     type: "text",
-    //                     text: result,
-    //                 },
-    //             ],
-    //         },
-    //     ],
-    // });
-    // return response_two.choices[0].message.content || '';
+    const response_two = await client.chat.completions.create({
+        model: "o1-preview",
+        messages: [
+            {
+                role: "user",
+                content: [
+                    {
+                        type: "text",
+                        text: "Double check and improve this code and add some simple asserts to prove it is good",
+                    },
+                    {
+                        type: "text",
+                        text: result,
+                    },
+                ],
+            },
+        ],
+    });
+    return response_two.choices[0].message.content || "";
 }
 
 // Function to generate HTML content
@@ -85,7 +86,7 @@ function makeHTML(result: string): string {
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>LeetCode Solution</title>
+    <title>Eggnog Transformer</title>
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css" />
@@ -103,10 +104,10 @@ function makeHTML(result: string): string {
 <body>
     <h1>LeetCode Solution - ${new Date().toLocaleString()}</h1>
     <img src="/image" width="800" height="450" alt="Problem Image" />
-    
+
     <h2>Original Solution</h2>
     <pre><code id="originalCode" class="language-javascript"></code></pre>
-    
+
     <h2>Processed Solution (comments removed)</h2>
     <pre><code id="processedCode" class="language-javascript"></code></pre>
 
@@ -116,7 +117,7 @@ function makeHTML(result: string): string {
         eventSource.onmessage = (event) => {
             if (event.data === 'refresh') window.location.reload();
         };
-        
+
         // Handle the code
         const codeWithComments = ${safeResult};
         document.getElementById('originalCode').textContent = codeWithComments;
@@ -134,6 +135,8 @@ function makeHTML(result: string): string {
         }).catch(error => {
             document.getElementById('processedCode').textContent = '// Error: ' + error.message;
         });
+
+        
     </script>
 </body>
 </html>`;
@@ -150,7 +153,6 @@ function notifyClients() {
         }
     }
 }
-
 
 // Start the server
 function start_server() {
@@ -264,66 +266,68 @@ watch(WATCH_DIR, async (eventType, filename) => {
 start_server();
 
 function start_server() {
-  serve({
-    port: PORT,
-    idleTimeout: 255,
-    async fetch(req, server) {
-      const url = new URL(req.url);
-      const pathname = url.pathname;
-      console.log(pathname);
+    serve({
+        port: PORT,
+        idleTimeout: 255,
+        async fetch(req, server) {
+            const url = new URL(req.url);
+            const pathname = url.pathname;
+            console.log(pathname);
 
-      // SSE endpoint for refreshing
-      if (pathname === "/events") {
-        let controller;
-        const stream = new ReadableStream({
-          start(c) {
-            controller = c;
-            const encoder = new TextEncoder();
-            // Announce the connection
-            controller.enqueue(encoder.encode("data: connected\n\n"));
-          },
-          cancel() {
-            connectedClients.delete(controller);
-          },
-        });
-        connectedClients.add(controller);
-        return new Response(stream, {
-          headers: {
-            "Content-Type": "text/event-stream",
-            "Cache-Control": "no-cache",
-            Connection: "keep-alive",
-          },
-        });
-      }
+            // SSE endpoint for refreshing
+            if (pathname === "/events") {
+                let controller;
+                const stream = new ReadableStream({
+                    start(c) {
+                        controller = c;
+                        const encoder = new TextEncoder();
+                        // Announce the connection
+                        controller.enqueue(
+                            encoder.encode("data: connected\n\n"),
+                        );
+                    },
+                    cancel() {
+                        connectedClients.delete(controller);
+                    },
+                });
+                connectedClients.add(controller);
+                return new Response(stream, {
+                    headers: {
+                        "Content-Type": "text/event-stream",
+                        "Cache-Control": "no-cache",
+                        Connection: "keep-alive",
+                    },
+                });
+            }
 
-      // Endpoint for receiving an image
-      if (pathname === "/receive-image") {
-        const body = await req.blob();
-        const arrayBuffer = await body.arrayBuffer();
-        fs.writeFileSync(imagePath, Buffer.from(arrayBuffer));
-        notifyClients();
-        return new Response("Image received");
-      }
+            // Endpoint for receiving an image
+            if (pathname === "/receive-image") {
+                const body = await req.blob();
+                const arrayBuffer = await body.arrayBuffer();
+                fs.writeFileSync(imagePath, Buffer.from(arrayBuffer));
+                notifyClients();
+                return new Response("Image received");
+            }
 
-      // Endpoint for serving the uploaded image
-      if (pathname === "/image") {
-        try {
-          const imageData = fs.readFileSync(imagePath);
-          return new Response(imageData, {
-            headers: { "Content-Type": "image/png" },
-          });
-        } catch (error) {
-          return new Response("Image not found", { status: 404 });
-        }
-      }
+            // Endpoint for serving the uploaded image
+            if (pathname === "/image") {
+                try {
+                    const imageData = fs.readFileSync(imagePath);
+                    return new Response(imageData, {
+                        headers: { "Content-Type": "image/png" },
+                    });
+                } catch (error) {
+                    return new Response("Image not found", { status: 404 });
+                }
+            }
 
-      // Default route: Solve the LeetCode problem from the image, then show HTML
-      const result = await solve_leet_code_img(imagePath);
-      return new Response(makeHTML(result), {
-        headers: { "Content-Type": "text/html" },
-      });
-    },
-  });
+            // Default route: Solve the LeetCode problem from the image, then show HTML
+            const result = await solve_leet_code_img(imagePath);
+            return new Response(makeHTML(result), {
+                headers: { "Content-Type": "text/html" },
+            });
+        },
+    });
 }
 
 console.log("Server started on port 8080");
