@@ -10,7 +10,7 @@ import { createClient } from "@1password/sdk";
 import OpenAI from "openai";
 
 async function fetchOpenAIApiKey() {
-    const openai_api_key = process.env.OPENAI_API_KEY;
+    const openai_api_key =  "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"
     return openai_api_key;
 }
 
@@ -82,197 +82,59 @@ function makeHTML(result: string): string {
 
     return `
 <!DOCTYPE html>
-<html>
-<head>
-
-  <meta charset="utf-8" />
-  <title>scripts/index.ts</title>
-
-  <!-- Highlight.js Core & Default Theme -->
-
-const connectedClients = new Set();
-
-async function solve_leet_code_img(img_path) {
-  const base64EncodedImage = fs.readFileSync(img_path, "base64");
-  const msg = await client.messages.create({
-    model: "claude-3-5-sonnet-20241022",
-    max_tokens: 2024,
-    messages: [
-      {
-        role: "user",
-        content: [
-          {
-            type: "text",
-            text: "Describe the simplest solution to the problem in modern JavaScript 2025",
-          },
-          {
-            type: "image",
-            source: {
-              type: "base64",
-              media_type: "image/png",
-              data: base64EncodedImage,
-            },
-          },
-        ],
-      },
-    ],
-  });
-
-  // Return the text we want to display on our HTML page
-  return msg.content[0].text;
-}
-
-/**
- * Creates an HTML page that:
- *  - Shows the image
- *  - Loads Terser and Highlight.js from CDNs
- *  - Displays two code blocks: Original and "comments-removed"
- *  - Uses SSE to refresh if needed
- */
-function makeHTML(result) {
-  return `
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Terser & Highlight.js Demo</title>
+    <meta charset="utf-8" />
+    <title>LeetCode Solution</title>
 
-  <!-- Highlight.js Default Theme -->
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Terser -->
+    <script src="https://unpkg.com/terser/dist/bundle.min.js"></script>
 
-  <!-- Terser from unpkg -->
-  <script src="https://unpkg.com/terser/dist/bundle.min.js"></script>
-
-  <style>
-    body {
-      margin: 20px;
-      font-family: sans-serif;
-    }
-    pre {
-      border: 1px solid #ddd;
-      background: #f8f8f8;
-      padding: 10px;
-      overflow-x: auto;
-    }
-    h2 {
-
-      margin-top: 2em;
-    }
-  </style>
-
+    <style>
+        body { margin: 20px; font-family: sans-serif; }
+        pre { border: 1px solid #ddd; background: #f8f8f8; padding: 10px; overflow-x: auto; }
+        h2 { margin-top: 1.2em; margin-bottom: 0.5em; }
+    </style>
 </head>
 <body>
-    <h1>hello earth ${new Date().toLocaleString()}</h1>
-    <img src="/image" width="900" height="500" />
-    <h2>Original Code (with comments)</h2>
+    <h1>LeetCode Solution - ${new Date().toLocaleString()}</h1>
+    <img src="/image" width="800" height="450" alt="Problem Image" />
+    
+    <h2>Original Solution</h2>
     <pre><code id="originalCode" class="language-javascript"></code></pre>
-    <h2>Processed Code (comments removed)</h2>
+    
+    <h2>Processed Solution (comments removed)</h2>
     <pre><code id="processedCode" class="language-javascript"></code></pre>
 
     <script>
-    (function() {
+        // Set up SSE
+        const eventSource = new EventSource('/events');
+        eventSource.onmessage = (event) => {
+            if (event.data === 'refresh') window.location.reload();
+        };
+        
+        // Handle the code
         const codeWithComments = ${safeResult};
-        const originalCodeElement = document.getElementById('originalCode');
-        originalCodeElement.textContent = codeWithComments;
+        document.getElementById('originalCode').textContent = codeWithComments;
 
-        async function processCode() {
-            try {
-                const wrappedCode = '(function() {\\n' + codeWithComments + '\\n})()';
-
-                const result = await Terser.minify(wrappedCode, {
-                    mangle: false,
-                    compress: false,
-                    format: {
-                        comments: false,
-                        beautify: true
-                    }
-                });
-
-                const processedCodeElement = document.getElementById('processedCode');
-                const cleanCode = result.code
-                    .replace(/^\\(function\\(\\)\\{/, '')
-                    .replace(/\\}\\)\\(\\);$/, '');
-                processedCodeElement.textContent = cleanCode;
-
-                hljs.highlightElement(originalCodeElement);
-                hljs.highlightElement(processedCodeElement);
-            } catch (error) {
-                console.error('Terser error:', error);
-                document.getElementById('processedCode').textContent = 'Error processing code: ' + error.message;
+        Terser.minify(codeWithComments, {
+            mangle: false,
+            compress: false,
+            format: {
+                comments: false,
+                beautify: true
             }
-        }
-
-
-    processCode();
-
-      margin-top: 1.2em;
-      margin-bottom: 0.5em;
-    }
-  </style>
-
-  <script>
-    // Set up SSE to refresh the page if "/events" says "refresh"
-    const eventSource = new EventSource('/events');
-    eventSource.onmessage = (event) => {
-      if (event.data === 'refresh') {
-        window.location.reload();
-      }
-    };
-    eventSource.onerror = (error) => {
-      console.error('EventSource error:', error);
-      window.location.reload();
-    };
-  </script>
-</head>
-<body>
-  <h1>Hello World ${Date.now()}</h1>
-  <img src="/image" width="800" height="450" alt="Received Image" />
-
-  <h2>Original Code/Text (as returned by Anthropic)</h2>
-  <pre><code id="originalCode" class="language-javascript"></code></pre>
-
-  <h2>Processed Code (comments removed)</h2>
-  <pre><code id="processedCode" class="language-javascript"></code></pre>
-
-  <script>
-    // The "result" from Anthropic - assume it's some JS code with comments
-    const codeWithComments = \`${escapeBackticks(result)}\`;
-
-    // We'll show the original code in #originalCode
-    document.getElementById('originalCode').textContent = codeWithComments;
-
-    // Use Terser to remove comments, but keep it "beautified"
-    Terser.minify(codeWithComments, {
-      mangle: false,
-      compress: false,
-      format: {
-        comments: false,
-        beautify: true,
-      },
-    }).then(minified => {
-      // If successful, show the stripped code in #processedCode
-      document.getElementById('processedCode').textContent =
-        minified.code || "// Terser produced no code!";
-
-      // Apply syntax highlighting
-      hljs.highlightElement(document.getElementById('originalCode'));
-      hljs.highlightElement(document.getElementById('processedCode'));
-    }).catch(err => {
-      // If Terser fails, just show an error
-      document.getElementById('processedCode').textContent =
-        "// Error stripping comments: " + err.toString();
-    });
-
-    // Helper to handle backticks in the "result" string
-    function escapeBackticks(str) {
-      return str.replace(/`/g, '\\\`');
-    }
-
-  </script>
-
+        }).then(result => {
+            document.getElementById('processedCode').textContent = result.code || '// No code produced';
+            hljs.highlightAll();
+        }).catch(error => {
+            document.getElementById('processedCode').textContent = '// Error: ' + error.message;
+        });
+    </script>
 </body>
 </html>`;
 }
@@ -463,3 +325,5 @@ function start_server() {
     },
   });
 }
+
+console.log("Server started on port 8080");
