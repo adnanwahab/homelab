@@ -58,127 +58,127 @@ export default {
     },
 
 
-    // {
-    //     name: "Embedded Systems",
-    //     pages: [
-    //         { name: "zig", path: "/embedded/zig" },
-    //         {
-    //             name: "hardware in the loop simulation",
-    //             path: "/embedded/hardware-in-the-loop-simulation",
-    //         },
-    //     ],
-    // },
+    {
+        name: "Embedded Systems",
+        pages: [
+            { name: "zig", path: "/embedded/zig" },
+            {
+                name: "hardware in the loop simulation",
+                path: "/embedded/hardware-in-the-loop-simulation",
+            },
+        ],
+    },
 
-    // {
-    //   name: "Computer Vision",
-    //   pages: [
-    //     {
-    //       name: "Object Detection with yolo",
-    //       path: "/perception/object-detection",
-    //     },
-    //     {
-    //       name: "Scene Understanding",
-    //       path: "/perception/scene-understanding",
-    //     },
-    //     {
-    //       name: "Semantic Segmentation with segment-anything-2",
-    //       path: "/perception/semantic-segmentation",
-    //     },
-    //     {
-    //       name: "Sensor Calibration",
-    //       path: "/perception/sensor-calibration",
-    //     },
-    //   ],
-    // },
-    // {
-    //     name: "Devops",
-    //     pages: [
-    //         { name: "terraform", path: "/devops/terraform" },
-    //         { name: "docker", path: "/devops/docker" },
-    //     ],
-    // },
+    {
+      name: "Computer Vision",
+      pages: [
+        {
+          name: "Object Detection with yolo",
+          path: "/perception/object-detection",
+        },
+        {
+          name: "Scene Understanding",
+          path: "/perception/scene-understanding",
+        },
+        {
+          name: "Semantic Segmentation with segment-anything-2",
+          path: "/perception/semantic-segmentation",
+        },
+        {
+          name: "Sensor Calibration",
+          path: "/perception/sensor-calibration",
+        },
+      ],
+    },
+    {
+        name: "Devops",
+        pages: [
+            { name: "terraform", path: "/devops/terraform" },
+            { name: "docker", path: "/devops/docker" },
+        ],
+    },
 
-    // {
-    //     name: "Robotics",
-    //     pages: [
-    //         { name: "Motion Planning", path: "/robotics/motion-planning" },
-    //     ],
-    // },
+    {
+        name: "Robotics",
+        pages: [
+            { name: "Motion Planning", path: "/robotics/motion-planning" },
+        ],
+    },
 
-    // {
-    //     name: "Hardware Engineering",
-    //     pages: [
-    //         {
-    //             name: "Soldering, PCB, and 3D Printing",
-    //             path: "/hardware/soldering-pcb-3d-printing",
-    //         },
-    //     ],
-    // },
+    {
+        name: "Hardware Engineering",
+        pages: [
+            {
+                name: "Soldering, PCB, and 3D Printing",
+                path: "/hardware/soldering-pcb-3d-printing",
+            },
+        ],
+    },
 
-    // {
-    //   name: "Data Visualization",
-    //   pages: [
-    //     {
-    //       name: "capacity planning",
-    //       path: "/data-vis/capacity-planning",
-    //     },
-    //     {
-    //       name: "Anomaly Detection",
-    //       path: "/data-vis/anomaly-detection",
-    //     },
-    //     { name: "Systems Design", path: "/data-vis/systems-design" },
-    //     {
-    //       name: "Crisis Diagnosis",
-    //       path: "/data-vis/crisis-diagnosis",
-    //     },
-    //   ],
-    // },
+    {
+      name: "Data Visualization",
+      pages: [
+        {
+          name: "capacity planning",
+          path: "/data-vis/capacity-planning",
+        },
+        {
+          name: "Anomaly Detection",
+          path: "/data-vis/anomaly-detection",
+        },
+        { name: "Systems Design", path: "/data-vis/systems-design" },
+        {
+          name: "Crisis Diagnosis",
+          path: "/data-vis/crisis-diagnosis",
+        },
+      ],
+    },
 
-    // {
-    //     name: "Data Analysis",
-    //     pages: [{ name: "olap", path: "/data-analysis/olap" }],
-    // },
+    {
+        name: "Data Analysis",
+        pages: [{ name: "olap", path: "/data-analysis/olap" }],
+    },
 
-    // {
-    //     name: "Networking and Connectivity",
-    //     pages: [
-    //         {
-    //             name: "Dashboard",
-    //             path: "/connectivity/tailscale-caddy-dns-porkbun",
-    //         },
-    //         { name: "Report", path: "/connectivity/livekit-webrtc" },
-    //     ],
-    // },
-    // {
-    //     name: "LLMs theory and practice",
-    //     pages: [
-    //         {
-    //             name: "ollama-claude-o1-pro",
-    //             path: "/llms/ollama-claude-o1-pro",
-    //         },
-    //     ],
-    // },
+    {
+        name: "Networking and Connectivity",
+        pages: [
+            {
+                name: "Dashboard",
+                path: "/connectivity/tailscale-caddy-dns-porkbun",
+            },
+            { name: "Report", path: "/connectivity/livekit-webrtc" },
+        ],
+    },
+    {
+        name: "LLMs theory and practice",
+        pages: [
+            {
+                name: "ollama-claude-o1-pro",
+                path: "/llms/ollama-claude-o1-pro",
+            },
+        ],
+    },
 
-    // {
-    //     name: "Python Fundamentals",
-    //     pages: [
-    //         {
-    //             name: "uv jupyter testing",
-    //             path: "/python/uv_jupyter_testing",
-    //         },
-    //     ],
-    // },
+    {
+        name: "Python Fundamentals",
+        pages: [
+            {
+                name: "uv jupyter testing",
+                path: "/python/uv_jupyter_testing",
+            },
+        ],
+    },
 
-    // {
-    //     name: "NeuroScience and Biotech",
-    //     pages: [
-    //         { name: "Free will", path: "/neuroscience/free-will" },
-    //         {
-    //             name: "Single Cell Analysis",
-    //             path: "/neuroscience/single-cell-analysis",
-    //         },
-    //     ],
-    // },
+    {
+        name: "NeuroScience and Biotech",
+        pages: [
+            { name: "Free will", path: "/neuroscience/free-will" },
+            {
+                name: "Single Cell Analysis",
+                path: "/neuroscience/single-cell-analysis",
+            },
+        ],
+    },
 
     // {
     //     name: "Dynamicland",
@@ -206,27 +206,27 @@ export default {
     //         { name: "Report", path: "/simulation/reinforcement-learning" },
     //     ],
     // },
-    // {
-    //     name: "Computer Vision",
-    //     pages: [
-    //         {
-    //             name: "Object Detection with yolo",
-    //             path: "/perception/object-detection",
-    //         },
-    //         {
-    //             name: "Scene Understanding",
-    //             path: "/perception/scene-understanding",
-    //         },
-    //         {
-    //             name: "Semantic Segmentation with segment-anything-2",
-    //             path: "/perception/semantic-segmentation",
-    //         },
-    //         {
-    //             name: "Sensor Calibration",
-    //             path: "/perception/sensor-calibration",
-    //         },
-    //     ],
-    // },
+    {
+        name: "Computer Vision",
+        pages: [
+            {
+                name: "Object Detection with yolo",
+                path: "/perception/object-detection",
+            },
+            {
+                name: "Scene Understanding",
+                path: "/perception/scene-understanding",
+            },
+            {
+                name: "Semantic Segmentation with segment-anything-2",
+                path: "/perception/semantic-segmentation",
+            },
+            {
+                name: "Sensor Calibration",
+                path: "/perception/sensor-calibration",
+            },
+        ],
+    },
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:

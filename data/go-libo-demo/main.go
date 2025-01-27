@@ -8,6 +8,9 @@ import (
 	"github.com/vcaesar/imgo"
 )
 
+var like_x, like_y = 1700, 485
+var then_like_x, then_like_y = 1605, 492
+
 func main() {
 	sx, sy := robotgo.GetScreenSize()
 
@@ -17,10 +20,19 @@ func main() {
 
 		bit := robotgo.CaptureScreen(0, 0, sx, sy)
 		img := robotgo.ToImage(bit)
-		imgo.Save(fmt.Sprintf("/Users/shelbernstein/Desktop/screenshot.png"), img)
+		imgo.Save(fmt.Sprintf("/Users/shelbernstein/Pictures/flirt-flow/%s.png", timestamp), img)
 
 		robotgo.FreeBitmap(bit)
+
+		robotgo.Move(like_x, like_y)
+		robotgo.Click()
 		time.Sleep(time.Second)
+		robotgo.Move(then_like_x, then_like_y)
+		robotgo.Click()
+		time.Sleep(time.Second)
+		x, y := robotgo.Location()
+
+		fmt.Printf("Mouse position: %v, %v\n", x, y)
 	}
 }
 
