@@ -126,3 +126,8 @@ files.cooperative-robotics.com {
 
 #8000 = python fastapi - cgi-tools.dev
 #8080 = bun cooperative-robotics.com
+
+
+happydream.dev {
+	reverse_proxy localhost:3000
+}
