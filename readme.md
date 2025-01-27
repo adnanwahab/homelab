@@ -2,11 +2,9 @@
 
 ### simulation for making robotic surgery more cost-effective and more accurate by 2026
 
-
 ## Goal - to make a robotic nurse/doctor that can live in an appartment building - costs $1000 - basic first aid, emergency response and diagnostics by 2026
 
 ### Dynamicland.org's principles will increase shared reasoning and scientific thinking by at least 20% over next 5 years
-
 
 # documentation - https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 
@@ -21,10 +19,7 @@
 
 https://dynamicland.org/2024/The_communal_science_lab.pdf
 https://spectrum.ieee.org/xerox-parc
-
-1. waymo open, GDELT, GAIA(astronomy), Connectome for NeurIPS 2025
 1. Waymo Open - robotics
 2. GDELT - Collecctive Consciousness
 3. Connnectome = Neuro Science
 4. Gaia = Astronomy
-5. Enron emails
