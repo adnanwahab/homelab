@@ -16,9 +16,9 @@
 2. Capacity planning - extrapolate non-linear trends
 3. Crisis diagnosis - see interactions between services
 4. System design - don’t guess; decide empirically
-
 https://dynamicland.org/2024/The_communal_science_lab.pdf
 https://spectrum.ieee.org/xerox-parc
+NeurIPS 2025 - sapolsky + seung lab + daniel dennet + dynamicland.org +
 1. Waymo Open - robotics
 2. GDELT - Collecctive Consciousness
 3. Connnectome = Neuro Science
