@@ -102,6 +102,9 @@ cooperative-robotics.com {
 	reverse_proxy localhost:8080
 }
 
+
+
+
 jupyter.cooperative-robotics.com {
 	reverse_proxy localhost:8888
 

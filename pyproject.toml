@@ -15,7 +15,5 @@ dependencies = [
     "browser-use>=0.1.27",
 ]
 
-# Expose an entry point for your FastAPI server
 [project.scripts]
-server =  "uv run uvicorn main:home --reload"
-
+server = "uvicorn main:home --reload"
