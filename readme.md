@@ -21,29 +21,10 @@
 
 https://dynamicland.org/2024/The_communal_science_lab.pdf
 https://spectrum.ieee.org/xerox-parc
-#fastapi
-8080 = cooperative-robotics.com - fastapi
-#8000 = bun- cgi-tools.dev - scripts/index.ts 
-https://jupyter.cgi-tools.dev/lab? - 8888
-https://github.com/observablehq/framework-runtime - https://observablehq.com/framework/
-https://once.com/writebook - https://www.gitbook.com/
 
-https://github.com/rreusser/regl-gpu-lines
-https://seunglab.org/#research
-https://adsb.exposed/?zoom=3&lat=34.2345&lng=-89.5605&query=e18e8c8d6a1db73c63953798ad8919a9
-https://clickhouse.com/docs/en/getting-started/example-datasets/github-events
-https://clickhouse.com/docs/en/getting-started/example-datasets/youtube-dislikes
-https://ghe.clickhouse.tech/
-https://crypto.clickhouse.com/?query=U0VMRUNUIGRheSwgc3RhdHVzLCB1bmlxQ29tYmluZWRNZXJnZSgxNCkodHhuX2NvdW50KSBBUyB0eG5fY291bnQKRlJPTSBzb2xhbmEudHhuX2NvdW50X2J5X3R5cGVfYnlfZGF5CkdST1VQIEJZIGRheSwgc3RhdHVzCk9SREVSIEJZIGRheSBERVNDLCBzdGF0dXM&
-https://compute.toys/view/168
-https://compute.toys/view/14
-https://observablehq.com/d/ad994d0f29ba1ba0
-https://developer.1password.com/docs/cli/scripts
-https://www.brendangregg.com/heatmaps.html
-Pixel Streaming + Server Side Deno + Three.js_WebGPU + 50 used GPUs = mmo pixar
-https://x.com/datashader
-https://flowingdata.com/page/2/
-https://snap.stanford.edu/data/
-https://explorabl.es/all/
-NeurIPS 2025 - sapolsky + seung lab + daniel dennet + dynamicland.org + 
 1. waymo open, GDELT, GAIA(astronomy), Connectome for NeurIPS 2025
+1. Waymo Open - robotics
+2. GDELT - Collecctive Consciousness
+3. Connnectome = Neuro Science
+4. Gaia = Astronomy
+5. Enron emails
