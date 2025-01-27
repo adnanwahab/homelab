@@ -10,8 +10,7 @@ import { createClient } from "@1password/sdk";
 import OpenAI from "openai";
 
 async function fetchOpenAIApiKey() {
-    const openai_api_key =
-        "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";
+    const openai_api_key = process.env.OPENAI_API_KEY;
     return openai_api_key;
 }
 

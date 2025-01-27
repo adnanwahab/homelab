@@ -8,7 +8,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@1password/sdk";
 
 async function fetchAnthropicApiKey() {
-    const anthropic_api_key = `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`
+    const anthropic_api_key = ``
     //     createClient().get("ANTHROPIC_API_KEY") ||
     //     process.env.ANTHROPIC_API_KEY;
     // console.log(anthropic_api_key);

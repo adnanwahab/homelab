@@ -79,6 +79,15 @@ install_1password() {
 # adnan@gpu
 # adnan@ll-series
 
+install_editor() {
+
+    git clone https://github.com/doomemacs/doomemacs ~/.emacs.d
+    ~/.emacs.d/bin/doom install
+    sudo apt update && sudo apt install emacs
+    git clone https://github.com/adnanwahab/emacs_config.git ~/.emacs.d
+    ~/.emacs.d/bin/doom sync
+    ln -s ~/.emacs.d/bin/doom /usr/local/bin/doom
+}
 
 
 install_all_deps() {
