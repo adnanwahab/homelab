@@ -1,18 +1,12 @@
 # Homelab - 2025
 
-# CGI-tools.dev - simulation-as-a-service (unreal, unity, blender, three.js to suppprt reinforcement learning for improving robustness of all robots across the industry + increased shared reasoning)
-
-### simulation for making robotic surgery more cost-effective and more accurate by 2026
-
-## Goal - to make a robotic nurse/doctor that can live in an appartment building - costs $1000 - basic first aid, emergency response and diagnostics by 2026
+# CGI-tools.dev
 
 ### Dynamicland.org's principles will increase shared reasoning and scientific thinking by at least 20% over next 5 years
 
 # documentation - https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 
-# for Dynamicland.org - scientific art creation - collaborative thinking space
-
-# Dynamicland will improve scientifc thinking by 20% in the next 5 years
+# fcollaborative thinking space
 
 1. Anomaly detection - observe abnormal activity
 2. Capacity planning - extrapolate non-linear trends
@@ -21,12 +15,9 @@
 https://dynamicland.org/2024/The_communal_science_lab.pdf
 https://spectrum.ieee.org/xerox-parc
 NeurIPS 2025 - sapolsky + seung lab + daniel dennet + dynamicland.org +
-1. Waymo Open - robotics
-2. GDELT - Collecctive Consciousness
-3. Connnectome = Neuro Science
-4. Gaia = Astronomy
-
-
+1. Waymo Open
+2. GDELT
+3. Connnectome
 https://threejs.org/examples/?q=webgpu%20rtt#webgpu_rtt
 https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7/examples/webgpu_backdrop_area.html#L82
 https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7/examples/webgpu_compute_texture.html#L91
