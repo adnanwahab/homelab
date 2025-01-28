@@ -1,4 +1,8 @@
 "use client"; // If you're using the new app router in Next.js 13+, ensure client rendering
+export default function FSKPage() {
+  return <div>Hello</div>;
+}
+
 import React, { useEffect, useRef, useState, useCallback } from "react";
 
 // Comment out Google Maps related imports
@@ -27,7 +31,8 @@ import { material } from "./Material.js";
 import { twixt } from "./deps/twixt.js";
 import { material as backdropMaterial } from "./BackdropMaterial.js";
 
-export default function FSKPage() {
+
+function FSKPage() {
   // Add state for material
   const [material, setMaterial] = useState(null);
 
