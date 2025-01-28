@@ -1,3 +1,4 @@
+'use client'
 import * as d3 from 'd3'
 import Link from 'next/link'
 
@@ -36,7 +37,7 @@ for (let i = processedFiles.length + 1; i < 9; i++) {
   });
 }
 
-//d3.shuffle(processedFiles)
+d3.shuffle(processedFiles)
 
 //processedFiles.reverse()
 

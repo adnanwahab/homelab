@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.mdx", "**/*.md", "app/map/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.mdx", "**/*.md", "app/map/page.jsx", "app/demos/11/ShaderToyNode.js"],
   "exclude": ["node_modules"]
 }
