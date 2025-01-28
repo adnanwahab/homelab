@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "6be686728e80f6c6": "https://api.observablehq.com/d/6be686728e80f6c6.tgz?v=3",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@livekit/components-react": "^2.6.10",
@@ -45,12 +46,12 @@
     "three": "^0.171.0"
   },
   "devDependencies": {
-    "babel-loader": "^9.2.1",
     "@types/d3": "^7.4.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/three": "^0.171.0",
+    "babel-loader": "^9.2.1",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
     "postcss": "^8",
