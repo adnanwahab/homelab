@@ -30,15 +30,16 @@ export async function POST(request: Request) {
 
 
 const domains = [
-  "human-advancement-institute.org",
-  "llama-tools.com",
-  "hashirama.blog",
-  "hashirama.art",
-  "roboticsuniversity.dev",
-  "leafstudio.design",
-  "taiyongrobotics.com",
-  "michael-pollan.app",
-  "hashirama.bio",
+  // "human-advancement-institute.org",
+  // "llama-tools.com",
+  // "hashirama.blog",
+  // "hashirama.art",
+  // "roboticsuniversity.dev",
+  // "leafstudio.design",
+  // "taiyongrobotics.com",
+  // "michael-pollan.app",
+  // "hashirama.bio",
+  "learn-math.fyi"
 ]
 
 
