@@ -58,7 +58,7 @@ import * as THREE from 'three/webgpu';
 				document.body.appendChild( stats.dom );
 
 				new RGBELoader()
-					.setPath( 'textures/equirectangular/' )
+					.setPath( '/levels/' )
 					.load( 'royal_esplanade_1k.hdr', function ( texture ) {
 
 						texture.mapping = THREE.EquirectangularReflectionMapping;
@@ -70,7 +70,7 @@ import * as THREE from 'three/webgpu';
 						const dracoLoader = new DRACOLoader();
 						dracoLoader.setDecoderPath( 'jsm/libs/draco/gltf/' );
 
-						const loader = new GLTFLoader().setPath( 'models/gltf/' );
+						const loader = new GLTFLoader().setPath( '/levels/' );
 						loader.setDRACOLoader( dracoLoader );
 
 						loader.load( 'dungeon_warkarma.glb', async function ( gltf ) {
