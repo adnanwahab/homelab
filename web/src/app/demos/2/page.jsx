@@ -32,7 +32,7 @@ import { twixt } from "./deps/twixt.js";
 import { material as backdropMaterial } from "./BackdropMaterial.js";
 
 
-function FSKPage() {
+function actualFSKPage() {
   // Add state for material
   const [material, setMaterial] = useState(null);
 
