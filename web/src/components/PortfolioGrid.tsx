@@ -39,8 +39,6 @@ for (let i = processedFiles.length + 1; i < 9; i++) {
 
 d3.shuffle(processedFiles)
 
-//processedFiles.reverse()
-
 export default function PortfolioGrid() {
   return (
     <div className="p-8 bg-[#1e2231]">
