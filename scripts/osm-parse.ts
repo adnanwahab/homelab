@@ -5,7 +5,6 @@ import Unbzip2 from "unbzip2-stream";
 import sax from "sax";
 
 // Path to your Planet.osm.bz2 file
-
 // Initialize the BZ2 decompressor
 const bz2Stream = fs.createReadStream(bz2FilePath).pipe(Unbzip2());
 

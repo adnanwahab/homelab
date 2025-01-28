@@ -1,50 +1,44 @@
-'use client';
-
-import Image from 'next/image';
-import Link from 'next/link';
-
-export default function RoboticsOdysseyPage() {
+export default function Home() {
   return (
-    <div className="dark">
-      <div className="text-gray-950 antialiased bg-slate-900">
-        <div className="overflow-hidden items-center min-h-screen">
-          <main className="flex flex-col items-center px-8">
-            {/* Hero Section */}
-            <div className="overflow-hidden bg-dark-blue text-light-blue">
-              <div className="mx-auto max-w-2xl lg:max-w-7xl">
-                <div className="max-w-4xl">
-                  <p className="text-xl font-semibold leading-7 text-teal-100">
-                    Robotics Odyssey <span className="text-gray-400 text-xs">Nov 1 - 5000 research papers converted to video games</span>
-                  </p>
-                  <h1 className="mt-2 text-pretty text-3xl font-semibold tracking-tight text-teal-100 shiny-text">
-                    Become a AI+Robotics <span className="rewriting-me">artist</span> for <span>$25</span>
-                  </h1>
-                  {/* ... rest of content ... */}
-                </div>
-              </div>
-            </div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[#0B0D18] px-4">
+      {/* Main container */}
+      <div className="max-w-md text-center text-white">
+        <h1 className="mb-4 text-3xl font-semibold md:text-4xl">
+          Become a <span className="rainbow-text">Robotics Engineer</span>.
+        </h1>
+        <p className="mb-8 text-gray-300">
+          We&apos;re building something special so you can learn how to connect
+          to your creation, build with your hands with english language to
+          explorable explanation generation.
+          <br />
+          <br />
+          Join the waitlist.
+        </p>
 
-            {/* Rest of sections */}
-            {/* ... */}
+        {/* Form */}
+        <form className="mb-8 flex flex-col items-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <input
+            type="email"
+            placeholder="messi@workon.co"
+            className="w-full flex-1 rounded bg-[#191D2D] px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400 sm:w-auto"
+          />
+          <button
+            type="submit"
+            className="rounded bg-green-500 px-6 py-2 font-semibold text-white transition-colors hover:bg-green-600"
+          >
+            Join the waitlist
+          </button>
+        </form>
 
-            {/* Footer */}
-            <footer aria-labelledby="footer-heading" className="bg-gray-900">
-              {/* ... footer content ... */}
-            </footer>
-          </main>
-        </div>
+        {/* Sign in text */}
+        <p className="text-gray-500">
+          The hippest beta testers can{' '}
+          <a href="#" className="text-green-400 hover:underline">
+            sign in
+          </a>{' '}
+          to their account.
+        </p>
       </div>
     </div>
-  );
+  )
 }
-
-// Add required styles to your global CSS file or a CSS module
-const styles = {
-  '.bg-dark-blue': {
-    backgroundColor: '#1a1a2e',
-  },
-  '.text-light-blue': {
-    color: '#e0e1dd',
-  },
-  // ... other styles ...
-};
