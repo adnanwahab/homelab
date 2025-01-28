@@ -1,32 +1,12 @@
-export default function () {
-  return <>hi</>
+import './seven.module.css'
+//https://observablehq.com/embed/6be686728e80f6c6?cells=canvas&banner=false
+
+//import MagicIframe from '../../components/Magiciframe'
+
+export default function Page() {
+  return  <div className="w-full h-screen">
+  <iframe src="https://observablehq.com/embed/6be686728e80f6c6?cell=*&banner=false" 
+  className="w-full h-screen" width="100%" height="100%"
+  ></iframe>
+  </div>
 }
-// 'use client'
-// import React, { useRef, useEffect } from 'react'
-// import { Runtime, Inspector } from '@observablehq/runtime'
-// //import notebook from '6be686728e80f6c6'
-// import define from 'https://api.observablehq.com/d/6be686728e80f6c6@402.js?v=4'
-
-// function Notebook() {
-//   const ref = useRef()
-
-//   useEffect(() => {
-//     const runtime = new Runtime()
-//     runtime.module(define, Inspector.into(ref.current))
-//     return () => runtime.dispose()
-//   }, [])
-
-//   return (
-//     <>
-//       <div ref={ref} />
-//       <p>
-//         Credit:{' '}
-//         <a href="https://observablehq.com/d/6be686728e80f6c6@402">
-//           canvas - wind map by roboticsuniversity
-//         </a>
-//       </p>
-//     </>
-//   )
-// }
-
-// export default Notebook
