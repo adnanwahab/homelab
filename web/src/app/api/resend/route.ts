@@ -37,12 +37,18 @@ export async function GET(request: Request) {
 
     // Get query parameters from URL
     const url = new URL(request.url);
-    const to = url.searchParams.get('to') || ["eggnog.wahab@gmail.com"]
     const subject = url.searchParams.get('subject') || "Test"
     const html = url.searchParams.get('html') || "<p>Hello World</p>"
 
+    // Use specific audience ID
+    const { data: audienceData, error: audienceError } = await resend.audiences.get("9034f78f-59a1-413c-8691-97ba687292bd");
+    
+    if (audienceError) {
+      return Response.json({ error: audienceError }, { status: 500, headers });
+    }
+
     // Validate required parameters
-    if (!to || !subject || !html) {
+    if (!subject || !html) {
       return Response.json(
         { error: 'Missing required parameters' },
         { status: 400, headers }
@@ -51,7 +57,7 @@ export async function GET(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'daily_reminder_2025@michael-pollan.app',
-      to,
+      audience: "9034f78f-59a1-413c-8691-97ba687292bd",
       subject,
       html,
     });
