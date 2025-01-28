@@ -25,3 +25,10 @@ NeurIPS 2025 - sapolsky + seung lab + daniel dennet + dynamicland.org +
 2. GDELT - Collecctive Consciousness
 3. Connnectome = Neuro Science
 4. Gaia = Astronomy
+
+
+https://threejs.org/examples/?q=webgpu%20rtt#webgpu_rtt
+https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7/examples/webgpu_backdrop_area.html#L82
+https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7/examples/webgpu_compute_texture.html#L91
+https://threejs.org/examples/?q=pmrem%20quirectangular#webgpu_pmrem_equirectangular
+https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7/examples/webgpu_materials.html#L85
