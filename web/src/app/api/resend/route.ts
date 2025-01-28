@@ -28,6 +28,20 @@ export async function POST(request: Request) {
 
 }
 
+
+const domains = [
+  "human-advancement-institute.org",
+  "llama-tools.com",
+  "hashirama.blog",
+  "hashirama.art",
+  "roboticsuniversity.dev",
+  "leafstudio.design",
+  "taiyongrobotics.com",
+  "michael-pollan.app",
+  "hashirama.bio",
+]
+
+
 export async function GET(request: Request) {
   try {
     // Handle OPTIONS request (preflight)
@@ -35,6 +49,7 @@ export async function GET(request: Request) {
       return new Response(null, { headers });
     }
 
+    const choice = Math.floor(Math.random() * domains.length);
     // Get query parameters from URL
     const url = new URL(request.url);
     const subject = url.searchParams.get('subject') || "Test"
@@ -56,7 +71,7 @@ export async function GET(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'daily_reminder_2025@michael-pollan.app',
+      from: `daily_reminder_forever@${domains[choice]}`,
       audience: "9034f78f-59a1-413c-8691-97ba687292bd",
       subject,
       html,
