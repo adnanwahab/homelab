@@ -34,7 +34,7 @@ class ShaderToyNode extends THREE.Node {
 
 					const { mainImage } = eval( jsCode )( TSL );
 
-					//this.mainImage = mainImage;
+					this.mainImage = mainImage;
 
 				}
 
@@ -55,13 +55,13 @@ class ShaderToyNode extends THREE.Node {
 
 				setup( builder ) {
 
-					// if ( this.mainImage === null ) {
+					if ( this.mainImage === null ) {
 
-					// 	throw new Error( 'ShaderToyNode: .parse() must be called first.' );
+						throw new Error( 'ShaderToyNode: .parse() must be called first.' );
 
-					// }
+					}
 
-					// return this.mainImage();
+					return this.mainImage();
 
 				}
 
