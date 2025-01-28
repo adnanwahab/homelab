@@ -20,10 +20,13 @@ import {
   Mesh,
   CanvasTexture,
   RepeatWrapping,
-  TorusKnotBufferGeometry,
+
   DirectionalLight,
-  IcosahedronBufferGeometry,
-} from "./third_party/three.module.js";
+
+} from "three";
+
+//import { IcosahedronBufferGeometry,   TorusKnotBufferGeometry } from "./third_party/three.module.js";
+
 import { OrbitControls } from "./third_party/OrbitControls.js";
 
 import { EquirectangularToCubemap } from "./EquirectangularToCubemap.js";
