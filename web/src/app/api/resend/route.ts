@@ -39,7 +39,7 @@ const domains = [
   // "taiyongrobotics.com",
   // "michael-pollan.app",
   // "hashirama.bio",
-  "learn-math.fyi"
+  //"learn-math.fyi"
 ]
 
 
