@@ -29,7 +29,7 @@ const processedFiles: FileItem[] = [
 ];
 
 
-for (let i = processedFiles.length + 1; i < 9; i++) {
+for (let i = processedFiles.length + 1; i < 33; i++) {
   processedFiles.push({
     title: `/demos/${i}`,
     size: '',
