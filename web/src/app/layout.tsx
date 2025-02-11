@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -7,7 +8,11 @@ import Script from 'next/script';
 
 
 
-//import { WebGPUProvider } from '@/context/WebGPUContext';
+//import { WebGPUProvider } from './context/WebGPUContext';
+
+
+
+import WebGPULayout from './WebGPULayout';
 
 
 const geistSans = Geist({
@@ -33,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      {/* <WebGPUProvider> */}
+      <WebGPULayout>
         {children}
         <Analytics />
         <Script id="microsoft-clarity">
@@ -46,7 +51,7 @@ export default function RootLayout({
           `}
         </Script>
         <SpeedInsights />
-        {/* </WebGPUProvider> */}
+        </WebGPULayout>
       </body>
     </html>
   )
