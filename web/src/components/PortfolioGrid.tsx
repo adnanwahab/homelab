@@ -46,7 +46,7 @@ for (let i = processedFiles.length + 1; i < 33; i++) {
 //   });
 // }
 
-//d3.shuffle(processedFiles)
+d3.shuffle(processedFiles)
 
 export default function PortfolioGrid() {
   return (
