@@ -28,9 +28,11 @@ export default function Home() {
           <a href="/blog" className="hover:text-[#8b98e8]">
             blog
           </a>
-          <a href="/tools" className="hover:text-[#8b98e8]">
+
+
+          {/* <a href="/tools" className="hover:text-[#8b98e8]">
             projects
-          </a>
+          </a> */}
           
 
           <a
@@ -53,6 +55,10 @@ export default function Home() {
             className="hover:text-[#8b98e8]"
           >
             linkedin
+          </a>
+
+          <a href="/books" className="hover:text-[#8b98e8]">
+            books
           </a>
   </div>
 
