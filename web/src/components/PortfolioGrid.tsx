@@ -29,13 +29,22 @@ const processedFiles: FileItem[] = [
 ];
 
 
-for (let i = processedFiles.length + 1; i < 16; i++) {
+for (let i = processedFiles.length + 1; i < 9; i++) {
   processedFiles.push({
     title: `/demos/${i}`,
     size: '',
     source: `/vis/${i}.png`,
   });
 }
+
+
+// for (let i = processedFiles.length + 1; i < 16; i++) {
+//   processedFiles.push({
+//     title: `/demos/${i}`,
+//     size: '',
+//     source: `/vis/${i}.png`,
+//   });
+// }
 
 //d3.shuffle(processedFiles)
 
