@@ -1,33 +1,28 @@
-// WebGPUContext.js
+'use client'; // important so React context can be used on the client
 
 import React, { createContext, useReducer } from 'react';
 
-// 1) The shape of our global WebGPU state
+// 1) The initial state shape
 const initialWebGPUState = {
   device: null,
-  // ... any other fields you want to store, e.g. adapter, queue, etc.
 };
 
-// 2) Our reducer function
+// 2) A simple reducer
 function webgpuReducer(state, action) {
   switch (action.type) {
     case 'SET_DEVICE':
-      return {
-        ...state,
-        device: action.payload,
-      };
+      return { ...state, device: action.payload };
     default:
       return state;
   }
 }
 
-// 3) Create a Context object
+// Create the context
 export const WebGPUContext = createContext();
 
-// 4) Build a Provider component
+// The provider
 export function WebGPUProvider({ children }) {
   const [state, dispatch] = useReducer(webgpuReducer, initialWebGPUState);
-
   return (
     <WebGPUContext.Provider value={{ state, dispatch }}>
       {children}
