@@ -7,7 +7,7 @@ interface FileItem {
   size: string;
   source: string;
 }
-const completed = 10
+
 
 const files: FileItem[] = []
 const processedFiles: FileItem[] = [
@@ -29,7 +29,7 @@ const processedFiles: FileItem[] = [
 ];
 
 
-for (let i = processedFiles.length + 1; i < 9; i++) {
+for (let i = processedFiles.length + 1; i < 16; i++) {
   processedFiles.push({
     title: `/demos/${i}`,
     size: '',
@@ -37,7 +37,7 @@ for (let i = processedFiles.length + 1; i < 9; i++) {
   });
 }
 
-d3.shuffle(processedFiles)
+//d3.shuffle(processedFiles)
 
 export default function PortfolioGrid() {
   return (
