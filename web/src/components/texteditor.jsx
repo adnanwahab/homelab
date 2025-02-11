@@ -89,7 +89,7 @@ export default function Example() {
                 name="comment"
                 rows={3}
                 placeholder="Add your knowledge..."
-                className="block w-full resize-none text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                className="block w-full resize-none text-base text-gray-900 placeholder:text-gray-400 focus:outline-hidden sm:text-sm/6"
                 value={commentText}
                 onChange={(e) => setCommentText(e.target.value)}
               />
@@ -134,13 +134,13 @@ export default function Example() {
 
                       <ListboxOptions
                         transition
-                        className="absolute z-10 -ml-6 w-60 rounded-lg bg-white py-3 text-base shadow outline outline-1 outline-black/5 data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-100 data-[leave]:ease-in sm:ml-auto sm:w-64 sm:text-sm"
+                        className="absolute z-10 -ml-6 w-60 rounded-lg bg-white py-3 text-base shadow-sm outline outline-1 outline-black/5 data-closed:data-leave:opacity-0 data-leave:transition data-leave:duration-100 data-leave:ease-in sm:ml-auto sm:w-64 sm:text-sm"
                       >
                         {moods.map((mood) => (
                           <ListboxOption
                             key={mood.value}
                             value={mood}
-                            className="cursor-default select-none bg-white px-3 py-2 data-[focus]:relative data-[focus]:bg-gray-100 data-[focus]:outline-none"
+                            className="cursor-default select-none bg-white px-3 py-2 data-focus:relative data-focus:bg-gray-100 data-focus:outline-hidden"
                           >
                             <div className="flex items-center">
                               <div
@@ -163,7 +163,7 @@ export default function Example() {
               <div className="shrink-0">
                 <button
                   type="submit"
-                  className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Post
                 </button>

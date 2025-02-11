@@ -445,7 +445,7 @@ export default function Blog() {
                         alt="Cover Image for Dynamic Routing and Static Generation"
                         src="/cover.webp"
                         decoding="async"
-                        className="shadow-sm hover:shadow-md transition-shadow duration-200"
+                        className="shadow-xs hover:shadow-md transition-shadow duration-200"
                         style={{
                           visibility: 'visible',
                           position: 'absolute',
