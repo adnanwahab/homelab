@@ -47,7 +47,7 @@ export default function PortfolioGrid() {
         {processedFiles.map((file, index) => (
           <Link href={file.title} key={index}>
             <li className="relative group">
-              <div className="aspect-[10/7] overflow-hidden rounded-lg bg-gray-800">
+              <div className="aspect-10/7 overflow-hidden rounded-lg bg-gray-800">
                 <img
                   alt=""
                   src={file.source}

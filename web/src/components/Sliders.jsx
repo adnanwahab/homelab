@@ -167,9 +167,9 @@ export default function Home() {
           <input
             type="email"
             placeholder="Email Address"
-            className="flex-1 px-3 py-2 rounded bg-gray-100 text-black focus:outline-none"
+            className="flex-1 px-3 py-2 rounded-sm bg-gray-100 text-black focus:outline-hidden"
           />
-          <button className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">
+          <button className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-sm">
             JOIN
           </button>
         </div>

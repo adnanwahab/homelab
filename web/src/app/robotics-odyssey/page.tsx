@@ -20,11 +20,11 @@ export default function Home() {
           <input
             type="email"
             placeholder="messi@workon.co"
-            className="w-full flex-1 rounded bg-[#191D2D] px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400 sm:w-auto"
+            className="w-full flex-1 rounded-sm bg-[#191D2D] px-4 py-2 text-white placeholder-gray-500 focus:outline-hidden focus:ring-2 focus:ring-green-400 sm:w-auto"
           />
           <button
             type="submit"
-            className="rounded bg-green-500 px-6 py-2 font-semibold text-white transition-colors hover:bg-green-600"
+            className="rounded-sm bg-green-500 px-6 py-2 font-semibold text-white transition-colors hover:bg-green-600"
           >
             Join the waitlist
           </button>
