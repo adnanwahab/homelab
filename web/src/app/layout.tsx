@@ -5,6 +5,11 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Script from 'next/script';
 
+
+
+//import { WebGPUProvider } from '@/context/WebGPUContext';
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      {/* <WebGPUProvider> */}
         {children}
         <Analytics />
         <Script id="microsoft-clarity">
@@ -40,6 +46,7 @@ export default function RootLayout({
           `}
         </Script>
         <SpeedInsights />
+        {/* </WebGPUProvider> */}
       </body>
     </html>
   )
