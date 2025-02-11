@@ -25,4 +25,4 @@ https://threejs.org/examples/?q=pmrem%20quirectangular#webgpu_pmrem_equirectangu
 https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7/examples/webgpu_materials.html#L85
 https://snap.stanford.edu/data/
 https://developers.notion.com/docs/getting-started
-Computer graphics, robotics, infrastructure
+https://x.com/jkane/status/1869338097273696621
