@@ -1,1 +1,64 @@
-privacy_policy.txt
+Terms of Use for Notion API
+Effective Date: Feb 17, 2025
+
+Welcome to the Notion API (“API”). These Terms of Use (“Terms”) govern your access to and use of the API provided by [Your Company Name] (“Company”, “we”, or “us”). By accessing or using the API, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the API.
+
+1. Acceptance of Terms
+1.1 Agreement. By using the API, you confirm that you have read, understood, and agree to be bound by these Terms and our Privacy Policy.
+
+1.2 Modifications. We may update or modify these Terms from time to time. Your continued use of the API after such changes constitutes your acceptance of the revised Terms.
+
+2. License Grant
+2.1 Limited License. Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, and revocable license to access and use the API solely for purposes permitted under these Terms.
+
+2.2 Restrictions. You agree not to:
+
+Reverse-engineer, decompile, or disassemble the API unless expressly permitted by applicable law.
+Use the API to create a competing product or service.
+Exceed any usage limits or otherwise abuse the API.
+3. User Obligations
+3.1 Compliance with Laws. You agree to use the API in compliance with all applicable laws, regulations, and third-party rights.
+
+3.2 Data Security. You are responsible for safeguarding your API keys and credentials. Notify us immediately if you suspect any unauthorized use of your API access.
+
+3.3 Data Usage. Any data accessed through the API must be handled in accordance with our Privacy Policy and any applicable data protection laws. You shall not store or process API data beyond the scope allowed by the API documentation.
+
+4. API Usage and Limitations
+4.1 Permitted Use. The API may only be used for lawful purposes and in accordance with these Terms.
+
+4.2 Usage Limits. We may impose limits on your API usage. You agree to abide by these limits and any instructions provided in our API documentation.
+
+4.3 Monitoring. We reserve the right to monitor your use of the API to ensure compliance with these Terms.
+
+5. Termination
+5.1 Termination by You. You may cease using the API at any time by discontinuing its use.
+
+5.2 Termination by Us. We reserve the right to suspend or terminate your access to the API, in whole or in part, at our sole discretion and without prior notice if you violate these Terms.
+
+5.3 Effect of Termination. Upon termination, you must immediately stop using the API and destroy all API data in your possession.
+
+6. Disclaimers and Limitation of Liability
+6.1 “As Is” Basis. The API is provided on an “as is” and “as available” basis without any warranties, express or implied, including but not limited to warranties of merchantability or fitness for a particular purpose.
+
+6.2 Limitation of Liability. In no event shall the Company be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of or inability to use the API, even if we have been advised of the possibility of such damages.
+
+6.3 No Warranty. We do not guarantee that the API will be error-free or uninterrupted, or that defects will be corrected.
+
+7. Indemnification
+You agree to indemnify, defend, and hold harmless the Company and its affiliates, officers, directors, employees, and agents from and against any claims, damages, liabilities, costs, or expenses (including reasonable attorneys’ fees) arising from or related to your use of the API or your violation of these Terms.
+
+8. Governing Law and Dispute Resolution
+8.1 Governing Law. These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of laws provisions.
+
+8.2 Dispute Resolution. Any disputes arising under or in connection with these Terms shall be resolved exclusively in the courts located within [Your Jurisdiction].
+
+9. General Provisions
+9.1 Entire Agreement. These Terms constitute the entire agreement between you and the Company regarding your use of the API and supersede all prior agreements.
+
+9.2 Severability. If any provision of these Terms is found to be invalid or unenforceable, that provision shall be enforced to the maximum extent possible, and the remaining provisions shall remain in full force and effect.
+
+9.3 Contact Information. For any questions regarding these Terms, please contact us at [contact@dynabot.dev].
+
+By using the Notion API, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use.
+
+Remember to replace placeholders (e.g., Dynabot, houston, Feb 17, 2025, [contact@example.com]) with your actual information before using this document.
