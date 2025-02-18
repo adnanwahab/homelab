@@ -1,0 +1,10 @@
+[package]
+name = "rust-webgpu-demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+wgpu = "0.16"
+winit = "0.27"
+pollster = "0.3"
