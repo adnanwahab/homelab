@@ -6,7 +6,7 @@
 
 # documentation - https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
 
-# fcollaborative thinking space
+# collaborative thinking space
 
 1. Anomaly detection - observe abnormal activity
 2. Capacity planning - extrapolate non-linear trends
