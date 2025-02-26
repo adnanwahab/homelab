@@ -2,7 +2,7 @@ export default function () {
   return (
     <div>
       <h1>Caddy Tool</h1>
-      <p>Welcome to the Caddy tool page.</p>
+      <p>Welcome to the Caddy tool page!</p>
     </div>
   )
 }
