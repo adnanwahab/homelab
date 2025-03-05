@@ -1,151 +1,76 @@
 'use client'
 import React, { useRef, useEffect } from 'react'
 import * as THREE from 'three'
-import { gsap } from 'gsap'
 
-export default function CubeWallDemo() {
+export default function TorusDemo() {
   const canvasRef = useRef(null)
 
   useEffect(() => {
-    // Constants
-    const CUBE_SIZE = 100
-    const GRID = 6
-    const WALL_SIZE = GRID * CUBE_SIZE
-    const HALF_WALL_SIZE = WALL_SIZE / 2
-    const MAIN_COLOR = 0xFFFFFF
-    const SECONDARY_COLOR = 0x222222
-
-    // Setup renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: false })
+    // 1. Set up renderer
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvasRef.current,
+      antialias: true
+    })
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setClearColor(MAIN_COLOR, 1.0)
-    renderer.shadowMap.enabled = true
+    renderer.setPixelRatio(window.devicePixelRatio)
 
-    // Setup scene and camera
+    // 2. Create scene & camera
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
-      45,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      10000
+      60, // field of view
+      window.innerWidth / window.innerHeight, // aspect ratio
+      0.1, // near clipping
+      100 // far clipping
     )
-    camera.position.set(0, 0, 800)
+    camera.position.set(0, 0, 5)
 
-    // Create main group
-    const group = new THREE.Object3D()
-    group.position.y = 50
-    group.rotation.set(
-      -60 * (Math.PI/180),
-      0,
-      -45 * (Math.PI/180)
-    )
+    // 3. Load environment map (CubeTextureLoader example)
+    const envMapLoader = new THREE.CubeTextureLoader()
+    const envMap = envMapLoader.setPath('/textures/cube/')
+      .load(['px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg'])
+    
+    // Optional: Create a simple color environment as placeholder
+    scene.background = new THREE.Color(0x333333)
+    // Comment out environment mapping for now
+    scene.environment = envMap
 
-    // Setup walls
-    const createWalls = () => {
-      const geometry = new THREE.BoxGeometry(WALL_SIZE, WALL_SIZE, 0.05)
-      geometry.faces[8].color.setHex(SECONDARY_COLOR)
-      geometry.faces[9].color.setHex(SECONDARY_COLOR)
-      geometry.colorsNeedUpdate = true
-      
-      const material = new THREE.MeshBasicMaterial({
-        color: MAIN_COLOR,
-        vertexColors: true
-      })
+    // 4. Create torus mesh
+    const geometry = new THREE.TorusGeometry(1, 0.4, 64, 128)
+    const material = new THREE.MeshPhysicalMaterial({
+      metalness: 1,
+      roughness: 0,
+      transmission: 1,  // for "glass-like" transparency
+      thickness: 0.5,   // thickness of the glass
+      envMapIntensity: 1
+    })
+    const torusMesh = new THREE.Mesh(geometry, material)
+    scene.add(torusMesh)
 
-      // Create and position walls
-      const wallPositions = [
-        { pos: [0, HALF_WALL_SIZE, -HALF_WALL_SIZE], rot: [90, 0, 0] },
-        { pos: [HALF_WALL_SIZE, 0, -HALF_WALL_SIZE], rot: [0, -90, 0] },
-        { pos: [0, -HALF_WALL_SIZE, -HALF_WALL_SIZE], rot: [-90, 0, 0] },
-        { pos: [-HALF_WALL_SIZE, 0, -HALF_WALL_SIZE], rot: [0, 90, 0] },
-        { pos: [0, 0, -WALL_SIZE], rot: [0, 0, 0] }
-      ]
-
-      wallPositions.forEach(({ pos, rot }) => {
-        const wall = new THREE.Mesh(geometry, material)
-        wall.position.set(...pos)
-        wall.rotation.set(...rot.map(deg => deg * Math.PI/180))
-        group.add(wall)
-      })
-    }
-
-    // Setup animated cubes
-    const createCubes = () => {
-      const geometry = new THREE.BoxGeometry(CUBE_SIZE, CUBE_SIZE, 0.05)
-      const material = new THREE.MeshLambertMaterial({ color: MAIN_COLOR })
-
-      for (let i = 0; i < GRID * GRID; i++) {
-        const row = Math.floor(i / GRID)
-        const col = i % GRID + 1
-        
-        const x = -(((GRID * CUBE_SIZE) / 2) - ((CUBE_SIZE) * col) + (CUBE_SIZE/2))
-        const y = -(((GRID * CUBE_SIZE) / 2) - ((CUBE_SIZE) * row + CUBE_SIZE) + (CUBE_SIZE/2))
-        
-        const cube = new THREE.Mesh(geometry, material)
-        cube.position.set(x, y, 0)
-        cube.castShadow = true
-        cube.receiveShadow = true
-
-        // Animate cube
-        gsap.to(cube.rotation, {
-          [Math.random() < 0.5 ? 'x' : 'y']: Math.random() < 0.5 ? -Math.PI : Math.PI,
-          duration: 3 + Math.random() * 3,
-          delay: 0.5 + Math.random() * 5.5,
-          ease: "elastic.out",
-          repeat: -1
-        })
-
-        group.add(cube)
-      }
-    }
-
-    // Setup lights
-    const createLights = () => {
-      const mainLight = new THREE.DirectionalLight(MAIN_COLOR, 1.25)
-      mainLight.position.set(-WALL_SIZE, -WALL_SIZE, CUBE_SIZE * GRID)
-      mainLight.castShadow = true
-      
-      const softLight = new THREE.DirectionalLight(MAIN_COLOR, 1.5)
-      softLight.position.set(WALL_SIZE, WALL_SIZE, CUBE_SIZE * GRID)
-      
-      group.add(mainLight)
-      group.add(softLight)
-    }
-
-    // Initialize scene
-    createWalls()
-    createCubes()
-    createLights()
-    scene.add(group)
-
-    // Animation loop
-    const animate = () => {
+    // 5. Basic animation loop
+    function animate() {
       requestAnimationFrame(animate)
+      // Rotate torus for a little motion
+      torusMesh.rotation.x += 0.005
+      torusMesh.rotation.y += 0.01
+
       renderer.render(scene, camera)
     }
+    animate()
 
-    // Handle resize
-    const onResize = () => {
+    // 6. Handle window resizing
+    function onWindowResize() {
       camera.aspect = window.innerWidth / window.innerHeight
       camera.updateProjectionMatrix()
       renderer.setSize(window.innerWidth, window.innerHeight)
     }
-
-    // Setup and cleanup
-    canvasRef.current.appendChild(renderer.domElement)
-    window.addEventListener('resize', onResize)
-    animate()
-
-    return () => {
-      window.removeEventListener('resize', onResize)
-      // Cleanup Three.js resources
-      scene.traverse(object => {
-        if (object.geometry) object.geometry.dispose()
-        if (object.material) object.material.dispose()
-      })
-      renderer.dispose()
-    }
+    window.addEventListener('resize', onWindowResize)
+    return () => window.removeEventListener('resize', onWindowResize)
   }, [])
 
-  return <div ref={canvasRef} />
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{ width: '100vw', height: '100vh', display: 'block' }}
+    />
+  )
 }
