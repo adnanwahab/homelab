@@ -97,7 +97,24 @@ export default function SwirlScene() {
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
 
-      // swirlGroup.rotation.y += 0.002; // optional rotation
+      // Animate the swirl
+      const time = Date.now() * 0.001; // Current time in seconds
+      
+      // Rotate the entire swirl group
+      swirlGroup.rotation.y = Math.sin(time * 0.2) * 0.3;
+      swirlGroup.rotation.x = Math.cos(time * 0.1) * 0.1;
+      
+      // Animate individual rectangles
+      swirlGroup.children.forEach((rect, i) => {
+        // Pulse scale based on time and position
+        const pulseFactor = Math.sin(time * 2 + i * 0.05) * 0.2 + 1;
+        rect.scale.set(pulseFactor, pulseFactor, pulseFactor);
+        
+        // Subtle rotation
+        rect.rotation.x += Math.sin(time + i * 0.01) * 0.003;
+        rect.rotation.z += Math.cos(time + i * 0.01) * 0.003;
+      });
+
       controls.update();
       renderer.render(scene, camera);
     };
@@ -196,7 +213,7 @@ export default function SwirlScene() {
 //   const rectDepth = 0.2; // thickness if using BoxGeometry
 //   const geometry = new THREE.BoxGeometry(rectWidth, rectHeight, rectDepth);
 
-//   // Optionally, if you want simpler “flat” pieces:
+//   // Optionally, if you want simpler "flat" pieces:
 //   // const geometry = new THREE.PlaneGeometry(rectWidth, rectHeight);
 
 //   // 6. Create and position each rectangle
@@ -211,7 +228,7 @@ export default function SwirlScene() {
 //     let x = currentRadius * Math.cos(angle);
 //     let z = currentRadius * Math.sin(angle);
 
-//     // Add some vertical offset so it “corkscrews” upward
+//     // Add some vertical offset so it "corkscrews" upward
 //     let y = (i - numRects / 2) * heightSeparation;
 
 //     // Create a simple material (vary color if desired)
