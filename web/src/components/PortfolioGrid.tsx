@@ -12,7 +12,7 @@ interface FileItem {
 const files: FileItem[] = []
 const processedFiles: FileItem[] = [
   {
-    title: `https://musicgame2026.netlify.app/`,
+    title: `/demos/1`,
     size: '',
     source: `/vis/1.png`,
   },

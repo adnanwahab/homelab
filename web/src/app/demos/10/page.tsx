@@ -1,90 +1,148 @@
-"use client"; // if you're on Next.js 13 App Router, ensure client-side rendering
+"use client";
+import React, { useRef, useEffect } from "react";
+import * as THREE from "three";
 
-import React, { useEffect, useRef } from "react";
-import * as THREE from "three/webgpu";
-// Import the WebGPU renderer from Three.js examples
-
-export default function WebGPUCube() {
-  const containerRef = useRef(null);
+export default function SphereDemo() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    // Ensure code only runs in the browser
-    if (!containerRef.current) return;
+    if (!canvasRef.current) return;
 
-    // Check if WebGPU is available
-    if (!navigator.gpu) {
-      console.warn("WebGPU is not supported in this browser.");
-      return;
+    // Scene setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      95,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      5000
+    );
+
+    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
+    renderer.setClearColor(0xe2ded2, 1.0);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    // Geometry and material setup
+    const geometry = new THREE.SphereGeometry(6, 64, 64);
+
+    const uniforms = THREE.UniformsUtils.merge([
+      THREE.UniformsLib["ambient"],
+      THREE.UniformsLib["lights"],
+      THREE.UniformsUtils.clone(THREE.ShaderLib.phong.uniforms),
+      {
+        diffuse: {
+          type: "c",
+          value: new THREE.Color(0xb19cd9)
+        },
+        dirSpecularWeight: {
+          type: "v3",
+          value: new THREE.Vector3(0.5, 0.5, 0.5)
+        },
+        time: {
+          type: "f",
+          value: 0.0
+        }
+      }
+    ]);
+
+    // Shader code
+    const vertexShader = `
+      uniform float time;
+      varying vec3 vNormal;
+      varying vec3 vViewPosition;
+
+      void main() {
+        vNormal = normalize(normalMatrix * normal);
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        vViewPosition = -mvPosition.xyz;
+        gl_Position = projectionMatrix * mvPosition;
+      }
+    `;
+
+    const fragmentShader = `
+      uniform vec3 diffuse;
+      uniform vec3 dirSpecularWeight;
+      uniform float shininess;
+      uniform float time;
+      
+      varying vec3 vNormal;
+      varying vec3 vViewPosition;
+
+      void main() {
+        vec3 normal = normalize(vNormal);
+        vec3 viewPosition = normalize(vViewPosition);
+        
+        // Softer color variation
+        vec3 color = diffuse * 0.8 * (1.0 + sin(time + vNormal.x * 2.0));
+        
+        // Softer lighting
+        float light = dot(normal, vec3(1.0));
+        color *= 0.7 + 0.3 * light;
+        
+        gl_FragColor = vec4(color, 1.0);
+      }
+    `;
+
+    const material = new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader,
+      fragmentShader,
+      lights: true
+    });
+
+    material.uniforms.shininess.value = 34.0;
+
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+
+    // Lighting
+    const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6);
+    hemiLight.color.setHSL(0.6, 0.5, 0.8);
+    hemiLight.position.set(0, 10, 0);
+    scene.add(hemiLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.3);
+    dirLight.color.setHSL(0.1, 0.5, 0.8);
+    dirLight.position.set(-1, 1.75, 1);
+    dirLight.position.multiplyScalar(30);
+    scene.add(dirLight);
+
+    camera.position.z = 10;
+
+    // Animation
+    function animate(timestamp: number) {
+      const t = timestamp * 0.001;
+      material.uniforms.time.value = t;
+      sphere.rotation.z = -t * 0.02 - 0.2;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
     }
 
-    let renderer, scene, camera, cube;
-    let animationHandle;
+    // Start animation
+    requestAnimationFrame(animate);
 
-    // Use an async function to initialize WebGPU
-    const init = async () => {
-      // Create WebGPU renderer
-      renderer = new THREE.WebGPURenderer({ antialias: true });
-      // You must call init() before using it
-      await renderer.init();
-
-      // Set size of the renderer to match container size
-      const width = containerRef.current.clientWidth;
-      const height = containerRef.current.clientHeight;
-      renderer.setSize(width, height);
-
-      // Attach the renderer canvas to our container
-      containerRef.current.appendChild(renderer.domElement);
-
-      // Create a basic scene
-      scene = new THREE.Scene();
-
-      // Create a camera
-      camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 100);
-      camera.position.z = 2;
-
-      // Create a simple box geometry and basic material
-      const geometry = new THREE.BoxGeometry();
-      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-      cube = new THREE.Mesh(geometry, material);
-      scene.add(cube);
-
-      // Optional: a simple background color
-      renderer.setClearColor(new THREE.Color("#202020"));
-
-      // Set up the animation loop
-      renderer.setAnimationLoop(() => {
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
-      });
+    // Handle window resize
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    init();
+    window.addEventListener('resize', handleResize);
 
-    // Cleanup on unmount
+    // Cleanup
     return () => {
-      // if (renderer) {
-      //   renderer.dispose();
-      // }
-      if (containerRef.current && renderer?.domElement) {
-        containerRef.current.removeChild(renderer.domElement);
-      }
-      // If using setAnimationLoop, you don't need to manually cancel it,
-      // but you could still track any requestAnimationFrame calls if used.
-      if (animationHandle) {
-        cancelAnimationFrame(animationHandle);
-      }
+      window.removeEventListener('resize', handleResize);
+      // Dispose of Three.js resources
+      geometry.dispose();
+      material.dispose();
+      renderer.dispose();
     };
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        width: "600px",
-        height: "400px",
-        border: "1px solid #ccc",
-      }}
+    <canvas
+      ref={canvasRef}
+      style={{ width: "100%", height: "100%", display: "block" }}
     />
   );
 }
