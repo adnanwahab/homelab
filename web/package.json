@@ -44,8 +44,10 @@
     "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
     "resend": "^4.0.1",
+    "simplex-noise": "^4.0.3",
     "soundcloud-audio": "^1.4.0",
-    "three": "^0.173.0"
+    "three": "^0.173.0",
+    "tweakpane": "^4.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",

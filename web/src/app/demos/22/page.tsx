@@ -222,9 +222,17 @@ export default function SpaceDemo() {
 
     function onWindowResize() {
       if (!canvasRef.current) return;
-      camera.aspect = canvasRef.current.clientWidth / canvasRef.current.clientHeight;
+      
+      // Get the current dimensions (handles both fullscreen and normal mode)
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      
+      // Update camera
+      camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      renderer.setSize(canvasRef.current.clientWidth, canvasRef.current.clientHeight);
+      
+      // Update renderer
+      renderer.setSize(width, height);
     }
 
     // Initialize and start animation
@@ -237,9 +245,13 @@ export default function SpaceDemo() {
       timeout_Debounce = setTimeout(onWindowResize, 80);
     });
 
+    // Also update when fullscreen changes
+    document.addEventListener('fullscreenchange', onWindowResize);
+
     // Cleanup
     return () => {
       window.removeEventListener('resize', onWindowResize);
+      document.removeEventListener('fullscreenchange', onWindowResize);
       renderer.dispose();
       scene.clear();
     };
@@ -258,10 +270,7 @@ export default function SpaceDemo() {
 
   return (
     <main className={styles.container}>
-      <canvas 
-      width={window.innerWidth}
-      height={window.innerHeight}
-      ref={canvasRef} className={styles.canvas}></canvas>
+      <canvas ref={canvasRef} className={styles.canvas}></canvas>
       <button 
         className={styles.fullscreenButton} 
         onClick={toggleFullscreen}

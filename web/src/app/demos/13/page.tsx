@@ -1,244 +1,639 @@
+'use client';
 
-export default function WGSLPlane() {
-  return <div>Hello World</div>;
+import { useEffect, useRef, useState } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { gsap } from 'gsap';
+
+// RoundedBoxGeometry implementation
+class RoundedBoxGeometry extends THREE.BufferGeometry {
+  constructor(width, height, depth, radius, radiusSegments) {
+    super();
+    
+    this.type = 'RoundedBoxGeometry';
+
+    // Validate params
+    radiusSegments = !isNaN(radiusSegments) ? Math.max(1, Math.floor(radiusSegments)) : 1;
+    width = !isNaN(width) ? width : 1;
+    height = !isNaN(height) ? height : 1;
+    depth = !isNaN(depth) ? depth : 1;
+    radius = !isNaN(radius) ? radius : 0.15;
+    radius = Math.min(radius, Math.min(width, Math.min(height, Math.min(depth))) / 2);
+
+    const edgeHalfWidth = width / 2 - radius;
+    const edgeHalfHeight = height / 2 - radius;
+    const edgeHalfDepth = depth / 2 - radius;
+
+    // Store parameters
+    this.parameters = {
+      width: width,
+      height: height,
+      depth: depth,
+      radius: radius,
+      radiusSegments: radiusSegments
+    };
+
+    // Calculate vertices count
+    const rs1 = radiusSegments + 1; // radius segments + 1
+    const totalVertexCount = (rs1 * radiusSegments + 1) << 3;
+
+    // Make buffers
+    const positions = new THREE.BufferAttribute(new Float32Array(totalVertexCount * 3), 3);
+    const normals = new THREE.BufferAttribute(new Float32Array(totalVertexCount * 3), 3);
+
+    // Some vars
+    const cornerVerts = [];
+    const cornerNormals = [];
+    const normal = new THREE.Vector3();
+    const vertex = new THREE.Vector3();
+    const vertexPool = [];
+    const normalPool = [];
+    const indices = [];
+
+    const lastVertex = rs1 * radiusSegments;
+    const cornerVertNumber = rs1 * radiusSegments + 1;
+
+    // Helper functions
+    const doVertices = () => {
+      // Corner offsets
+      const cornerLayout = [
+        new THREE.Vector3(1, 1, 1),
+        new THREE.Vector3(1, 1, -1),
+        new THREE.Vector3(-1, 1, -1),
+        new THREE.Vector3(-1, 1, 1),
+        new THREE.Vector3(1, -1, 1),
+        new THREE.Vector3(1, -1, -1),
+        new THREE.Vector3(-1, -1, -1),
+        new THREE.Vector3(-1, -1, 1)
+      ];
+
+      // Corner holder
+      for (let j = 0; j < 8; j++) {
+        cornerVerts.push([]);
+        cornerNormals.push([]);
+      }
+
+      // Construct 1/8 sphere
+      const PIhalf = Math.PI / 2;
+      const cornerOffset = new THREE.Vector3(edgeHalfWidth, edgeHalfHeight, edgeHalfDepth);
+
+      for (let y = 0; y <= radiusSegments; y++) {
+        const v = y / radiusSegments;
+        const va = v * PIhalf; // Arrange in 90 deg
+        const cosVa = Math.cos(va); // Scale of vertical angle
+        const sinVa = Math.sin(va);
+
+        if (y === radiusSegments) {
+          vertex.set(0, 1, 0);
+          const vert = vertex.clone().multiplyScalar(radius).add(cornerOffset);
+          cornerVerts[0].push(vert);
+          vertexPool.push(vert);
+          
+          const norm = vertex.clone();
+          cornerNormals[0].push(norm);
+          normalPool.push(norm);
+          continue; // Skip row loop
+        }
+
+        for (let x = 0; x <= radiusSegments; x++) {
+          const u = x / radiusSegments;
+          const ha = u * PIhalf;
+
+          // Make 1/8 sphere points
+          vertex.x = cosVa * Math.cos(ha);
+          vertex.y = sinVa;
+          vertex.z = cosVa * Math.sin(ha);
+
+          // Copy sphere point, scale by radius, offset by half whd
+          const vert = vertex.clone().multiplyScalar(radius).add(cornerOffset);
+          cornerVerts[0].push(vert);
+          vertexPool.push(vert);
+          
+          // Sphere already normalized, just clone
+          const norm = vertex.clone().normalize();
+          cornerNormals[0].push(norm);
+          normalPool.push(norm);
+        }
+      }
+
+      // Distribute corner verts
+      for (let i = 1; i < 8; i++) {
+        for (let j = 0; j < cornerVerts[0].length; j++) {
+          const vert = cornerVerts[0][j].clone().multiply(cornerLayout[i]);
+          cornerVerts[i].push(vert);
+          vertexPool.push(vert);
+
+          const norm = cornerNormals[0][j].clone().multiply(cornerLayout[i]);
+          cornerNormals[i].push(norm);
+          normalPool.push(norm);
+        }
+      }
+    };
+
+    const doCorners = () => {
+      const flips = [
+        true,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        true
+      ];
+
+      const lastRowOffset = rs1 * (radiusSegments - 1);
+
+      for (let i = 0; i < 8; i++) {
+        const cornerOffset = cornerVertNumber * i;
+
+        for (let v = 0; v < radiusSegments - 1; v++) {
+          const r1 = v * rs1; // Row offset
+          const r2 = (v + 1) * rs1; // Next row
+
+          for (let u = 0; u < radiusSegments; u++) {
+            const u1 = u + 1;
+            const a = cornerOffset + r1 + u;
+            const b = cornerOffset + r1 + u1;
+            const c = cornerOffset + r2 + u;
+            const d = cornerOffset + r2 + u1;
+
+            if (!flips[i]) {
+              indices.push(a);
+              indices.push(b);
+              indices.push(c);
+
+              indices.push(b);
+              indices.push(d);
+              indices.push(c);
+            } else {
+              indices.push(a);
+              indices.push(c);
+              indices.push(b);
+
+              indices.push(b);
+              indices.push(c);
+              indices.push(d);
+            }
+          }
+        }
+        
+        for (let u = 0; u < radiusSegments; u++) {
+          const a = cornerOffset + lastRowOffset + u;
+          const b = cornerOffset + lastRowOffset + u + 1;
+          const c = cornerOffset + lastVertex;
+
+          if (!flips[i]) {
+            indices.push(a);
+            indices.push(b);
+            indices.push(c);
+          } else {
+            indices.push(a);
+            indices.push(c);
+            indices.push(b);
+          }
+        }
+      }
+    };
+
+    const doFaces = () => {
+      // Top
+      let a = lastVertex;
+      let b = lastVertex + cornerVertNumber;
+      let c = lastVertex + cornerVertNumber * 2;
+      let d = lastVertex + cornerVertNumber * 3;
+
+      indices.push(a);
+      indices.push(b);
+      indices.push(c);
+      indices.push(a);
+      indices.push(c);
+      indices.push(d);
+
+      // Bottom
+      a = lastVertex + cornerVertNumber * 4;
+      b = lastVertex + cornerVertNumber * 5;
+      c = lastVertex + cornerVertNumber * 6;
+      d = lastVertex + cornerVertNumber * 7;
+
+      indices.push(a);
+      indices.push(c);
+      indices.push(b);
+      indices.push(a);
+      indices.push(d);
+      indices.push(c);
+
+      // Left
+      a = 0;
+      b = cornerVertNumber;
+      c = cornerVertNumber * 4;
+      d = cornerVertNumber * 5;
+
+      indices.push(a);
+      indices.push(c);
+      indices.push(b);
+      indices.push(b);
+      indices.push(c);
+      indices.push(d);
+
+      // Right
+      a = cornerVertNumber * 2;
+      b = cornerVertNumber * 3;
+      c = cornerVertNumber * 6;
+      d = cornerVertNumber * 7;
+
+      indices.push(a);
+      indices.push(c);
+      indices.push(b);
+      indices.push(b);
+      indices.push(c);
+      indices.push(d);
+
+      // Front
+      a = radiusSegments;
+      b = radiusSegments + cornerVertNumber * 3;
+      c = radiusSegments + cornerVertNumber * 4;
+      d = radiusSegments + cornerVertNumber * 7;
+
+      indices.push(a);
+      indices.push(b);
+      indices.push(c);
+      indices.push(b);
+      indices.push(d);
+      indices.push(c);
+
+      // Back
+      a = radiusSegments + cornerVertNumber;
+      b = radiusSegments + cornerVertNumber * 2;
+      c = radiusSegments + cornerVertNumber * 5;
+      d = radiusSegments + cornerVertNumber * 6;
+
+      indices.push(a);
+      indices.push(c);
+      indices.push(b);
+      indices.push(b);
+      indices.push(c);
+      indices.push(d);
+    };
+
+    const doHeightEdges = () => {
+      for (let i = 0; i < 4; i++) {
+        const cOffset = i * cornerVertNumber;
+        const cRowOffset = 4 * cornerVertNumber + cOffset;
+        const needsFlip = i & 1 === 1;
+        
+        for (let u = 0; u < radiusSegments; u++) {
+          const u1 = u + 1;
+          const a = cOffset + u;
+          const b = cOffset + u1;
+          const c = cRowOffset + u;
+          const d = cRowOffset + u1;
+
+          if (!needsFlip) {
+            indices.push(a);
+            indices.push(b);
+            indices.push(c);
+            indices.push(b);
+            indices.push(d);
+            indices.push(c);
+          } else {
+            indices.push(a);
+            indices.push(c);
+            indices.push(b);
+            indices.push(b);
+            indices.push(c);
+            indices.push(d);
+          }
+        }
+      }
+    };
+
+    const doDepthEdges = () => {
+      const cStarts = [0, 2, 4, 6];
+      const cEnds = [1, 3, 5, 7];
+        
+      for (let i = 0; i < 4; i++) {
+        const cStart = cornerVertNumber * cStarts[i];
+        const cEnd = cornerVertNumber * cEnds[i];
+        const needsFlip = 1 >= i;
+
+        for (let u = 0; u < radiusSegments; u++) {
+          const urs1 = u * rs1;
+          const u1rs1 = (u + 1) * rs1;
+
+          const a = cStart + urs1;
+          const b = cStart + u1rs1;
+          const c = cEnd + urs1;
+          const d = cEnd + u1rs1;
+
+          if (needsFlip) {
+            indices.push(a);
+            indices.push(c);
+            indices.push(b);
+            indices.push(b);
+            indices.push(c);
+            indices.push(d);
+          } else {
+            indices.push(a);
+            indices.push(b);
+            indices.push(c);
+            indices.push(b);
+            indices.push(d);
+            indices.push(c);
+          }
+        }
+      }
+    };
+
+    const doWidthEdges = () => {
+      const end = radiusSegments - 1;
+      const cStarts = [0, 1, 4, 5];
+      const cEnds = [3, 2, 7, 6];
+      const needsFlip = [0, 1, 1, 0];
+
+      for (let i = 0; i < 4; i++) {
+        const cStart = cStarts[i] * cornerVertNumber;
+        const cEnd = cEnds[i] * cornerVertNumber;
+        
+        for (let u = 0; u <= end; u++) {
+          const a = cStart + radiusSegments + u * rs1;
+          const b = cStart + (u !== end ? radiusSegments + (u + 1) * rs1 : cornerVertNumber - 1);
+          const c = cEnd + radiusSegments + u * rs1;
+          const d = cEnd + (u !== end ? radiusSegments + (u + 1) * rs1 : cornerVertNumber - 1);
+
+          if (!needsFlip[i]) {
+            indices.push(a);
+            indices.push(b);
+            indices.push(c);
+            indices.push(b);
+            indices.push(d);
+            indices.push(c);
+          } else {
+            indices.push(a);
+            indices.push(c);
+            indices.push(b);
+            indices.push(b);
+            indices.push(c);
+            indices.push(d);
+          }
+        }
+      }
+    };
+
+    // Execute helper functions to build geometry
+    doVertices();
+    doFaces();
+    doCorners();
+    doHeightEdges();
+    doWidthEdges();
+    doDepthEdges();
+
+    // Fill buffers
+    let index = 0;
+    for (let i = 0; i < vertexPool.length; i++) {
+      positions.setXYZ(
+        index,
+        vertexPool[i].x,
+        vertexPool[i].y,
+        vertexPool[i].z
+      );
+
+      normals.setXYZ(
+        index,
+        normalPool[i].x,
+        normalPool[i].y,
+        normalPool[i].z
+      );
+
+      index++;
+    }
+
+    this.setIndex(new THREE.BufferAttribute(new Uint16Array(indices), 1));
+    this.setAttribute('position', positions);
+    this.setAttribute('normal', normals);
+  }
 }
-// 'use client'
-// import React, { useRef, useEffect } from 'react';
-// import * as THREE from 'three/webgpu';
-// // IMPORTANT: Make sure you've imported the WebGPU components.
-// // e.g. import { WebGPURenderer } from 'three/addons/renderers/webgpu/WebGPURenderer.js';
 
-// export default function WGSLPlane() {
-//   const canvasRef = useRef(null);
+const AnimatedBoxes = ({ 
+  gridSize = 40, 
+  boxSize = 1,
+  backgroundColor = '#43fa8e', 
+  lightColor = '#7d7d7d', 
+  darkColor = '#25222f',
+  lightEmissive = '#0f3855',
+  darkEmissive = '#031e31'
+}) => {
+  const containerRef = useRef(null);
+  const sceneRef = useRef(null);
+  const rendererRef = useRef(null);
+  const cameraRef = useRef(null);
+  const controlsRef = useRef(null);
+  const requestRef = useRef(null);
+  const oddBoxesRef = useRef([]);
+  const evenBoxesRef = useRef([]);
+  
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-//   useEffect(() => {
-//     if (!canvasRef.current) return;
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    // Initialize scene
+    const scene = new THREE.Scene();
+    sceneRef.current = scene;
 
-//     // Create WebGPU renderer
-//     const renderer = new THREE.WebGPURenderer({ canvas: canvasRef.current });
-//     renderer.setSize(window.innerWidth, window.innerHeight);
-//     renderer.setPixelRatio(window.devicePixelRatio);
+    // Initialize camera
+    const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 1000);
+    camera.position.set(-20, 20, -20);
+    cameraRef.current = camera;
 
-//     // Create basic scene/camera
-//     const scene = new THREE.Scene();
-//     const camera = new THREE.PerspectiveCamera(
-//       45,
-//       window.innerWidth / window.innerHeight,
-//       0.1,
-//       100
-//     );
-//     camera.position.z = 2;
+    // Initialize renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    containerRef.current.appendChild(renderer.domElement);
+    rendererRef.current = renderer;
 
-//     // Create a plane geometry
-//     const geometry = new THREE.PlaneGeometry(2, 2);
+    // Initialize controls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.04;
+    controlsRef.current = controls;
 
-//     // Minimal vertex + fragment as raw strings:
-//     const wgslVertex = `
-// struct Uniforms {
-//     iResolution : vec2<f32>,
-//     iTime       : f32,
-//     iMouse      : vec4<f32>,
-// };
+    // Add event listeners for cursor changes
+    controls.addEventListener("start", () => {
+      requestAnimationFrame(() => {
+        document.body.style.cursor = "-webkit-grabbing";
+      });
+    });
 
-// @group(0) @binding(0) var<uniform> uniforms : Uniforms;
+    controls.addEventListener("end", () => {
+      requestAnimationFrame(() => {
+        document.body.style.cursor = "-webkit-grab";
+      });
+    });
 
-// struct VertexInput {
-//     @location(0) position : vec3<f32>,
-//     @location(1) uv       : vec2<f32>,
-// };
+    // Set initial cursor style
+    document.body.style.cursor = "-webkit-grab";
 
-// struct VertexOutput {
-//     @builtin(position) Position : vec4<f32>,
-//     @location(0) vUV : vec2<f32>,
-// };
+    // Add ambient light
+    const ambientLight = new THREE.AmbientLight('#ffffff', 1);
+    scene.add(ambientLight);
 
-// @vertex
-// fn vert_main(input: VertexInput) -> VertexOutput {
-//     var out : VertexOutput;
-//     out.Position = vec4<f32>(input.position, 1.0);
-//     out.vUV = input.uv;
-//     return out;
-// }
-// `;
+    // Add spot light
+    const spotLight = new THREE.SpotLight(0xffffff);
+    spotLight.position.set(0, 500, 0);
+    scene.add(spotLight);
 
-//     const wgslFragment = `
-// // ... Paste the frag_main WGSL code from above ...
-// // Make sure to match the layout with your Uniforms struct or remove any mismatch.
-// @group(0) @binding(0)
-// var<uniform> uniforms : Uniforms;
+    // Add point lights
+    const light = new THREE.PointLight(0xffffff, 1, 1000);
+    light.position.set(0, 20, 0);
+    light.castShadow = true;
+    scene.add(light);
 
-// let PI    : f32 = 3.1415926535;
-// let TAU   : f32 = 6.2831853070;
-// let SCALE : f32 = 1.0;
+    const light1 = new THREE.PointLight(0x00ff00, 1, 100);
+    light1.position.set(0, 20, 0);
+    light1.castShadow = true;
+    scene.add(light1);
 
-// fn gm(
-//     rgb    : vec3<f32>,
-//     param  : f32,
-//     t      : f32,
-//     w      : f32,
-//     d      : f32,
-//     invert : bool
-// ) -> vec3<f32> {
-//     // Placeholder
-//     return vec3<f32>(0.0);
-// }
+    const light2 = new THREE.PointLight(0xff00ff, 1, 1000);
+    light2.position.set(-50, 50, -20);
+    scene.add(light2);
 
-// fn ds(
-//     uv     : vec2<f32>,
-//     se     : f32,
-//     t      : f32,
-//     px     : f32,
-//     param4 : f32,
-//     param5 : f32
-// ) -> f32 {
-//     // Placeholder
-//     return 0.0;
-// }
+    // Create materials
+    const lightMaterial = new THREE.MeshPhongMaterial({
+      color: lightColor,
+      emissive: lightEmissive
+    });
 
-// struct VertexOutput {
-//     @builtin(position) Position : vec4<f32>,
-//     @location(0) vUV : vec2<f32>,
-// };
+    const darkMaterial = new THREE.MeshPhongMaterial({
+      color: darkColor,
+      emissive: darkEmissive
+    });
 
-// @fragment
-// fn frag_main(in: VertexOutput) -> @location(0) vec4<f32> {
-//     let R       = uniforms.iResolution;
-//     let iTime   = uniforms.iTime;
-//     var m       = uniforms.iMouse;
-//     let XY      = in.vUV * R;
+    // Create boxes
+    const roundedGeometry = new RoundedBoxGeometry(boxSize, boxSize, boxSize, 0.04, 0.4);
+    const odds = [];
+    const evens = [];
 
-//     var t = iTime / PI * 2.0;
+    const getRandomInt = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
 
-//     // Remap mouse if needed
-//     if (R.x > 0.0 && R.y > 0.0) {
-//         m.x = (m.x * 2.0 / R.x) - 1.0;
-//         m.y = (m.y * 2.0 / R.y) - 1.0;
-//     }
+    const getMaterial = () => {
+      const number = getRandomInt(0, gridSize * 2);
+      return number % 2 === 0 ? lightMaterial : darkMaterial;
+    };
 
-//     if (m.z > 0.0) {
-//         t = t + m.y * SCALE;
-//     }
+    // Add boxes to the scene
+    for (let i = 0; i < gridSize; i++) {
+      for (let j = 0; j < gridSize; j++) {
+        const box = new THREE.Mesh(roundedGeometry, getMaterial());
+        box.position.set((i * boxSize) + gridSize * -0.5, 2, (j * boxSize) + gridSize * -0.5);
+        box.castShadow = true;
+        box.receiveShadow = true;
 
-//     let z = if (m.z > 0.0) {
-//         pow(1.0 - abs(m.y), sign(m.y))
-//     } else {
-//         1.0
-//     };
+        if ((i + j) % 2 === 0) {
+          evens.push(box);
+        } else {
+          odds.push(box);
+        }
 
-//     let e = if (m.z > 0.0) {
-//         pow(1.0 - abs(m.x), -sign(m.x))
-//     } else {
-//         1.0
-//     };
+        scene.add(box);
+      }
+    }
 
-//     let se = if (m.z > 0.0) {
-//         e * -sign(m.y)
-//     } else {
-//         1.0
-//     };
+    oddBoxesRef.current = odds;
+    evenBoxesRef.current = evens;
 
-//     var bg = vec3<f32>(0.0);
+    // Set background color
+    document.body.style.backgroundColor = backgroundColor;
 
-//     let aa = 3.0;
-//     for (var j = 0; j < 3; j = j + 1) {
-//         for (var k = 0; k < 3; k = k + 1) {
-//             var c = vec3<f32>(0.0);
-//             let o = vec2<f32>(f32(j), f32(k)) / aa;
-//             var uv = (XY - 0.5 * R + o) / R.y * SCALE * z;
+    // Animation function
+    const animate = () => {
+      if (controlsRef.current) controlsRef.current.update();
+      if (rendererRef.current && sceneRef.current && cameraRef.current) {
+        rendererRef.current.render(sceneRef.current, cameraRef.current);
+      }
+      requestRef.current = requestAnimationFrame(animate);
+    };
 
-//             if (m.z > 0.0) {
-//                 let signUV = sign(uv);
-//                 let absUV  = abs(uv);
-//                 let logUV  = log(absUV);
-//                 let mulUV  = logUV * e;
-//                 uv = exp(mulUV) * signUV;
-//             }
+    // Start animation loop
+    requestRef.current = requestAnimationFrame(animate);
 
-//             let fw = abs(dpdx(uv)) + abs(dpdy(uv));
-//             let px = length(fw);
+    // Animate boxes
+    const radians = (degrees) => degrees * Math.PI / 180;
+    
+    const animateBoxes = (boxes) => {
+      boxes.forEach((box, i) => {
+        gsap.to(box.position, {
+          y: 3,
+          duration: 1.5,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1
+        });
+        
+        gsap.to(box.rotation, {
+          z: `-=${radians(180)}`,
+          duration: 0.6,
+          delay: 1 + (i/1000),
+          ease: "sine.inOut"
+        });
+      });
+    };
 
-//             let x = uv.x;
-//             let y = uv.y;
-//             let l = length(uv);
+    // Start animations with delay between odd and even boxes
+    animateBoxes(odds);
+    setTimeout(() => animateBoxes(evens), 1500);
 
-//             let mc = (x*x + y*y - 1.0) / y;
-//             let g  = min(abs(mc), 1.0 / abs(mc));
-//             let gold = vec3<f32>(1.0, 0.6, 0.0) * g * l;
-//             let blue = vec3<f32>(0.3, 0.5, 0.9) * (1.0 - g);
-//             let rgb  = max(gold, blue);
+    // Handle window resize
+    const handleResize = () => {
+      if (cameraRef.current && rendererRef.current) {
+        cameraRef.current.aspect = window.innerWidth / window.innerHeight;
+        cameraRef.current.updateProjectionMatrix();
+        rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+      }
+    };
 
-//             let w = 0.1;
-//             let d = 0.4;
-//             c = max(c, gm(rgb, mc, -t, w, d, false));
-//             c = max(c, gm(rgb, abs(y/x)*sign(y), -t, w, d, false));
-//             c = max(c, gm(rgb, (x*x)/(y*y)*sign(y), -t, w, d, false));
-//             c = max(c, gm(rgb, (x*x) + (y*y), t, w, d, true));
+    window.addEventListener('resize', handleResize);
 
-//             c = c + rgb * ds(uv, se, t/TAU, px*2.0, 2.0, 0.0);
-//             c = c + rgb * ds(uv, se, t/TAU, px*2.0, 2.0, PI);
-//             c = c + rgb * ds(uv, -se, t/TAU, px*2.0, 2.0, 0.0);
-//             c = c + rgb * ds(uv, -se, t/TAU, px*2.0, 2.0, PI);
-//             c = max(c, vec3<f32>(0.0));
+    // Clean up
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
+      if (rendererRef.current && rendererRef.current.domElement && containerRef.current) {
+        containerRef.current.removeChild(rendererRef.current.domElement);
+      }
+      
+      // Remove event listeners
+      if (controlsRef.current) {
+        controlsRef.current.dispose();
+      }
+    };
+  }, [gridSize, boxSize, backgroundColor, lightColor, darkColor, lightEmissive, darkEmissive]);
 
-//             c = c + pow(max(1.0 - l, 0.0), 3.0 / z);
+  // Toggle between light and dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.style.backgroundColor = isDarkMode ? backgroundColor : '#222';
+  };
 
-//             if (m.z > 0.0) {
-//                 let xyg  = abs(fract(uv + 0.5) - 0.5) / px;
-//                 let grid = 1.0 - min(min(xyg.x, xyg.y), 1.0);
-//                 c.g = c.g + 0.2 * grid;
-//                 c.b = c.b + 0.2 * grid;
-//             }
+  return (
+    <div className="relative w-full h-screen">
+      <div ref={containerRef} className="w-full h-full" />
+      <div className="absolute top-4 right-4 z-10">
+        <button 
+          onClick={toggleDarkMode}
+          className="px-4 py-2 bg-white bg-opacity-20 rounded-md text-white hover:bg-opacity-30 transition-all"
+        >
+          Toggle {isDarkMode ? 'Light' : 'Dark'} Mode
+        </button>
+      </div>
+    </div>
+  );
+};
 
-//             bg = bg + c;
-//         }
-//     }
-
-//     bg = bg / (aa * aa);
-//     bg = bg * sqrt(bg) * 1.5;
-
-//     return vec4<f32>(bg, 1.0);
-// }
-// `;
-
-//     // Create a raw shader material (WebGPU in mind)
-//     const material = new THREE.RawShaderMaterial({
-//       vertexShader: wgslVertex,
-//       fragmentShader: wgslFragment,
-//       uniforms: {
-//         // You can't pass uniforms the classic way in a RawShaderMaterial for WebGPU;
-//         // Instead, you need to create a GPU buffer. This is a simplified example:
-//         iResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-//         iTime: { value: 0.0 },
-//         iMouse: { value: new THREE.Vector4(0, 0, 0, 0) },
-//       },
-//     });
-
-//     const mesh = new THREE.Mesh(geometry, material);
-//     scene.add(mesh);
-
-//     // Animate
-//     let startTime = performance.now();
-//     function animate() {
-//       requestAnimationFrame(animate);
-//       let elapsed = (performance.now() - startTime) * 0.001;
-
-//       // In a fully working WebGPU pipeline, you'd update your uniform buffer
-//       // with the new iTime, iMouse, etc. For demonstration:
-//       material.uniforms.iTime.value = elapsed;
-
-//       // Render
-//       renderer.render(scene, camera);
-//     }
-//     animate();
-
-//     // Cleanup on unmount
-//     return () => {
-//       renderer.dispose();
-//       scene.remove(mesh);
-//       geometry.dispose();
-//       material.dispose();
-//     };
-//   }, []);
-
-//   return <canvas ref={canvasRef} />;
-// }
+export default AnimatedBoxes;
