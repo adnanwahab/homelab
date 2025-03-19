@@ -7,10 +7,13 @@ import fetch from "node-fetch";
 import OpenAI from "openai";
 import { createClient } from "@1password/sdk";
 
+/**
+ * Fetches the OpenAI API key from environment or defaults.
+ */
 async function fetchOpenAIApiKey() {
     const openai_api_key =
-        process.env.OPENAI_API_KEY
-    //console.log("openai_api_key", 123);
+        process.env.OPENAI_API_KEY;
+    console.log("openai_api_key", 123);
     return openai_api_key;
 }
 
@@ -29,7 +32,7 @@ const connectedClients = new Set<ReadableStreamDefaultController>();
  * a solution in modern JavaScript, returns the text from the API.
  */
 async function solve_leet_code_img(img_path: string) {
-    //return "shit";
+    // return "dummy text if needed";
     const base64EncodedImage = fs.readFileSync(img_path, "base64");
     const response = await client.chat.completions.create({
         model: "gpt-4o",
@@ -39,7 +42,7 @@ async function solve_leet_code_img(img_path: string) {
                 content: [
                     {
                         type: "text",
-                        text: "Describe the simplest solution to the problem in modern JavaScript 2025",
+                        text: "Describe the simplest solution to the problem in modern javascript 2025",
                     },
                     {
                         type: "image_url",
@@ -52,8 +55,10 @@ async function solve_leet_code_img(img_path: string) {
         ],
         max_tokens: 2024,
     });
-    const result = response.choices[0].message.content || "";
+    const result = response.choices?.[0]?.message?.content || "";
 
+    //return result;
+    // Optional second call for "improved" version
     const response_Improved = await client.chat.completions.create({
         model: "o1-preview",
         messages: [
@@ -69,27 +74,47 @@ async function solve_leet_code_img(img_path: string) {
                 ],
             },
         ],
-        //max_tokens: 2024,
     });
 
-    return response_Improved.choices[0].message.content;
+    return response_Improved.choices?.[0]?.message?.content || result;
+}
+
+/**
+ * Utility to safely escape HTML special characters.
+ */
+function escapeHTML(text: string) {
+    return text.replace(/[&<>"']/g, (match) => {
+        switch (match) {
+            case "&":
+                return "&amp;";
+            case "<":
+                return "&lt;";
+            case ">":
+                return "&gt;";
+            case '"':
+                return "&quot;";
+            case "'":
+                return "&#39;";
+        }
+        return match;
+    });
 }
 
 /**
  * Creates an HTML page that:
- *   - Uses SSE (Server-Sent Events) to auto-refresh when an image is received
- *   - Displays the uploaded/received image
- *   - Loads Terser & Highlight.js from CDNs
- *   - Shows two code blocks: the original text from OpenAI, and a version
- *     with comments removed (via Terser)
- *   - Uses JSON.stringify to safely embed the text from OpenAI in the script
+ *   1) Uses SSE (Server-Sent Events) to auto-refresh when an image is received.
+ *   2) Displays the uploaded image.
+ *   3) Loads Terser & Highlight.js from CDNs.
+ *   4) Splits the original code into lines, highlights each line, and on hover:
+ *      - highlights that line’s background
+ *      - copies that line’s text to an <input>.
+ *   5) Same with the processed (comments-removed) code.
  */
 function makeHTML(result: string): string {
-    // Safely serialize "result" (which may include quotes, backticks, etc.)
+    // We store the raw text in a JS string:
     const safeResult = JSON.stringify(result);
 
-    return `
-<!DOCTYPE html>
+    return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -113,29 +138,89 @@ function makeHTML(result: string): string {
       background: #f8f8f8;
       padding: 10px;
       overflow-x: auto;
+      position: relative;
     }
     h2 {
       margin-top: 1.2em;
       margin-bottom: 0.5em;
     }
+    /* Each individual line */
+    .code-line {
+      display: inline-block;
+      width: 100%;
+    }
+    /* Highlight the hovered line */
+    .code-line.highlight-line {
+      background-color: #fffb91; /* pale yellow */
+    }
+    /* Extra pointer styling so it’s clear lines are interactive */
+    .code-line:hover {
+      cursor: pointer;
+    }
   </style>
 
   <script>
-    // Set up SSE to refresh if "/events" emits "refresh"
-    const eventSource = new EventSource('/events');
-    eventSource.onmessage = (event) => {
-      if (event.data === 'refresh') {
-        window.location.reload();
-      }
-    };
-    eventSource.onerror = (error) => {
-      console.error('EventSource error:', error);
-      window.location.reload();
-    };
+    // We'll do line-by-line splitting/hover in initCodeBlocks
+    async function initCodeBlocks(codeWithComments) {
+      // --- Original Code ---
+
+      // 1) Split into lines, wrap each line in a span
+      const originalLines = codeWithComments.split('\\n').map(line =>
+        '<span class="code-line">' + ${escapeHTML.toString()}(line) + '</span>'
+      ).join('\\n');
+
+      // 2) Populate #originalCode
+      const originalCodeEl = document.getElementById('originalCode');
+      originalCodeEl.innerHTML = originalLines;
+
+      // 3) Syntax highlight
+      hljs.highlightElement(originalCodeEl);
+
+      // 4) Hover/copy
+      originalCodeEl.querySelectorAll('.code-line').forEach(span => {
+        span.addEventListener('mouseenter', () => {
+          span.classList.add('highlight-line');
+          document.getElementById('lineInput').value = span.textContent;
+        });
+        span.addEventListener('mouseleave', () => {
+          span.classList.remove('highlight-line');
+        });
+      });
+
+      // --- Processed Code (comments removed) ---
+      const result = await Terser.minify(codeWithComments, {
+        mangle: false,
+        compress: false,
+        format: {
+          comments: false,
+          beautify: true
+        }
+      });
+      const processedCode = result.code || '// Terser produced empty code!';
+
+      const processedLines = processedCode.split('\\n').map(line =>
+        '<span class="code-line">' + ${escapeHTML.toString()}(line) + '</span>'
+      ).join('\\n');
+
+      const processedCodeEl = document.getElementById('processedCode');
+      processedCodeEl.innerHTML = processedLines;
+      hljs.highlightElement(processedCodeEl);
+
+      processedCodeEl.querySelectorAll('.code-line').forEach(span => {
+        span.addEventListener('mouseenter', () => {
+          span.classList.add('highlight-line');
+          document.getElementById('lineInput').value = span.textContent;
+        });
+        span.addEventListener('mouseleave', () => {
+          span.classList.remove('highlight-line');
+        });
+      });
+    }
   </script>
 </head>
 <body>
   <h1>Hello World ${Date.now()}</h1>
+
   <img src="/image" width="800" height="450" alt="Received Image" />
 
   <h2>Original Code/Text (from OpenAI)</h2>
@@ -145,32 +230,22 @@ function makeHTML(result: string): string {
   <pre><code id="processedCode" class="language-javascript"></code></pre>
 
   <script>
-    // The OpenAI result is safely embedded as a JS string
+    // SSE auto-reload if the server pushes "refresh"
+    const eventSource = new EventSource('/events');
+    eventSource.onmessage = (event) => {
+      if (event.data === 'refresh') {
+        window.location.reload();
+      }
+    };
+    eventSource.onerror = (err) => {
+      console.error('EventSource error:', err);
+      window.location.reload();
+    };
+
+    // The server-passed string from OpenAI
     const codeWithComments = ${safeResult};
-
-    // Show the original text in #originalCode
-    document.getElementById('originalCode').textContent = codeWithComments;
-
-    // Run Terser to remove comments, keep it semi-readably formatted
-    Terser.minify(codeWithComments, {
-      mangle: false,
-      compress: false,
-      format: {
-        comments: false,
-        beautify: true,
-      },
-    })
-    .then((minified) => {
-      document.getElementById('processedCode').textContent =
-        minified.code || "// Terser produced empty code!";
-      // Syntax-highlight both code blocks
-      hljs.highlightElement(document.getElementById('originalCode'));
-      hljs.highlightElement(document.getElementById('processedCode'));
-    })
-    .catch((err) => {
-      document.getElementById('processedCode').textContent =
-        "// Error removing comments: " + err.toString();
-    });
+    // Initialize line-by-line logic
+    initCodeBlocks(codeWithComments);
   </script>
 </body>
 </html>`;
@@ -198,7 +273,7 @@ function notifyClients() {
  */
 function start_server() {
     serve({
-        port: 8888,
+        port: PORT,
         idleTimeout: 255,
         async fetch(req, server) {
             const url = new URL(req.url);
@@ -212,7 +287,6 @@ function start_server() {
                     start(c) {
                         controller = c;
                         const encoder = new TextEncoder();
-                        // Send initial message
                         controller.enqueue(
                             encoder.encode("data: connected\n\n"),
                         );
@@ -236,8 +310,9 @@ function start_server() {
                 const body = await req.blob();
                 const arrayBuffer = await body.arrayBuffer();
                 fs.writeFileSync(imagePath, Buffer.from(arrayBuffer));
-                //notifyClients();
-                console.log("recieved image and wrote to desktop");
+                console.log("Received image and wrote to desktop");
+                // Optionally notify all clients to refresh
+                // notifyClients();
                 return new Response("Image received");
             }
 
@@ -253,7 +328,7 @@ function start_server() {
                 }
             }
 
-            // Default route: run the OCR/solution pipeline, display the HTML
+            // Default route: run the solution pipeline, display the HTML
             const result = await solve_leet_code_img(imagePath);
             return new Response(makeHTML(result), {
                 headers: { "Content-Type": "text/html" },
@@ -262,7 +337,7 @@ function start_server() {
     });
 }
 
-// Watch a directory for a new "screenshot.png" and upload it somewhere else
+// Watch a directory for "screenshot.png" and upload it to /receive-image
 watch(WATCH_DIR, async (eventType, filename) => {
     if (filename !== "screenshot.png") return;
 
@@ -271,9 +346,7 @@ watch(WATCH_DIR, async (eventType, filename) => {
         const file = Bun.file(filePath);
         console.log(`Sending ${filename} to server...`);
 
-        // Make sure you define or set this somewhere (e.g. in your .env or code).
-        // For example: const TARGET_URL = "http://yourserver/receive-image";
-        // Otherwise it won't know where to POST.
+        // Provide an actual endpoint for posting the screenshot
         const TARGET_URL =
             process.env.TARGET_URL || "http://localhost:8080/receive-image";
 
@@ -293,5 +366,6 @@ watch(WATCH_DIR, async (eventType, filename) => {
 });
 
 start_server();
-
-console.log(`Server running at http://localhost:${PORT}`);
+console.log(
+    `Server running at http://localhost:${PORT} - jupyyter.cooperative-robotics.com`,
+);

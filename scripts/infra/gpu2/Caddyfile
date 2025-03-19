@@ -1,63 +1,143 @@
 {
+	# Global Options
 	email adnan.f.wahab@gmail.com
+	admin localhost:2019
+	debug
+
+	# If you want to use ZeroSSL's ACME endpoint:
+	#acme_ca https://acme.zerossl.com/v2/DV90
+
+	# Use Cloudflare DNS for certificate challenges.
+	# Replace with your real API token.
+	#acme_dns cloudflare "NkMrF1e_xtqtSAEDvVPOXPVUa_VwxhBeNeKBVzxB"
+	acme_dns porkbun {
+		api_key pk1_62468de2630bc187d931b5fbe492804aeef44fb1b4bd76a6a0c329aa1f7cc3b0
+		api_secret_key sk1_0a7503fccd9fa51c59cfdef8e316271ab9b29934e532e25bf62446c9f6b54f24
+	}
+	# Tailscale configuration
+	# (caddy-tailscale plugin)
+	tailscale {
+		# Your Tailscale auth key
+		auth_key tskey-auth-kcLGhDDaXi11CNTRL-PYfniXrHQpdh5EGeFFBJodBReXa8mZoD
+
+		# If you're using Tailscale's default control server, omit this or keep blank
+		#control_url
+
+		# Whether the node is ephemeral or not
+		ephemeral false
+
+		# Where to store Tailscale state
+		# e.g. /var/lib/tailscale or /home/adnan/tailscale
+		#state_dir /home/adnan/tailscale_state
+
+		# Enable Tailscale Web UI
+		webui true
+
+		# (Optionally) customize node-specific overrides
+		# learnmath-node {
+		#    auth_key <if different>
+		#    hostname learn-math-tsnode
+		#    ephemeral false
+		#    state_dir /home/adnan/tailscale_state/learnmath-node
+		#    webui true
+		# }
+	}
 }
 
-files.learnmath.fyi {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-		resolvers 1.1.1.1
-	}
-	root * /home/adnan/derp/support_bret
-	file_server browse
-	header Access-Control-Allow-Origin *
-	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
-	header Access-Control-Allow-Headers "Content-Type"
-}
-
-jupyter.learnmath.fyi {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-		resolvers 1.1.1.1
-	}
-	reverse_proxy localhost:8888
-	header Access-Control-Allow-Origin *
-	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
-	header Access-Control-Allow-Headers "Content-Type"
-}
-
-learnmath.fyi {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-		resolvers 1.1.1.1
-	}
-
-	route /status_page {
+# ------------------------------------------------------------------
+#  Public Domain: learn-math.org
+# ------------------------------------------------------------------
+cgi-tools.dev {
+	# Handle /status_page requests separately
+	handle /status_page* {
 		respond "status page"
 	}
 
-	route /files {
-		root * /home/adnan/homelab
-		file_server browse
-		header Access-Control-Allow-Origin *
-		header Access-Control-Allow-Methods "GET, POST, OPTIONS"
-		header Access-Control-Allow-Headers "Content-Type"
+	# All other requests get proxied to your local app (e.g., Bun, echo.go, etc.) on port 8000.
+	handle {
+		reverse_proxy localhost:8000 {
+			# These headers help ensure that the necessary
+			# Upgrade and Connection headers for WebSocket support are passed through.
+			header_up Upgrade {http.request.header.Upgrade}
+			header_up Connection {http.request.header.Connection}
+		}
 	}
 
-
-	route /* {
-		reverse_proxy localhost:8888
-	}
-
-	# Add logging for this site
+	# Logging
 	log {
-		output file /home/adnan/derp/log/caddy/hashirama.blog.log {
+		output file /home/adnan/derp/log/caddy/learn-math.org.log {
 			roll_size 10MiB
 			roll_keep 5
 			roll_gzip
 		}
 	}
 
-	header Access-Control-Allow-Origin *
+	# CORS Headers
+	header Access-Control-Allow-Origin "*"
 	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
 	header Access-Control-Allow-Headers "Content-Type"
+}
+
+# ------------------------------------------------------------------
+#  File Server: files.learn-math.org
+# ------------------------------------------------------------------
+files.cgi-tools.dev {
+	root * /home/adnan/derp
+	file_server browse
+
+	# CORS Headers
+	header Access-Control-Allow-Origin "*"
+	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
+	header Access-Control-Allow-Headers "Content-Type"
+}
+
+# ------------------------------------------------------------------
+#  Public JupyterLab: jupyter.learn-math.org
+# ------------------------------------------------------------------
+jupyter.cgi-tools.dev {
+	reverse_proxy localhost:8888
+
+	# CORS Headers
+	header Access-Control-Allow-Origin "*"
+	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
+	header Access-Control-Allow-Headers "Content-Type"
+}
+
+# ------------------------------------------------------------------
+#  cooperative-robotics.com and related subdomains
+# ------------------------------------------------------------------
+cooperative-robotics.com {
+	reverse_proxy localhost:8080
+}
+
+jupyter.cooperative-robotics.com {
+	reverse_proxy localhost:8888
+
+	# CORS Headers
+	header Access-Control-Allow-Origin "*"
+	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
+	header Access-Control-Allow-Headers "Content-Type"
+}
+
+files.cooperative-robotics.com {
+	root * /home/adnan/derp
+	file_server browse
+
+	# CORS Headers
+	header Access-Control-Allow-Origin "*"
+	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
+	header Access-Control-Allow-Headers "Content-Type"
+}
+
+# ------------------------------------------------------------------
+#  Other domains / ports
+# ------------------------------------------------------------------
+# 8000 = cgi-tools.dev
+# 8080 = cooperative-robotics.com
+# 3000 = Next.js (happydream.dev)
+# 5173 = Vite
+# 8888 = Jupyter
+
+happydream.dev {
+	reverse_proxy localhost:3000
 }

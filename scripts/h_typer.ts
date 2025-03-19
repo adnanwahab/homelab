@@ -8,7 +8,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@1password/sdk";
 
 async function fetchAnthropicApiKey() {
-    const anthropic_api_key = ``
+    const anthropic_api_key = 
     //     createClient().get("ANTHROPIC_API_KEY") ||
     //     process.env.ANTHROPIC_API_KEY;
     // console.log(anthropic_api_key);
@@ -21,7 +21,7 @@ const client = new Anthropic({ apiKey: anthropic_api_key });
 
 const WATCH_DIR = "/home/adnan/Desktop/";
 const username = os.userInfo().username;
-const PORT = 8000;
+const PORT = 8080;
 const desktopPath = `/home/${username}/Desktop`;
 const imagePath = `${desktopPath}/received-image.png`;
 const connectedClients = new Set<ReadableStreamDefaultController>();
@@ -33,15 +33,15 @@ const connectedClients = new Set<ReadableStreamDefaultController>();
 async function solve_leet_code_img(img_path: string) {
     const base64EncodedImage = fs.readFileSync(img_path, "base64");
     const msg = await client.messages.create({
-        model: "claude-3-5-sonnet-20241022",
-        max_tokens: 2024,
+        model: "claude-3-7-sonnet-20250219",
+        max_tokens: 4024,
         messages: [
             {
                 role: "user",
                 content: [
                     {
                         type: "text",
-                        text: "Describe the simplest solution to the problem in modern JavaScript 2025",
+                        text: "Describe the best optimal solution to the problem in modern javascript 2025",
                     },
                     {
                         type: "image",
