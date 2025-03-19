@@ -11,3 +11,5 @@ scripts - bun
 notebooks/course_content - python + uv + https://github.com/enjalot/latent-scope
 web/tools, web/blog - next.js
 fb, ig, twitter, linkedin, wordpress
+
+# cgi-tools.dev

@@ -48,14 +48,19 @@
 #  Public Domain: learn-math.org
 # ------------------------------------------------------------------
 cgi-tools.dev {
-	# Simple status page
-	route /status_page {
+	# Handle /status_page requests separately
+	handle /status_page* {
 		respond "status page"
 	}
 
-	# Reverse proxy to your local app (bun, echo.go, etc.)
-	route /* {
-		reverse_proxy localhost:8000
+	# All other requests get proxied to your local app (e.g., Bun, echo.go, etc.) on port 8000.
+	handle {
+		reverse_proxy localhost:8000 {
+			# These headers help ensure that the necessary
+			# Upgrade and Connection headers for WebSocket support are passed through.
+			header_up Upgrade {http.request.header.Upgrade}
+			header_up Connection {http.request.header.Connection}
+		}
 	}
 
 	# Logging
@@ -98,12 +103,12 @@ jupyter.cgi-tools.dev {
 	header Access-Control-Allow-Headers "Content-Type"
 }
 
+# ------------------------------------------------------------------
+#  cooperative-robotics.com and related subdomains
+# ------------------------------------------------------------------
 cooperative-robotics.com {
 	reverse_proxy localhost:8080
 }
-
-
-
 
 jupyter.cooperative-robotics.com {
 	reverse_proxy localhost:8888
@@ -124,15 +129,15 @@ files.cooperative-robotics.com {
 	header Access-Control-Allow-Headers "Content-Type"
 }
 
-#8000 = bun - cgi-tools.dev
-#8080 = bun cooperative-robotics.com
-
-
-#3000 = next 
-#3333 = python fastapi - happydream.dev
-#5173 vite
-
-#8888 = jupyter
+# ------------------------------------------------------------------
+#  Other domains / ports
+# ------------------------------------------------------------------
+# 8000 = Bun / your WebSocket-enabled backend for cgi-tools.dev
+# 8080 = Bun for cooperative-robotics.com
+# 3000 = Next.js (happydream.dev)
+# 3333 = Python FastAPI (happydream.dev)
+# 5173 = Vite
+# 8888 = Jupyter
 
 happydream.dev {
 	reverse_proxy localhost:3000
