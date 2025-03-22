@@ -11,7 +11,7 @@ export default function Resume() {
           </h1>
           {/* Optional: Add a short tagline or role summary */}
           <p className="text-sm text-gray-600 mt-1">
-            Perception Tools
+            Perception Tools Engineer 
           </p>
         </div>
         
@@ -60,6 +60,25 @@ export default function Resume() {
           Professional Experience
         </h2>
 
+        <div className="mb-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-md font-semibold text-gray-800">
+                Founding Android Engineer | Swarmbotics.ai
+              </h3>
+              <p className="text-xs text-gray-500">Feb 2024 - July 2024</p>
+            </div>
+            <img
+              src="https://cdn.prod.website-files.com/654e59919b1d46d3d7ad02b7/654e5b251f82e087adb3ad9e_icosahedron-dark%20orange.png"
+              alt="Zoox logo"
+              className="h-6 w-auto object-contain"
+            />
+          </div>
+          <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
+            <li>Implemented low-latency tele-operations for Military Contractor</li>
+          </ul>
+        </div>
+
         {/* Zoox */}
         <div className="mb-4">
           <div className="flex items-center justify-between">
@@ -67,7 +86,7 @@ export default function Resume() {
               <h3 className="text-md font-semibold text-gray-800">
                 Perception Tools Engineer | Zoox
               </h3>
-              <p className="text-xs text-gray-500">Feb 2021 - Present</p>
+              <p className="text-xs text-gray-500">Feb 2021 - Jan 2023</p>
             </div>
             <img
               src="/logos/zoox.jpeg"
@@ -76,7 +95,7 @@ export default function Resume() {
             />
           </div>
           <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-            <li>Lead development of 3D annotation tools for improving accuracy of perception models</li>
+            <li>Lead development of 3D annotation tools for AV computer vision</li>
             <li>Optimized data pipelines at 50PB scale, improving labeling throughput</li>
             <li>Implemented Auto-labeling, RLHF, and continuous QA to lower cost of labels by over 80%</li>
             <li>
@@ -98,13 +117,13 @@ export default function Resume() {
             <img
               src="/logos/amex.jpeg"
               alt="American Express logo"
-              className="h-8 w-auto object-contain"
+              className="h-6 w-auto object-contain"
             />
           </div>
           <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
+            <li>Developed ML systems for personalized card pages</li>
             <li>Implemented A/B testing and analytics, increasing revenue by $400M/year</li>
-            <li>Implemented design systems for consistent user experience across multiple regions.</li>
-            <li>Created personalization layer for the "view-all-cards" page to increase conversions.</li>
+            <li>Enhanced design systems for consistent user experience</li>
           </ul>
         </div>
 
@@ -124,10 +143,10 @@ export default function Resume() {
             />
           </div>
           <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-            <li>Built LiDAR annotation tools for point clouds (WebGL, Three.js) for nascent AV industry</li>
+            <li>Built first LiDAR annotation tools for point clouds (WebGL, Three.js)</li>
             <li>Implemented large-scale labeling pipelines (Node.js, C++, Go)</li>
             <li>
-              Awarded first Innovation Award for Empowerment of Women by Secretary of State Hillary Clinton
+              Awarded first Innovation Award for Empowerment of Women by H. Clinton
             </li>
           </ul>
         </div>
@@ -148,8 +167,8 @@ export default function Resume() {
             />
           </div>
           <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-            <li>Contributed to PlayStation Now video game streaming services with ember.js and Java</li>
-            <li>Built UI for PlayStation Store with over 100 million customers</li>
+            <li>Contributed to PlayStation Now video game streaming services with ember.js and java</li>
+            <li>Built PlayStation Store with over 100 million customers</li>
           </ul>
         </div>
 
@@ -169,7 +188,7 @@ export default function Resume() {
             />
           </div>
           <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-            <li>Created appointment-management applications to support 2M+ small business owners</li>
+            <li>Created responsive web apps for 2M+ small business owners</li>
             <li>Supported BookFresh acquisition to expand Square's calendar services <a className="text-blue-600 hover:underline" href="https://archive.is/5WG2G" target="_blank" rel="noopener noreferrer">https://archive.is/5WG2G</a></li>
           </ul>
         </div>
@@ -201,7 +220,7 @@ export default function Resume() {
           </li>
           <li>
             <span className="font-semibold">Frontend:</span>{" "}
-            React, Three.js, WebGL, tailwindcss
+            React, Three.js, WebGL, WebGPU, tailwindcss
           </li>
           <li>
             <span className="font-semibold">Backend:</span>{" "}
@@ -212,8 +231,8 @@ export default function Resume() {
             3D annotation, Computer Vision systems
           </li>
           <li>
-            <span className="font-semibold">Data Engineering &amp;</span>{" "}
-            Apache Spark, Kafka, Clickhouse, Kinesis
+            <span className="font-semibold">Tools:</span>{" "}
+            Git, Figma, Testing, CI/CD
           </li>
         </ul>
       </section>

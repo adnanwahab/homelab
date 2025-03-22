@@ -1,13 +1,8 @@
 # Homelab - 2025
-
 # CGI-tools.dev
-
 ### Dynamicland.org's principles will increase shared reasoning and scientific thinking by at least 20% over next 5 years
-
 # documentation - https://roboticsuniversity.observablehq.cloud/dynamicbotnotebook/
-
 # collaborative thinking space
-
 1. Anomaly detection - observe abnormal activity
 2. Capacity planning - extrapolate non-linear trends
 3. Crisis diagnosis - see interactions between services
@@ -34,6 +29,4 @@ cgi-tools.dev - python
 cooperative-robotics.com - bun
 adnanwahab.com - netlify / vercel
 happydream.dev = deno2
-=======
 plotly(datashader), clickhouse, figma, notion-api
->>>>>>> c30ed9a (simplify)
