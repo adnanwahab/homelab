@@ -8,12 +8,12 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@1password/sdk";
 
 async function fetchAnthropicApiKey() {
-    const anthropic_api_key = 
-    //     createClient().get("ANTHROPIC_API_KEY") ||
-    //     process.env.ANTHROPIC_API_KEY;
-    // console.log(anthropic_api_key);
-    // console.log(createClient().get("ANTHROPIC_API_KEY"));
-    return anthropic_api_key;
+  const anthropic_api_key = process.env.ANTHROPIC_API_KEY;
+  //     createClient().get("ANTHROPIC_API_KEY") ||
+  //
+  // console.log(anthropic_api_key);
+  // console.log(createClient().get("ANTHROPIC_API_KEY"));
+  return anthropic_api_key;
 }
 
 const anthropic_api_key = await fetchAnthropicApiKey();
@@ -31,33 +31,33 @@ const connectedClients = new Set<ReadableStreamDefaultController>();
  * a solution in modern JavaScript, returns the text from the API.
  */
 async function solve_leet_code_img(img_path: string) {
-    const base64EncodedImage = fs.readFileSync(img_path, "base64");
-    const msg = await client.messages.create({
-        model: "claude-3-7-sonnet-20250219",
-        max_tokens: 4024,
-        messages: [
-            {
-                role: "user",
-                content: [
-                    {
-                        type: "text",
-                        text: "Describe the best optimal solution to the problem in modern javascript 2025",
-                    },
-                    {
-                        type: "image",
-                        source: {
-                            type: "base64",
-                            media_type: "image/png",
-                            data: base64EncodedImage,
-                        },
-                    },
-                ],
+  const base64EncodedImage = fs.readFileSync(img_path, "base64");
+  const msg = await client.messages.create({
+    model: "claude-3-7-sonnet-20250219",
+    max_tokens: 4024,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "text",
+            text: "Describe the best optimal solution to the problem in modern javascript 2025",
+          },
+          {
+            type: "image",
+            source: {
+              type: "base64",
+              media_type: "image/png",
+              data: base64EncodedImage,
             },
+          },
         ],
-    });
+      },
+    ],
+  });
 
-    // Return only the text from the first piece of content
-    return msg.content[0].text;
+  // Return only the text from the first piece of content
+  return msg.content[0].text;
 }
 
 /**
@@ -70,10 +70,10 @@ async function solve_leet_code_img(img_path: string) {
  *   - Uses JSON.stringify to safely embed the text from Anthropic in the script
  */
 function makeHTML(result: string): string {
-    // Safely serialize "result" (which may include quotes, backticks, etc.)
-    const safeResult = JSON.stringify(result);
+  // Safely serialize "result" (which may include quotes, backticks, etc.)
+  const safeResult = JSON.stringify(result);
 
-    return `
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,15 +163,15 @@ function makeHTML(result: string): string {
 
 /** Notifies all connected SSE clients to reload. */
 function notifyClients() {
-    const encoder = new TextEncoder();
-    const message = encoder.encode("data: refresh\n\n");
-    for (const controller of connectedClients) {
-        try {
-            controller.enqueue(message);
-        } catch {
-            connectedClients.delete(controller);
-        }
+  const encoder = new TextEncoder();
+  const message = encoder.encode("data: refresh\n\n");
+  for (const controller of connectedClients) {
+    try {
+      controller.enqueue(message);
+    } catch {
+      connectedClients.delete(controller);
     }
+  }
 }
 
 /**
@@ -182,98 +182,96 @@ function notifyClients() {
  * - Default route: read the image with solve_leet_code_img(), render the HTML.
  */
 function start_server() {
-    serve({
-        port: PORT,
-        idleTimeout: 255,
-        async fetch(req, server) {
-            const url = new URL(req.url);
-            const pathname = url.pathname;
-            console.log(pathname);
+  serve({
+    port: PORT,
+    idleTimeout: 255,
+    async fetch(req, server) {
+      const url = new URL(req.url);
+      const pathname = url.pathname;
+      console.log(pathname);
 
-            // SSE endpoint
-            if (pathname === "/events") {
-                let controller: ReadableStreamDefaultController;
-                const stream = new ReadableStream({
-                    start(c) {
-                        controller = c;
-                        const encoder = new TextEncoder();
-                        // Send initial message
-                        controller.enqueue(
-                            encoder.encode("data: connected\n\n"),
-                        );
-                    },
-                    cancel() {
-                        connectedClients.delete(controller);
-                    },
-                });
-                connectedClients.add(controller);
-                return new Response(stream, {
-                    headers: {
-                        "Content-Type": "text/event-stream",
-                        "Cache-Control": "no-cache",
-                        Connection: "keep-alive",
-                    },
-                });
-            }
+      // SSE endpoint
+      if (pathname === "/events") {
+        let controller: ReadableStreamDefaultController;
+        const stream = new ReadableStream({
+          start(c) {
+            controller = c;
+            const encoder = new TextEncoder();
+            // Send initial message
+            controller.enqueue(encoder.encode("data: connected\n\n"));
+          },
+          cancel() {
+            connectedClients.delete(controller);
+          },
+        });
+        connectedClients.add(controller);
+        return new Response(stream, {
+          headers: {
+            "Content-Type": "text/event-stream",
+            "Cache-Control": "no-cache",
+            Connection: "keep-alive",
+          },
+        });
+      }
 
-            // Endpoint to receive an image
-            if (pathname === "/receive-image") {
-                const body = await req.blob();
-                const arrayBuffer = await body.arrayBuffer();
-                fs.writeFileSync(imagePath, Buffer.from(arrayBuffer));
-                notifyClients();
-                return new Response("Image received");
-            }
+      // Endpoint to receive an image
+      if (pathname === "/receive-image") {
+        const body = await req.blob();
+        const arrayBuffer = await body.arrayBuffer();
+        fs.writeFileSync(imagePath, Buffer.from(arrayBuffer));
+        notifyClients();
+        return new Response("Image received");
+      }
 
-            // Serve the uploaded image
-            if (pathname === "/image") {
-                try {
-                    const imageData = fs.readFileSync(imagePath);
-                    return new Response(imageData, {
-                        headers: { "Content-Type": "image/png" },
-                    });
-                } catch (error) {
-                    return new Response("Image not found", { status: 404 });
-                }
-            }
+      // Serve the uploaded image
+      if (pathname === "/image") {
+        try {
+          const imageData = fs.readFileSync(imagePath);
+          return new Response(imageData, {
+            headers: { "Content-Type": "image/png" },
+          });
+        } catch (error) {
+          return new Response("Image not found", { status: 404 });
+        }
+      }
 
-            // Default route: run the OCR/solution pipeline, display the HTML
-            const result = await solve_leet_code_img(imagePath);
-            return new Response(makeHTML(result), {
-                headers: { "Content-Type": "text/html" },
-            });
-        },
-    });
+      // Default route: run the OCR/solution pipeline, display the HTML
+      const result = await solve_leet_code_img(imagePath);
+      return new Response(makeHTML(result), {
+        headers: { "Content-Type": "text/html" },
+      });
+    },
+  });
 }
 
 // Watch a directory for a new "screenshot.png" and upload it somewhere else
 watch(WATCH_DIR, async (eventType, filename) => {
-    if (filename !== "screenshot.png") return;
+  if (filename !== "screenshot.png") return;
 
-    try {
-        const filePath = path.join(WATCH_DIR, filename);
-        const file = Bun.file(filePath);
-        console.log(`Sending ${filename} to server...`);
+  try {
+    const filePath = path.join(WATCH_DIR, filename);
+    const file = Bun.file(filePath);
+    console.log(`Sending ${filename} to server...`);
 
-        // Make sure you define or set this somewhere (e.g. in your .env or code).
-        // For example: const TARGET_URL = "http://yourserver/receive-image";
-        // Otherwise it won't know where to POST.
-        const TARGET_URL =
-            process.env.TARGET_URL || "http://localhost:8080/receive-image";
+    // Make sure you define or set this somewhere (e.g. in your .env or code).
+    // For example: const TARGET_URL = "http://yourserver/receive-image";
+    // Otherwise it won't know where to POST.
+    const TARGET_URL =
+      process.env.TARGET_URL || "http://localhost:8080/receive-image";
 
-        const response = await fetch(TARGET_URL, {
-            method: "POST",
-            body: file,
-            headers: { "Content-Type": "image/png" },
-        });
+    const response = await fetch(TARGET_URL, {
+      method: "POST",
+      body: file,
+      headers: { "Content-Type": "image/png" },
+    });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        console.log(`Successfully sent ${filename}`);
-    } catch (error) {
-        console.error("Error sending file:", error);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    console.log(`Successfully sent ${filename}`);
+  } catch (error) {
+    console.error("Error sending file:", error);
+  }
 });
 
 start_server();
