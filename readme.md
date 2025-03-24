@@ -18,11 +18,9 @@ https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7
 https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7/examples/webgpu_compute_texture.html#L91
 https://threejs.org/examples/?q=pmrem%20quirectangular#webgpu_pmrem_equirectangular
 https://github.com/mrdoob/three.js/blob/edc26d4ee9104b937b50c22996d3980a9de20cf7/examples/webgpu_materials.html#L85
-<<<<<<< HEAD
 https://snap.stanford.edu/data/
 https://developers.notion.com/docs/getting-started
 https://x.com/jkane/status/1869338097273696621
-<<<<<<< HEAD
 plotly(datashader), clickhouse, figma, notion-api
 https://files.cgi-tools.dev/
 cgi-tools.dev - python
