@@ -8,12 +8,21 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@1password/sdk";
 
 async function fetchAnthropicApiKey() {
+<<<<<<< HEAD
   const anthropic_api_key = process.env.ANTHROPIC_API_KEY;
   //     createClient().get("ANTHROPIC_API_KEY") ||
   //
   // console.log(anthropic_api_key);
   // console.log(createClient().get("ANTHROPIC_API_KEY"));
   return anthropic_api_key;
+=======
+    const anthropic_api_key =  process.env.ANTHROPIC_API_KEY;
+    //     createClient().get("ANTHROPIC_API_KEY") ||
+    //    
+    // console.log(anthropic_api_key);
+    // console.log(createClient().get("ANTHROPIC_API_KEY"));
+    return anthropic_api_key;
+>>>>>>> d28ca2d (simplify)
 }
 
 const anthropic_api_key = await fetchAnthropicApiKey();
