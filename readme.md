@@ -23,8 +23,4 @@ https://developers.notion.com/docs/getting-started
 https://x.com/jkane/status/1869338097273696621
 plotly(datashader), clickhouse, figma, notion-api
 https://files.cgi-tools.dev/
-cgi-tools.dev - python
-cooperative-robotics.com - bun
-adnanwahab.com - netlify / vercel
-happydream.dev = deno2
-plotly(datashader), clickhouse, figma, notion-api
+plotly(datashader), clickhouse, figma, notion-apis
