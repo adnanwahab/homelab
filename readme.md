@@ -9,7 +9,6 @@
 4. System design - don’t guess; decide empirically
 https://dynamicland.org/2024/The_communal_science_lab.pdf
 https://spectrum.ieee.org/xerox-parc
-NeurIPS 2025 - sapolsky + seung lab + daniel dennet + dynamicland.org +
 1. Waymo Open
 2. GDELT
 3. Connnectome
@@ -22,5 +21,5 @@ https://snap.stanford.edu/data/
 https://developers.notion.com/docs/getting-started
 https://x.com/jkane/status/1869338097273696621
 plotly(datashader), clickhouse, figma, notion-api
-https://files.cgi-tools.dev/
+https://files.cgi-tools.dev/q
 plotly(datashader), clickhouse, figma, notion-apis
