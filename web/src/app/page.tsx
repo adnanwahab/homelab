@@ -12,6 +12,7 @@ export default function Home() {
 
 
  function Header() {
+  console.log('wtf',process.env);
   return (
     <div className="flex items-center justify-between border-b border-gray-700 bg-[#1e2231] p-8 text-[#8b98e8]">
       <div className="flex flex-col space-y-2">
