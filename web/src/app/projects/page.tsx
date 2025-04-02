@@ -1,13 +1,15 @@
 export default function () {
-    return <>
-    <ul>
-        <li>WebRTC Steam Streaming</li>
+  return (
+    <>
+      <ul>
+        <li>
+          <a href="/projects/webrtc-streaming">WebRTC Streaming</a>
+        </li>
 
-        <li>Auto-magic Book_reader</li>
+        <li>Auto-magic Book Reader</li>
 
         <li>Replay Analyzer</li>
-
-    </ul>
-    
+      </ul>
     </>
+  )
 }
