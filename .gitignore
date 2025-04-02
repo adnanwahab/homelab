@@ -1,5 +1,5 @@
 notebooks/try-agent.py
-./scripts/.env
+scripts/.env
 .DS_Store
 /dist/
 node_modules/
