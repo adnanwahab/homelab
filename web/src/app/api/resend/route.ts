@@ -73,7 +73,7 @@ export async function GET(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: `daily_reminder@${domains[choice]}`,
-      to: ["mail@adnanwahab.com", "renafkaufman@gmail.com"],
+      to: ["mail@adnanwahab.com"],
       subject,
       html,
     });
