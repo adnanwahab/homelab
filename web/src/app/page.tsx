@@ -30,6 +30,11 @@ export default function Home() {
           </a>
 
 
+          <a href="/projects" className="hover:text-[#8b98e8]">
+            projects
+          </a>
+
+
           {/* <a href="/tools" className="hover:text-[#8b98e8]">
             projects
           </a> */}
