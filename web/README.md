@@ -1,5 +1,5 @@
 # Homelab = robotics UI for 2025
-# 150 mini-games mario arty
+# 150 mini-games mario party
 # 150 visualizations - observablehq
 # 150 three.js demos - simulation-editor
 # 150 blog posts - mdx
