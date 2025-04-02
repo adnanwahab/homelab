@@ -11,8 +11,7 @@ import { createClient } from "@1password/sdk";
  * Fetches the OpenAI API key from environment or defaults.
  */
 async function fetchOpenAIApiKey() {
-    const openai_api_key =
-        process.env.OPENAI_API_KEY || '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'
+    const openai_api_key = process.env.OPENAI_API_KEY
     console.log("openai_api_key", 123);
     return openai_api_key;
 }

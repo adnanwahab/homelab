@@ -7,6 +7,11 @@
 2. Capacity planning - extrapolate non-linear trends
 3. Crisis diagnosis - see interactions between services
 4. System design - don’t guess; decide empirically
+____________
+1. Waymo Open
+2. GDELT
+3. Connnectome
+4. 311
 https://dynamicland.org/2024/The_communal_science_lab.pdf
 https://spectrum.ieee.org/xerox-parc
 1. Waymo Open

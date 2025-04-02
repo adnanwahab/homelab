@@ -9,6 +9,7 @@ import { createClient } from "@1password/sdk";
 
 async function fetchAnthropicApiKey() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   const anthropic_api_key = process.env.ANTHROPIC_API_KEY;
   //     createClient().get("ANTHROPIC_API_KEY") ||
   //
@@ -17,6 +18,9 @@ async function fetchAnthropicApiKey() {
   return anthropic_api_key;
 =======
     const anthropic_api_key =  process.env.ANTHROPIC_API_KEY;
+=======
+    const anthropic_api_key = process.env.anthropic_api_key
+>>>>>>> 22e6a36 (simplify)
     //     createClient().get("ANTHROPIC_API_KEY") ||
     //    
     // console.log(anthropic_api_key);
