@@ -35,9 +35,11 @@ export default function Home() {
           </a>
 
 
-          {/* <a href="/tools" className="hover:text-[#8b98e8]">
-            projects
-          </a> */}
+          {process.env.NODE_ENV === 'development' && (
+            <a href="/tools" className="hover:text-[#8b98e8]">
+              tools
+            </a>
+          )}
           
 
           <a
