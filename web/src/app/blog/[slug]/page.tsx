@@ -21,7 +21,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <p className="mb-8 text-gray-600">{post.date}</p>
       <div
         className="prose prose-lg"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{ __html: 'hi' }}
       />
     </div>
   )
