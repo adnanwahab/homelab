@@ -1,12 +1,6 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  compilerOptions: {
-    baseUrl: '.',
-    paths: {
-      '@/*': ['./*'],
-    },
-  },
   // Configure pageExtensions to include md and mdx
   typescript: {
     ignoreBuildErrors: true,
