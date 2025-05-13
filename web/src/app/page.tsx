@@ -1,4 +1,3 @@
-
 import PortfolioGrid from '../components/PortfolioGrid'
 
 export default function Home() {
@@ -10,54 +9,48 @@ export default function Home() {
   )
 }
 
-
- function Header() {
+function Header() {
   return (
     <div className="flex items-center justify-between border-b border-gray-700 bg-[#1e2231] p-8 text-[#8b98e8]">
       <div className="flex flex-col space-y-2">
         <h1 className="text-5xl font-bold tracking-tight text-[#8b98e8]">
           Adnan Wahab
         </h1>
-        <h1 className="text-xl font-bold tracking-tight text-[#8b98e8]">
+        {/* <h1 className="text-xl font-bold tracking-tight text-[#8b98e8]">
           Computer Graphics, Robotics, Infrastructure
-        </h1>
+        </h1> */}
 
         <div className="flex space-x-4 text-gray-400">
-
-
           <a href="/blog" className="hover:text-[#8b98e8]">
             blog
           </a>
 
-
           <a href="/projects" className="hover:text-[#8b98e8]">
             projects
           </a>
-
 
           {process.env.NODE_ENV === 'development' && (
             <a href="/tools" className="hover:text-[#8b98e8]">
               tools
             </a>
           )}
-          
 
           <a
             href="mailto:adnan@llama-tools.com"
             className="hover:text-[#8b98e8]"
           >
             email
-          </a> 
-   <a
+          </a>
+          <a
             href="https://github.com/adnanwahab"
             className="hover:text-[#8b98e8]"
           >
             github
-          </a> 
-    {/* <a href="https://x.com/adnan_wahab_" className="hover:text-[#8b98e8]">
+          </a>
+          {/* <a href="https://x.com/adnan_wahab_" className="hover:text-[#8b98e8]">
             twitter
           </a> */}
-        <a
+          <a
             href="https://linkedin.com/in/dynabot"
             className="hover:text-[#8b98e8]"
           >
@@ -67,17 +60,14 @@ export default function Home() {
           <a href="/books" className="hover:text-[#8b98e8]">
             books
           </a>
-  </div>
-
-
-
-          {/* <a href="/about" className="hover:text-[#8b98e8]">
-            about
-          </a> */}
         </div>
 
+        {/* <a href="/about" className="hover:text-[#8b98e8]">
+            about
+          </a> */}
+      </div>
 
-        {/* <div className="text-sm text-gray-400">
+      {/* <div className="text-sm text-gray-400">
           <a
             href="/robotics-odyssey"
             className="underline hover:text-[#8b98e8]"
@@ -85,6 +75,6 @@ export default function Home() {
             Self-teaching Robotics info-course
           </a>
         </div> */}
-      </div>
+    </div>
   )
-} 
+}
