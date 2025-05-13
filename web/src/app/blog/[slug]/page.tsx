@@ -8,8 +8,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug)
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await getPostBySlug(params.slug)
 
   if (!post || !post.content) {
     notFound()
