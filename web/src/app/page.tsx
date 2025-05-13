@@ -25,9 +25,9 @@ function Header() {
             blog
           </a>
 
-          <a href="/projects" className="hover:text-[#8b98e8]">
+          {/* <a href="/projects" className="hover:text-[#8b98e8]">
             projects
-          </a>
+          </a> */}
 
           {process.env.NODE_ENV === 'development' && (
             <a href="/tools" className="hover:text-[#8b98e8]">
