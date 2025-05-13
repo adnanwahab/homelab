@@ -56,6 +56,9 @@ export async function getPostBySlug(slug: string) {
       .process(matterResult.content)
     const contentHtml = processedContent.toString()
 
+    // Log the HTML content for debugging
+    console.log('Generated HTML:', contentHtml)
+
     return {
       slug,
       content: contentHtml,
