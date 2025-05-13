@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "trustedDependencies": [
+    "gray-matter"
+  ],
   "dependencies": {
     "6be686728e80f6c6": "https://api.observablehq.com/d/6be686728e80f6c6.tgz?v=3",
     "@headlessui/react": "^2.2.0",
@@ -30,6 +33,7 @@
     "deck.gl": "^9.0.38",
     "fast-glob": "^3.2.11",
     "feed": "^4.2.2",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.12.7",
     "livekit-client": "^2.7.5",
     "livekit-server-sdk": "^2.9.4",
