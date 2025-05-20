@@ -1,0 +1,10 @@
+So i started using Bun + tailscale + caddy as a reverse proxy to connect to porkbun.
+
+So far this is the easiest non-cloud based solution to rapid prototyping different endpoints.
+
+
+The compile time is literally non-existent and instead of having to Git push and build a bundle, it instantly deploys the newest version to a live-link.
+
+I could see this setup being super useful in a swarm based agent setup.
+
+It's a radical simplification in programming that is mostly about moving and storing data.
