@@ -9,3 +9,4 @@ not ordererd
 3. simon wilson
 4. robert heaton
 5. gwern
+6. steve newcomb
