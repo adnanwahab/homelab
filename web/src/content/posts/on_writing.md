@@ -9,4 +9,4 @@ if every human wrote a daily or weekly blog, then AI would understand the needs 
 
 Good design tends to involve a highly detailed understand of how human beings actually think.
 
-a decade from now you'll  be happy you started a blog :)
+a decade from now you'll  be happy you started a blog.
