@@ -1,3 +1,9 @@
+---
+title: 'Tailscale Selfhosted Development'
+date: '2025-05-13'
+---
+
+
 So i started using Bun + tailscale + caddy as a reverse proxy to connect to porkbun.
 
 So far this is the easiest non-cloud based solution to rapid prototyping different endpoints.

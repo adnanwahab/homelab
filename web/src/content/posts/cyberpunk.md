@@ -1,3 +1,9 @@
+---
+title: 'Cyberpunk is my favorite game in the last decade'
+date: '2025-05-13'
+---
+
+
 cyberpunk 2077 is the best story game i've ever played.
 
 i havent played any game seriously in maybe 10 years.
