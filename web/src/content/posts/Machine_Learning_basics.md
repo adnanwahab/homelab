@@ -1,0 +1,82 @@
+---
+title: 'Machine Learning Basics'
+date: '2025-05-13'
+---
+
+Binary Cross Entropy
+
+Binary cross entropy (BCE) is a loss function primarily used in binary classification problems—situations where the goal is to classify data into two distinct categories (e.g., spam vs. non-spam emails).
+
+The formula for BCE is:
+
+
+
+Where:
+
+ is the actual binary value (0 or 1).
+
+ is the predicted probability that the input belongs to class 1.
+
+A lower BCE indicates predictions closer to the actual values. Minimizing BCE improves the accuracy and reliability of a classification model.
+
+Stochastic Gradient Descent
+
+To optimize the loss function and improve predictions, machine learning algorithms use gradient descent, an iterative optimization method. Stochastic Gradient Descent (SGD) is a variant that calculates the gradient (direction of steepest descent) using a randomly selected single or small batch of data points in each iteration, rather than the entire dataset.
+
+Advantages of SGD include:
+
+Efficiency: Faster computations, suitable for large datasets.
+
+Flexibility: Works well in online and continuously updating environments.
+
+The basic update rule for SGD is:
+
+
+
+Where:
+
+ represents the model parameters.
+
+ is the learning rate, determining the step size.
+
+ is the gradient of the loss function with respect to parameters .
+
+Activation Functions
+
+Non-linear functions such as ReLU, Sigmoid, Tanh, and Softmax, essential for enabling neural networks to model complex patterns.
+
+Backpropagation
+
+Algorithm for efficiently computing gradients to update network weights during training.
+
+Regularization
+
+Techniques like dropout, weight decay, and early stopping that prevent overfitting and help models generalize better.
+
+Convolutional Neural Networks (CNNs)
+
+Specialized networks for spatial data, especially images and videos, using convolutional layers to detect local patterns and features.
+
+Recurrent Neural Networks (RNNs) and Transformers
+
+Networks designed to process sequential data, such as text or time series. Transformers, specifically, leverage attention mechanisms to handle sequence data more efficiently.
+
+Batch Normalization
+
+A technique to stabilize learning by normalizing activations across mini-batches, resulting in faster and more stable training.
+
+Loss Functions
+
+Beyond binary cross entropy, important loss functions include Mean Squared Error (MSE), Categorical Cross Entropy, and Hinge loss.
+
+Optimization Algorithms
+
+Methods like Adam, RMSprop, AdaGrad, and Momentum-based optimizers used for efficiently training neural networks.
+
+Transfer Learning
+
+Technique of reusing a model pre-trained on a large dataset as a starting point for training on a smaller, related dataset, significantly improving training efficiency and performance.
+
+Hyperparameter Tuning
+
+The process of systematically adjusting model parameters (like learning rate, batch size, layers, and neurons) to optimize model performance.
