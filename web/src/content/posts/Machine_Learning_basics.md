@@ -6,6 +6,29 @@ date: '2025-05-13'
 
 --- Work is progress ---
 
+
+When you solve a regression problem with gradient descent, you’re minimizing some differentiable loss function. The most commonly used loss function is
+mean squared error (aka MSE, `2 loss). Why? Here is a simple probabilistic
+justification, which can also be used to explain `1 loss, as well as `1 and `2
+regularization.
+
+1 What is regression?
+What is a regression problem? In simplest form, we have a dataset D = {(xi ∈
+R
+n, yi ∈ R)} and want a function f that approximately maps xi to yi without
+overfitting. We typically choose a function (from some family Θ) parametrized
+by θ. A simple parametrization is fθ : x 7→ x · θ where θ ∈ Θ = R
+n – this is
+linear regression. Neural networks are another kind of parametrization.
+Now we use some optimization scheme to find a function in that family that
+minimizes some loss function on our data. Which loss function should we use?
+People commonly use mean squared error (aka `2 loss): 1
+|D|
+P(yi − fθ(xi))2
+.
+Why?
+
+
 Binary Cross Entropy
 
 Binary cross entropy (BCE) is a loss function primarily used in binary classification problems—situations where the goal is to classify data into two distinct categories (e.g., spam vs. non-spam emails).
