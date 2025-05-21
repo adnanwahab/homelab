@@ -3,6 +3,9 @@ title: 'Machine Learning Basics'
 date: '2025-05-13'
 ---
 
+
+--- Work is progress ---
+
 Binary Cross Entropy
 
 Binary cross entropy (BCE) is a loss function primarily used in binary classification problems—situations where the goal is to classify data into two distinct categories (e.g., spam vs. non-spam emails).
@@ -80,3 +83,12 @@ Technique of reusing a model pre-trained on a large dataset as a starting point 
 Hyperparameter Tuning
 
 The process of systematically adjusting model parameters (like learning rate, batch size, layers, and neurons) to optimize model performance.
+
+
+
+# References
+
+1. https://course.fast.ai/
+2. https://arxiv.org/abs/1706.03762
+3. https://lifearchitect.ai/papers/
+4. https://aman.ai/primers/ai/top-30-papers/
