@@ -3,12 +3,16 @@ title: 'on writing'
 date: '2025-05-13'
 ---
 
-In a world where artifical intelligence is ubiqutious,
+Whats the point of writing down anything in a world with infinite text?
 
-if every human wrote a daily or weekly blog, then AI would understand the needs and wants of human beings.
+Well, good text is still always scarce.
 
-Good design tends to involve a highly detailed understand of how human beings actually think.
 
+
+
+
+if every human wrote some kind of journal / essay periodically, 
+then AI would be able to better understand the needs and wants of human beings.
 
 
 it's highly likely that OpenAI wouldn't exist without paul graham's blog.
