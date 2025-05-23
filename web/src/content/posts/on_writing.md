@@ -11,10 +11,7 @@ Good design tends to involve a highly detailed understand of how human beings ac
 
 
 
-it's highly likely that Ycombinator wouldn't exist without paul graham's blog.
-
-and open-AI might not exist without yc.
-
+it's highly likely that OpenAI wouldn't exist without paul graham's blog.
 
 
 a decade from now you'll  be happy you started a blog.
