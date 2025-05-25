@@ -12,8 +12,8 @@ export function getPosts() {
   const fileNames = fs.readdirSync(postsDirectory)
 
   const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get slug
-    const slug = fileName.replace(/\.md$/, '')
+    // Remove ".md" or ".mdx" from file name to get slug
+    const slug = fileName.replace(/\.(md|mdx)$/, '')
 
     // Read markdown file as string
     const fullPath = path.join(postsDirectory, fileName)

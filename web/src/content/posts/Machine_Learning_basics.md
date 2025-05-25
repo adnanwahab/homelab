@@ -1,6 +1,7 @@
 ---
 title: 'Machine Learning Basics'
 date: '2025-05-13'
+tags: ml
 ---
 
 

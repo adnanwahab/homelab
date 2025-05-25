@@ -1,11 +1,19 @@
 import type { NextConfig } from 'next'
 
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
+
 const nextConfig: NextConfig = {
   // Configure pageExtensions to include md and mdx
   typescript: {
     ignoreBuildErrors: true,
   },
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md'],
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   async headers() {
     return [
       {
@@ -27,4 +35,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+export default withMDX(nextConfig)
