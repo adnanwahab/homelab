@@ -1,16 +1,19 @@
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
-  const { slug } = await params
-  const { default: Post } = await import(`../../../content/posts/${slug}.mdx`)
- 
-  return <Post />
+import { getPostBySlug, getPostSlugs } from '../../../lib/posts';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+
+export async function generateStaticParams() {
+  return getPostSlugs().map(slug => ({ slug }));
 }
- 
-export function generateStaticParams() {
-  return [{ slug: 'welcome' }, { slug: 'about' }]
+
+export default function PostPage({ params }) {
+  const post = getPostBySlug(params.slug);
+  return (
+    <main>
+      <h1>{post.meta.title}</h1>
+      <MDXRemote source={post.content} />
+    </main>
+  );
 }
- 
-export const dynamicParams = false
+
+const postsDirectory = path.join(process.cwd(), 'src/content/posts');
+
