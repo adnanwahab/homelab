@@ -8,15 +8,13 @@ tags: ml
 --- Work is progress ---
 
 
-When you solve a regression problem with gradient descent, you’re minimizing some differentiable loss function. The most commonly used loss function is
+When you solve a regression problem with gradient descent, you're minimizing some differentiable loss function. The most commonly used loss function is
 mean squared error (aka MSE, `2 loss). Why? Here is a simple probabilistic
 justification, which can also be used to explain `1 loss, as well as `1 and `2
 regularization.
 
 1 What is regression?
-What is a regression problem? In simplest form, we have a dataset D = {(xi ∈
-R
-n, yi ∈ R)} and want a function f that approximately maps xi to yi without
+What is a regression problem? In simplest form, we have a dataset D = `{(xi ∈ Rⁿ, yi ∈ R)}` and want a function f that approximately maps xi to yi without
 overfitting. We typically choose a function (from some family Θ) parametrized
 by θ. A simple parametrization is fθ : x 7→ x · θ where θ ∈ Θ = R
 n – this is

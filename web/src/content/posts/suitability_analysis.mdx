@@ -4,15 +4,16 @@ date: '2024-05-13'
 tags: feature engineering
 ---
 
-import Iframe from '../components/Iframe'
-<Iframe src="https://observablehq.com/embed/@nrabinowitz/h3-tutorial-suitability-analysis?cells=mapContainer" height="676" />
+import Iframe from '../../components/Iframe'
 
 This post explores suitability analysis using H3 geospatial indexing. Suitability analysis helps us identify optimal locations based on multiple criteria and constraints.
 
 The interactive map below demonstrates how we can use H3 hexagons to perform suitability analysis. The visualization shows different factors that influence site selection, with darker colors indicating higher suitability scores.
 
-<iframe width="100%" height="676" frameborder="0"
-  src="https://observablehq.com/embed/@nrabinowitz/h3-tutorial-suitability-analysis?cells=mapContainer"></iframe>
+<Iframe 
+  src="https://observablehq.com/embed/@nrabinowitz/h3-tutorial-suitability-analysis?cells=mapContainer" 
+  height="676" 
+/>
 
 The analysis combines multiple data layers including:
 - Proximity to key infrastructure

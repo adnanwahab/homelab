@@ -1,38 +1,38 @@
-import type { NextConfig } from 'next'
+import type { NextConfig } from 'next';
+import createMDX from '@next/mdx';
+//import postgres from 'postgres';
 
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-})
+// export const sql = postgres(process.env.POSTGRES_URL!, {
+//   ssl: 'allow'
+// });
 
 const nextConfig: NextConfig = {
-  // Configure pageExtensions to include md and mdx
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  async headers() {
-    return [
-      {
-        // Apply these headers to all routes
-        source: '/api/:path*',
-        headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          {
-            key: 'Access-Control-Allow-Methods',
-            value: 'GET, POST, PUT, DELETE, OPTIONS',
-          },
-          {
-            key: 'Access-Control-Allow-Headers',
-            value: 'Content-Type, Authorization',
-          },
-        ],
-      },
-    ]
-  },
-}
+  pageExtensions: ['mdx', 'ts', 'tsx'],
+  async redirects() {
+    if (!process.env.POSTGRES_URL) {
+      return [];
+    }
 
-export default withMDX(nextConfig)
+    // let redirects = await sql`
+    //   SELECT source, destination, permanent
+    //   FROM redirects;
+    // `;
+
+    // return redirects.map(({ source, destination, permanent }) => ({
+    //   source,
+    //   destination,
+    //   permanent: !!permanent
+    // }));
+    return []
+  },
+  // Note: Using the Rust compiler means we cannot use
+  // rehype or remark plugins. For my app, this is fine.
+  experimental: {
+    mdxRs: true,
+   // viewTransition: true
+  }
+};
+
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);
