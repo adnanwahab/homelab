@@ -3,17 +3,26 @@ export default function Tools() {
     <div>
       Tools
       <ul>
+        <li>
+          <a href="/tools/karaoke">karaoke</a>
+        </li>
+        <li>
+          <a href="/tools/replay_analyzer">replay analyzer</a>
+        </li>
+        <li>
+          <a href="/tools/voice_coach">voice coach</a>
+        </li>
         {/* <li>
           <a href="/tools/supabase">discord</a>
         </li> */}
 
-        <li>
+        {/* <li>
           <a href="/tools/supabase">supabase</a>
-        </li>
+        </li> */}
 
-        <li>
+        {/* <li>
           <a href="/tools/livekit">livekit</a>
-        </li>
+        </li> */}
 
         {/* <li>
           <a href="/tools/group_chat">group chat</a>
