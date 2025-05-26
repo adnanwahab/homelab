@@ -2,11 +2,9 @@ import Link from 'next/link'
 
 const navItems = {
   '/': {
-    name: 'home',
-  },
-  '/blog': {
     name: 'blog',
   },
+
   'mailto:adnan@llama-tools.com': {
     name: 'email',
   },
