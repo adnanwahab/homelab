@@ -13,19 +13,21 @@ mean squared error (aka MSE, `2 loss). Why? Here is a simple probabilistic
 justification, which can also be used to explain `1 loss, as well as `1 and `2
 regularization.
 
-1 What is regression?
+# What is regression?
 What is a regression problem? In simplest form, we have a dataset D = `{(xi ∈ Rⁿ, yi ∈ R)}` and want a function f that approximately maps xi to yi without
 overfitting. We typically choose a function (from some family Θ) parametrized
 by θ. A simple parametrization is fθ : x 7→ x · θ where θ ∈ Θ = R
 n – this is
 linear regression. Neural networks are another kind of parametrization.
+
+
 Now we use some optimization scheme to find a function in that family that
 minimizes some loss function on our data. Which loss function should we use?
 People commonly use mean squared error (aka `2 loss): 1
 |D|
 P(yi − fθ(xi))2
 .
-Why?
+# Two assumptions: (1) Data is noisy; (2) We want the most likely model
 
 
 Binary Cross Entropy
@@ -44,7 +46,7 @@ Where:
 
 A lower BCE indicates predictions closer to the actual values. Minimizing BCE improves the accuracy and reliability of a classification model.
 
-Stochastic Gradient Descent
+# Stochastic Gradient Descent
 
 To optimize the loss function and improve predictions, machine learning algorithms use gradient descent, an iterative optimization method. Stochastic Gradient Descent (SGD) is a variant that calculates the gradient (direction of steepest descent) using a randomly selected single or small batch of data points in each iteration, rather than the entire dataset.
 
@@ -66,43 +68,43 @@ Where:
 
  is the gradient of the loss function with respect to parameters .
 
-Activation Functions
+# Activation Functions
 
 Non-linear functions such as ReLU, Sigmoid, Tanh, and Softmax, essential for enabling neural networks to model complex patterns.
 
-Backpropagation
+# Backpropagation
 
 Algorithm for efficiently computing gradients to update network weights during training.
 
-Regularization
+# Regularization
 
 Techniques like dropout, weight decay, and early stopping that prevent overfitting and help models generalize better.
 
-Convolutional Neural Networks (CNNs)
+# Convolutional Neural Networks (CNNs)
 
 Specialized networks for spatial data, especially images and videos, using convolutional layers to detect local patterns and features.
 
-Recurrent Neural Networks (RNNs) and Transformers
+# Recurrent Neural Networks (RNNs) and Transformers
 
 Networks designed to process sequential data, such as text or time series. Transformers, specifically, leverage attention mechanisms to handle sequence data more efficiently.
 
-Batch Normalization
+# Batch Normalization
 
 A technique to stabilize learning by normalizing activations across mini-batches, resulting in faster and more stable training.
 
-Loss Functions
+# Loss Functions
 
 Beyond binary cross entropy, important loss functions include Mean Squared Error (MSE), Categorical Cross Entropy, and Hinge loss.
 
-Optimization Algorithms
+# Optimization Algorithms
 
 Methods like Adam, RMSprop, AdaGrad, and Momentum-based optimizers used for efficiently training neural networks.
 
-Transfer Learning
+# Transfer Learning
 
 Technique of reusing a model pre-trained on a large dataset as a starting point for training on a smaller, related dataset, significantly improving training efficiency and performance.
 
-Hyperparameter Tuning
+# Hyperparameter Tuning
 
 The process of systematically adjusting model parameters (like learning rate, batch size, layers, and neurons) to optimize model performance.
 
