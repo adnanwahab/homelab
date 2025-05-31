@@ -5,6 +5,10 @@ const navItems = {
     name: 'blog',
   },
 
+  '/projects': {
+    name: 'projects',
+  },
+
   'mailto:adnan@llama-tools.com': {
     name: 'email',
   },
