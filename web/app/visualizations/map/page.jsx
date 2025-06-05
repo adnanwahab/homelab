@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import DeckGL from '@deck.gl/react';
-import { Map } from 'react-map-gl';
+import { Map } from 'react-map-gl/maplibre';
 import { ScatterplotLayer } from '@deck.gl/layers';
 
 const INITIAL_VIEW_STATE = {

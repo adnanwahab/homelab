@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@deck.gl/layers": "^9.1.12",
     "@deck.gl/react": "^9.1.12",
     "@supabase/supabase-js": "^2.49.10",
     "@tailwindcss/postcss": "4.0.0-alpha.13",
