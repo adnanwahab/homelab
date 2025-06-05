@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
+import Comments from './Comments'
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -97,13 +98,17 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+ 
 }
 
 export function CustomMDX(props) {
   return (
+    <> 
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
     />
+    <Comments postId={props.postId} />
+    </>
   )
 }
