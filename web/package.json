@@ -10,6 +10,7 @@
     "@deck.gl/react": "^9.1.12",
     "@supabase/supabase-js": "^2.49.10",
     "@tailwindcss/postcss": "4.0.0-alpha.13",
+    "@tweenjs/tween.js": "^25.0.0",
     "@types/node": "20.11.17",
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
@@ -26,6 +27,7 @@
     "sugar-high": "^0.6.0",
     "tailwindcss": "4.0.0-alpha.13",
     "three": "^0.177.0",
+    "tweakpane": "^4.0.5",
     "typescript": "5.3.3"
   }
 }
