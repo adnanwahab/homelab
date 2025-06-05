@@ -12,7 +12,7 @@ interface FileItem {
 const files: FileItem[] = []
 const processedFiles: FileItem[] = [
   {
-    title: `/demos/1`,
+    title: `/visualizations/1`,
     size: '',
     source: `/vis/1.png`,
   },
@@ -22,7 +22,7 @@ const processedFiles: FileItem[] = [
     source: `/vis/2.png`,
   },
   {
-    title: `/demos/2`,
+    title: `/visualizations/2`,
     size: '',
     source: `/vis/3.png`,
   },
@@ -31,7 +31,7 @@ const processedFiles: FileItem[] = [
 
 for (let i = processedFiles.length + 1; i < 25; i++) {
   processedFiles.push({
-    title: `/demos/${i}`,
+    title: `/visualizations/${i}`,
     size: '',
     source: `/vis/${i}.png`,
   });
