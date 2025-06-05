@@ -104,11 +104,11 @@ let components = {
 export function CustomMDX(props) {
   return (
     <> 
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
-    <Comments postId={props.postId} />
+      <MDXRemote
+        {...props}
+        components={{ ...components, ...(props.components || {}) }}
+      />
+      <Comments postId={props.postId} />
     </>
   )
 }

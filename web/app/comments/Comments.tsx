@@ -44,29 +44,22 @@ export default function Comments({ postId }: CommentsProps) {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold mb-2">Comments</h2>
+      <h2 className="text-2xl font-bold">Comments</h2>
       <CommentForm postId={postId} onNewComment={handleNewComment} />
-      <div className="space-y-6">
+      <div className="space-y-4">
         {comments.map((comment) => (
-          <div
-            key={comment.id}
-            className="bg-neutral-900/80 border border-neutral-700 rounded-xl p-5 shadow-md transition hover:shadow-lg"
-          >
-            <div className="flex items-center space-x-3 mb-2">
-              <span className="font-semibold text-neutral-200 text-base">
-                {comment.user_name || 'Anonymous'}
-              </span>
-              <span className="text-neutral-400 text-xs">
+          <div key={comment.id} className="bg-gray-50 p-4 rounded-lg">
+            <div className="flex items-center space-x-2 mb-2">
+              <span className="font-semibold">{comment.user_name || 'Anonymous'}</span>
+              <span className="text-gray-500 text-sm">
                 {new Date(comment.created_at).toLocaleDateString()}
               </span>
             </div>
-            <p className="text-neutral-100 text-base leading-relaxed whitespace-pre-line">
-              {comment.content}
-            </p>
+            <p className="text-gray-700">{comment.content}</p>
           </div>
         ))}
         {comments.length === 0 && (
-          <p className="text-neutral-500 text-center">No comments yet. Be the first to comment!</p>
+          <p className="text-gray-500 text-center">No comments yet. Be the first to comment!</p>
         )}
       </div>
     </div>

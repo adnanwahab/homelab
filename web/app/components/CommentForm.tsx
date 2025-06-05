@@ -24,21 +24,23 @@ export default function CommentForm({ postId, onNewComment }: CommentFormProps) 
     try {
       const { data, error } = await supabase
         .from('comments')
-        .insert([
-          {
-            content: content.trim(),
-            post_id: postId,
-            user_name: 'Anonymous'
-          },
-        ])
-        .select()
+        .insert({
+          content: content.trim(),
+          post_id: postId,
+          user_name: 'Anonymous'
+        })
+        .select('*')
         .single()
 
-      if (error) throw error
+      if (error) {
+        console.error('Supabase error:', error)
+        throw error
+      }
 
       setContent('')
       onNewComment(data)
     } catch (err) {
+      console.error('Error details:', err)
       setError(err instanceof Error ? err.message : 'Failed to post comment')
     } finally {
       setIsSubmitting(false)
@@ -46,22 +48,22 @@ export default function CommentForm({ postId, onNewComment }: CommentFormProps) 
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-3 mb-6">
       <div>
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="Write your comment..."
-          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full p-3 border border-neutral-700 bg-neutral-800 text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition min-h-[90px] resize-none shadow-sm"
           rows={4}
           disabled={isSubmitting}
         />
       </div>
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="text-red-400 text-sm">{error}</p>}
       <button
         type="submit"
         disabled={isSubmitting || !content.trim()}
-        className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="px-5 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed shadow"
       >
         {isSubmitting ? 'Posting...' : 'Post Comment'}
       </button>
