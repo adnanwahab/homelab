@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
-import { Comment, CommentFormData } from './types'
+import { Comment, CommentFormData } from '../components/types'
 
 interface CommentFormProps {
   postId: string
