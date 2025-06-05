@@ -22,20 +22,13 @@ export default function CommentForm({ postId, onNewComment }: CommentFormProps) 
     setError(null)
 
     try {
-      const { data: userData } = await supabase.auth.getUser()
-      const userId = userData?.user?.id
-
-      if (!userId) {
-        throw new Error('You must be logged in to comment')
-      }
-
       const { data, error } = await supabase
         .from('comments')
         .insert([
           {
             content: content.trim(),
             post_id: postId,
-            user_id: userId,
+            user_name: 'Anonymous'
           },
         ])
         .select()
