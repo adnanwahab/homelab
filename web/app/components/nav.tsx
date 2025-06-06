@@ -5,13 +5,13 @@ const navItems = {
     name: 'blog',
   },
 
-  // '/projects': {
-  //   name: 'projects',
-  // },
+  '/projects': {
+    name: 'projects',
+  },
 
-  // '/visualizations': {
-  //   name: 'visualizations',
-  // },
+  '/demos': {
+    name: 'demos',
+  },
 
   'mailto:adnan@llama-tools.com': {
     name: 'email',
