@@ -11,21 +11,21 @@ interface FileItem {
 
 const files: FileItem[] = []
 const processedFiles: FileItem[] = [
-  {
-    title: `/demos/1`,
-    size: '',
-    source: `/vis/1.png`,
-  },
-  {
-    title: `https://nyc-map.vercel.app/`,
-    size: '',
-    source: `/vis/2.png`,
-  },
-  {
-    title: `/demos/2`,
-    size: '',
-    source: `/vis/3.png`,
-  },
+//   {
+//     title: `/demos/1`,
+//     size: '',
+//     source: `/vis/1.png`,
+//   },
+//   {
+//     title: `https://nyc-map.vercel.app/`,
+//     size: '',
+//     source: `/vis/2.png`,
+//   },
+//   {
+//     title: `/demos/2`,
+//     size: '',
+//     source: `/vis/3.png`,
+//   },
 ];
 
 
@@ -33,7 +33,7 @@ for (let i = processedFiles.length + 1; i < 25; i++) {
   processedFiles.push({
     title: `/demos/${i}`,
     size: '',
-    source: `/vis/${i}.png`,
+    source: `/demo_thumbnails/demo_${i}.gif`,
   });
 }
 
