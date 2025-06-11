@@ -21,7 +21,7 @@
     "gsap": "^3.13.0",
     "lucide-react": "^0.513.0",
     "maplibre-gl": "^5.6.0",
-    "next": "canary",
+    "next": "14.1.0",
     "next-mdx-remote": "^4.4.1",
     "postcss": "^8.4.35",
     "react": "18.2.0",
@@ -36,6 +36,7 @@
   "resolutions": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "@types/react": "18.2.55"
+    "@types/react": "18.2.55",
+    "react/jsx-runtime": "18.2.0"
   }
 }
