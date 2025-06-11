@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
-import { Comment } from './types'
-import CommentForm from './CommentForm'
+import { Comment } from '../comments/types'
+import CommentForm from '../comments/CommentForm'
 
 interface CommentsProps {
   postId: string
