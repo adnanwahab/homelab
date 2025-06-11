@@ -23,14 +23,15 @@ export default function Page() {
           <a href="/projects/voice_coach">voice coach</a>
         </li>
         <li>
-          <a href="/projects/project4">Project 4</a>
+          <a href="/projects/physics_puzzle_maker">Physics Puzzle Maker</a>
         </li>
         <li>
-          <a href="/projects/project5">Project 5</a>
+          <a href="/projects/comic_book_generator">Comic Book Generator</a>
         </li>
         <li>
-          <a href="/projects/project6">Project 6</a>
+          <a href="/projects/project6">Project 6</a> // TODO: add project 6
         </li>
+        
       </ul>
     </div>
   );
