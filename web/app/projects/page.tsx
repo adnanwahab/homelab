@@ -29,8 +29,9 @@ export default function Page() {
           <a href="/projects/comic_book_generator">Comic Book Generator</a>
         </li>
         <li>
-          <a href="/projects/project6">Project 6</a> // TODO: add project 6
+          <a href="/projects/sound_board">Sound Board</a>
         </li>
+        
         
       </ul>
     </div>
