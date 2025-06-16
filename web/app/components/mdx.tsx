@@ -24,7 +24,7 @@ function Table({ data }) {
       </thead>
       <tbody>{rows}</tbody>
     </table>
-  )
+ ) 
 }
 
 function CustomLink(props) {
