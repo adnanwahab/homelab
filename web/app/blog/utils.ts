@@ -11,10 +11,19 @@ type Metadata = {
 function parseFrontmatter(fileContent: string) {
   let frontmatterRegex = /---\s*([\s\S]*?)\s*---/
   let match = frontmatterRegex.exec(fileContent)
-  // if (!match) {
-  //   return { metadata: {}, content: fileContent }
-  // }
-  let frontMatterBlock = match![1]
+  
+  if (!match) {
+    return {
+      metadata: {
+        title: 'Untitled',
+        publishedAt: new Date().toISOString().split('T')[0],
+        summary: 'No summary available'
+      },
+      content: fileContent
+    }
+  }
+
+  let frontMatterBlock = match[1]
   let content = fileContent.replace(frontmatterRegex, '').trim()
   let frontMatterLines = frontMatterBlock.trim().split('\n')
   let metadata: Partial<Metadata> = {}
@@ -26,7 +35,15 @@ function parseFrontmatter(fileContent: string) {
     metadata[key.trim() as keyof Metadata] = value
   })
 
-  return { metadata: metadata as Metadata, content }
+  return { 
+    metadata: {
+      title: metadata.title || 'Untitled',
+      publishedAt: metadata.publishedAt || new Date().toISOString().split('T')[0],
+      summary: metadata.summary || 'No summary available',
+      image: metadata.image
+    }, 
+    content 
+  }
 }
 
 function getMDXFiles(dir) {
