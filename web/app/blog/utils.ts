@@ -6,6 +6,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  draft?: boolean
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -17,7 +18,8 @@ function parseFrontmatter(fileContent: string) {
       metadata: {
         title: 'Untitled',
         publishedAt: new Date().toISOString().split('T')[0],
-        summary: 'No summary available'
+        summary: 'No summary available',
+        draft: true
       },
       content: fileContent
     }
@@ -32,7 +34,11 @@ function parseFrontmatter(fileContent: string) {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
+    if (key.trim() === 'draft') {
+      metadata[key.trim() as keyof Metadata] = value.toLowerCase() === 'true'
+    } else {
+      metadata[key.trim() as keyof Metadata] = value
+    }
   })
 
   return { 
@@ -40,7 +46,8 @@ function parseFrontmatter(fileContent: string) {
       title: metadata.title || 'Untitled',
       publishedAt: metadata.publishedAt || new Date().toISOString().split('T')[0],
       summary: metadata.summary || 'No summary available',
-      image: metadata.image
+      image: metadata.image,
+      draft: metadata.draft || false
     }, 
     content 
   }
@@ -71,6 +78,7 @@ function getMDXData(dir) {
 
 export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+    .filter(post => !post.metadata.draft)
 }
 
 export function formatDate(date: string, includeRelative = false) {
