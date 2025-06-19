@@ -28,17 +28,17 @@ function parseFrontmatter(fileContent: string) {
   let frontMatterBlock = match[1]
   let content = fileContent.replace(frontmatterRegex, '').trim()
   let frontMatterLines = frontMatterBlock.trim().split('\n')
-  let metadata: Partial<Metadata> = {}
+  let metadata: Partial<Record<string, any>> = {}
 
   frontMatterLines.forEach((line) => {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    // if (key.trim() === 'draft') {
-    //   metadata[key.trim() as keyof Metadata] = value.toLowerCase() === 'true'
-    // } else {
+    if (key.trim() === 'draft') {
+      metadata[key.trim() as keyof Metadata] = value.toLowerCase() === 'true'
+    } else {
       metadata[key.trim() as keyof Metadata] = value
-    //}
+    }
   })
 
   return { 
@@ -78,7 +78,6 @@ function getMDXData(dir) {
 
 export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
-    .filter(post => !post.metadata.draft)
 }
 
 export function formatDate(date: string, includeRelative = false) {
