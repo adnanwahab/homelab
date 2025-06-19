@@ -34,11 +34,11 @@ function parseFrontmatter(fileContent: string) {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    if (key.trim() === 'draft') {
-      metadata[key.trim() as keyof Metadata] = value.toLowerCase() === 'true'
-    } else {
+    // if (key.trim() === 'draft') {
+    //   metadata[key.trim() as keyof Metadata] = value.toLowerCase() === 'true'
+    // } else {
       metadata[key.trim() as keyof Metadata] = value
-    }
+    //}
   })
 
   return { 
