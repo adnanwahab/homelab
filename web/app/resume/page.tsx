@@ -77,7 +77,6 @@ export default function Resume() {
           </div>
           <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
             <li>Lead development of 3D annotation tools for improving accuracy of perception models</li>
-            <li>Optimized data pipelines at 50PB scale, improving labeling throughput</li>
             <li>Implemented Auto-labeling, RLHF, and continuous QA to lower cost of labels by over 80%</li>
             <li>
               Awarded a patent for object annotation in computer
