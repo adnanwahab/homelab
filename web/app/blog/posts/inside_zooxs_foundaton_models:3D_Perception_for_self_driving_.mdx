@@ -1,0 +1,65 @@
+---
+title: 'inside zooxs foundation models'
+publishedAt: '2025-04-21'
+---
+
+
+zoox's Unique AI & Perception Challenges
+Spatial Awareness & 3D Understanding:
+zoox's stack depends on powerful spatial awareness—understanding everything around the vehicle in 3D, using not just cameras but also LIDAR and radar for precise environmental modeling.
+
+Long Memory Over Scenes:
+The system needs to remember what has happened over many seconds (sometimes hundreds of frames) to reason about the present. This temporal awareness is crucial for safe, context-aware driving.
+
+Preventing Hallucinations:
+As with other generative AI, zoox must prevent the model from "hallucinating" (making up) events or objects that aren't actually present—something that can be a big risk in safety-critical applications.
+
+Constantly Evolving Domain:
+Unlike basic vision-language models (VLMs), self-driving stacks must handle constant changes: new cities, new sensor setups, varied weather, and rare edge cases. The models need to generalize extremely well.
+
+Integrating Foundation Models (Large Multimodal Models)
+Adapting to Self-Driving:
+zoox adapts advances in AI—especially large vision-language and multimodal models—to their driving domain, often requiring creative tweaks. For example, they published "EMMA," which adapts a Gemini-like model for driving tasks, converting driving trajectories to tokens the model can understand.
+
+Why Vanilla VLMs Aren't Enough:
+Generic VLMs lack some needed capabilities:
+
+3D spatial reasoning from rich sensors (LIDAR, radar, not just RGB images)
+
+Long-sequence memory (reasoning over many seconds, not just one frame)
+
+Robustness against rare, unseen situations (to minimize hallucinations or model failure)
+
+Scaling & Transfer:
+By scaling up models in the data center, zoox can use a large "foundation" model to learn everything possible from collected data, then distill the knowledge into smaller, real-time models that run in the car.
+
+Modeling, Simulation, and Validation
+Prediction Beyond Trajectories:
+Models can predict not just the car's future path, but also the future of what sensors will see, and how all agents (other cars, pedestrians) will move together. This "joint modeling" is key for robust decision-making.
+
+Simulator Tech:
+Realistic simulation is vital for validation and training—using techniques like NeRFs, 3D Gaussian splatting, and diffusion models to reconstruct and augment real-world scenes for better scenario testing.
+
+Modular vs. End-to-End:
+zoox prefers "few, large, modular" components (not a single end-to-end black box). This makes the system more testable, controllable, and explainable—crucial for safety validation and regulatory confidence.
+
+Testing, Safety, and Generalization
+Safety Impact:
+zoox's real-world stats show their vehicles are 80%+ safer than human drivers (e.g., fewer injury crashes, police reports, etc.).
+
+Testing Regimen:
+Validation isn't just data-driven—it includes hardware failure tests, closed-course driving, simulation, and more, with rigorous processes before launching in new cities or domains.
+
+Generalization as a Core Challenge:
+The goal is to have models that generalize to new cities and environments with minimal bespoke work, speeding up launch and improving reliability.
+
+Research and Community
+Active Research:
+They're exploring integrating even more sensor modalities into foundation models, and how to pre-train models to best leverage domain data alongside internet-scale knowledge.
+
+Open Challenges:
+zoox runs public competitions (e.g., for end-to-end driving from cameras, agent simulation, traffic generation) to push forward research on these hard problems.
+
+TL;DR:
+zoox's autonomous driving stack requires powerful 3D and temporal reasoning, long memory, and prevention of hallucinations—going beyond what off-the-shelf AI models provide. They use and adapt foundation models, but must solve unique challenges in perception, simulation, validation, and safety. Their approach emphasizes scalable, explainable, and thoroughly tested AI to safely generalize to new environments.
+
