@@ -215,7 +215,7 @@ export default function Resume() {
           </section>
 
           {/* Education */}
-          {/* <section className="mb-6">
+          <section className="mb-6">
             <h2 className="text-lg font-bold text-gray-900 border-b border-gray-200 pb-1 mb-3">
               Education
             </h2>
@@ -223,9 +223,9 @@ export default function Resume() {
               <p className="text-md font-semibold text-gray-800">
                 Bachelor of Science in Computer Science
               </p>
-              <p className="text-sm text-gray-500">Texas A&M University</p>
+              <p className="text-sm text-gray-500">Texas A&M University, 2014</p>
             </div>
-          </section> */}
+          </section>
 
           {/* Technical Skills */}
           <section className="mb-6">

@@ -9,9 +9,9 @@ const navItems = {
     name: 'projects',
   },
 
-  '/demos': {
-    name: 'demos',
-  },
+  // '/demos': {
+  //   name: 'demos',
+  // },
 
   'mailto:adnan@llama-tools.com': {
     name: 'email',
