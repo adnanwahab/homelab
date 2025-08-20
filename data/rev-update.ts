@@ -19,7 +19,6 @@ async function loadSavedCredentialsIfExist() {
         return null;
     }
 }
-
 async function saveCredentials(client) {
     const content = fs.readFileSync(CREDENTIALS_PATH, "utf8");
     const keys = JSON.parse(content);
