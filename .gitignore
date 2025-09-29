@@ -1,3 +1,5 @@
+data/credential.json
+data/token.json
 notebooks/try-agent.py
 scripts/.env
 .DS_Store
