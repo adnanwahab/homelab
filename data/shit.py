@@ -12,11 +12,17 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 def get_service():
     creds = None
     token_path = '/Users/shelbernstein/Downloads/token.json'
-    credentials_path = '/home/adnan/homelab/data/credentials.json'
+    credentials_path = '/Users/shelbernstein/homelab/data/credential.json'
     
     # Load existing token
     if os.path.exists(token_path):
-        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+        try:
+            creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+        except ValueError as e:
+            print(f"Error loading token file: {e}")
+            print("Deleting corrupted token file...")
+            os.remove(token_path)
+            creds = None
     
     # If there are no valid credentials available, request authorization
     if not creds or not creds.valid:
