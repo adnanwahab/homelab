@@ -1,3 +1,11 @@
+
+screens
+
+settings, game, level-list (create game, join game), 
+
+
+
+
 # Homelab - 2025
 # CGI-tools.dev
 ### Dynamicland.org's principles will increase shared reasoning and scientific thinking by at least 20% over next 5 years
