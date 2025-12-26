@@ -1,22 +1,22 @@
 // src/App.jsx
 import { Routes, Route, Link } from 'react-router-dom'
-// import Home from './screens/Home'
-// import About from './screens/About'
+import Home from './screens/Home'
+import About from './screens/About'
 // import Contact from './screens/Contact'
 
-function Home() {
-  return <div>Home</div>
-}
+// function Home() {
+//   return <div>Home</div>
+// }
 
-function About() {
-  return <div>About</div>
-}
+// function About() {
+//   return <div>About</div>
+// }
 
 // function Contact() {
 //   return <div>Contact</div>
 // }
 
-import Contact from './settings'
+import Settings from './settings'
 
 function App() {
   return (
@@ -24,13 +24,13 @@ function App() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/settings">Settings</Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </div>
   )
