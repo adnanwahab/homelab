@@ -28,37 +28,61 @@ export function setupExample(Jolt, bodyInterface, scene, dynamicObjects, onExamp
     bumpScale: 1
   } );
   const textureLoader = new THREE.TextureLoader();
-  textureLoader.load( 'textures/floor/hardwood2_diffuse.jpg', function ( map ) {
-console.log(map);
-    map.wrapS = THREE.RepeatWrapping;
-    map.wrapT = THREE.RepeatWrapping;
-    map.anisotropy = 4;
-    map.repeat.set( 10, 24 );
-    map.colorSpace = THREE.SRGBColorSpace;
-    floorMat.map = map;
-    floorMat.needsUpdate = true;
-
-  } );
-  textureLoader.load( 'textures/floor/hardwood2_bump.jpg', function ( map ) {
-
-    map.wrapS = THREE.RepeatWrapping;
-    map.wrapT = THREE.RepeatWrapping;
-    map.anisotropy = 4;
-    map.repeat.set( 10, 24 );
-    floorMat.bumpMap = map;
-    floorMat.needsUpdate = true;
-
-  } );
-  textureLoader.load( 'textures/floor/hardwood2_roughness.jpg', function ( map ) {
-
-    map.wrapS = THREE.RepeatWrapping;
-    map.wrapT = THREE.RepeatWrapping;
-    map.anisotropy = 4;
-    map.repeat.set( 10, 24 );
-    floorMat.roughnessMap = map;
-    floorMat.needsUpdate = true;
-
-  } );
+  
+  // Load diffuse texture
+  textureLoader.load( 
+    '/textures/floor/hardwood2_diffuse.jpg', 
+    function ( map ) {
+      console.log('Diffuse texture loaded:', map);
+      map.wrapS = THREE.RepeatWrapping;
+      map.wrapT = THREE.RepeatWrapping;
+      map.anisotropy = 4;
+      map.repeat.set( 10, 24 );
+      map.colorSpace = THREE.SRGBColorSpace;
+      floorMat.map = map;
+      floorMat.needsUpdate = true;
+    },
+    undefined, // onProgress
+    function ( error ) {
+      console.error('Error loading diffuse texture:', error);
+    }
+  );
+  
+  // Load bump texture
+  textureLoader.load( 
+    '/textures/floor/hardwood2_bump.jpg', 
+    function ( map ) {
+      console.log('Bump texture loaded:', map);
+      map.wrapS = THREE.RepeatWrapping;
+      map.wrapT = THREE.RepeatWrapping;
+      map.anisotropy = 4;
+      map.repeat.set( 10, 24 );
+      floorMat.bumpMap = map;
+      floorMat.needsUpdate = true;
+    },
+    undefined, // onProgress
+    function ( error ) {
+      console.error('Error loading bump texture:', error);
+    }
+  );
+  
+  // Load roughness texture
+  textureLoader.load( 
+    '/textures/floor/hardwood2_roughness.jpg', 
+    function ( map ) {
+      console.log('Roughness texture loaded:', map);
+      map.wrapS = THREE.RepeatWrapping;
+      map.wrapT = THREE.RepeatWrapping;
+      map.anisotropy = 4;
+      map.repeat.set( 10, 24 );
+      floorMat.roughnessMap = map;
+      floorMat.needsUpdate = true;
+    },
+    undefined, // onProgress
+    function ( error ) {
+      console.error('Error loading roughness texture:', error);
+    }
+  );
 
   // 1) Basic floor
   createFloor(Jolt, bodyInterface, (body) => {

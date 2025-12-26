@@ -36,23 +36,29 @@ export function initGraphics(canvas, container, size) {
 
   const controls = new OrbitControls(camera, container);
 
-  container.appendChild(renderer.domElement);
+  // The renderer uses the canvas we pass to it, so we don't need to append it
+  // The canvas is already in the DOM via React
 
+  // Load cube texture for background
+  const cubeTextureLoader = new THREE.CubeTextureLoader();
+  cubeTextureLoader.setPath( '/textures/cube/Park2/' );
 
+  const cubeTexture = cubeTextureLoader.load( 
+    [
+      'posx.jpg', 'negx.jpg',
+      'posy.jpg', 'negy.jpg',
+      'posz.jpg', 'negz.jpg'
+    ],
+    undefined, // onLoad
+    undefined, // onProgress
+    function ( error ) {
+      console.error('Error loading cube texture:', error);
+      // Set a fallback background color if texture fails to load
+      scene.background = new THREE.Color(0x87CEEB); // Sky blue
+    }
+  );
 
-
-
-
-const cubeTextureLoader = new THREE.CubeTextureLoader();
-cubeTextureLoader.setPath( 'textures/cube/Park2/' );
-
-const cubeTexture = cubeTextureLoader.load( [
-  'posx.jpg', 'negx.jpg',
-  'posy.jpg', 'negy.jpg',
-  'posz.jpg', 'negz.jpg'
-] );
-
-scene.background = cubeTexture;
+  scene.background = cubeTexture;
 
   return { renderer, scene, camera, controls };
 } 
