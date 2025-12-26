@@ -1,7 +1,7 @@
 // src/App.jsx
 import { Routes, Route, Link } from 'react-router-dom'
-import Home from './screens/Home'
-import About from './screens/About'
+import Game from './screens/Game'
+import LevelList from './screens/LevelList'
 // import Contact from './screens/Contact'
 
 // function Home() {
@@ -23,13 +23,15 @@ function App() {
     <div>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <Link to="/game">Game</Link>
+        <Link to="/level-list">Level List</Link>
         <Link to="/settings">Settings</Link>
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<LevelList />} />
+        <Route path="/level-list" element={<LevelList />} />
+        <Route path="/game/:game_id" element={<Game />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </div>
