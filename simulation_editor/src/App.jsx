@@ -22,10 +22,11 @@ function App() {
   return (
     <div>
       <nav>
-        <Link to="/">Home</Link>
+        {/* <Link to="/">Home</Link> */}
         <Link to="/game">Game</Link>
+        <br />
         <Link to="/level-list">Level List</Link>
-        <Link to="/settings">Settings</Link>
+        {/* <Link to="/settings">Settings</Link> */}
       </nav>
 
       <Routes>

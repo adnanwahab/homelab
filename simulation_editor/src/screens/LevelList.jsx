@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 const levels = [
     { id: '1', name: 'Level 1', difficulty: 'Easy', description: 'Introduction level' },
     { id: '2', name: 'Level 2', difficulty: 'Medium', description: 'Intermediate challenge' },
-    { id: '3', name: 'Level 3', difficulty: 'Hard', description: 'Advanced gameplay' },
-    { id: '4', name: 'Level 4', difficulty: 'Expert', description: 'Master level' },
-    { id: '5', name: 'Level 5', difficulty: 'Easy', description: 'Another beginner level' },
+    // { id: '3', name: 'Level 3', difficulty: 'Hard', description: 'Advanced gameplay' },
+    // { id: '4', name: 'Level 4', difficulty: 'Expert', description: 'Master level' },
+    // { id: '5', name: 'Level 5', difficulty: 'Easy', description: 'Another beginner level' },
 ];
 
 export default function LevelList() {
