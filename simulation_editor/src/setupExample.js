@@ -5,7 +5,7 @@ import { getThreeObjectForBody } from './getThreeObjectForBody.js';
 import * as THREE from 'three';
 /**
  * Sets up your environment and character logic. Creates floors, walls, 
- * a simple “character” body, etc. Also provides the onExampleUpdate() function 
+ * a simple "character" body, etc. Also provides the onExampleUpdate() function 
  * that drives character motion each frame.
  * 
  * @param {Object} Jolt - Your Jolt WASM object
@@ -13,8 +13,11 @@ import * as THREE from 'three';
  * @param {THREE.Scene} scene 
  * @param {Array} dynamicObjects - Array to push newly created objects
  * @param {Function} onExampleUpdateRef - An empty object with { fn: null } so we can assign .fn 
+ * @param {string} levelID - The ID of the current level
  */
-export function setupExample(Jolt, bodyInterface, scene, dynamicObjects, onExampleUpdateRef) {
+export function setupExample(Jolt, bodyInterface, scene, dynamicObjects, onExampleUpdateRef, levelID) {
+  console.log('Setting up level with ID:', levelID);
+  
   // For collision layers
   const LAYER_NON_MOVING = 0;
   const LAYER_MOVING = 1;

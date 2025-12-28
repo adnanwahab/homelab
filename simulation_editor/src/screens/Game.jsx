@@ -28,6 +28,68 @@ import { setupLighting } from "../lighting.js";
 
 import initGenerateObject from "../mutateScene.ts";
 
+// Function to load level data and create cuboids
+async function loadLevelCuboids(levelId, scene) {
+    try {
+        // Dynamically import the level JSON file
+        const levelModule = await import(`../levels/${levelId}.json`);
+        const levelData = levelModule.default || levelModule;
+        console.log('Loaded level data:', levelData);
+        
+        // Extract objects from the first item in the array
+        if (levelData && levelData.length > 0 && levelData[0].objects) {
+            const objects = levelData[0].objects;
+            
+            // Create red material for cuboids
+            const redMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0xff0000,
+                metalness: 0.3,
+                roughness: 0.7
+            });
+            
+            // Create a cuboid for each object
+            objects.forEach((obj, index) => {
+                if (obj.type === 'cuboid') {
+                    // Create geometry with size [width, height, depth]
+                    const geometry = new THREE.BoxGeometry(
+                        obj.size[0], 
+                        obj.size[1], 
+                        obj.size[2]
+                    );
+                    
+                    // Create mesh
+                    const mesh = new THREE.Mesh(geometry, redMaterial);
+                    
+                    // Set position [x, y, z]
+                    mesh.position.set(
+                        obj.position[0],
+                        obj.position[1],
+                        obj.position[2]
+                    );
+                    
+                    // Set rotation [x, y, z] in radians
+                    mesh.rotation.set(
+                        obj.rotation[0],
+                        obj.rotation[1],
+                        obj.rotation[2]
+                    );
+                    
+                    // Enable shadows
+                    mesh.castShadow = true;
+                    mesh.receiveShadow = true;
+                    
+                    // Add to scene
+                    scene.add(mesh);
+                    
+                    console.log(`Created cuboid ${index + 1} at position:`, obj.position);
+                }
+            });
+        }
+    } catch (error) {
+        console.error('Error loading level cuboids:', error);
+    }
+}
+
 export default function Game() {
     const { game_id } = useParams();
     const containerRef = useRef(null);
@@ -130,8 +192,14 @@ export default function Game() {
                 scene,
                 dynamicObjects,
                 onExampleUpdateRef,
+                game_id
             );
             //editScene(scene);
+
+            // Load level data and create cuboids
+            loadLevelCuboids(game_id, scene).catch((error) => {
+                console.error('Error loading level cuboids:', error);
+            });
 
             // Prepare user input
             handleUserInput(inputState);
@@ -201,8 +269,20 @@ export default function Game() {
 
     return (
         <div style={{ padding: '20px' }}>
-            <h1>Game: {game_id}</h1>
-            <p>Playing level {game_id}</p>
+            <div style={{ 
+                marginBottom: '20px',
+                borderBottom: '2px solid #e5e7eb',
+                paddingBottom: '10px'
+            }}>
+                <h1 style={{ 
+                    margin: 0,
+                    fontSize: '2rem',
+                    fontWeight: 'bold',
+                    color: 'white'
+                }}>
+                    Level {game_id}
+                </h1>
+            </div>
             <div 
                 ref={containerRef} 
                 id="container"
