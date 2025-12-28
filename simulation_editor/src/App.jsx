@@ -16,7 +16,7 @@ import LevelList from './screens/LevelList'
 //   return <div>Contact</div>
 // }
 
-import Settings from './settings'
+import Settings from './screens/Settings'
 
 function App() {
   return (

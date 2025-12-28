@@ -25,11 +25,14 @@ import editScene from "../utils/edit_scene.js";
 //new AudioVisualizer();
 //import tsl from 'three/tsl'
 import { setupLighting } from "../lighting.js";
+import { createBox } from "../createBox.js";
+import { addToScene } from "../addToScene.js";
+import { getThreeObjectForBody } from "../getThreeObjectForBody.js";
 
 import initGenerateObject from "../mutateScene.ts";
 
-// Function to load level data and create cuboids
-async function loadLevelCuboids(levelId, scene) {
+// Function to load level data and create cuboids with Jolt physics
+async function loadLevelCuboids(levelId, Jolt, bodyInterface, scene, dynamicObjects) {
     try {
         // Dynamically import the level JSON file
         const levelModule = await import(`../levels/${levelId}.json`);
@@ -47,41 +50,71 @@ async function loadLevelCuboids(levelId, scene) {
                 roughness: 0.7
             });
             
-            // Create a cuboid for each object
+            // Collision layer for static platforms (same as walls/floor)
+            const LAYER_NON_MOVING = 0;
+            
+            // Create a physics-enabled cuboid for each object
             objects.forEach((obj, index) => {
                 if (obj.type === 'cuboid') {
-                    // Create geometry with size [width, height, depth]
-                    const geometry = new THREE.BoxGeometry(
-                        obj.size[0], 
-                        obj.size[1], 
-                        obj.size[2]
+                    // Convert size to half-extent for Jolt (half of each dimension)
+                    const halfExtent = new Jolt.Vec3(
+                        obj.size[0] / 2,
+                        obj.size[1] / 2,
+                        obj.size[2] / 2
                     );
                     
-                    // Create mesh
-                    const mesh = new THREE.Mesh(geometry, redMaterial);
-                    
-                    // Set position [x, y, z]
-                    mesh.position.set(
+                    // Create position vector
+                    const position = new Jolt.RVec3(
                         obj.position[0],
                         obj.position[1],
                         obj.position[2]
                     );
                     
-                    // Set rotation [x, y, z] in radians
-                    mesh.rotation.set(
-                        obj.rotation[0],
-                        obj.rotation[1],
-                        obj.rotation[2]
+                    // Create rotation quaternion
+                    // If rotation is [0,0,0], use identity, otherwise create from Euler
+                    let rotation;
+                    if (obj.rotation[0] === 0 && obj.rotation[1] === 0 && obj.rotation[2] === 0) {
+                        rotation = Jolt.Quat.prototype.sIdentity();
+                    } else {
+                        // Convert Euler angles (in radians) to quaternion
+                        // Using Three.js to help with conversion
+                        const euler = new THREE.Euler(
+                            obj.rotation[0],
+                            obj.rotation[1],
+                            obj.rotation[2],
+                            'XYZ'
+                        );
+                        const quat = new THREE.Quaternion();
+                        quat.setFromEuler(euler);
+                        rotation = new Jolt.Quat(
+                            quat.x,
+                            quat.y,
+                            quat.z,
+                            quat.w
+                        );
+                    }
+                    
+                    // Create static physics body (so player can jump on it)
+                    const cuboidBody = createBox(
+                        Jolt,
+                        bodyInterface,
+                        (body) => addToScene(
+                            body, 
+                            Jolt, 
+                            bodyInterface, 
+                            scene, 
+                            dynamicObjects, 
+                            getThreeObjectForBody, 
+                            redMaterial
+                        ),
+                        position,
+                        rotation,
+                        halfExtent,
+                        Jolt.EMotionType_Static, // Static so it doesn't move
+                        LAYER_NON_MOVING
                     );
                     
-                    // Enable shadows
-                    mesh.castShadow = true;
-                    mesh.receiveShadow = true;
-                    
-                    // Add to scene
-                    scene.add(mesh);
-                    
-                    console.log(`Created cuboid ${index + 1} at position:`, obj.position);
+                    console.log(`Created physics cuboid ${index + 1} at position:`, obj.position);
                 }
             });
         }
@@ -196,8 +229,14 @@ export default function Game() {
             );
             //editScene(scene);
 
-            // Load level data and create cuboids
-            loadLevelCuboids(game_id, scene).catch((error) => {
+            // Load level data and create cuboids with physics
+            loadLevelCuboids(
+                game_id, 
+                Jolt, 
+                bodyInterface, 
+                scene, 
+                dynamicObjects
+            ).catch((error) => {
                 console.error('Error loading level cuboids:', error);
             });
 
