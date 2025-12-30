@@ -7,6 +7,10 @@ export default function Page() {
        Adnan Wahab 
       </h1>
 
+      <a href="https://physics-game-five.vercel.app/" target="_blank" rel="noopener noreferrer">Physics Game</a>
+<iframe src="https://physics-game-five.vercel.app/" width="100%" height="900px"></iframe>
+
+
       <div className="my-8">
         <BlogPosts />
       </div>
