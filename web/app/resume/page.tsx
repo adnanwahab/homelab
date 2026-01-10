@@ -34,13 +34,35 @@ export default function Resume() {
 
   return (
     <>
-      <div className="max-w-3xl mx-auto px-4 pt-6 bg-white text-gray-800 font-sans">
-        <button
+      <style dangerouslySetInnerHTML={{__html: `
+        @media print {
+          aside,
+          nav,
+          footer,
+          #nav {
+            display: none !important;
+            visibility: hidden !important;
+          }
+          
+          body {
+            background: white !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+          
+          main {
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+        }
+      `}} />
+      <div className="max-w-3xl mx-auto px-4 pt-6 bg-white text-gray-800 font-sans print:bg-white">
+        {/* <button
           onClick={handleExportPDF}
           className="mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors float-right print:hidden"
         >
           Export as PDF
-        </button>
+        </button> */}
         <div ref={resumeRef} className="clear-both pb-6">
           {/* Header / Name / Contact */}
           <header className="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
@@ -49,9 +71,9 @@ export default function Resume() {
                 Adnan Wahab
               </h1>
               {/* Optional: Add a short tagline or role summary */}
-              <p className="text-sm text-gray-600 mt-1">
+              {/* <p className="text-sm text-gray-600 mt-1">
                 Perception Tools
-              </p>
+              </p> */}
             </div>
             
             <div className="mt-4 sm:mt-0 flex flex-col items-start sm:items-end text-sm text-gray-700 space-y-1">
@@ -99,6 +121,26 @@ export default function Resume() {
               Professional Experience
             </h2>
 
+            {/* Swarmbotics AI */}
+            <div className="mb-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-md font-semibold text-gray-800">
+                    Software Engineer | Swarmbotics AI
+                  </h3>
+                  <p className="text-xs text-gray-500">Jan 2024 - Jul 2024</p>
+                </div>
+                <img
+                  src="/logos/swarmbotics_ai_logo.jpeg"
+                  alt="Swarmbotics AI logo"
+                  className="h-6 w-auto object-contain"
+                />
+              </div>
+              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
+                <li>Implemented low-latency tele-operations for Military Contractor</li>
+              </ul>
+            </div>
+
             {/* Zoox */}
             <div className="mb-4">
               <div className="flex items-center justify-between">
@@ -106,7 +148,7 @@ export default function Resume() {
                   <h3 className="text-md font-semibold text-gray-800">
                     Perception Tools Engineer | Zoox
                   </h3>
-                  <p className="text-xs text-gray-500">Feb 2021 - Present</p>
+                  <p className="text-xs text-gray-500">Feb 2021 - Feb 2023</p>
                 </div>
                 <img
                   src="/logos/zoox.jpeg"
@@ -125,12 +167,29 @@ export default function Resume() {
               </ul>
             </div>
 
+            {/* Principal Consulting */}
+            <div className="mb-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-md font-semibold text-gray-800">
+                    Principal | Consulting
+                  </h3>
+                  <p className="text-xs text-gray-500">Feb 2019 - Feb 2021</p>
+                </div>
+              </div>
+              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
+ 
+                <li>Built UIs and Tooling for Graphistry, MeetYogi(language modeling), and Blink Health</li>
+
+              </ul>
+            </div>
+
             {/* American Express */}
             <div className="mb-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-md font-semibold text-gray-800">
-                    Senior Software Engineer | American Express
+                    Software Engineer | American Express
                   </h3>
                   <p className="text-xs text-gray-500">Feb 2017 - Feb 2019</p>
                 </div>
@@ -171,6 +230,26 @@ export default function Resume() {
               </ul>
             </div>
 
+            {/* Amaze */}
+            <div className="mb-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-md font-semibold text-gray-800">
+                    Software Engineer | Amaze
+                  </h3>
+                  <p className="text-xs text-gray-500">Apr 2014 - May 2015</p>
+                </div>
+                <img
+                  src="/logos/amaze.jpeg"
+                  alt="Amaze logo"
+                  className="h-6 w-auto object-contain"
+                />
+              </div>
+              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
+              <li>Made a webGL graphics engine, chrome extension, documentation and weekly demos for mobile web.</li>
+              </ul>
+            </div>
+
             {/* Sony */}
             <div className="mb-4">
               <div className="flex items-center justify-between">
@@ -178,7 +257,7 @@ export default function Resume() {
                   <h3 className="text-md font-semibold text-gray-800">
                     Software Engineer | Sony PlayStation
                   </h3>
-                  <p className="text-xs text-gray-500">Feb 2013 - Jul 2014</p>
+                  <p className="text-xs text-gray-500">Feb 2013 - Mar 2014</p>
                 </div>
                 <img
                   src="/logos/sony.jpeg"
@@ -192,14 +271,15 @@ export default function Resume() {
               </ul>
             </div>
 
-            {/* Square */}
+            {/* BookFresh/Square */}
             <div>
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-md font-semibold text-gray-800">
-                    Software Engineer | Square
+                    Software Engineer | BookFresh
                   </h3>
-                  <p className="text-xs text-gray-500">Feb 2012 - Jul 2013</p>
+                  <p className="text-xs text-gray-500">Feb 2012 - Feb 2013</p>
+                  <p className="text-xs text-gray-400 italic">Acquired by Square</p>
                 </div>
                 <img
                   src="/logos/square.jpeg"
@@ -215,7 +295,7 @@ export default function Resume() {
           </section>
 
           {/* Education */}
-          <section className="mb-6">
+          {/* <section className="mb-6">
             <h2 className="text-lg font-bold text-gray-900 border-b border-gray-200 pb-1 mb-3">
               Education
             </h2>
@@ -223,9 +303,9 @@ export default function Resume() {
               <p className="text-md font-semibold text-gray-800">
                 Bachelor of Science in Computer Science
               </p>
-              <p className="text-sm text-gray-500">Texas A&M University, 2014</p>
+              <p className="text-sm text-gray-500">Texas A&M University, 2013</p>
             </div>
-          </section>
+          </section> */}
 
           {/* Technical Skills */}
           <section className="mb-6">
@@ -236,19 +316,15 @@ export default function Resume() {
             <ul className="text-sm text-gray-700 space-y-2">
               <li>
                 <span className="font-semibold">Languages:</span>{" "}
-                TypeScript, JavaScript, Python, Golang, C++, Zig
+                JavaScript, Python, Golang, C++, Zig
               </li>
               <li>
                 <span className="font-semibold">Frontend:</span>{" "}
                 React, Three.js, WebGL, tailwindcss
               </li>
               <li>
-                <span className="font-semibold">`Backend`:</span>{" "}
-                REST APIs, PostgreSQL, Docker, AWS, Kubernetes
-              </li>
-              <li>
-                <span className="font-semibold">Data Engineering &amp;</span>{" "}
-                Apache Spark, Kafka, Clickhouse, Kinesis, Airflow
+                <span className="font-semibold">Backend:</span>{" "}
+                REST APIs, PostgreSQL, Docker, AWS, Clickhouse, Kinesis, Airflow
               </li>
             </ul>
           </section>
