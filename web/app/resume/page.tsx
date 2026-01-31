@@ -126,9 +126,9 @@ export default function Resume() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-md font-semibold text-gray-800">
-                    Software Engineer | Swarmbotics AI
+                    Software Engineer  | Swarmbotics AI
                   </h3>
-                  <p className="text-xs text-gray-500">Jan 2024 - Jul 2024</p>
+                  <p className="text-xs text-gray-500">Jan 2024 - Jul 2024 (Contract)</p>
                 </div>
                 <img
                   src="/logos/swarmbotics_ai_logo.jpeg"
@@ -158,7 +158,7 @@ export default function Resume() {
               </div>
               <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
                 <li>Lead development of 3D annotation tools for improving accuracy of perception models</li>
-                <li>Developeed and maintained internal tools and systems automating existing work and improving productivity using LLMs</li>
+                <li>Developed and maintained internal tools and systems automating existing work and improving productivity using LLMs</li>
                 <li>Implemented Auto-labeling, RLHF, and continuous QA to lower cost of labels by over 80%</li>
                 <li>
                   Awarded a patent for object annotation in computer
@@ -174,7 +174,7 @@ export default function Resume() {
                   <h3 className="text-md font-semibold text-gray-800">
                     Principal | Consulting
                   </h3>
-                  <p className="text-xs text-gray-500">Feb 2019 - Feb 2021</p>
+                  <p className="text-xs text-gray-500">Dec 2019 - Feb 2021</p>
                 </div>
               </div>
               <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
@@ -191,7 +191,7 @@ export default function Resume() {
                   <h3 className="text-md font-semibold text-gray-800">
                     Software Engineer | American Express
                   </h3>
-                  <p className="text-xs text-gray-500">Feb 2017 - Feb 2019</p>
+                  <p className="text-xs text-gray-500">Oct 2017 - Dec 2019</p>
                 </div>
                 <img
                   src="/logos/amex.jpeg"
@@ -213,7 +213,7 @@ export default function Resume() {
                   <h3 className="text-md font-semibold text-gray-800">
                     Graphics Engineer | Samasource
                   </h3>
-                  <p className="text-xs text-gray-500">Mar 2015 - Oct 2017</p>
+                  <p className="text-xs text-gray-500">Sep 2015 - Oct 2017</p>
                 </div>
                 <img
                   src="/logos/samasource.jpeg"
@@ -237,7 +237,7 @@ export default function Resume() {
                   <h3 className="text-md font-semibold text-gray-800">
                     Software Engineer | Amaze
                   </h3>
-                  <p className="text-xs text-gray-500">Apr 2014 - May 2015</p>
+                  <p className="text-xs text-gray-500">March 2014 - Sep 2015</p>
                 </div>
                 <img
                   src="/logos/amaze.jpeg"
