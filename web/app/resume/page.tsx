@@ -43,13 +43,13 @@ export default function Resume() {
             display: none !important;
             visibility: hidden !important;
           }
-          
+
           body {
             background: white !important;
             margin: 0 !important;
             padding: 0 !important;
           }
-          
+
           main {
             margin: 0 !important;
             padding: 0 !important;
@@ -75,7 +75,7 @@ export default function Resume() {
                 Perception Tools
               </p> */}
             </div>
-            
+
             <div className="mt-4 sm:mt-0 flex flex-col items-start sm:items-end text-sm text-gray-700 space-y-1">
               <div className="flex items-center space-x-1">
                 <span className="font-semibold text-gray-600">Portfolio:</span>
@@ -167,131 +167,12 @@ export default function Resume() {
               </ul>
             </div>
 
-            {/* Principal Consulting */}
-            <div className="mb-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-md font-semibold text-gray-800">
-                    Principal | Consulting
-                  </h3>
-                  <p className="text-xs text-gray-500">Dec 2019 - Feb 2021</p>
-                </div>
-              </div>
-              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
- 
-                <li>Built UIs and Tooling for Graphistry, MeetYogi(language modeling), and Blink Health</li>
 
-              </ul>
-            </div>
 
-            {/* American Express */}
-            <div className="mb-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-md font-semibold text-gray-800">
-                    Software Engineer | American Express
-                  </h3>
-                  <p className="text-xs text-gray-500">Oct 2017 - Dec 2019</p>
-                </div>
-                <img
-                  src="/logos/amex.jpeg"
-                  alt="American Express logo"
-                  className="h-8 w-auto object-contain"
-                />
-              </div>
-              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-                <li>Implemented A/B testing and analytics, increasing revenue by $400M/year</li>
-                <li>Implemented design systems for consistent user experience across multiple regions.</li>
-                <li>Created personalization layer for the "view-all-cards" page to increase conversions.</li>
-              </ul>
-            </div>
 
-            {/* Samasource */}
-            <div className="mb-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-md font-semibold text-gray-800">
-                    Graphics Engineer | Samasource
-                  </h3>
-                  <p className="text-xs text-gray-500">Sep 2015 - Oct 2017</p>
-                </div>
-                <img
-                  src="/logos/samasource.jpeg"
-                  alt="Samasource logo"
-                  className="h-6 w-auto object-contain"
-                />
-              </div>
-              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-                <li>Built LiDAR annotation tools for point clouds (WebGL, Three.js) for nascent AV industry</li>
-                <li>Implemented large-scale labeling pipelines (Node.js, C++, Go)</li>
-                <li>
-                  Awarded first Innovation Award for Empowerment of Women by Secretary of State Hillary Clinton
-                </li>
-              </ul>
-            </div>
 
-            {/* Amaze */}
-            <div className="mb-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-md font-semibold text-gray-800">
-                    Software Engineer | Amaze
-                  </h3>
-                  <p className="text-xs text-gray-500">March 2014 - Sep 2015</p>
-                </div>
-                <img
-                  src="/logos/amaze.jpeg"
-                  alt="Amaze logo"
-                  className="h-6 w-auto object-contain"
-                />
-              </div>
-              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-              <li>Made a webGL graphics engine, chrome extension, documentation and weekly demos for mobile web.</li>
-              </ul>
-            </div>
 
-            {/* Sony */}
-            <div className="mb-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-md font-semibold text-gray-800">
-                    Software Engineer | Sony PlayStation
-                  </h3>
-                  <p className="text-xs text-gray-500">Feb 2013 - Mar 2014</p>
-                </div>
-                <img
-                  src="/logos/sony.jpeg"
-                  alt="Sony logo"
-                  className="h-6 w-auto object-contain"
-                />
-              </div>
-              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-                <li>Contributed to PlayStation Now video game streaming services with ember.js and Java</li>
-                <li>Built UI for PlayStation Store with over 100 million customers</li>
-              </ul>
-            </div>
 
-            {/* BookFresh/Square */}
-            <div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-md font-semibold text-gray-800">
-                    Software Engineer | BookFresh
-                  </h3>
-                  <p className="text-xs text-gray-500">Feb 2012 - Feb 2013</p>
-                  <p className="text-xs text-gray-400 italic">Acquired by Square</p>
-                </div>
-                <img
-                  src="/logos/square.jpeg"
-                  alt="Square logo"
-                  className="h-6 w-auto object-contain"
-                />
-              </div>
-              <ul className="list-disc list-outside ml-5 mt-2 text-sm text-gray-700 space-y-1">
-                <li>Created appointment-management applications to support 2M+ small business owners</li>
-                <li>Supported BookFresh acquisition to expand Square's calendar services <a className="text-blue-600 hover:underline" href="https://archive.is/5WG2G" target="_blank" rel="noopener noreferrer">https://archive.is/5WG2G</a></li>
-              </ul>
-            </div>
           </section>
 
           {/* Education */}
